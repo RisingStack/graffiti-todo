@@ -1,0 +1,29 @@
+{
+  "extends": "airbnb/base",
+  "plugins": [
+    "react"
+  ],
+  "ecmaFeatures": {
+    "blockBindings": true,
+    "forOf": true,
+    "jsx": true
+  },
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "before": false,
+    "after": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "describe": false,
+    "it": false
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "no-shadow": 0,
+    "no-param-reassign": 0,
+    "id-length": [2, {"exceptions": ["_", "i", "e"]}],
+    "comma-dangle": [1, "never"]
+  }
+}

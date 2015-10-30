@@ -740,7 +740,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "changedTodoEdgeEdge",
+                "name": "changedTodoEdge",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -770,7 +770,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "changedTodoEdgeEdge",
+          "name": "changedTodoEdge",
           "description": "An edge in a connection.",
           "fields": [
             {
@@ -779,7 +779,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "changedTodoEdge",
+                "name": "changedTodoNode",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -809,7 +809,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "changedTodoEdge",
+          "name": "changedTodoNode",
           "description": null,
           "fields": [
             {

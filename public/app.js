@@ -41647,8 +41647,18 @@
 	            'Created by the ',
 	            _react2['default'].createElement(
 	              'a',
-	              { target: '_blank', href: 'https://risingstack.com/' },
+	              { target: '_blank', href: 'https://risingstack.com' },
 	              'RisingStack team'
+	            )
+	          ),
+	          _react2['default'].createElement(
+	            'p',
+	            null,
+	            'The source code can be found on ',
+	            _react2['default'].createElement(
+	              'a',
+	              { target: '_blank', href: 'https://github.com/RisingStack/graffiti-todo' },
+	              'GitHub'
 	            )
 	          ),
 	          _react2['default'].createElement(
@@ -41841,15 +41851,15 @@
 	      return (function () {
 	        var GraphQL = _reactRelay2['default'].QL.__GraphQL;
 	        return new GraphQL.QueryFragment('AddTodoMutation', 'addTodoPayload', [new GraphQL.Field('changedTodoEdge', [new GraphQL.Field('cursor', null, null, null, null, null, {
-	          parentType: 'changedTodoEdgeEdge',
-	          generated: true,
-	          requisite: true
-	        }), new GraphQL.Field('node', [new GraphQL.Field('id', null, null, null, null, null, {
 	          parentType: 'changedTodoEdge',
 	          generated: true,
 	          requisite: true
+	        }), new GraphQL.Field('node', [new GraphQL.Field('id', null, null, null, null, null, {
+	          parentType: 'changedTodoNode',
+	          generated: true,
+	          requisite: true
 	        })], null, null, null, null, {
-	          parentType: 'changedTodoEdgeEdge',
+	          parentType: 'changedTodoEdge',
 	          generated: true,
 	          requisite: true
 	        })], null, null, null, null, {

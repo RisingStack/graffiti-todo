@@ -105,7 +105,10 @@ class TodoApp extends React.Component {
         <footer className="info">
           <p>Double-click to edit a todo</p>
           <p>
-            Created by the <a target="_blank" href="https://risingstack.com/">RisingStack team</a>
+            Created by the <a target="_blank" href="https://risingstack.com">RisingStack team</a>
+          </p>
+          <p>
+            The source code can be found on <a target="_blank" href="https://github.com/RisingStack/graffiti-todo">GitHub</a>
           </p>
           <p>
             Part of <a target="_blank" href="http://todomvc.com">TodoMVC</a>

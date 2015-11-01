@@ -7,6 +7,7 @@
       "mutationType": {
         "name": "RootMutation"
       },
+      "subscriptionType": null,
       "types": [
         {
           "kind": "OBJECT",
@@ -740,7 +741,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "changedTodoEdge",
+                "name": "changedTodoEdgeEdge",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -770,7 +771,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "changedTodoEdge",
+          "name": "changedTodoEdgeEdge",
           "description": "An edge in a connection.",
           "fields": [
             {
@@ -779,7 +780,7 @@
               "args": [],
               "type": {
                 "kind": "OBJECT",
-                "name": "changedTodoNode",
+                "name": "changedTodoEdge",
                 "ofType": null
               },
               "isDeprecated": false,
@@ -809,7 +810,7 @@
         },
         {
           "kind": "OBJECT",
-          "name": "changedTodoNode",
+          "name": "changedTodoEdge",
           "description": null,
           "fields": [
             {
@@ -1140,7 +1141,7 @@
         {
           "kind": "OBJECT",
           "name": "__Schema",
-          "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query and mutation operations.",
+          "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation, and subscription operations.",
           "fields": [
             {
               "name": "types",
@@ -1184,6 +1185,18 @@
             {
               "name": "mutationType",
               "description": "If this server supports mutation, the type that mutation operations will be rooted at.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "__Type",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
+              "name": "subscriptionType",
+              "description": "If this server support subscription, the type that subscription operations will be rooted at.",
               "args": [],
               "type": {
                 "kind": "OBJECT",

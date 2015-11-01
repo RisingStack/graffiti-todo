@@ -1,8 +1,7 @@
 import path from 'path';
 import Hapi from 'hapi';
 import Inert from 'inert';
-import {graphql} from 'graphql';
-import boom from 'boom';
+import {hapi} from '@risingstack/graffiti';
 import {getSchema} from '@risingstack/graffiti-mongoose';
 import mongoose from 'mongoose';
 import mongooseSchema from './data/schema';
@@ -15,34 +14,14 @@ mongoose.connect(MONGO_URI);
 const server = new Hapi.Server();
 server.connection({ port: PORT });
 
-server.register(Inert, (err) => {
+server.register([Inert, {
+  register: hapi,
+  options: {
+    schema: getSchema(mongooseSchema)
+  }
+}], (err) => {
   if (err) {
     throw new Error('Failed to load a plugin: ' + err);
-  }
-});
-
-const schema = getSchema(mongooseSchema);
-
-// handle graphql requests
-server.route({
-  method: ['POST'],
-  path: '/graphql',
-  handler: (request, reply) => {
-    const {query, variables} = request.payload || {}; // eslint-disable-line
-
-    if (!query) {
-      return reply(boom.badRequest('no query'));
-    }
-
-    return graphql(schema, query, null, variables)
-      .then((result) => {
-        if (result.errors) {
-          const message = result.errors.map((error) => error.message).join('\n');
-          return reply(boom.badRequest(message));
-        }
-        return reply(result);
-      })
-      .catch((err) => reply(boom.badImplementation(err)));
   }
 });
 

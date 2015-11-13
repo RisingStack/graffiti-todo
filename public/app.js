@@ -41915,15 +41915,15 @@
 	      return (function () {
 	        var GraphQL = _reactRelay2['default'].QL.__GraphQL;
 	        return new GraphQL.QueryFragment('AddTodoMutation', 'addTodoPayload', [new GraphQL.Field('changedTodoEdge', [new GraphQL.Field('cursor', null, null, null, null, null, {
-	          parentType: 'changedTodoEdgeEdge',
-	          generated: true,
-	          requisite: true
-	        }), new GraphQL.Field('node', [new GraphQL.Field('id', null, null, null, null, null, {
 	          parentType: 'changedTodoEdge',
 	          generated: true,
 	          requisite: true
+	        }), new GraphQL.Field('node', [new GraphQL.Field('id', null, null, null, null, null, {
+	          parentType: 'changedTodoNode',
+	          generated: true,
+	          requisite: true
 	        })], null, null, null, null, {
-	          parentType: 'changedTodoEdgeEdge',
+	          parentType: 'changedTodoEdge',
 	          generated: true,
 	          requisite: true
 	        })], null, null, null, null, {
@@ -41939,7 +41939,9 @@
 	          generated: true,
 	          requisite: true
 	        })], null, null, null, null, {
-	          parentType: 'addTodoPayload'
+	          parentType: 'addTodoPayload',
+	          rootCall: 'node',
+	          pk: 'id'
 	        })]);
 	      })();
 	    }
@@ -42074,7 +42076,9 @@
 	          connection: true,
 	          nonFindable: true
 	        })], null, null, null, null, {
-	          parentType: 'deleteTodoPayload'
+	          parentType: 'deleteTodoPayload',
+	          rootCall: 'node',
+	          pk: 'id'
 	        })]);
 	      })();
 	    }
@@ -43211,7 +43215,11 @@
 	      viewer: function viewer() {
 	        return (function () {
 	          var GraphQL = _reactRelay2['default'].QL.__GraphQL;
-	          return new GraphQL.Query('viewer', null, null, null, null, 'AppRoute');
+	          return new GraphQL.Query('viewer', null, [new GraphQL.Field('id', null, null, null, null, null, {
+	            parentType: 'Viewer',
+	            generated: true,
+	            requisite: true
+	          })], null, null, 'AppRoute');
 	        })();
 	      }
 	    },

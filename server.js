@@ -14,10 +14,21 @@ mongoose.connect(MONGO_URI);
 const server = new Hapi.Server();
 server.connection({ port: PORT });
 
+const hooks = {
+  mutation: {
+    pre: (next, {complete, id}, {fieldName}) => {
+      if (fieldName === 'updateTodo' && complete) {
+        console.log(`TODO with id: ${id} is marked complete`);
+      }
+
+      next();
+    }
+  }
+};
 server.register([Inert, {
   register: hapi,
   options: {
-    schema: getSchema(mongooseSchema)
+    schema: getSchema(mongooseSchema, {hooks})
   }
 }], (err) => {
   if (err) {

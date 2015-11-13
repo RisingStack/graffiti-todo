@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@risingstack/graffiti": "^2.0.0",
-    "@risingstack/graffiti-mongoose": "^4.0.3",
+    "@risingstack/graffiti-mongoose": "^4.2.0",
     "babel": "5.8.29",
     "babel-loader": "5.3.3",
     "babel-relay-plugin": "0.3.0",

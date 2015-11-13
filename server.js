@@ -5,6 +5,7 @@ import {hapi} from '@risingstack/graffiti';
 import {getSchema} from '@risingstack/graffiti-mongoose';
 import mongoose from 'mongoose';
 import mongooseSchema from './data/schema';
+import Filter from 'bad-words';
 
 const PORT = process.env.PORT || 8080;
 const MONGO_URI = process.env.MONGO_URI || process.env.MONGOLAB_URI || 'mongodb://localhost/graphql';
@@ -14,10 +15,22 @@ mongoose.connect(MONGO_URI);
 const server = new Hapi.Server();
 server.connection({ port: PORT });
 
+const filter = new Filter();
+const hooks = {
+  mutation: {
+    pre: (next, todo, ...rest) => {
+      if (todo.text) {
+        todo.text = filter.clean(todo.text);
+      }
+
+      next(todo, ...rest);
+    }
+  }
+};
 server.register([Inert, {
   register: hapi,
   options: {
-    schema: getSchema(mongooseSchema)
+    schema: getSchema(mongooseSchema, {hooks})
   }
 }], (err) => {
   if (err) {

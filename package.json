@@ -28,14 +28,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node .",
-    "build": "webpack && npm run update-schema",
+    "build": "npm run update-schema && webpack",
     "update-schema": "babel-node ./scripts/updateSchema.js",
     "prepush": "npm run build && git commit --amend --no-edit",
     "eslint": "eslint js"
   },
   "dependencies": {
     "@risingstack/graffiti": "^2.1.1",
-    "@risingstack/graffiti-mongoose": "^4.3.2",
+    "@risingstack/graffiti-mongoose": "^4.3.3",
     "babel": "6.3.13",
     "babel-loader": "6.2.0",
     "babel-polyfill": "^6.3.14",

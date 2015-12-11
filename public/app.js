@@ -42368,8 +42368,11 @@
 	            }],
 	            fieldName: 'changedTodo',
 	            kind: 'Field',
-	            metadata: {},
-	            type: 'changedTodo'
+	            metadata: {
+	              inferredRootCallName: 'node',
+	              inferredPrimaryKey: 'id'
+	            },
+	            type: 'Todo'
 	          }],
 	          hash: 'Cn3/JYd4',
 	          kind: 'Fragment',
@@ -42697,8 +42700,11 @@
 	            }],
 	            fieldName: 'changedTodo',
 	            kind: 'Field',
-	            metadata: {},
-	            type: 'changedTodo'
+	            metadata: {
+	              inferredRootCallName: 'node',
+	              inferredPrimaryKey: 'id'
+	            },
+	            type: 'Todo'
 	          }],
 	          hash: 'p+icXmQh',
 	          kind: 'Fragment',

@@ -25,7 +25,7 @@ export default class TodoTextInput extends React.Component {
   }
 
   handleChange = (e) => {
-    this.setState({text: e.target.value});
+    this.setState({ text: e.target.value });
   }
 
   handleKeyDown = (e) => {
@@ -44,7 +44,7 @@ export default class TodoTextInput extends React.Component {
       this.props.onCancel();
     } else if (text !== '') {
       this.props.onSave(text);
-      this.setState({text: ''});
+      this.setState({ text: '' });
     }
   }
 

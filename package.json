@@ -30,40 +30,51 @@
     "start": "node .",
     "build": "webpack && npm run update-schema",
     "update-schema": "babel-node ./scripts/updateSchema.js",
-    "prepush": "npm run build && git commit --amend --no-edit"
+    "prepush": "npm run build && git commit --amend --no-edit",
+    "eslint": "eslint js"
   },
   "dependencies": {
-    "@risingstack/graffiti": "^2.0.0",
-    "@risingstack/graffiti-mongoose": "^4.2.0",
-    "babel": "5.8.29",
-    "babel-loader": "5.3.3",
-    "babel-relay-plugin": "0.4.1",
+    "@risingstack/graffiti": "^2.1.1",
+    "@risingstack/graffiti-mongoose": "^4.3.2",
+    "babel": "6.3.13",
+    "babel-loader": "6.2.0",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-register": "^6.3.13",
+    "babel-relay-plugin": "0.6.0",
     "bad-words": "1.3.1",
-    "classnames": "2.2.0",
-    "graphql": "0.4.12",
-    "hapi": "11.1.1",
+    "classnames": "2.2.1",
+    "graphql": "0.4.14",
+    "hapi": "11.1.2",
     "inert": "3.2.0",
-    "mongoose": "4.2.5",
-    "react": "0.14.2",
-    "react-dom": "0.14.2",
-    "react-relay": "0.5.0",
+    "mongoose": "4.3.0",
+    "react": "0.14.3",
+    "react-dom": "0.14.3",
+    "react-relay": "0.6.0",
     "todomvc-app-css": "2.0.3",
     "todomvc-common": "1.0.2"
   },
   "devDependencies": {
-    "babel-eslint": "4.1.5",
+    "babel-cli": "^6.3.17",
+    "babel-eslint": "5.0.0-beta6",
     "css-loader": "0.23.0",
-    "eslint": "1.9.0",
-    "eslint-config-airbnb": "1.0.0",
-    "eslint-plugin-react": "3.8.0",
+    "eslint": "1.10.3",
+    "eslint-config-airbnb": "2.0.0",
+    "eslint-plugin-react": "3.11.3",
     "pre-push": "0.1.1",
     "style-loader": "0.13.0",
-    "webpack": "1.12.6"
+    "webpack": "1.12.9"
   },
   "pre-push": [
     "prepush"
   ],
   "babel": {
-    "stage": 0
+    "presets": [
+      "react",
+      "es2015",
+      "stage-0"
+    ]
   }
 }

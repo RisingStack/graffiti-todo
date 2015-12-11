@@ -18,12 +18,12 @@ class TodoApp extends React.Component {
 
   handleTextInputSave = (text) => {
     Relay.Store.update(
-      new AddTodoMutation({text, viewer: this.props.viewer})
+      new AddTodoMutation({ text, viewer: this.props.viewer })
     );
   }
 
   handleFilterChange = (selectedFilter) => {
-    this.setState({selectedFilter});
+    this.setState({ selectedFilter });
   }
 
   handleClearCompleted = () => {
@@ -31,7 +31,7 @@ class TodoApp extends React.Component {
     viewer.todos.edges
       .filter((edge) => edge.node.complete)
       .forEach((edge) => Relay.Store.update(
-        new DeleteTodoMutation({viewer, id: edge.node.id})
+        new DeleteTodoMutation({ viewer, id: edge.node.id })
       ));
   }
 
@@ -58,7 +58,7 @@ class TodoApp extends React.Component {
         return (
           <li key={filter}>
             <a href={'#' + filter}
-               className={classNames({selected})}
+               className={classNames({ selected })}
                onClick={selected ? null : this.handleFilterChange.bind(this, filter)}>
               {filter}
             </a>
@@ -122,7 +122,7 @@ class TodoApp extends React.Component {
 export default Relay.createContainer(TodoApp, {
   prepareVariables() {
     return {
-      limit: Number.MAX_SAFE_INTEGER
+      limit: 100
     };
   },
 

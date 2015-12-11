@@ -46,23 +46,23 @@
 
 	'use strict';
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	// eslint-disable-line
 
 	var _reactDom = __webpack_require__(158);
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
-	var _componentsApp = __webpack_require__(159);
+	var _App = __webpack_require__(159);
 
-	var _componentsApp2 = _interopRequireDefault(_componentsApp);
+	var _App2 = _interopRequireDefault(_App);
 
-	_reactDom2['default'].render(_react2['default'].createElement(_componentsApp2['default'], null), document.getElementById('root'));
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	// eslint-disable-line
+
+	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 
 /***/ },
 /* 1 */
@@ -114,6 +114,7 @@
 	});
 
 	React.__SECRET_DOM_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactDOM;
+	React.__SECRET_DOM_SERVER_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactDOMServer;
 
 	module.exports = React;
 
@@ -10464,6 +10465,7 @@
 	    multiple: MUST_USE_PROPERTY | HAS_BOOLEAN_VALUE,
 	    muted: MUST_USE_PROPERTY | HAS_BOOLEAN_VALUE,
 	    name: null,
+	    nonce: MUST_USE_ATTRIBUTE,
 	    noValidate: HAS_BOOLEAN_VALUE,
 	    open: HAS_BOOLEAN_VALUE,
 	    optimum: null,
@@ -10475,6 +10477,7 @@
 	    readOnly: MUST_USE_PROPERTY | HAS_BOOLEAN_VALUE,
 	    rel: null,
 	    required: HAS_BOOLEAN_VALUE,
+	    reversed: HAS_BOOLEAN_VALUE,
 	    role: MUST_USE_ATTRIBUTE,
 	    rows: MUST_USE_ATTRIBUTE | HAS_POSITIVE_NUMERIC_VALUE,
 	    rowSpan: null,
@@ -18677,7 +18680,7 @@
 
 	'use strict';
 
-	module.exports = '0.14.2';
+	module.exports = '0.14.3';
 
 /***/ },
 /* 147 */
@@ -19654,19 +19657,11 @@
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(1);
 
@@ -19676,13 +19671,21 @@
 
 	var _reactRelay2 = _interopRequireDefault(_reactRelay);
 
-	var _TodoApp = __webpack_require__(387);
+	var _TodoApp = __webpack_require__(385);
 
 	var _TodoApp2 = _interopRequireDefault(_TodoApp);
 
-	var _routesAppRoute = __webpack_require__(402);
+	var _AppRoute = __webpack_require__(400);
 
-	var _routesAppRoute2 = _interopRequireDefault(_routesAppRoute);
+	var _AppRoute2 = _interopRequireDefault(_AppRoute);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var App = (function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -19690,23 +19693,22 @@
 	  function App() {
 	    _classCallCheck(this, App);
 
-	    _get(Object.getPrototypeOf(App.prototype), 'constructor', this).apply(this, arguments);
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
 	  }
 
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2['default'].createElement(_reactRelay2['default'].RootContainer, {
-	        Component: _TodoApp2['default'],
-	        route: new _routesAppRoute2['default']() });
+	      return _react2.default.createElement(_reactRelay2.default.RootContainer, {
+	        Component: _TodoApp2.default,
+	        route: new _AppRoute2.default() });
 	    }
 	  }]);
 
 	  return App;
-	})(_react2['default'].Component);
+	})(_react2.default.Component);
 
-	exports['default'] = App;
-	module.exports = exports['default'];
+	exports.default = App;
 
 /***/ },
 /* 160 */
@@ -20000,7 +20002,15 @@
 /* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {/**
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var _extends = __webpack_require__(161)['default'];
+
+	var Promise = __webpack_require__(179);
+
+	/**
 	 * Copyright 2013-2015, Facebook, Inc.
 	 * All rights reserved.
 	 *
@@ -20014,12 +20024,6 @@
 	 */
 
 	'use strict';
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var _extends = __webpack_require__(161)['default'];
-
-	var Promise = __webpack_require__(179);
 
 	var fetch = __webpack_require__(189);
 	var fetchWithRetries = __webpack_require__(191);
@@ -21654,19 +21658,19 @@
 	'use strict';
 
 	var RelayContainer = __webpack_require__(197);
-	var RelayMutation = __webpack_require__(375);
-	var RelayNetworkLayer = __webpack_require__(302);
-	var RelayPropTypes = __webpack_require__(367);
-	var RelayQL = __webpack_require__(376);
-	var RelayRootContainer = __webpack_require__(378);
-	var RelayRoute = __webpack_require__(383);
-	var RelayStore = __webpack_require__(369);
-	var RelayTaskScheduler = __webpack_require__(306);
-	var RelayInternals = __webpack_require__(385);
+	var RelayMutation = __webpack_require__(374);
+	var RelayNetworkLayer = __webpack_require__(303);
+	var RelayPropTypes = __webpack_require__(287);
+	var RelayQL = __webpack_require__(375);
+	var RelayRootContainer = __webpack_require__(376);
+	var RelayRoute = __webpack_require__(381);
+	var RelayStore = __webpack_require__(289);
+	var RelayTaskScheduler = __webpack_require__(304);
+	var RelayInternals = __webpack_require__(383);
 
-	var createRelayQuery = __webpack_require__(386);
-	var getRelayQueries = __webpack_require__(382);
-	var isRelayContainer = __webpack_require__(368);
+	var createRelayQuery = __webpack_require__(384);
+	var getRelayQueries = __webpack_require__(380);
+	var isRelayContainer = __webpack_require__(288);
 
 	if (typeof global.__REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined') {
 	  global.__REACT_DEVTOOLS_GLOBAL_HOOK__._relayInternals = RelayInternals;
@@ -21728,35 +21732,31 @@
 
 	var ErrorUtils = __webpack_require__(211);
 	var GraphQLFragmentPointer = __webpack_require__(212);
-	var GraphQLStoreChangeEmitter = __webpack_require__(244);
 	var GraphQLStoreDataHandler = __webpack_require__(213);
-	var GraphQLStoreQueryResolver = __webpack_require__(247);
+	var GraphQLStoreQueryResolver = __webpack_require__(244);
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(158);
-	var RelayContainerComparators = __webpack_require__(355);
-	var RelayContainerProxy = __webpack_require__(356);
-	var RelayDeprecated = __webpack_require__(358);
+	var RelayContainerComparators = __webpack_require__(281);
+	var RelayContainerProxy = __webpack_require__(282);
+	var RelayDeprecated = __webpack_require__(284);
 	var RelayFragmentReference = __webpack_require__(229);
 
 	var RelayMetaRoute = __webpack_require__(231);
-	var RelayMutationTransaction = __webpack_require__(359);
-	var RelayPendingQueryTracker = __webpack_require__(303);
-	var RelayPropTypes = __webpack_require__(367);
+	var RelayMutationTransaction = __webpack_require__(285);
+	var RelayPropTypes = __webpack_require__(287);
 	var RelayProfiler = __webpack_require__(232);
 	var RelayQuery = __webpack_require__(214);
-	var RelayStore = __webpack_require__(369);
-	var RelayStoreData = __webpack_require__(278);
+	var RelayStore = __webpack_require__(289);
+	var RelayStoreData = __webpack_require__(291);
 
-	var buildRQL = __webpack_require__(371);
+	var buildRQL = __webpack_require__(370);
 
 	var forEachObject = __webpack_require__(230);
 	var invariant = __webpack_require__(222);
-	var nullthrows = __webpack_require__(361);
-	var prepareRelayContainerProps = __webpack_require__(373);
-	var shallowEqual = __webpack_require__(243);
+	var nullthrows = __webpack_require__(339);
+	var prepareRelayContainerProps = __webpack_require__(372);
+	var shallowEqual = __webpack_require__(242);
 	var warning = __webpack_require__(194);
-
-	GraphQLStoreChangeEmitter.injectBatchingStrategy(ReactDOM.unstable_batchedUpdates);
 
 	var containerContextTypes = {
 	  route: RelayPropTypes.QueryConfig.isRequired
@@ -21764,6 +21764,8 @@
 	var nextContainerID = 0;
 
 	var storeData = RelayStoreData.getDefaultInstance();
+
+	storeData.getChangeEmitter().injectBatchingStrategy(ReactDOM.unstable_batchedUpdates);
 
 	/**
 	 * @public
@@ -21801,17 +21803,14 @@
 
 	      var self = this;
 	      self.forceFetch = this.forceFetch.bind(this);
-	      self.getFragmentError = this.getFragmentError.bind(this);
 	      self.getPendingTransactions = this.getPendingTransactions.bind(this);
 	      self.hasFragmentData = this.hasFragmentData.bind(this);
 	      self.hasOptimisticUpdate = this.hasOptimisticUpdate.bind(this);
 	      self.setVariables = this.setVariables.bind(this);
 
-	      this._deferredErrors = null;
 	      this._deferredSubscriptions = null;
 	      this._didShowFakeDataWarning = false;
 	      this._fragmentPointers = {};
-	      this._hasNewDeferredData = false;
 	      this._hasStaleQueryData = false;
 	      this._queryResolvers = {};
 
@@ -21877,6 +21876,8 @@
 	            fragmentPointer = new GraphQLFragmentPointer(dataIDs, fragment);
 	          }
 	        } else {
+	          /* $FlowFixMe(>=0.19.0) - queryData is mixed but getID expects Object
+	           */
 	          var dataID = GraphQLStoreDataHandler.getID(queryData);
 	          if (dataID) {
 	            fragmentPointer = new GraphQLFragmentPointer(dataID, fragment);
@@ -21975,7 +21976,7 @@
 	    RelayContainer.prototype.hasOptimisticUpdate = function hasOptimisticUpdate(record) {
 	      var dataID = GraphQLStoreDataHandler.getID(record);
 	      !(dataID != null) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayContainer.hasOptimisticUpdate(): Expected a record in `%s`.', componentName) : invariant(false) : undefined;
-	      return storeData.getQueuedStore().hasOptimisticUpdate(dataID);
+	      return storeData.hasOptimisticUpdate(dataID);
 	    };
 
 	    /**
@@ -21985,33 +21986,14 @@
 	    RelayContainer.prototype.getPendingTransactions = function getPendingTransactions(record) {
 	      var dataID = GraphQLStoreDataHandler.getID(record);
 	      !(dataID != null) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayContainer.getPendingTransactions(): Expected a record in `%s`.', componentName) : invariant(false) : undefined;
-	      var mutationIDs = storeData.getQueuedStore().getClientMutationIDs(dataID);
+	      var mutationIDs = storeData.getClientMutationIDs(dataID);
 	      if (!mutationIDs) {
 	        return null;
 	      }
-	      return mutationIDs.map(RelayMutationTransaction.get);
-	    };
-
-	    /**
-	     * Returns any error related to fetching data for a deferred fragment.
-	     */
-
-	    RelayContainer.prototype.getFragmentError = function getFragmentError(fragmentReference, record) {
-	      var deferredErrors = this._deferredErrors;
-	      if (!deferredErrors) {
-	        return null;
-	      }
-	      var dataID = GraphQLStoreDataHandler.getID(record);
-	      if (dataID == null) {
-	        // TODO: Throw instead, like we do in `hasFragmentData`, #7857010.
-	        process.env.NODE_ENV !== 'production' ? warning(false, 'RelayContainer.getFragmentError(): Invalid call from `%s`. Second ' + 'argument is not a valid record.', componentName) : undefined;
-	        return null;
-	      }
-	      var fragment = getDeferredFragment(fragmentReference, this.context, this.state.variables);
-	      !(fragment instanceof RelayQuery.Fragment) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayContainer.getFragmentError(): First argument is not a valid ' + 'fragment. Ensure that there are no failing `if` or `unless` ' + 'conditions.') : invariant(false) : undefined;
-	      var fragmentID = fragment.getFragmentID();
-	      var subscriptionKey = getSubscriptionKey(dataID, fragmentID);
-	      return deferredErrors[subscriptionKey];
+	      var mutationQueue = storeData.getMutationQueue();
+	      return mutationIDs.map(function (id) {
+	        return mutationQueue.getTransaction(id);
+	      });
 	    };
 
 	    /**
@@ -22021,7 +22003,7 @@
 	     */
 
 	    RelayContainer.prototype.hasFragmentData = function hasFragmentData(fragmentReference, record) {
-	      if (!RelayPendingQueryTracker.hasPendingQueries() && !this._deferredErrors) {
+	      if (!storeData.getPendingQueryTracker().hasPendingQueries()) {
 	        // nothing can be missing => must have data
 	        return true;
 	      }
@@ -22030,30 +22012,7 @@
 	      !(dataID != null) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayContainer.hasFragmentData(): Second argument is not a valid ' + 'record. For `<%s X={this.props.X} />`, use ' + '`this.props.hasFragmentData(%s.getFragment(\'X\'), this.props.X)`.', componentName, componentName) : invariant(false) : undefined;
 	      var fragment = getDeferredFragment(fragmentReference, this.context, this.state.variables);
 	      !(fragment instanceof RelayQuery.Fragment) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayContainer.hasFragmentData(): First argument is not a valid ' + 'fragment. Ensure that there are no failing `if` or `unless` ' + 'conditions.') : invariant(false) : undefined;
-	      var fragmentID = fragment.getFragmentID();
-	      var hasData = !storeData.getDeferredQueryTracker().isQueryPending(dataID, fragmentID);
-
-	      var subscriptionKey = getSubscriptionKey(dataID, fragmentID);
-	      if (!hasData) {
-	        // Query is pending: subscribe for updates to any missing deferred data.
-	        var deferredSubscriptions = this._deferredSubscriptions || {};
-	        if (!this._deferredSubscriptions) {
-	          this._deferredSubscriptions = deferredSubscriptions;
-	        }
-	        if (!deferredSubscriptions.hasOwnProperty(subscriptionKey)) {
-	          deferredSubscriptions[subscriptionKey] = storeData.getDeferredQueryTracker().addListenerForFragment(dataID, fragmentID, {
-	            onSuccess: this._handleDeferredSuccess.bind(this),
-	            onFailure: this._handleDeferredFailure.bind(this)
-	          });
-	        }
-	      } else {
-	        // query completed: check for errors
-	        if (this._deferredErrors && this._deferredErrors.hasOwnProperty(subscriptionKey)) {
-	          hasData = false;
-	        }
-	      }
-
-	      return hasData;
+	      return storeData.getCachedStore().hasDeferredFragmentData(dataID, fragment.getFragmentID());
 	    };
 
 	    RelayContainer.prototype.componentWillMount = function componentWillMount() {
@@ -22066,8 +22025,8 @@
 	      var queryData = this._getQueryData(this.props);
 
 	      this.setState({
-	        queryData: queryData,
-	        variables: variables
+	        variables: variables,
+	        queryData: queryData
 	      });
 	    };
 
@@ -22100,16 +22059,13 @@
 	        });
 	      }
 
-	      // Remove any subscriptions for pending deferred queries.
-	      var deferredSubscriptions = this._deferredSubscriptions;
-	      if (deferredSubscriptions) {
-	        forEachObject(deferredSubscriptions, function (subscription) {
-	          subscription && subscription.remove();
+	      if (this._deferredSubscriptions) {
+	        forEachObject(this._deferredSubscriptions, function (sub) {
+	          return sub.dispose();
 	        });
 	      }
-
-	      this._deferredErrors = null;
 	      this._deferredSubscriptions = null;
+
 	      this._fragmentPointers = {};
 	      this._queryResolvers = {};
 
@@ -22135,7 +22091,7 @@
 	            queryResolvers[fragmentName] = null;
 	          }
 	        } else if (!queryResolver) {
-	          queryResolver = new GraphQLStoreQueryResolver(storeData.getQueuedStore(), fragmentPointer, _this4._handleFragmentDataUpdate.bind(_this4));
+	          queryResolver = new GraphQLStoreQueryResolver(storeData, fragmentPointer, _this4._handleFragmentDataUpdate.bind(_this4));
 	          queryResolvers[fragmentName] = queryResolver;
 	        }
 	      });
@@ -22235,58 +22191,10 @@
 	      return queryData;
 	    };
 
-	    /**
-	     * Update query props when deferred data becomes available.
-	     */
-
-	    RelayContainer.prototype._handleDeferredSuccess = function _handleDeferredSuccess(dataID, fragmentID) {
-	      var subscriptionKey = getSubscriptionKey(dataID, fragmentID);
-	      var deferredSubscriptions = this._deferredSubscriptions;
-	      if (deferredSubscriptions && deferredSubscriptions.hasOwnProperty(subscriptionKey)) {
-	        // Flag to force `shouldComponentUpdate` to return true.
-	        this._hasNewDeferredData = true;
-	        deferredSubscriptions[subscriptionKey].remove();
-	        delete deferredSubscriptions[subscriptionKey];
-
-	        var deferredSuccessProfiler = RelayProfiler.profile('RelayContainer.handleDeferredSuccess');
-	        var queryData = this._getQueryData(this.props);
-	        this.setState({ queryData: queryData }, deferredSuccessProfiler.stop);
-	      }
-	    };
-
-	    /**
-	     * Update query props when deferred queries fail.
-	     */
-
-	    RelayContainer.prototype._handleDeferredFailure = function _handleDeferredFailure(dataID, fragmentID, error) {
-	      var subscriptionKey = getSubscriptionKey(dataID, fragmentID);
-	      var deferredErrors = this._deferredErrors;
-	      if (!deferredErrors) {
-	        this._deferredErrors = deferredErrors = {};
-	      }
-	      // Flag to force `shouldComponentUpdate` to return true.
-	      this._hasNewDeferredData = true;
-	      deferredErrors[subscriptionKey] = error;
-
-	      var deferredFailureProfiler = RelayProfiler.profile('RelayContainer.handleDeferredFailure');
-	      // Dummy `setState` to trigger re-render.
-	      this.setState(this.state, deferredFailureProfiler.stop);
-	    };
-
 	    RelayContainer.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps, nextState, nextContext) {
-	      // TODO: Fix bug with `_hasStaleQueryData` and `_hasNewDeferredData` both
-	      // being true. (This will return true two times in a row.)
-
 	      // Flag indicating that query data changed since previous render.
 	      if (this._hasStaleQueryData) {
 	        this._hasStaleQueryData = false;
-	        return true;
-	      }
-	      // Flag indicating that deferred data has resolved - this component's data
-	      // will not change since the data is for a child component, therefore
-	      // we force update here.
-	      if (this._hasNewDeferredData) {
-	        this._hasNewDeferredData = false;
 	        return true;
 	      }
 
@@ -22301,7 +22209,6 @@
 	    RelayContainer.prototype.render = function render() {
 	      var relayProps = {
 	        forceFetch: this.forceFetch,
-	        getFragmentError: this.getFragmentError,
 	        getPendingTransactions: this.getPendingTransactions,
 	        hasFragmentData: this.hasFragmentData,
 	        hasOptimisticUpdate: this.hasOptimisticUpdate,
@@ -22697,7 +22604,7 @@
 	var RelayQuery = __webpack_require__(214);
 
 	var invariant = __webpack_require__(222);
-	var shallowEqual = __webpack_require__(243);
+	var shallowEqual = __webpack_require__(242);
 
 	/**
 	 * Fragment pointers encapsulate the fetched data for a fragment reference. They
@@ -22837,6 +22744,8 @@
 	var METADATA_KEYS = {
 	  __dataID__: true,
 	  __range__: true,
+	  __resolvedFragmentMap__: true,
+	  __resolvedFragmentMapGeneration__: true,
 	  __status__: true
 	};
 
@@ -22908,6 +22817,7 @@
 	var _Object$freeze = __webpack_require__(215)['default'];
 
 	var QueryBuilder = __webpack_require__(218);
+
 	var RelayConnectionInterface = __webpack_require__(227);
 	var RelayFragmentReference = __webpack_require__(229);
 
@@ -22922,8 +22832,8 @@
 	var getWeakIdForObject = __webpack_require__(239);
 	var invariant = __webpack_require__(222);
 	var printRelayQueryCall = __webpack_require__(240);
-	var shallowEqual = __webpack_require__(243);
-	var stableStringify = __webpack_require__(242);
+	var shallowEqual = __webpack_require__(242);
+	var stableStringify = __webpack_require__(243);
 
 	// TODO: replace once #6525923 is resolved
 
@@ -23135,6 +23045,10 @@
 	    return fieldMap[storageKey];
 	  };
 
+	  RelayQueryNode.prototype.getType = function getType() {
+	    return this.__concreteNode__.type;
+	  };
+
 	  RelayQueryNode.prototype.getRoute = function getRoute() {
 	    return this.__route__;
 	  };
@@ -23152,6 +23066,10 @@
 	      this.__hasDeferredDescendant__ = hasDeferredDescendant;
 	    }
 	    return hasDeferredDescendant;
+	  };
+
+	  RelayQueryNode.prototype.isAbstract = function isAbstract() {
+	    throw new Error('RelayQueryNode: Abstract function cannot be called.');
 	  };
 
 	  RelayQueryNode.prototype.isRequisite = function isRequisite() {
@@ -23209,7 +23127,7 @@
 	   * route/variables.
 	   */
 
-	  RelayQueryRoot.build = function build(name, fieldName, value, children, metadata) {
+	  RelayQueryRoot.build = function build(name, fieldName, value, children, metadata, type) {
 	    var nextChildren = children ? children.filter(function (child) {
 	      return !!child;
 	    }) : [];
@@ -23226,7 +23144,8 @@
 	      fieldName: fieldName,
 	      identifyingArgValue: identifyingArgValue,
 	      metadata: metadata,
-	      name: name
+	      name: name,
+	      type: type
 	    });
 	    var root = new RelayQueryRoot(concreteRoot, RelayMetaRoute.get('$RelayQuery'), {});
 	    root.__children__ = nextChildren;
@@ -23350,7 +23269,11 @@
 	            return arg !== identifyingArg;
 	          });
 	        }
-	        var field = RelayQueryField.build(_this4.getFieldName(), args, null);
+	        var field = RelayQueryField.build({
+	          fieldName: _this4.getFieldName(),
+	          calls: args,
+	          type: _this4.getType()
+	        });
 	        storageKey = field.getStorageKey();
 	        _this4.__storageKey__ = storageKey;
 	      })();
@@ -23360,6 +23283,10 @@
 
 	  RelayQueryRoot.prototype.hasDeferredDescendant = function hasDeferredDescendant() {
 	    return this.isDeferred() || _RelayQueryNode.prototype.hasDeferredDescendant.call(this);
+	  };
+
+	  RelayQueryRoot.prototype.isAbstract = function isAbstract() {
+	    return !!this.__concreteNode__.metadata.isAbstract;
 	  };
 
 	  RelayQueryRoot.prototype.isDeferred = function isDeferred() {
@@ -23423,6 +23350,10 @@
 	    return this.__concreteNode__.responseType;
 	  };
 
+	  RelayQueryOperation.prototype.getType = function getType() {
+	    return this.getResponseType();
+	  };
+
 	  RelayQueryOperation.prototype.getInputType = function getInputType() {
 	    var inputType = this.__concreteNode__.metadata.inputType;
 	    !inputType ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQuery: Expected operation `%s` to be annotated with the type of ' + 'its argument. Either the babel transform was configured incorrectly, ' + 'or the schema failed to define an argument for this mutation.', this.getCall().name) : invariant(false) : undefined;
@@ -23451,6 +23382,15 @@
 	      this.__callVariableName__ = callVariable.callVariableName;
 	    }
 	    return this.__callVariableName__;
+	  };
+
+	  /**
+	   * Mutations and subscriptions must have a concrete type due to the need for
+	   * requisite top-level fields.
+	   */
+
+	  RelayQueryOperation.prototype.isAbstract = function isAbstract() {
+	    return false;
 	  };
 
 	  return RelayQueryOperation;
@@ -23591,6 +23531,8 @@
 
 	    _RelayQueryNode3.call(this, concreteNode, route, variables);
 	    this.__fragmentID__ = null;
+	    // NOTE: `this.__hash__` gets set to null when cloning.
+	    this.__hash__ = concreteNode.hash || null;
 	    this.__metadata__ = metadata || DEFAULT_FRAGMENT_METADATA;
 	  }
 
@@ -23602,6 +23544,15 @@
 
 	  RelayQueryFragment.prototype.getDebugName = function getDebugName() {
 	    return this.__concreteNode__.name;
+	  };
+
+	  /**
+	   * Returns the hash for a fragment that is generated by the code transform.
+	   * Fragments that are generated on the client do not have a hash.
+	   */
+
+	  RelayQueryFragment.prototype.getConcreteFragmentHash = function getConcreteFragmentHash() {
+	    return this.__hash__;
 	  };
 
 	  /**
@@ -23628,8 +23579,8 @@
 	    return fragmentID;
 	  };
 
-	  RelayQueryFragment.prototype.getType = function getType() {
-	    return this.__concreteNode__.type;
+	  RelayQueryFragment.prototype.isAbstract = function isAbstract() {
+	    return !!this.__concreteNode__.metadata.isAbstract;
 	  };
 
 	  RelayQueryFragment.prototype.isDeferred = function isDeferred() {
@@ -23641,6 +23592,10 @@
 	    return !!(metadata.isPlural || // FB Printer
 	    metadata.plural) // OSS Printer from `@relay`
 	    ;
+	  };
+
+	  RelayQueryFragment.prototype.cloneAsPlainFragment = function cloneAsPlainFragment() {
+	    return createMemoizedFragment(this.__concreteNode__, this.__route__, this.__variables__, DEFAULT_FRAGMENT_METADATA);
 	  };
 
 	  RelayQueryFragment.prototype.isContainerFragment = function isContainerFragment() {
@@ -23657,7 +23612,8 @@
 
 	  RelayQueryFragment.prototype.clone = function clone(children) {
 	    var clone = _RelayQueryNode3.prototype.clone.call(this, children);
-	    if (clone instanceof RelayQueryFragment) {
+	    if (clone !== this && clone instanceof RelayQueryFragment) {
+	      clone.__hash__ = null;
 	      clone.__metadata__ = _extends({}, this.__metadata__);
 	    }
 	    return clone;
@@ -23693,19 +23649,28 @@
 	   * route/variables.
 	   */
 
-	  RelayQueryField.build = function build(fieldName, calls, children, metadata, alias) {
-	    var nextChildren = children ? children.filter(function (child) {
-	      return !!child;
-	    }) : [];
-	    var concreteField = QueryBuilder.createField({
-	      alias: alias,
-	      calls: calls ? callsToGraphQL(calls) : null,
-	      fieldName: fieldName,
-	      metadata: metadata
-	    });
-	    var field = new RelayQueryField(concreteField, RelayMetaRoute.get('$RelayQuery'), {});
-	    field.__children__ = nextChildren;
-	    return field;
+	  RelayQueryField.build = function build(_ref) {
+	    var alias = _ref.alias;
+	    var calls = _ref.calls;
+	    var children = _ref.children;
+	    var fieldName = _ref.fieldName;
+	    var metadata = _ref.metadata;
+	    var type = _ref.type;
+	    return (function () {
+	      var nextChildren = children ? children.filter(function (child) {
+	        return !!child;
+	      }) : [];
+	      var concreteField = QueryBuilder.createField({
+	        alias: alias,
+	        calls: calls ? callsToGraphQL(calls) : null,
+	        fieldName: fieldName,
+	        metadata: metadata,
+	        type: type
+	      });
+	      var field = new RelayQueryField(concreteField, RelayMetaRoute.get('$RelayQuery'), {});
+	      field.__children__ = nextChildren;
+	      return field;
+	    })();
 	  };
 
 	  function RelayQueryField(concreteNode, route, variables) {
@@ -23717,8 +23682,8 @@
 	    this.__rangeBehaviorKey__ = undefined;
 	  }
 
-	  RelayQueryField.prototype.isRequisite = function isRequisite() {
-	    return !!this.__concreteNode__.metadata.isRequisite;
+	  RelayQueryField.prototype.isAbstract = function isAbstract() {
+	    return !!this.__concreteNode__.metadata.isAbstract;
 	  };
 
 	  RelayQueryField.prototype.isFindable = function isFindable() {
@@ -23741,13 +23706,13 @@
 	    return this.__isRefQueryDependency__;
 	  };
 
+	  RelayQueryField.prototype.isRequisite = function isRequisite() {
+	    return !!this.__concreteNode__.metadata.isRequisite;
+	  };
+
 	  RelayQueryField.prototype.isScalar = function isScalar() {
 	    var concreteChildren = this.__concreteNode__.children;
 	    return (!this.__children__ || this.__children__.length === 0) && (!concreteChildren || concreteChildren.length === 0);
-	  };
-
-	  RelayQueryField.prototype.isUnionOrInterface = function isUnionOrInterface() {
-	    return !!this.__concreteNode__.metadata.isUnionOrInterface;
 	  };
 
 	  RelayQueryField.prototype.getDebugName = function getDebugName() {
@@ -23771,12 +23736,6 @@
 	      })();
 	    }
 	    return debugName;
-	  };
-
-	  RelayQueryField.prototype.getParentType = function getParentType() {
-	    var parentType = this.__concreteNode__.metadata.parentType;
-	    !parentType ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryField(): Expected field `%s` to be annotated with the ' + 'type of the parent field.', this.getSchemaName()) : invariant(false) : undefined;
-	    return parentType;
 	  };
 
 	  /**
@@ -23993,6 +23952,17 @@
 	      type = RelayQueryField;
 	    } else if (kind === 'Fragment') {
 	      type = RelayQueryFragment;
+	    } else if (kind === 'FragmentReference') {
+	      type = RelayQueryFragment;
+	      var fragment = QueryBuilder.getFragment(concreteNode.fragment);
+	      // TODO #9171213: Reference directives should override fragment directives
+	      if (fragment) {
+	        return createMemoizedFragment(fragment, route, {}, {
+	          isDeferred: false,
+	          isContainerFragment: true,
+	          isTypeConditional: true
+	        });
+	      }
 	    } else if (kind === 'Query') {
 	      type = RelayQueryRoot;
 	    } else if (kind === 'Mutation') {
@@ -24000,14 +23970,14 @@
 	    } else if (kind === 'Subscription') {
 	      type = RelayQuerySubscription;
 	    } else if (concreteNode instanceof RelayRouteFragment) {
-	      var routeFragment = concreteNode.getFragmentForRoute(route);
-	      if (routeFragment) {
+	      var fragment = concreteNode.getFragmentForRoute(route);
+	      if (fragment) {
 	        // may be null if no value was defined for this route.
-	        _x = routeFragment;
+	        _x = fragment;
 	        _x2 = route;
 	        _x3 = variables;
 	        _again = true;
-	        kind = type = routeFragment = undefined;
+	        kind = type = fragment = fragment = undefined;
 	        continue _function;
 	      }
 	      return null;
@@ -24159,6 +24129,10 @@
 
 	var _Object$freeze = __webpack_require__(215)['default'];
 
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
 	var RelayNodeInterface = __webpack_require__(219);
 
 	var invariant = __webpack_require__(222);
@@ -24231,9 +24205,9 @@
 	        isGenerated: !!partialMetadata.isGenerated,
 	        isPlural: !!partialMetadata.isPlural,
 	        isRequisite: !!partialMetadata.isRequisite,
-	        isUnionOrInterface: !!partialMetadata.isUnionOrInterface,
-	        parentType: partialMetadata.parentType
-	      }
+	        isAbstract: !!partialMetadata.isAbstract
+	      },
+	      type: partialField.type
 	    };
 	  },
 
@@ -24242,12 +24216,21 @@
 	    return {
 	      children: partialFragment.children || EMPTY_CHILDREN,
 	      directives: partialFragment.directives || EMPTY_DIRECTIVES,
+	      hash: null, // Only present for transformed fragments.
 	      kind: 'Fragment',
 	      metadata: {
+	        isAbstract: !!metadata.isAbstract,
 	        plural: !!metadata.plural },
 	      // match the `@relay` argument name
 	      name: partialFragment.name,
 	      type: partialFragment.type
+	    };
+	  },
+
+	  createFragmentReference: function createFragmentReference(fragment) {
+	    return {
+	      kind: 'FragmentReference',
+	      fragment: fragment
 	    };
 	  },
 
@@ -24287,9 +24270,11 @@
 	      metadata: {
 	        identifyingArgName: identifyingArgName,
 	        identifyingArgType: metadata.identifyingArgType,
-	        isPlural: metadata.isPlural
+	        isAbstract: !!metadata.isAbstract,
+	        isPlural: !!metadata.isPlural
 	      },
-	      name: partialQuery.name
+	      name: partialQuery.name,
+	      type: partialQuery.type
 	    };
 	  },
 
@@ -24328,6 +24313,12 @@
 
 	  getFragment: function getFragment(node) {
 	    if (isConcreteKind(node, 'Fragment')) {
+	      return node;
+	    }
+	  },
+
+	  getFragmentReference: function getFragmentReference(node) {
+	    if (isConcreteKind(node, 'FragmentReference')) {
 	      return node;
 	    }
 	  },
@@ -24406,6 +24397,7 @@
 	 * Defines logic relevant to the informal "Node" GraphQL interface.
 	 */
 	var RelayOSSNodeInterface = {
+	  ANY_TYPE: '__any',
 	  ID: 'id',
 	  NODE: 'node',
 	  NODE_TYPE: 'Node',
@@ -24675,18 +24667,23 @@
 	'use strict';
 
 	var performance = __webpack_require__(226);
-	var curPerformance = performance;
+
+	var performanceNow;
 
 	/**
 	 * Detect if we can use `window.performance.now()` and gracefully fallback to
 	 * `Date.now()` if it doesn't exist. We need to support Firefox < 15 for now
 	 * because of Facebook's testing infrastructure.
 	 */
-	if (!curPerformance || !curPerformance.now) {
-	  curPerformance = Date;
+	if (performance.now) {
+	  performanceNow = function () {
+	    return performance.now();
+	  };
+	} else {
+	  performanceNow = function () {
+	    return Date.now();
+	  };
 	}
-
-	var performanceNow = curPerformance.now.bind(curPerformance);
 
 	module.exports = performanceNow;
 
@@ -25189,7 +25186,9 @@
 	var removeFromArray = __webpack_require__(233);
 
 	var aggregateHandlersByName = {};
-	var profileHandlersByName = {};
+	var profileHandlersByName = {
+	  '*': []
+	};
 
 	var NOT_INVOKED = {};
 	var defaultProfiler = { stop: emptyFunction };
@@ -25369,9 +25368,11 @@
 	   * attached profile handlers will receive this as the second argument.
 	   */
 	  profile: function profile(name, state) {
-	    if (profileHandlersByName.hasOwnProperty(name)) {
+	    var hasCatchAllHandlers = profileHandlersByName['*'].length > 0;
+	    var hasNamedHandlers = profileHandlersByName.hasOwnProperty(name);
+	    if (hasNamedHandlers || hasCatchAllHandlers) {
 	      var _ret = (function () {
-	        var profileHandlers = profileHandlersByName[name];
+	        var profileHandlers = hasNamedHandlers && hasCatchAllHandlers ? profileHandlersByName[name].concat(profileHandlersByName['*']) : hasNamedHandlers ? profileHandlersByName[name] : profileHandlersByName['*'];
 	        var stopHandlers = undefined;
 	        for (var ii = profileHandlers.length - 1; ii >= 0; ii--) {
 	          var profileHandler = profileHandlers[ii];
@@ -25398,7 +25399,8 @@
 	  },
 
 	  /**
-	   * Attaches a handler to profiles with the supplied name.
+	   * Attaches a handler to profiles with the supplied name. You can also
+	   * attach to the special name '*' which is a catch all.
 	   */
 	  attachProfileHandler: function attachProfileHandler(name, handler) {
 	    if (shouldInstrument(name)) {
@@ -25845,7 +25847,6 @@
 	'use strict';
 
 	var flattenArray = __webpack_require__(241);
-	var stableStringify = __webpack_require__(242);
 
 	/**
 	 * @internal
@@ -25941,6 +25942,61 @@
 
 /***/ },
 /* 242 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule shallowEqual
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+	/**
+	 * Performs equality by iterating through keys on an object and returning false
+	 * when any key has values which are not strictly equal between the arguments.
+	 * Returns true when the values of all keys are strictly equal.
+	 */
+	function shallowEqual(objA, objB) {
+	  if (objA === objB) {
+	    return true;
+	  }
+
+	  if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) {
+	    return false;
+	  }
+
+	  var keysA = Object.keys(objA);
+	  var keysB = Object.keys(objB);
+
+	  if (keysA.length !== keysB.length) {
+	    return false;
+	  }
+
+	  // Test for A's keys different from B.
+	  var bHasOwnProperty = hasOwnProperty.bind(objB);
+	  for (var i = 0; i < keysA.length; i++) {
+	    if (!bHasOwnProperty(keysA[i]) || objA[keysA[i]] !== objB[keysA[i]]) {
+	      return false;
+	    }
+	  }
+
+	  return true;
+	}
+
+	module.exports = shallowEqual;
+
+/***/ },
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26029,324 +26085,7 @@
 	module.exports = stableStringify;
 
 /***/ },
-/* 243 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule shallowEqual
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var hasOwnProperty = Object.prototype.hasOwnProperty;
-
-	/**
-	 * Performs equality by iterating through keys on an object and returning false
-	 * when any key has values which are not strictly equal between the arguments.
-	 * Returns true when the values of all keys are strictly equal.
-	 */
-	function shallowEqual(objA, objB) {
-	  if (objA === objB) {
-	    return true;
-	  }
-
-	  if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) {
-	    return false;
-	  }
-
-	  var keysA = Object.keys(objA);
-	  var keysB = Object.keys(objB);
-
-	  if (keysA.length !== keysB.length) {
-	    return false;
-	  }
-
-	  // Test for A's keys different from B.
-	  var bHasOwnProperty = hasOwnProperty.bind(objB);
-	  for (var i = 0; i < keysA.length; i++) {
-	    if (!bHasOwnProperty(keysA[i]) || objA[keysA[i]] !== objB[keysA[i]]) {
-	      return false;
-	    }
-	  }
-
-	  return true;
-	}
-
-	module.exports = shallowEqual;
-
-/***/ },
 /* 244 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule GraphQLStoreChangeEmitter
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	var ErrorUtils = __webpack_require__(211);
-	var GraphQLStoreRangeUtils = __webpack_require__(245);
-
-	var resolveImmediate = __webpack_require__(246);
-
-	var batchUpdate = function batchUpdate(callback) {
-	  return callback();
-	};
-	var subscribers = [];
-
-	var executingIDs = {};
-	var scheduledIDs = null;
-
-	/**
-	 * Asynchronous change emitter for nodes stored in the Relay cache.
-	 *
-	 * Changes are produced by `RelayStoreData` after writing query and mutation
-	 * payloads into the store and consumed by `GraphQLStoreQueryResolver`, which
-	 * subscribes to all records that are part of an active query result set.
-	 *
-	 * @internal
-	 */
-	var GraphQLStoreChangeEmitter = {
-
-	  addListenerForIDs: function addListenerForIDs(ids, callback) {
-	    var subscribedIDs = ids.map(getBroadcastID);
-	    var index = subscribers.length;
-	    subscribers.push({ subscribedIDs: subscribedIDs, callback: callback });
-	    return {
-	      remove: function remove() {
-	        delete subscribers[index];
-	      }
-	    };
-	  },
-
-	  broadcastChangeForID: function broadcastChangeForID(id) {
-	    if (scheduledIDs === null) {
-	      resolveImmediate(processBroadcasts);
-	      scheduledIDs = {};
-	    }
-	    // Record index of the last subscriber so we do not later unintentionally
-	    // invoke callbacks that were subscribed after this broadcast.
-	    scheduledIDs[getBroadcastID(id)] = subscribers.length - 1;
-	  },
-
-	  injectBatchingStrategy: function injectBatchingStrategy(batchStrategy) {
-	    batchUpdate = batchStrategy;
-	  },
-
-	  /**
-	   * Exposed for profiling reasons.
-	   * @private
-	   */
-	  _processSubscribers: processSubscribers
-
-	};
-
-	function processBroadcasts() {
-	  if (scheduledIDs) {
-	    executingIDs = scheduledIDs;
-	    scheduledIDs = null;
-	    batchUpdate(processSubscribers);
-	  }
-	}
-
-	function processSubscribers() {
-	  subscribers.forEach(processSubscriber);
-	}
-
-	function processSubscriber(_ref, subscriberIndex) {
-	  var subscribedIDs = _ref.subscribedIDs;
-	  var callback = _ref.callback;
-
-	  for (var broadcastID in executingIDs) {
-	    if (executingIDs.hasOwnProperty(broadcastID)) {
-	      var broadcastIndex = executingIDs[broadcastID];
-	      if (broadcastIndex < subscriberIndex) {
-	        // Callback was subscribed after this particular broadcast.
-	        break;
-	      }
-	      if (subscribedIDs.indexOf(broadcastID) >= 0) {
-	        ErrorUtils.applyWithGuard(callback, null, null, null, 'GraphQLStoreChangeEmitter');
-	        break;
-	      }
-	    }
-	  }
-	}
-
-	/**
-	 * Ranges publish events for the entire range, not the specific view of that
-	 * range. For example, if "client:1" is a range, the event is on "client:1",
-	 * not "client:1_first(5)".
-	 */
-	function getBroadcastID(id) {
-	  return GraphQLStoreRangeUtils.getCanonicalClientID(id);
-	}
-
-	module.exports = GraphQLStoreChangeEmitter;
-
-/***/ },
-/* 245 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule GraphQLStoreRangeUtils
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var callsFromGraphQL = __webpack_require__(236);
-	var printRelayQueryCall = __webpack_require__(240);
-
-	var rangeData = {};
-
-	/**
-	 * Utilities used by GraphQLStore for storing ranges
-	 *
-	 * GraphQLStore stores all of the parts of a range in a single GraphQLRange
-	 * object. For example, `node(4808495){friends.first(5){id,name}}` might be
-	 * stored similar to this (pseudo-code):
-	 *
-	 *   "4808495": {
-	 *     "friends": { __dataID__: "client:1" }
-	 *   },
-	 *   "client:1": {
-	 *     "nodes": new GraphQLRange(...) // all friends, not just the first 5
-	 *   }
-	 *
-	 * and when that query is run, the store would return a result pointing at
-	 * a specific part of the range, encoded into the data ID:
-	 *
-	 * {
-	 *   "4808495": {
-	 *     "friends": { __dataID__: "client:1_first(5)" }
-	 *   }
-	 * }
-	 *
-	 * That "client:1_first(5)" ID can then be used to query for the first 5
-	 * friends.
-	 *
-	 * @internal
-	 */
-	var GraphQLStoreRangeUtils = {
-
-	  /**
-	   * Returns a token that can be parsed using parseRangeClientID to recover
-	   * the attributes needed to retrieve the corresponding items from a
-	   * GraphQLRange.
-	   *
-	   * @param {array<*>} calls
-	   * @param {object} callValues
-	   * @param {string} dataID
-	   * @return {string}
-	   */
-	  getClientIDForRangeWithID: function getClientIDForRangeWithID(calls, callValues, dataID) {
-	    var callsAsString = callsFromGraphQL(calls, callValues).map(function (call) {
-	      return printRelayQueryCall(call).substring(1);
-	    }).join(',');
-	    var key = dataID + '_' + callsAsString;
-	    var edge = rangeData[key];
-	    if (!edge) {
-	      rangeData[key] = {
-	        dataID: dataID,
-	        calls: calls,
-	        callValues: callValues
-	      };
-	    }
-	    return key;
-	  },
-
-	  /**
-	   * Parses an ID back into its data ID and calls
-	   *
-	   * @param {string} rangeSpecificClientID
-	   * @return {?object}
-	   */
-	  parseRangeClientID: function parseRangeClientID(rangeSpecificClientID) {
-	    return rangeData[rangeSpecificClientID] || null;
-	  },
-
-	  /**
-	   * If given the client id for a range view, returns the canonical client id
-	   * for the entire range. e.g. converts "client:1_first(5)" to "client:1".
-	   * Otherwise returns the input.
-	   *
-	   * @param {string} dataID
-	   * @return {string}
-	   */
-	  getCanonicalClientID: function getCanonicalClientID(dataID) {
-	    return rangeData[dataID] ? rangeData[dataID].dataID : dataID;
-	  }
-	};
-
-	module.exports = GraphQLStoreRangeUtils;
-
-/***/ },
-/* 246 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule resolveImmediate
-	 * 
-	 */
-
-	'use strict';
-
-	var Promise = __webpack_require__(179);
-
-	var resolvedPromise = Promise.resolve();
-
-	/**
-	 * An alternative to setImmediate based on Promise.
-	 */
-	function resolveImmediate(callback) {
-	  resolvedPromise.then(callback)['catch'](throwNext);
-	}
-
-	function throwNext(error) {
-	  setTimeout(function () {
-	    throw error;
-	  }, 0);
-	}
-
-	module.exports = resolveImmediate;
-
-/***/ },
-/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -26366,20 +26105,15 @@
 
 	var _classCallCheck = __webpack_require__(178)['default'];
 
-	var _slicedToArray = __webpack_require__(248)['default'];
+	var _slicedToArray = __webpack_require__(245)['default'];
 
 	var _Object$keys = __webpack_require__(207)['default'];
 
-	var GraphQLStoreChangeEmitter = __webpack_require__(244);
-	var GraphQLStoreRangeUtils = __webpack_require__(245);
-
 	var RelayProfiler = __webpack_require__(232);
 
-	var RelayStoreData = __webpack_require__(278);
-
-	var filterExclusiveKeys = __webpack_require__(351);
-	var readRelayQueryData = __webpack_require__(352);
-	var recycleNodesInto = __webpack_require__(354);
+	var filterExclusiveKeys = __webpack_require__(275);
+	var readRelayQueryData = __webpack_require__(276);
+	var recycleNodesInto = __webpack_require__(280);
 
 	/**
 	 * @internal
@@ -26391,14 +26125,14 @@
 	 */
 
 	var GraphQLStoreQueryResolver = (function () {
-	  function GraphQLStoreQueryResolver(store, fragmentPointer, callback) {
+	  function GraphQLStoreQueryResolver(storeData, fragmentPointer, callback) {
 	    _classCallCheck(this, GraphQLStoreQueryResolver);
 
 	    this.reset();
 	    this._callback = callback;
 	    this._fragmentPointer = fragmentPointer;
 	    this._resolver = null;
-	    this._store = store;
+	    this._storeData = storeData;
 	  }
 
 	  /**
@@ -26419,7 +26153,7 @@
 	  GraphQLStoreQueryResolver.prototype.resolve = function resolve(fragmentPointer) {
 	    var resolver = this._resolver;
 	    if (!resolver) {
-	      resolver = this._fragmentPointer.getFragment().isPlural() ? new GraphQLStorePluralQueryResolver(this._store, this._callback) : new GraphQLStoreSingleQueryResolver(this._store, this._callback);
+	      resolver = this._fragmentPointer.getFragment().isPlural() ? new GraphQLStorePluralQueryResolver(this._storeData, this._callback) : new GraphQLStoreSingleQueryResolver(this._storeData, this._callback);
 	      this._resolver = resolver;
 	    }
 	    return resolver.resolve(fragmentPointer);
@@ -26429,12 +26163,12 @@
 	})();
 
 	var GraphQLStorePluralQueryResolver = (function () {
-	  function GraphQLStorePluralQueryResolver(store, callback) {
+	  function GraphQLStorePluralQueryResolver(storeData, callback) {
 	    _classCallCheck(this, GraphQLStorePluralQueryResolver);
 
 	    this.reset();
 	    this._callback = callback;
-	    this._store = store;
+	    this._storeData = storeData;
 	  }
 
 	  /**
@@ -26470,7 +26204,7 @@
 
 	    // Ensure that we have exactly `nextLength` resolvers.
 	    while (resolvers.length < nextLength) {
-	      resolvers.push(new GraphQLStoreSingleQueryResolver(this._store, this._callback));
+	      resolvers.push(new GraphQLStoreSingleQueryResolver(this._storeData, this._callback));
 	    }
 	    while (resolvers.length > nextLength) {
 	      resolvers.pop().reset();
@@ -26498,13 +26232,13 @@
 	})();
 
 	var GraphQLStoreSingleQueryResolver = (function () {
-	  function GraphQLStoreSingleQueryResolver(store, callback) {
+	  function GraphQLStoreSingleQueryResolver(storeData, callback) {
 	    _classCallCheck(this, GraphQLStoreSingleQueryResolver);
 
 	    this.reset();
 	    this._callback = callback;
-	    this._garbageCollector = RelayStoreData.getDefaultInstance().getGarbageCollector();
-	    this._store = store;
+	    this._garbageCollector = storeData.getGarbageCollector();
+	    this._storeData = storeData;
 	    this._subscribedIDs = {};
 	  }
 
@@ -26537,17 +26271,17 @@
 	    var prevResult = this._result;
 	    var subscribedIDs;
 
-	    if (prevFragment != null && prevID != null && getCanonicalID(prevID) === getCanonicalID(nextID)) {
+	    if (prevFragment != null && prevID != null && this._getCanonicalID(prevID) === this._getCanonicalID(nextID)) {
 	      if (prevID !== nextID || this._hasDataChanged || !nextFragment.isEquivalent(prevFragment)) {
-	        var _resolveFragment = resolveFragment(this._store, nextFragment, nextID);
+	        var _resolveFragment2 = this._resolveFragment(nextFragment, nextID);
 
 	        // same canonical ID,
 	        // but the data, call(s), route, and/or variables have changed
 
-	        var _resolveFragment2 = _slicedToArray(_resolveFragment, 2);
+	        var _resolveFragment22 = _slicedToArray(_resolveFragment2, 2);
 
-	        nextResult = _resolveFragment2[0];
-	        subscribedIDs = _resolveFragment2[1];
+	        nextResult = _resolveFragment22[0];
+	        subscribedIDs = _resolveFragment22[1];
 
 	        nextResult = recycleNodesInto(prevResult, nextResult);
 	      } else {
@@ -26555,7 +26289,7 @@
 	        nextResult = prevResult;
 	      }
 	    } else {
-	      var _resolveFragment3 = resolveFragment(this._store, nextFragment, nextID);
+	      var _resolveFragment3 = this._resolveFragment(nextFragment, nextID);
 
 	      // Pointer has a different ID or is/was fake data.
 
@@ -26574,7 +26308,8 @@
 	      if (subscribedIDs) {
 	        // always subscribe to the root ID
 	        subscribedIDs[nextID] = true;
-	        this._subscription = GraphQLStoreChangeEmitter.addListenerForIDs(_Object$keys(subscribedIDs), this._handleChange.bind(this));
+	        var changeEmitter = this._storeData.getChangeEmitter();
+	        this._subscription = changeEmitter.addListenerForIDs(_Object$keys(subscribedIDs), this._handleChange.bind(this));
 	        this._updateGarbageCollectorSubscriptionCount(subscribedIDs);
 	        this._subscribedIDs = subscribedIDs;
 	      }
@@ -26588,11 +26323,30 @@
 	    return this._result;
 	  };
 
+	  /**
+	   * Ranges publish events for the entire range, not the specific view of that
+	   * range. For example, if "client:1" is a range, the event is on "client:1",
+	   * not "client:1_first(5)".
+	   */
+
+	  GraphQLStoreSingleQueryResolver.prototype._getCanonicalID = function _getCanonicalID(id) {
+	    return this._storeData.getRangeData().getCanonicalClientID(id);
+	  };
+
 	  GraphQLStoreSingleQueryResolver.prototype._handleChange = function _handleChange() {
 	    if (!this._hasDataChanged) {
 	      this._hasDataChanged = true;
 	      this._callback();
 	    }
+	  };
+
+	  GraphQLStoreSingleQueryResolver.prototype._resolveFragment = function _resolveFragment(fragment, dataID) {
+	    var _readRelayQueryData = readRelayQueryData(this._storeData, fragment, dataID);
+
+	    var data = _readRelayQueryData.data;
+	    var dataIDs = _readRelayQueryData.dataIDs;
+
+	    return [data, dataIDs];
 	  };
 
 	  /**
@@ -26624,24 +26378,6 @@
 	  return GraphQLStoreSingleQueryResolver;
 	})();
 
-	function resolveFragment(store, fragment, dataID) {
-	  var _readRelayQueryData = readRelayQueryData(store, fragment, dataID);
-
-	  var data = _readRelayQueryData.data;
-	  var dataIDs = _readRelayQueryData.dataIDs;
-
-	  return [data, dataIDs];
-	}
-
-	/**
-	 * Ranges publish events for the entire range, not the specific view of that
-	 * range. For example, if "client:1" is a range, the event is on "client:1",
-	 * not "client:1_first(5)".
-	 */
-	function getCanonicalID(id) {
-	  return GraphQLStoreRangeUtils.getCanonicalClientID(id);
-	}
-
 	RelayProfiler.instrumentMethods(GraphQLStoreQueryResolver.prototype, {
 	  resolve: 'GraphQLStoreQueryResolver.resolve'
 	});
@@ -26649,14 +26385,14 @@
 	module.exports = GraphQLStoreQueryResolver;
 
 /***/ },
-/* 248 */
+/* 245 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _getIterator = __webpack_require__(249)["default"];
+	var _getIterator = __webpack_require__(246)["default"];
 
-	var _isIterable = __webpack_require__(275)["default"];
+	var _isIterable = __webpack_require__(272)["default"];
 
 	exports["default"] = (function () {
 	  function sliceIterator(arr, i) {
@@ -26699,42 +26435,42 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 249 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(250), __esModule: true };
+	module.exports = { "default": __webpack_require__(247), __esModule: true };
 
 /***/ },
-/* 250 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(251);
-	__webpack_require__(269);
-	module.exports = __webpack_require__(272);
+	__webpack_require__(248);
+	__webpack_require__(266);
+	module.exports = __webpack_require__(269);
 
 /***/ },
-/* 251 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(252);
-	var Iterators = __webpack_require__(255);
+	__webpack_require__(249);
+	var Iterators = __webpack_require__(252);
 	Iterators.NodeList = Iterators.HTMLCollection = Iterators.Array;
 
 /***/ },
-/* 252 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var addToUnscopables = __webpack_require__(253)
-	  , step             = __webpack_require__(254)
-	  , Iterators        = __webpack_require__(255)
-	  , toIObject        = __webpack_require__(256);
+	var addToUnscopables = __webpack_require__(250)
+	  , step             = __webpack_require__(251)
+	  , Iterators        = __webpack_require__(252)
+	  , toIObject        = __webpack_require__(253);
 
 	// 22.1.3.4 Array.prototype.entries()
 	// 22.1.3.13 Array.prototype.keys()
 	// 22.1.3.29 Array.prototype.values()
 	// 22.1.3.30 Array.prototype[@@iterator]()
-	module.exports = __webpack_require__(257)(Array, 'Array', function(iterated, kind){
+	module.exports = __webpack_require__(254)(Array, 'Array', function(iterated, kind){
 	  this._t = toIObject(iterated); // target
 	  this._i = 0;                   // next index
 	  this._k = kind;                // kind
@@ -26760,13 +26496,13 @@
 	addToUnscopables('entries');
 
 /***/ },
-/* 253 */
+/* 250 */
 /***/ function(module, exports) {
 
 	module.exports = function(){ /* empty */ };
 
 /***/ },
-/* 254 */
+/* 251 */
 /***/ function(module, exports) {
 
 	module.exports = function(done, value){
@@ -26774,13 +26510,13 @@
 	};
 
 /***/ },
-/* 255 */
+/* 252 */
 /***/ function(module, exports) {
 
 	module.exports = {};
 
 /***/ },
-/* 256 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// to indexed object, toObject with fallback for non-array-like ES3 strings
@@ -26791,20 +26527,20 @@
 	};
 
 /***/ },
-/* 257 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var LIBRARY        = __webpack_require__(258)
+	var LIBRARY        = __webpack_require__(255)
 	  , $export        = __webpack_require__(165)
-	  , redefine       = __webpack_require__(259)
-	  , hide           = __webpack_require__(260)
-	  , has            = __webpack_require__(263)
-	  , Iterators      = __webpack_require__(255)
-	  , $iterCreate    = __webpack_require__(264)
-	  , setToStringTag = __webpack_require__(265)
+	  , redefine       = __webpack_require__(256)
+	  , hide           = __webpack_require__(257)
+	  , has            = __webpack_require__(260)
+	  , Iterators      = __webpack_require__(252)
+	  , $iterCreate    = __webpack_require__(261)
+	  , setToStringTag = __webpack_require__(262)
 	  , getProto       = __webpack_require__(171).getProto
-	  , ITERATOR       = __webpack_require__(266)('iterator')
+	  , ITERATOR       = __webpack_require__(263)('iterator')
 	  , BUGGY          = !([].keys && 'next' in [].keys()) // Safari has buggy iterators w/o `next`
 	  , FF_ITERATOR    = '@@iterator'
 	  , KEYS           = 'keys'
@@ -26862,24 +26598,24 @@
 	};
 
 /***/ },
-/* 258 */
+/* 255 */
 /***/ function(module, exports) {
 
 	module.exports = true;
 
 /***/ },
-/* 259 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(260);
+	module.exports = __webpack_require__(257);
 
 /***/ },
-/* 260 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $          = __webpack_require__(171)
-	  , createDesc = __webpack_require__(261);
-	module.exports = __webpack_require__(262) ? function(object, key, value){
+	  , createDesc = __webpack_require__(258);
+	module.exports = __webpack_require__(259) ? function(object, key, value){
 	  return $.setDesc(object, key, createDesc(1, value));
 	} : function(object, key, value){
 	  object[key] = value;
@@ -26887,7 +26623,7 @@
 	};
 
 /***/ },
-/* 261 */
+/* 258 */
 /***/ function(module, exports) {
 
 	module.exports = function(bitmap, value){
@@ -26900,7 +26636,7 @@
 	};
 
 /***/ },
-/* 262 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Thank's IE8 for his funny defineProperty
@@ -26909,7 +26645,7 @@
 	});
 
 /***/ },
-/* 263 */
+/* 260 */
 /***/ function(module, exports) {
 
 	var hasOwnProperty = {}.hasOwnProperty;
@@ -26918,17 +26654,17 @@
 	};
 
 /***/ },
-/* 264 */
+/* 261 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var $              = __webpack_require__(171)
-	  , descriptor     = __webpack_require__(261)
-	  , setToStringTag = __webpack_require__(265)
+	  , descriptor     = __webpack_require__(258)
+	  , setToStringTag = __webpack_require__(262)
 	  , IteratorPrototype = {};
 
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-	__webpack_require__(260)(IteratorPrototype, __webpack_require__(266)('iterator'), function(){ return this; });
+	__webpack_require__(257)(IteratorPrototype, __webpack_require__(263)('iterator'), function(){ return this; });
 
 	module.exports = function(Constructor, NAME, next){
 	  Constructor.prototype = $.create(IteratorPrototype, {next: descriptor(1, next)});
@@ -26936,23 +26672,23 @@
 	};
 
 /***/ },
-/* 265 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var def = __webpack_require__(171).setDesc
-	  , has = __webpack_require__(263)
-	  , TAG = __webpack_require__(266)('toStringTag');
+	  , has = __webpack_require__(260)
+	  , TAG = __webpack_require__(263)('toStringTag');
 
 	module.exports = function(it, tag, stat){
 	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 	};
 
 /***/ },
-/* 266 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var store  = __webpack_require__(267)('wks')
-	  , uid    = __webpack_require__(268)
+	var store  = __webpack_require__(264)('wks')
+	  , uid    = __webpack_require__(265)
 	  , Symbol = __webpack_require__(166).Symbol;
 	module.exports = function(name){
 	  return store[name] || (store[name] =
@@ -26960,7 +26696,7 @@
 	};
 
 /***/ },
-/* 267 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var global = __webpack_require__(166)
@@ -26971,7 +26707,7 @@
 	};
 
 /***/ },
-/* 268 */
+/* 265 */
 /***/ function(module, exports) {
 
 	var id = 0
@@ -26981,14 +26717,14 @@
 	};
 
 /***/ },
-/* 269 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var $at  = __webpack_require__(270)(true);
+	var $at  = __webpack_require__(267)(true);
 
 	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(257)(String, 'String', function(iterated){
+	__webpack_require__(254)(String, 'String', function(iterated){
 	  this._t = String(iterated); // target
 	  this._i = 0;                // next index
 	// 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -27003,10 +26739,10 @@
 	});
 
 /***/ },
-/* 270 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var toInteger = __webpack_require__(271)
+	var toInteger = __webpack_require__(268)
 	  , defined   = __webpack_require__(173);
 	// true  -> String#at
 	// false -> String#codePointAt
@@ -27025,7 +26761,7 @@
 	};
 
 /***/ },
-/* 271 */
+/* 268 */
 /***/ function(module, exports) {
 
 	// 7.1.4 ToInteger
@@ -27036,11 +26772,11 @@
 	};
 
 /***/ },
-/* 272 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(206)
-	  , get      = __webpack_require__(273);
+	  , get      = __webpack_require__(270);
 	module.exports = __webpack_require__(167).getIterator = function(it){
 	  var iterFn = get(it);
 	  if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
@@ -27048,12 +26784,12 @@
 	};
 
 /***/ },
-/* 273 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(274)
-	  , ITERATOR  = __webpack_require__(266)('iterator')
-	  , Iterators = __webpack_require__(255);
+	var classof   = __webpack_require__(271)
+	  , ITERATOR  = __webpack_require__(263)('iterator')
+	  , Iterators = __webpack_require__(252);
 	module.exports = __webpack_require__(167).getIteratorMethod = function(it){
 	  if(it != undefined)return it[ITERATOR]
 	    || it['@@iterator']
@@ -27061,12 +26797,12 @@
 	};
 
 /***/ },
-/* 274 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
 	var cof = __webpack_require__(175)
-	  , TAG = __webpack_require__(266)('toStringTag')
+	  , TAG = __webpack_require__(263)('toStringTag')
 	  // ES3 wrong here
 	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
 
@@ -27082,26 +26818,26 @@
 	};
 
 /***/ },
-/* 275 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(276), __esModule: true };
+	module.exports = { "default": __webpack_require__(273), __esModule: true };
 
 /***/ },
-/* 276 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(251);
-	__webpack_require__(269);
-	module.exports = __webpack_require__(277);
+	__webpack_require__(248);
+	__webpack_require__(266);
+	module.exports = __webpack_require__(274);
 
 /***/ },
-/* 277 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(274)
-	  , ITERATOR  = __webpack_require__(266)('iterator')
-	  , Iterators = __webpack_require__(255);
+	var classof   = __webpack_require__(271)
+	  , ITERATOR  = __webpack_require__(263)('iterator')
+	  , Iterators = __webpack_require__(252);
 	module.exports = __webpack_require__(167).isIterable = function(it){
 	  var O = Object(it);
 	  return O[ITERATOR] !== undefined
@@ -27110,7 +26846,1460 @@
 	};
 
 /***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule filterExclusiveKeys
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var _Object$keys = __webpack_require__(207)['default'];
+
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+	/**
+	 * Returns two arrays of keys that contain each object's exclusive keys.
+	 */
+	function filterExclusiveKeys(a, b) {
+	  var keysA = a ? _Object$keys(a) : [];
+	  var keysB = b ? _Object$keys(b) : [];
+
+	  if (keysA.length === 0 || keysB.length === 0) {
+	    return [keysA, keysB];
+	  }
+	  return [keysA.filter(function (key) {
+	    return !hasOwnProperty.call(b, key);
+	  }), keysB.filter(function (key) {
+	    return !hasOwnProperty.call(a, key);
+	  })];
+	}
+
+	module.exports = filterExclusiveKeys;
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule readRelayQueryData
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _inherits = __webpack_require__(198)['default'];
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	var GraphQLFragmentPointer = __webpack_require__(212);
+	var GraphQLStoreDataHandler = __webpack_require__(213);
+
+	var RelayConnectionInterface = __webpack_require__(227);
+
+	var RelayProfiler = __webpack_require__(232);
+	var RelayQuery = __webpack_require__(214);
+	var RelayQueryVisitor = __webpack_require__(277);
+	var RelayRecordState = __webpack_require__(278);
+
+	var callsFromGraphQL = __webpack_require__(236);
+	var callsToGraphQL = __webpack_require__(237);
+	var invariant = __webpack_require__(222);
+	var validateRelayReadQuery = __webpack_require__(279);
+
+	var EDGES = RelayConnectionInterface.EDGES;
+	var PAGE_INFO = RelayConnectionInterface.PAGE_INFO;
+
+	var METADATA_KEYS = ['__status__', '__resolvedFragmentMapGeneration__'];
+
+	/**
+	 * @internal
+	 *
+	 * Retrieves data from the `RelayStore`.
+	 */
+	function readRelayQueryData(storeData, queryNode, dataID, options) {
+	  var reader = new RelayStoreReader(storeData, options);
+	  var data = reader.retrieveData(queryNode, dataID);
+
+	  // We validate only after retrieving the data, to give our `invariant`
+	  // checks below a chance to fail fast.
+	  validateRelayReadQuery(queryNode, options);
+
+	  return data;
+	}
+
+	var RelayStoreReader = (function (_RelayQueryVisitor) {
+	  _inherits(RelayStoreReader, _RelayQueryVisitor);
+
+	  function RelayStoreReader(storeData, options) {
+	    _classCallCheck(this, RelayStoreReader);
+
+	    _RelayQueryVisitor.call(this);
+	    this._rangeData = storeData.getRangeData();
+	    this._recordStore = storeData.getQueuedStore();
+	    this._traverseFragmentReferences = options && options.traverseFragmentReferences || false;
+	    this._traverseGeneratedFields = options && options.traverseGeneratedFields || false;
+	  }
+
+	  /**
+	   * Checks that `parent` either has range calls on it or does not contain either
+	   * `page_info` or `edges` fields. This enforcement intentionally transcends
+	   * traverseFragmentReferences boundaries.
+	   */
+
+	  /**
+	   * Runs `queryNode` against the data in `dataID` and returns the result.
+	   */
+
+	  RelayStoreReader.prototype.retrieveData = function retrieveData(queryNode, dataID) {
+	    var result = {
+	      data: undefined,
+	      dataIDs: {}
+	    };
+	    var rangeData = this._rangeData.parseRangeClientID(dataID);
+	    var status = this._recordStore.getRecordState(rangeData ? rangeData.dataID : dataID);
+	    if (status === RelayRecordState.EXISTENT) {
+	      var state = {
+	        componentDataID: null,
+	        data: undefined,
+	        parent: null,
+	        rangeInfo: null,
+	        seenDataIDs: result.dataIDs,
+	        storeDataID: dataID
+	      };
+	      this.visit(queryNode, state);
+	      result.data = state.data;
+	    } else if (status === RelayRecordState.NONEXISTENT) {
+	      result.data = null;
+	    }
+	    return result;
+	  };
+
+	  RelayStoreReader.prototype.visitField = function visitField(node, state) {
+	    // Check for range client IDs (eg. `someID_first(25)`) and unpack if
+	    // present, overriding `state`.
+	    this._handleRangeInfo(node, state);
+
+	    if (!node.isScalar() || node.isGenerated()) {
+	      // Make sure we return at least the __dataID__.
+	      getDataObject(state);
+	    }
+
+	    if (node.isGenerated() && !this._traverseGeneratedFields) {
+	      return;
+	    }
+	    var rangeInfo = state.rangeInfo;
+	    if (rangeInfo && node.getSchemaName() === EDGES) {
+	      this._readEdges(node, rangeInfo, state);
+	    } else if (rangeInfo && node.getSchemaName() === PAGE_INFO) {
+	      this._readPageInfo(node, rangeInfo, state);
+	    } else if (node.isScalar()) {
+	      this._readScalar(node, state);
+	    } else if (node.isPlural()) {
+	      this._readPlural(node, state);
+	    } else if (node.isConnection()) {
+	      this._readConnection(node, state);
+	    } else {
+	      this._readLinkedField(node, state);
+	    }
+	    state.seenDataIDs[state.storeDataID] = true;
+	  };
+
+	  RelayStoreReader.prototype.visitFragment = function visitFragment(node, state) {
+	    if (node.isContainerFragment() && !this._traverseFragmentReferences) {
+	      var dataID = getComponentDataID(state);
+	      state.seenDataIDs[dataID] = true;
+	      var fragmentPointer = new GraphQLFragmentPointer(node.isPlural() ? [dataID] : dataID, node);
+	      this._setDataValue(state, fragmentPointer.getFragment().getConcreteFragmentID(), fragmentPointer);
+	    } else {
+	      this.traverse(node, state);
+	    }
+	  };
+
+	  RelayStoreReader.prototype._readScalar = function _readScalar(node, state) {
+	    var storageKey = node.getStorageKey();
+	    var field = this._recordStore.getField(state.storeDataID, storageKey);
+	    if (field === undefined) {
+	      return;
+	    } else if (field === null && !state.data) {
+	      state.data = null;
+	    } else {
+	      this._setDataValue(state, node.getApplicationName(), Array.isArray(field) ? field.slice() : field);
+	    }
+	  };
+
+	  RelayStoreReader.prototype._readPlural = function _readPlural(node, state) {
+	    var _this = this;
+
+	    var storageKey = node.getStorageKey();
+	    var dataIDs = this._recordStore.getLinkedRecordIDs(state.storeDataID, storageKey);
+	    if (dataIDs) {
+	      var applicationName = node.getApplicationName();
+	      var previousData = getDataValue(state, applicationName);
+	      var nextData = dataIDs.map(function (dataID, ii) {
+	        var data;
+	        if (previousData instanceof Object) {
+	          data = previousData[ii];
+	        }
+	        var nextState = {
+	          componentDataID: null,
+	          data: data,
+	          parent: node,
+	          rangeInfo: null,
+	          seenDataIDs: state.seenDataIDs,
+	          storeDataID: dataID
+	        };
+	        node.getChildren().forEach(function (child) {
+	          return _this.visit(child, nextState);
+	        });
+	        return nextState.data;
+	      });
+	      this._setDataValue(state, applicationName, nextData);
+	    }
+	  };
+
+	  RelayStoreReader.prototype._readConnection = function _readConnection(node, state) {
+	    var applicationName = node.getApplicationName();
+	    var storageKey = node.getStorageKey();
+	    var calls = node.getCallsWithValues();
+	    var dataID = this._recordStore.getLinkedRecordID(state.storeDataID, storageKey);
+	    if (!dataID) {
+	      return;
+	    }
+	    enforceRangeCalls(node);
+	    var metadata = this._recordStore.getRangeMetadata(dataID, calls);
+	    var nextState = {
+	      componentDataID: this._getConnectionClientID(node, dataID),
+	      data: getDataValue(state, applicationName),
+	      parent: node,
+	      rangeInfo: metadata && calls.length ? metadata : null,
+	      seenDataIDs: state.seenDataIDs,
+	      storeDataID: dataID
+	    };
+	    this.traverse(node, nextState);
+	    this._setDataValue(state, applicationName, nextState.data);
+	  };
+
+	  RelayStoreReader.prototype._readEdges = function _readEdges(node, rangeInfo, state) {
+	    var _this2 = this;
+
+	    var previousData = getDataValue(state, EDGES);
+	    var edges = rangeInfo.filteredEdges.map(function (edgeData, ii) {
+	      var data;
+	      if (previousData instanceof Object) {
+	        data = previousData[ii];
+	      }
+	      var nextState = {
+	        componentDataID: null,
+	        data: data,
+	        parent: node,
+	        rangeInfo: null,
+	        seenDataIDs: state.seenDataIDs,
+	        storeDataID: edgeData.edgeID
+	      };
+	      _this2.traverse(node, nextState);
+	      return nextState.data;
+	    });
+	    this._setDataValue(state, EDGES, edges);
+	  };
+
+	  RelayStoreReader.prototype._readPageInfo = function _readPageInfo(node, rangeInfo, state) {
+	    var _this3 = this;
+
+	    var pageInfo = rangeInfo.pageInfo;
+
+	    !pageInfo ? process.env.NODE_ENV !== 'production' ? invariant(false, 'readRelayQueryData(): Missing field, `%s`.', PAGE_INFO) : invariant(false) : undefined;
+	    var info = pageInfo; // for Flow
+	    var nextData;
+
+	    // Page info comes from the range metadata, so we do a custom traversal here
+	    // which is simpler than passing through page-info-related state as a hint
+	    // for the normal traversal.
+	    var read = function read(child) {
+	      if (child instanceof RelayQuery.Fragment) {
+	        if (child.isContainerFragment() && !_this3._traverseFragmentReferences) {
+	          var fragmentPointer = new GraphQLFragmentPointer(getComponentDataID(state), child);
+	          nextData = nextData || {};
+	          var concreteFragmentID = fragmentPointer.getFragment().getConcreteFragmentID();
+	          nextData[concreteFragmentID] = fragmentPointer;
+	        } else {
+	          child.getChildren().forEach(read);
+	        }
+	      } else {
+	        var field = child;
+	        if (!field.isGenerated() || _this3._traverseGeneratedFields) {
+	          nextData = nextData || {};
+	          nextData[field.getApplicationName()] = info[field.getStorageKey()];
+	        }
+	      }
+	    };
+	    node.getChildren().forEach(read);
+
+	    this._setDataValue(state, PAGE_INFO, nextData);
+	  };
+
+	  RelayStoreReader.prototype._readLinkedField = function _readLinkedField(node, state) {
+	    var storageKey = node.getStorageKey();
+	    var applicationName = node.getApplicationName();
+	    var dataID = this._recordStore.getLinkedRecordID(state.storeDataID, storageKey);
+	    if (dataID == null) {
+	      this._setDataValue(state, applicationName, dataID);
+	      return;
+	    }
+	    var nextState = {
+	      componentDataID: null,
+	      data: getDataValue(state, applicationName),
+	      parent: node,
+	      rangeInfo: null,
+	      seenDataIDs: state.seenDataIDs,
+	      storeDataID: dataID
+	    };
+	    var status = this._recordStore.getRecordState(dataID);
+	    if (status === RelayRecordState.EXISTENT) {
+	      // Make sure we return at least the __dataID__.
+	      getDataObject(nextState);
+	    }
+	    this.traverse(node, nextState);
+	    this._setDataValue(state, applicationName, nextState.data);
+	  };
+
+	  /**
+	   * Assigns `value` to the property of `state.data` identified by `key`.
+	   *
+	   * Pre-populates `state` with a suitable `data` object if needed, and copies
+	   * over any metadata fields, if present.
+	   */
+
+	  RelayStoreReader.prototype._setDataValue = function _setDataValue(state, key, value) {
+	    var _this4 = this;
+
+	    var data = getDataObject(state); // ensure __dataID__
+	    if (value === undefined) {
+	      return;
+	    }
+	    data[key] = value;
+
+	    // Copy metadata like `__resolvedFragmentMapGeneration__` and `__status__`.
+	    METADATA_KEYS.forEach(function (metadataKey) {
+	      var metadataValue = _this4._recordStore.getField(state.storeDataID, metadataKey);
+	      if (metadataValue != null) {
+	        data[metadataKey] = metadataValue;
+	      }
+	    });
+	  };
+
+	  /**
+	   * Obtains a client ID (eg. `someDataID_first(10)`) for the connection
+	   * identified by `connectionID`. If there are no range calls on the supplied
+	   * `node`, then a call-less connection ID (eg. `someDataID`) will be returned
+	   * instead.
+	   */
+
+	  RelayStoreReader.prototype._getConnectionClientID = function _getConnectionClientID(node, connectionID) {
+	    var calls = node.getCallsWithValues();
+	    if (!RelayConnectionInterface.hasRangeCalls(calls)) {
+	      return connectionID;
+	    }
+	    return this._rangeData.getClientIDForRangeWithID(callsToGraphQL(calls), {}, connectionID);
+	  };
+
+	  /**
+	   * Checks to see if we have a range client ID (eg. `someID_first(25)`), and if
+	   * so, unpacks the range metadata, stashing it into (and overriding) `state`.
+	   */
+
+	  RelayStoreReader.prototype._handleRangeInfo = function _handleRangeInfo(node, state) {
+	    var rangeData = this._rangeData.parseRangeClientID(state.storeDataID);
+	    if (rangeData != null) {
+	      state.componentDataID = state.storeDataID;
+	      state.storeDataID = rangeData.dataID;
+	      state.rangeInfo = this._recordStore.getRangeMetadata(state.storeDataID, callsFromGraphQL(rangeData.calls, rangeData.callValues));
+	    }
+	  };
+
+	  return RelayStoreReader;
+	})(RelayQueryVisitor);
+
+	function enforceRangeCalls(parent) {
+	  if (!parent.__hasValidatedConnectionCalls__) {
+	    var calls = parent.getCallsWithValues();
+	    if (!RelayConnectionInterface.hasRangeCalls(calls)) {
+	      rangeCallEnforcer.traverse(parent, parent);
+	    }
+	    parent.__hasValidatedConnectionCalls__ = true;
+	  }
+	}
+
+	var RelayRangeCallEnforcer = (function (_RelayQueryVisitor2) {
+	  _inherits(RelayRangeCallEnforcer, _RelayQueryVisitor2);
+
+	  function RelayRangeCallEnforcer() {
+	    _classCallCheck(this, RelayRangeCallEnforcer);
+
+	    _RelayQueryVisitor2.apply(this, arguments);
+	  }
+
+	  RelayRangeCallEnforcer.prototype.visitField = function visitField(node, parent) {
+	    var schemaName = node.getSchemaName();
+	    !(schemaName !== EDGES && schemaName !== PAGE_INFO) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'readRelayQueryData(): The field `%s` is a connection. Fields `%s` and ' + '`%s` cannot be fetched without a `first`, `last` or `find` argument.', parent.getApplicationName(), EDGES, PAGE_INFO) : invariant(false) : undefined;
+	  };
+
+	  return RelayRangeCallEnforcer;
+	})(RelayQueryVisitor);
+
+	var rangeCallEnforcer = new RelayRangeCallEnforcer();
+
+	/**
+	 * Returns the component-specific DataID stored in `state`, falling back to the
+	 * generic "store" DataID.
+	 *
+	 * For most nodes, the generic "store" DataID can be used for both reading out
+	 * of the store and writing into the result object that will be passed back to
+	 * the component. For connections with range calls on them the "store" and
+	 * "component" ID will be different because the component needs a special
+	 * client-ID that encodes the range calls.
+	 */
+	function getComponentDataID(state) {
+	  if (state.componentDataID != null) {
+	    return state.componentDataID;
+	  } else {
+	    return state.storeDataID;
+	  }
+	}
+
+	/**
+	 * Retrieves `state.data`, initializing it if necessary.
+	 */
+	function getDataObject(state) {
+	  var data = state.data;
+	  if (!data) {
+	    var pointer = GraphQLStoreDataHandler.createPointerWithID(getComponentDataID(state));
+	    data = state.data = pointer;
+	  }
+	  !(data instanceof Object) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'readRelayQueryData(): Unable to read field on non-object.') : invariant(false) : undefined;
+	  return data;
+	}
+
+	/**
+	 * Looks up the value identified by `key` in `state.data`.
+	 *
+	 * Pre-populates `state` with a suitable `data` objects if needed.
+	 */
+	function getDataValue(state, key) {
+	  var data = getDataObject(state);
+	  return data[key];
+	}
+
+	var instrumented = RelayProfiler.instrument('readRelayQueryData', readRelayQueryData);
+
+	// #7573861: Type export collides with CommonJS export in presence of
+	// `instrument()` call:
+	module.exports = instrumented;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayQueryVisitor
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var RelayQuery = __webpack_require__(214);
+
+	/**
+	 * @internal
+	 *
+	 * Base class for traversing a Relay Query.
+	 *
+	 * Subclasses can optionally implement methods to customize the traversal:
+	 *
+	 * - `visitField(field, state)`: Called for each field.
+	 * - `visitFragment(fragment, state)`: Called for each fragment.
+	 * - `visitQuery(fragment, state)`: Called for the top level query.
+	 *
+	 * A `state` variable is passed along to all callbacks and can be used to
+	 * accumulate data while traversing (effectively passing data back up the tree),
+	 * or modify the behavior of later callbacks (effectively passing data down the
+	 * tree).
+	 *
+	 * There are two additional methods for controlling the traversal:
+	 *
+	 * - `traverse(parent, state)`: Visits all children of `parent`. Subclasses
+	 *   may override in order to short-circuit traversal. Note that
+	 *   `visit{Field,Fragment,Query}` are //not// called on `parent`, as it will
+	 *   already have been visited by the time this method is called.
+	 * - `visit(child, state)`: Processes the `child` node, calling the appropriate
+	 *   `visit{Field,Fragment,Query}` method based on the node type.
+	 *
+	 * By convention, each of the callback methods returns the visited node. This is
+	 * used by the `RelayQueryTransform` subclass to implement mapping and filtering
+	 * behavior, but purely-visitor subclases do not need to follow this convention.
+	 *
+	 * @see RelayQueryTransform
+	 */
+
+	var RelayQueryVisitor = (function () {
+	  function RelayQueryVisitor() {
+	    _classCallCheck(this, RelayQueryVisitor);
+	  }
+
+	  RelayQueryVisitor.prototype.visit = function visit(node, nextState) {
+	    if (node instanceof RelayQuery.Field) {
+	      return this.visitField(node, nextState);
+	    } else if (node instanceof RelayQuery.Fragment) {
+	      return this.visitFragment(node, nextState);
+	    } else if (node instanceof RelayQuery.Root) {
+	      return this.visitRoot(node, nextState);
+	    }
+	  };
+
+	  RelayQueryVisitor.prototype.traverse = function traverse(node, nextState) {
+	    var _this = this;
+
+	    if (!node.isScalar()) {
+	      node.getChildren().forEach(function (child) {
+	        return _this.visit(child, nextState);
+	      });
+	    }
+	    return node;
+	  };
+
+	  RelayQueryVisitor.prototype.visitField = function visitField(node, nextState) {
+	    return this.traverse(node, nextState);
+	  };
+
+	  RelayQueryVisitor.prototype.visitFragment = function visitFragment(node, nextState) {
+	    return this.traverse(node, nextState);
+	  };
+
+	  RelayQueryVisitor.prototype.visitRoot = function visitRoot(node, nextState) {
+	    return this.traverse(node, nextState);
+	  };
+
+	  return RelayQueryVisitor;
+	})();
+
+	module.exports = RelayQueryVisitor;
+
+/***/ },
 /* 278 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayRecordState
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var RelayRecordState = {
+	  /**
+	   * Record exists (either fetched from the server or produced by a local,
+	   * optimistic update).
+	   */
+	  EXISTENT: 'EXISTENT',
+
+	  /**
+	   * Record is known not to exist (either as the result of a mutation, or
+	   * because the server returned `null` when queried for the record).
+	   */
+	  NONEXISTENT: 'NONEXISTENT',
+
+	  /**
+	   * Record State is unknown because it has not yet been fetched from the
+	   * server.
+	   */
+	  UNKNOWN: 'UNKNOWN'
+	};
+
+	module.exports = RelayRecordState;
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule validateRelayReadQuery
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _inherits = __webpack_require__(198)['default'];
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var RelayQueryVisitor = __webpack_require__(277);
+
+	var emptyFunction = __webpack_require__(195);
+
+	var SERIALIZATION_KEY = '__serializationKey__'; // task #7117200
+
+	var validateRelayReadQuery = emptyFunction;
+
+	if (process.env.NODE_ENV !== 'production') {
+	  // Wrap in an IIFE to avoid unwanted function hoisting.
+	  (function () {
+	    /**
+	     * @internal
+	     *
+	     * `validateRelayReadQuery` is a `__DEV__`-only validator that checks that a
+	     * query used to read data from `RelayStore` is well-formed. Validation
+	     * problems are reported via `console.error`.
+	     *
+	     * At the moment, "well-formed" means that the query does not contain
+	     * duplicate aliases.
+	     */
+	    validateRelayReadQuery = function validateRelayReadQuery(queryNode, options) {
+	      var validator = new RelayStoreReadValidator(options);
+	      validator.visit(queryNode, {});
+	    };
+
+	    function assertUniqueAlias(field, aliasMap) {
+	      var serializationKey = field.getSerializationKey();
+	      if (aliasMap[SERIALIZATION_KEY]) {
+	        if (aliasMap[SERIALIZATION_KEY] !== serializationKey) {
+	          console.error('`%s` is used as an alias more than once. Please use unique ' + 'aliases.', field.getApplicationName());
+	        }
+	      } else {
+	        aliasMap[SERIALIZATION_KEY] = serializationKey;
+	      }
+	    }
+
+	    /**
+	     * Returns the nested AliasMap for `node`, initializing it to an empty map
+	     * if it does not already exist.
+	     */
+	    function getAliasMap(node, aliasMap) {
+	      var applicationName = node.getApplicationName();
+	      if (!aliasMap[applicationName]) {
+	        aliasMap[applicationName] = {};
+	      }
+	      return aliasMap[applicationName];
+	    }
+
+	    var RelayStoreReadValidator = (function (_RelayQueryVisitor) {
+	      _inherits(RelayStoreReadValidator, _RelayQueryVisitor);
+
+	      function RelayStoreReadValidator(options) {
+	        _classCallCheck(this, RelayStoreReadValidator);
+
+	        _RelayQueryVisitor.call(this);
+	        this._traverseFragmentReferences = options && options.traverseFragmentReferences || false;
+	      }
+
+	      RelayStoreReadValidator.prototype.visitField = function visitField(node, aliasMap) {
+	        aliasMap = getAliasMap(node, aliasMap);
+	        assertUniqueAlias(node, aliasMap);
+
+	        if (node.isGenerated()) {
+	          return;
+	        } else if (node.isScalar()) {
+	          return;
+	        } else if (node.isPlural()) {
+	          this._readPlural(node, aliasMap);
+	        } else {
+	          // No special handling needed for connections, edges, page_info etc.
+	          this._readLinkedField(node, aliasMap);
+	        }
+	      };
+
+	      RelayStoreReadValidator.prototype.visitFragment = function visitFragment(node, aliasMap) {
+	        if (this._traverseFragmentReferences || !node.isContainerFragment()) {
+	          this.traverse(node, aliasMap);
+	        }
+	      };
+
+	      RelayStoreReadValidator.prototype._readPlural = function _readPlural(node, aliasMap) {
+	        var _this = this;
+
+	        node.getChildren().forEach(function (child) {
+	          return _this.visit(child, aliasMap);
+	        });
+	      };
+
+	      RelayStoreReadValidator.prototype._readLinkedField = function _readLinkedField(node, aliasMap) {
+	        aliasMap = getAliasMap(node, aliasMap);
+	        this.traverse(node, aliasMap);
+	      };
+
+	      return RelayStoreReadValidator;
+	    })(RelayQueryVisitor);
+	  })();
+	}
+
+	module.exports = validateRelayReadQuery;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 280 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule recycleNodesInto
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var _Object$keys = __webpack_require__(207)['default'];
+
+	var GraphQLFragmentPointer = __webpack_require__(212);
+
+	/**
+	 * Recycles subtrees from `prevData` by replacing equal subtrees in `nextData`.
+	 */
+	function recycleNodesInto(prevData, nextData) {
+	  if (typeof prevData !== 'object' || !prevData || typeof nextData !== 'object' || !nextData) {
+	    return nextData;
+	  }
+	  var canRecycle = false;
+	  if (prevData instanceof GraphQLFragmentPointer) {
+	    canRecycle = nextData instanceof GraphQLFragmentPointer && nextData.equals(prevData);
+	  } else {
+	    var isPrevArray = Array.isArray(prevData);
+	    var isNextArray = Array.isArray(nextData);
+	    if (isPrevArray && isNextArray) {
+	      // Assign local variables to preserve Flow type refinement.
+	      var prevArray = prevData;
+	      var nextArray = nextData;
+	      canRecycle = nextArray.reduce(function (wasEqual, nextItem, ii) {
+	        nextArray[ii] = recycleNodesInto(prevArray[ii], nextItem);
+	        return wasEqual && nextArray[ii] === prevArray[ii];
+	      }, true) && prevArray.length === nextArray.length;
+	    } else if (!isPrevArray && !isNextArray) {
+	      // Assign local variables to preserve Flow type refinement.
+	      var prevObject = prevData;
+	      var nextObject = nextData;
+	      var prevKeys = _Object$keys(prevObject);
+	      var nextKeys = _Object$keys(nextObject);
+	      canRecycle = nextKeys.reduce(function (wasEqual, key) {
+	        var nextValue = nextObject[key];
+	        nextObject[key] = recycleNodesInto(prevObject[key], nextValue);
+	        return wasEqual && nextObject[key] === prevObject[key];
+	      }, true) && prevKeys.length === nextKeys.length;
+	    }
+	  }
+	  return canRecycle ? prevData : nextData;
+	}
+
+	module.exports = recycleNodesInto;
+
+/***/ },
+/* 281 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayContainerComparators
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	/**
+	 * Compares `objectA` and `objectB` using the provided `isEqual` function.
+	 *
+	 * If a `filter` object is provided, only its keys will be checked during
+	 * comparison.
+	 */
+	function compareObjects(isEqual, objectA, objectB, filter) {
+	  var key;
+
+	  // Test for A's keys different from B.
+	  for (key in objectA) {
+	    if (filter && !filter.hasOwnProperty(key)) {
+	      continue;
+	    }
+
+	    if (objectA.hasOwnProperty(key) && (!objectB.hasOwnProperty(key) || !isEqual(objectA[key], objectB[key], key))) {
+	      return false;
+	    }
+	  }
+	  // Test for B's keys missing from A.
+	  for (key in objectB) {
+	    if (filter && !filter.hasOwnProperty(key)) {
+	      continue;
+	    }
+
+	    if (objectB.hasOwnProperty(key) && !objectA.hasOwnProperty(key)) {
+	      return false;
+	    }
+	  }
+	  return true;
+	}
+
+	function isScalarAndEqual(valueA, valueB) {
+	  return valueA === valueB && (valueA === null || typeof valueA !== 'object');
+	}
+
+	function isQueryDataEqual(fragmentPointers, currProp, nextProp, propName) {
+	  return(
+	    // resolved data did not change
+	    fragmentPointers[propName] && currProp === nextProp ||
+	    // otherwise compare fake data
+	    isScalarAndEqual(currProp, nextProp)
+	  );
+	}
+
+	function isNonQueryPropEqual(fragments, currProp, nextProp, propName) {
+	  return(
+	    // ignore props with fragments (instead resolved values are compared)
+	    fragments.hasOwnProperty(propName) ||
+	    // otherwise props must be scalar and === in order to skip
+	    isScalarAndEqual(currProp, nextProp)
+	  );
+	}
+
+	/**
+	 * Relay-aware comparators for props and state provide a reasonable default
+	 * implementation of `shouldComponentUpdate`.
+	 */
+	var RelayContainerComparators = {
+	  areQueryResultsEqual: function areQueryResultsEqual(fragmentPointers, prevQueryData, nextQueryData) {
+	    return compareObjects(isQueryDataEqual.bind(null, fragmentPointers), prevQueryData, nextQueryData);
+	  },
+
+	  areNonQueryPropsEqual: function areNonQueryPropsEqual(fragments, props, nextProps) {
+	    return compareObjects(isNonQueryPropEqual.bind(null, fragments), props, nextProps);
+	  },
+
+	  areQueryVariablesEqual: function areQueryVariablesEqual(variables, nextVariables) {
+	    return compareObjects(isScalarAndEqual, variables, nextVariables);
+	  }
+	};
+
+	module.exports = RelayContainerComparators;
+
+/***/ },
+/* 282 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayContainerProxy
+	 */
+
+	'use strict';
+
+	module.exports = __webpack_require__(283);
+
+/***/ },
+/* 283 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayOSSContainerProxy
+	 * @typechecks
+	 * 
+	 */
+
+	/**
+	 * This feature is deprecated and unavailable in open source.
+	 */
+	'use strict';
+
+	var RelayOSSContainerProxy = {
+	  proxyMethods: function proxyMethods(RelayContainer, Component) {}
+	};
+
+	module.exports = RelayOSSContainerProxy;
+
+/***/ },
+/* 284 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayDeprecated
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var invariant = __webpack_require__(222);
+
+	/**
+	 * @internal
+	 */
+	var RelayDeprecated = {
+
+	  /**
+	   * Detects deprecated API usage.
+	   *
+	   * TODO(jkassens, #8978552): delete this
+	   */
+	  upgradeContainerSpec: function upgradeContainerSpec(spec) {
+	    ['queries', 'queryParams'].forEach(function (property) {
+	      !!spec.hasOwnProperty(property) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Relay.createContainer(...): Found no longer supported property: %s', property) : invariant(false) : undefined;
+	    });
+	    return spec;
+	  }
+
+	};
+
+	module.exports = RelayDeprecated;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayMutationTransaction
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var RelayMutationTransactionStatus = __webpack_require__(286);
+
+	var invariant = __webpack_require__(222);
+
+	/**
+	 * @internal
+	 */
+
+	var RelayMutationTransaction = (function () {
+	  function RelayMutationTransaction(mutationQueue, id) {
+	    _classCallCheck(this, RelayMutationTransaction);
+
+	    this._id = id;
+	    this._mutationQueue = mutationQueue;
+	  }
+
+	  RelayMutationTransaction.prototype.commit = function commit() {
+	    var status = this.getStatus();
+	    !(status === RelayMutationTransactionStatus.UNCOMMITTED) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationTransaction: Only transactions with status `UNCOMMITTED` ' + 'can be comitted.') : invariant(false) : undefined;
+
+	    this._mutationQueue.commit(this._id);
+	  };
+
+	  RelayMutationTransaction.prototype.recommit = function recommit() {
+	    var status = this.getStatus();
+	    !(status === RelayMutationTransactionStatus.COMMIT_FAILED || status === RelayMutationTransactionStatus.COLLISION_COMMIT_FAILED) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationTransaction: Only transaction with status ' + '`COMMIT_FAILED` or `COLLISION_COMMIT_FAILED` can be comitted.') : invariant(false) : undefined;
+
+	    this._mutationQueue.commit(this._id);
+	  };
+
+	  RelayMutationTransaction.prototype.rollback = function rollback() {
+	    var status = this.getStatus();
+	    !(status === RelayMutationTransactionStatus.UNCOMMITTED || status === RelayMutationTransactionStatus.COMMIT_FAILED || status === RelayMutationTransactionStatus.COLLISION_COMMIT_FAILED) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationTransaction: Only transactions with status `UNCOMMITTED` ' + '`COMMIT_FAILED` or `COLLISION_COMMIT_FAILED` can be rolledback.') : invariant(false) : undefined;
+
+	    this._mutationQueue.rollback(this._id);
+	  };
+
+	  RelayMutationTransaction.prototype.getError = function getError() {
+	    return this._mutationQueue.getError(this._id);
+	  };
+
+	  RelayMutationTransaction.prototype.getStatus = function getStatus() {
+	    return this._mutationQueue.getStatus(this._id);
+	  };
+
+	  return RelayMutationTransaction;
+	})();
+
+	module.exports = RelayMutationTransaction;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 286 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayMutationTransactionStatus
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var RelayMutationTransactionStatus = {
+	  /**
+	   * Transaction hasn't yet been sent to the server. Client has an optimistic
+	   * update applied if the mutation defined one. Transaction can be committed or
+	   * rolledback.
+	   */
+	  UNCOMMITTED: 'UNCOMMITTED',
+
+	  /**
+	   * Transaction was committed but another transaction with the same collision
+	   * key is pending, so the transaction has been queued to send to the server.
+	   */
+	  COMMIT_QUEUED: 'COMMIT_QUEUED',
+
+	  /**
+	   * Transaction was queued for commit but another transaction with the same
+	   * collision queue failed to commit. All transactions in the collision
+	   * queue, including this one, have been failed as well. Transaction can be
+	   * recommitted or rolledback.
+	   */
+	  COLLISION_COMMIT_FAILED: 'COLLISION_COMMIT_FAILED',
+
+	  /**
+	   * Transaction was sent to the server for comitting and a response is awaited.
+	   */
+	  COMMITTING: 'COMMITTING',
+
+	  /**
+	   * Transaction was sent to the server for comitting but was failed.
+	   */
+	  COMMIT_FAILED: 'COMMIT_FAILED'
+	};
+
+	module.exports = RelayMutationTransactionStatus;
+
+/***/ },
+/* 287 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayPropTypes
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _require = __webpack_require__(1);
+
+	var PropTypes = _require.PropTypes;
+
+	var isRelayContainer = __webpack_require__(288);
+	var sprintf = __webpack_require__(193);
+
+	var RelayPropTypes = {
+	  Container: function Container(props, propName, componentName) {
+	    var component = props[propName];
+	    if (component == null) {
+	      return new Error(sprintf('Required prop `%s` was not specified in `%s`.', propName, componentName));
+	    } else if (!isRelayContainer(component)) {
+	      return new Error(sprintf('Invalid prop `%s` supplied to `%s`, expected a RelayContainer.', propName, componentName));
+	    }
+	    return null;
+	  },
+
+	  QueryConfig: PropTypes.shape({
+	    name: PropTypes.string.isRequired,
+	    params: PropTypes.object.isRequired,
+	    queries: PropTypes.object.isRequired,
+	    uri: PropTypes.object
+	  })
+	};
+
+	module.exports = RelayPropTypes;
+
+/***/ },
+/* 288 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule isRelayContainer
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	function isRelayContainer(component) {
+	  return !!(component && component.getFragmentNames && component.getFragment && component.hasFragment && component.hasVariable);
+	}
+
+	module.exports = isRelayContainer;
+
+/***/ },
+/* 289 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayStore
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var GraphQLFragmentPointer = __webpack_require__(212);
+
+	var RelayMutationTransaction = __webpack_require__(285);
+	var RelayQuery = __webpack_require__(214);
+	var RelayQueryResultObservable = __webpack_require__(290);
+	var RelayStoreData = __webpack_require__(291);
+
+	var forEachRootCallArg = __webpack_require__(221);
+	var readRelayQueryData = __webpack_require__(276);
+
+	var storeData = RelayStoreData.getDefaultInstance();
+	var queryRunner = storeData.getQueryRunner();
+	var queuedStore = storeData.getQueuedStore();
+
+	/**
+	 * @public
+	 *
+	 * RelayStore is a caching layer that records GraphQL response data and enables
+	 * resolving and subscribing to queries.
+	 *
+	 * === onReadyStateChange ===
+	 *
+	 * Whenever Relay sends a request for data via GraphQL, an "onReadyStateChange"
+	 * callback can be supplied. This callback is called one or more times with a
+	 * `readyState` object with the following properties:
+	 *
+	 *   aborted: Whether the request was aborted.
+	 *   done: Whether all response data has been fetched.
+	 *   error: An error in the event of a failure, or null if none.
+	 *   ready: Whether the queries are at least partially resolvable.
+	 *   stale: When resolvable during `forceFetch`, whether data is stale.
+	 *
+	 * If the callback is invoked with `aborted`, `done`, or a non-null `error`, the
+	 * callback will never be called again. Example usage:
+	 *
+	 *  function onReadyStateChange(readyState) {
+	 *    if (readyState.aborted) {
+	 *      // Request was aborted.
+	 *    } else if (readyState.error) {
+	 *      // Failure occurred.
+	 *    } else if (readyState.ready) {
+	 *      // Queries are at least partially resolvable.
+	 *      if (readyState.done) {
+	 *        // Queries are completely resolvable.
+	 *      }
+	 *    }
+	 *  }
+	 *
+	 */
+	var RelayStore = {
+
+	  /**
+	   * Primes the store by sending requests for any missing data that would be
+	   * required to satisfy the supplied set of queries.
+	   */
+	  primeCache: function primeCache(querySet, callback) {
+	    return queryRunner.run(querySet, callback);
+	  },
+
+	  /**
+	   * Forces the supplied set of queries to be fetched and written to the store.
+	   * Any data that previously satisfied the queries will be overwritten.
+	   */
+	  forceFetch: function forceFetch(querySet, callback) {
+	    return queryRunner.forceFetch(querySet, callback);
+	  },
+
+	  /**
+	   * Reads query data anchored at the supplied data ID.
+	   */
+	  read: function read(node, dataID, options) {
+	    return readRelayQueryData(storeData, node, dataID, options).data;
+	  },
+
+	  /**
+	   * Reads query data anchored at the supplied data IDs.
+	   */
+	  readAll: function readAll(node, dataIDs, options) {
+	    return dataIDs.map(function (dataID) {
+	      return readRelayQueryData(storeData, node, dataID, options).data;
+	    });
+	  },
+
+	  /**
+	   * Reads query data, where each element in the result array corresponds to a
+	   * root call argument. If the root call has no arguments, the result array
+	   * will contain exactly one element.
+	   */
+	  readQuery: function readQuery(root, options) {
+	    var storageKey = root.getStorageKey();
+	    var results = [];
+	    forEachRootCallArg(root, function (identifyingArgValue) {
+	      var data;
+	      var dataID = queuedStore.getDataID(storageKey, identifyingArgValue);
+	      if (dataID != null) {
+	        data = RelayStore.read(root, dataID, options);
+	      }
+	      results.push(data);
+	    });
+	    return results;
+	  },
+
+	  /**
+	   * Reads and subscribes to query data anchored at the supplied data ID. The
+	   * returned observable emits updates as the data changes over time.
+	   */
+	  observe: function observe(fragment, dataID) {
+	    var fragmentPointer = new GraphQLFragmentPointer(fragment.isPlural() ? [dataID] : dataID, fragment);
+	    return new RelayQueryResultObservable(storeData, fragmentPointer);
+	  },
+
+	  applyUpdate: function applyUpdate(mutation, callbacks) {
+	    return storeData.getMutationQueue().createTransaction(mutation, callbacks);
+	  },
+
+	  update: function update(mutation, callbacks) {
+	    this.applyUpdate(mutation, callbacks).commit();
+	  }
+	};
+
+	module.exports = RelayStore;
+
+/***/ },
+/* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayQueryResultObservable
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var GraphQLFragmentPointer = __webpack_require__(212);
+	var GraphQLStoreQueryResolver = __webpack_require__(244);
+
+	var invariant = __webpack_require__(222);
+
+	/**
+	 * An Rx Observable representing the results of a fragment in the local cache.
+	 * Subscribers are notified as follows:
+	 *
+	 * `onNext`: Called with the latest results of a fragment. Results may be `null`
+	 * if the data was marked as deleted or `undefined` if the fragment was either
+	 * not fetched or evicted from the cache. Note that required fields may be
+	 * missing if the fragment was not fetched with `Relay.Store.primeCache` or
+	 * `Relay.Store.forceFetch` before creating a subscription.
+	 * - Called synchronously on `subscribe()`.
+	 * - Called whenever the results of the fragment change.
+	 *
+	 * `onError`: Currently not called. In the future this may be used to indicate
+	 * that required data for the fragment has not been fetched or was evicted
+	 * from the cache.
+	 *
+	 * `onCompleted`: Not called.
+	 *
+	 * @see http://reactivex.io/documentation/observable.html
+	 */
+
+	var RelayQueryResultObservable = (function () {
+	  function RelayQueryResultObservable(storeData, fragmentPointer) {
+	    _classCallCheck(this, RelayQueryResultObservable);
+
+	    this._data = undefined;
+	    this._fragmentPointer = fragmentPointer;
+	    this._queryResolver = null;
+	    this._storeData = storeData;
+	    this._subscriptionCallbacks = [];
+	    this._subscriptionCount = 0;
+	  }
+
+	  RelayQueryResultObservable.prototype.subscribe = function subscribe(callbacks) {
+	    var _this = this;
+
+	    this._subscriptionCount++;
+	    var subscriptionIndex = this._subscriptionCallbacks.length;
+	    var subscription = {
+	      dispose: function dispose() {
+	        !_this._subscriptionCallbacks[subscriptionIndex] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryResultObservable: Subscriptions may only be disposed once.') : invariant(false) : undefined;
+	        delete _this._subscriptionCallbacks[subscriptionIndex];
+	        _this._subscriptionCount--;
+	        if (_this._subscriptionCount === 0) {
+	          _this._unobserve();
+	        }
+	      }
+	    };
+	    this._subscriptionCallbacks.push(callbacks);
+
+	    if (this._subscriptionCount === 1) {
+	      this._resolveData(this._observe());
+	    }
+	    this._fire(callbacks);
+
+	    return subscription;
+	  };
+
+	  RelayQueryResultObservable.prototype._observe = function _observe() {
+	    var _this2 = this;
+
+	    !!this._queryResolver ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryResultObservable: Initialized twice.') : invariant(false) : undefined;
+	    var queryResolver = new GraphQLStoreQueryResolver(this._storeData, this._fragmentPointer, function () {
+	      return _this2._onUpdate(queryResolver);
+	    });
+	    this._queryResolver = queryResolver;
+	    return queryResolver;
+	  };
+
+	  RelayQueryResultObservable.prototype._unobserve = function _unobserve() {
+	    if (this._queryResolver) {
+	      this._data = undefined;
+	      this._queryResolver.reset();
+	      this._queryResolver = null;
+	    }
+	  };
+
+	  RelayQueryResultObservable.prototype._onUpdate = function _onUpdate(queryResolver) {
+	    var _this3 = this;
+
+	    this._resolveData(queryResolver);
+	    this._subscriptionCallbacks.forEach(function (callbacks) {
+	      return _this3._fire(callbacks);
+	    });
+	  };
+
+	  RelayQueryResultObservable.prototype._fire = function _fire(callbacks) {
+	    callbacks.onNext && callbacks.onNext(this._data);
+	  };
+
+	  RelayQueryResultObservable.prototype._resolveData = function _resolveData(queryResolver) {
+	    var data = queryResolver.resolve(this._fragmentPointer);
+	    !!Array.isArray(data) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryResultObservable: Plural fragments are not supported.') : invariant(false) : undefined;
+	    this._data = data;
+	  };
+
+	  return RelayQueryResultObservable;
+	})();
+
+	module.exports = RelayQueryResultObservable;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -27132,32 +28321,34 @@
 
 	var _Object$keys = __webpack_require__(207)['default'];
 
-	var GraphQLDeferredQueryTracker = __webpack_require__(279);
-	var GraphQLQueryRunner = __webpack_require__(294);
-	var GraphQLStoreChangeEmitter = __webpack_require__(244);
+	var GraphQLQueryRunner = __webpack_require__(292);
+	var GraphQLStoreChangeEmitter = __webpack_require__(318);
 	var GraphQLStoreDataHandler = __webpack_require__(213);
-	var RelayChangeTracker = __webpack_require__(327);
+	var GraphQLStoreRangeUtils = __webpack_require__(319);
+	var RelayChangeTracker = __webpack_require__(320);
+
 	var RelayConnectionInterface = __webpack_require__(227);
+	var RelayMutationQueue = __webpack_require__(321);
 
 	var RelayNodeInterface = __webpack_require__(219);
+	var RelayPendingQueryTracker = __webpack_require__(347);
 	var RelayProfiler = __webpack_require__(232);
 	var RelayQuery = __webpack_require__(214);
-	var RelayQueryTracker = __webpack_require__(328);
-	var RelayQueryWriter = __webpack_require__(331);
-	var RelayRecordStore = __webpack_require__(333);
-	var RelayStoreGarbageCollector = __webpack_require__(341);
+	var RelayQueryTracker = __webpack_require__(353);
+	var RelayQueryWriter = __webpack_require__(354);
+	var RelayRecordStore = __webpack_require__(356);
+	var RelayStoreGarbageCollector = __webpack_require__(361);
 
 	var forEachObject = __webpack_require__(230);
 	var invariant = __webpack_require__(222);
-	var generateForceIndex = __webpack_require__(323);
-	var readRelayDiskCache = __webpack_require__(344);
-	var refragmentRelayQuery = __webpack_require__(346);
-	var resolveImmediate = __webpack_require__(246);
+	var generateForceIndex = __webpack_require__(311);
+	var readRelayDiskCache = __webpack_require__(364);
 	var warning = __webpack_require__(194);
-	var writeRelayQueryPayload = __webpack_require__(347);
-	var writeRelayUpdatePayload = __webpack_require__(348);
+	var writeRelayQueryPayload = __webpack_require__(367);
+	var writeRelayUpdatePayload = __webpack_require__(368);
 
 	var CLIENT_MUTATION_ID = RelayConnectionInterface.CLIENT_MUTATION_ID;
+	var NODE_TYPE = RelayNodeInterface.NODE_TYPE;
 
 	// The source of truth for application data.
 	var _instance;
@@ -27191,22 +28382,39 @@
 	    var records = {};
 	    var rootCallMap = {};
 	    var nodeRangeMap = {};
-	    var queuedStore = new RelayRecordStore({ cachedRecords: cachedRecords, queuedRecords: queuedRecords, records: records }, { cachedRootCallMap: cachedRootCallMap, rootCallMap: rootCallMap }, nodeRangeMap);
-	    var recordStore = new RelayRecordStore({ records: records }, { rootCallMap: rootCallMap }, nodeRangeMap);
+
+	    var _createRecordCollection = createRecordCollection({
+	      cachedRecords: cachedRecords,
+	      cachedRootCallMap: cachedRootCallMap,
+	      cacheWriter: null,
+	      queuedRecords: queuedRecords,
+	      nodeRangeMap: nodeRangeMap,
+	      records: records,
+	      rootCallMap: rootCallMap
+	    });
+
+	    var cachedStore = _createRecordCollection.cachedStore;
+	    var queuedStore = _createRecordCollection.queuedStore;
+	    var recordStore = _createRecordCollection.recordStore;
+
+	    var rangeData = new GraphQLStoreRangeUtils();
 
 	    this._cacheManager = null;
-	    this._cachePopulated = true;
 	    this._cachedRecords = cachedRecords;
-	    this._cachedRootCalls = cachedRootCallMap;
-	    this._deferredQueryTracker = new GraphQLDeferredQueryTracker(recordStore);
+	    this._cachedRootCallMap = cachedRootCallMap;
+	    this._cachedStore = cachedStore;
+	    this._changeEmitter = new GraphQLStoreChangeEmitter(rangeData);
+	    this._mutationQueue = new RelayMutationQueue(this);
 	    this._nodeRangeMap = nodeRangeMap;
-	    this._records = records;
+	    this._pendingQueryTracker = new RelayPendingQueryTracker(this);
+	    this._queryRunner = new GraphQLQueryRunner(this);
+	    this._queryTracker = new RelayQueryTracker();
 	    this._queuedRecords = queuedRecords;
 	    this._queuedStore = queuedStore;
+	    this._records = records;
 	    this._recordStore = recordStore;
-	    this._queryTracker = new RelayQueryTracker();
-	    this._queryRunner = new GraphQLQueryRunner(this);
-	    this._rootCalls = rootCallMap;
+	    this._rangeData = rangeData;
+	    this._rootCallMap = rootCallMap;
 	  }
 
 	  /**
@@ -27230,41 +28438,69 @@
 	   */
 
 	  RelayStoreData.prototype.injectCacheManager = function injectCacheManager(cacheManager) {
-	    var cachedRecords = this._cachedRecords;
-	    var cachedRootCallMap = this._cachedRootCalls;
-	    var rootCallMap = this._rootCalls;
-	    var queuedRecords = this._queuedRecords;
-	    var records = this._records;
+	    var _createRecordCollection2 = createRecordCollection({
+	      cachedRecords: this._cachedRecords,
+	      cachedRootCallMap: this._cachedRootCallMap,
+	      cacheWriter: cacheManager ? cacheManager.getQueryWriter() : null,
+	      queuedRecords: this._queuedRecords,
+	      nodeRangeMap: this._nodeRangeMap,
+	      records: this._records,
+	      rootCallMap: this._rootCallMap
+	    });
+
+	    var cachedStore = _createRecordCollection2.cachedStore;
+	    var queuedStore = _createRecordCollection2.queuedStore;
+	    var recordStore = _createRecordCollection2.recordStore;
 
 	    this._cacheManager = cacheManager;
-	    this._cachePopulated = false;
-	    this._queuedStore = new RelayRecordStore({ cachedRecords: cachedRecords, queuedRecords: queuedRecords, records: records }, { cachedRootCallMap: cachedRootCallMap, rootCallMap: rootCallMap }, this._nodeRangeMap);
-	    this._recordStore = new RelayRecordStore({ records: records }, { rootCallMap: rootCallMap }, this._nodeRangeMap, cacheManager ? cacheManager.getQueryWriter() : null);
+	    this._cachedStore = cachedStore;
+	    this._queuedStore = queuedStore;
+	    this._recordStore = recordStore;
 	  };
 
-	  /**
-	   * Runs the callback after all data has been read out from diskc cache into
-	   * cachedRecords
-	   */
+	  RelayStoreData.prototype.clearCacheManager = function clearCacheManager() {
+	    var _createRecordCollection3 = createRecordCollection({
+	      cachedRecords: this._cachedRecords,
+	      cachedRootCallMap: this._cachedRootCallMap,
+	      cacheWriter: null,
+	      queuedRecords: this._queuedRecords,
+	      nodeRangeMap: this._nodeRangeMap,
+	      records: this._records,
+	      rootCallMap: this._rootCallMap
+	    });
 
-	  RelayStoreData.prototype.runWithDiskCache = function runWithDiskCache(callback) {
-	    var _this = this;
+	    var cachedStore = _createRecordCollection3.cachedStore;
+	    var queuedStore = _createRecordCollection3.queuedStore;
+	    var recordStore = _createRecordCollection3.recordStore;
 
-	    var cacheManager = this._cacheManager;
-	    if (this._cachePopulated || !cacheManager) {
-	      resolveImmediate(callback);
-	    } else {
-	      var profile = RelayProfiler.profile('RelayStoreData.runWithDiskCache');
-	      cacheManager.readAllData(this._cachedRecords, this._cachedRootCalls, function () {
-	        profile.stop();
-	        _this._cachePopulated = true;
-	        callback();
-	      });
-	    }
+	    this._cacheManager = null;
+	    this._cachedStore = cachedStore;
+	    this._queuedStore = queuedStore;
+	    this._recordStore = recordStore;
 	  };
 
 	  RelayStoreData.prototype.hasCacheManager = function hasCacheManager() {
 	    return !!this._cacheManager;
+	  };
+
+	  /**
+	   * Returns whether a given record is affected by an optimistic update.
+	   */
+
+	  RelayStoreData.prototype.hasOptimisticUpdate = function hasOptimisticUpdate(dataID) {
+	    dataID = this.getRangeData().getCanonicalClientID(dataID);
+	    return this.getQueuedStore().hasOptimisticUpdate(dataID);
+	  };
+
+	  /**
+	   * Returns a list of client mutation IDs for queued mutations whose optimistic
+	   * updates are affecting the record corresponding the given dataID. Returns
+	   * null if the record isn't affected by any optimistic updates.
+	   */
+
+	  RelayStoreData.prototype.getClientMutationIDs = function getClientMutationIDs(dataID) {
+	    dataID = this.getRangeData().getCanonicalClientID(dataID);
+	    return this.getQueuedStore().getClientMutationIDs(dataID);
 	  };
 
 	  /**
@@ -27277,7 +28513,7 @@
 	    var cacheManager = this._cacheManager;
 	    !cacheManager ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayStoreData: `readFromDiskCache` should only be called when cache ' + 'manager is available.') : invariant(false) : undefined;
 	    var profile = RelayProfiler.profile('RelayStoreData.readFromDiskCache');
-	    readRelayDiskCache(queries, this._queuedStore, this._cachedRecords, this._cachedRootCalls, cacheManager, {
+	    readRelayDiskCache(queries, this._queuedStore, this._cachedRecords, this._cachedRootCallMap, cacheManager, {
 	      onSuccess: function onSuccess() {
 	        profile.stop();
 	        callbacks.onSuccess && callbacks.onSuccess();
@@ -27296,7 +28532,7 @@
 	  RelayStoreData.prototype.handleQueryPayload = function handleQueryPayload(query, response, forceIndex) {
 	    var profiler = RelayProfiler.profile('RelayStoreData.handleQueryPayload');
 	    var changeTracker = new RelayChangeTracker();
-	    var writer = new RelayQueryWriter(this._recordStore, this._queryTracker, changeTracker, {
+	    var writer = new RelayQueryWriter(this._cachedStore, this._queryTracker, changeTracker, {
 	      forceIndex: forceIndex,
 	      updateTrackedQueries: true
 	    });
@@ -27325,6 +28561,7 @@
 	    }
 	    var writer = new RelayQueryWriter(store, this._queryTracker, changeTracker, {
 	      forceIndex: generateForceIndex(),
+	      isOptimisticUpdate: isOptimisticUpdate,
 	      updateTrackedQueries: false
 	    });
 	    writeRelayUpdatePayload(writer, operation, payload, { configs: configs, isOptimisticUpdate: isOptimisticUpdate });
@@ -27341,13 +28578,11 @@
 	    if (GraphQLStoreDataHandler.isClientID(dataID)) {
 	      var path = this._queuedStore.getPathToRecord(dataID);
 	      !path ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayStoreData.buildFragmentQueryForDataID(): Cannot refetch ' + 'record `%s` without a path.', dataID) : invariant(false) : undefined;
-	      var query = refragmentRelayQuery(path.getQuery(fragment));
-	      !query ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayStoreData.buildFragmentQueryForDataID(): Expected a query for ' + 'record `%s`.', dataID) : invariant(false) : undefined;
-	      return query;
+	      return path.getQuery(fragment);
 	    }
 	    // Fragment fields cannot be spread directly into the root because they
 	    // may not exist on the `Node` type.
-	    return RelayQuery.Root.build(fragment.getDebugName() || 'UnknownQuery', RelayNodeInterface.NODE, dataID, [fragment], { identifyingArgName: RelayNodeInterface.ID });
+	    return RelayQuery.Root.build(fragment.getDebugName() || 'UnknownQuery', RelayNodeInterface.NODE, dataID, [fragment], { identifyingArgName: RelayNodeInterface.ID }, NODE_TYPE);
 	  };
 
 	  RelayStoreData.prototype.getNodeData = function getNodeData() {
@@ -27359,11 +28594,11 @@
 	  };
 
 	  RelayStoreData.prototype.clearQueuedData = function clearQueuedData() {
-	    var _this2 = this;
+	    var _this = this;
 
 	    forEachObject(this._queuedRecords, function (_, key) {
-	      delete _this2._queuedRecords[key];
-	      GraphQLStoreChangeEmitter.broadcastChangeForID(key);
+	      delete _this._queuedRecords[key];
+	      _this._changeEmitter.broadcastChangeForID(key);
 	    });
 	  };
 
@@ -27373,6 +28608,18 @@
 
 	  RelayStoreData.prototype.getGarbageCollector = function getGarbageCollector() {
 	    return this._garbageCollector;
+	  };
+
+	  RelayStoreData.prototype.getMutationQueue = function getMutationQueue() {
+	    return this._mutationQueue;
+	  };
+
+	  /**
+	   * Get the record store with only the cached and base data (no queued data).
+	   */
+
+	  RelayStoreData.prototype.getCachedStore = function getCachedStore() {
+	    return this._cachedStore;
 	  };
 
 	  /**
@@ -27399,8 +28646,20 @@
 	    return this._queryRunner;
 	  };
 
-	  RelayStoreData.prototype.getDeferredQueryTracker = function getDeferredQueryTracker() {
-	    return this._deferredQueryTracker;
+	  RelayStoreData.prototype.getChangeEmitter = function getChangeEmitter() {
+	    return this._changeEmitter;
+	  };
+
+	  RelayStoreData.prototype.getChangeEmitter = function getChangeEmitter() {
+	    return this._changeEmitter;
+	  };
+
+	  RelayStoreData.prototype.getRangeData = function getRangeData() {
+	    return this._rangeData;
+	  };
+
+	  RelayStoreData.prototype.getPendingQueryTracker = function getPendingQueryTracker() {
+	    return this._pendingQueryTracker;
 	  };
 
 	  /**
@@ -27411,7 +28670,7 @@
 	   */
 
 	  RelayStoreData.prototype.getRootCallData = function getRootCallData() {
-	    return this._rootCalls;
+	    return this._rootCallMap;
 	  };
 
 	  RelayStoreData.prototype._isStoreDataEmpty = function _isStoreDataEmpty() {
@@ -27424,8 +28683,12 @@
 	   */
 
 	  RelayStoreData.prototype._handleChangedAndNewDataIDs = function _handleChangedAndNewDataIDs(changeSet) {
+	    var _this2 = this;
+
 	    var updatedDataIDs = _Object$keys(changeSet.updated);
-	    updatedDataIDs.forEach(GraphQLStoreChangeEmitter.broadcastChangeForID);
+	    updatedDataIDs.forEach(function (id) {
+	      return _this2._changeEmitter.broadcastChangeForID(id);
+	    });
 	    if (this._garbageCollector) {
 	      var createdDataIDs = _Object$keys(changeSet.created);
 	      var garbageCollector = this._garbageCollector;
@@ -27437,15 +28700,15 @@
 
 	  RelayStoreData.prototype._getRecordStoreForMutation = function _getRecordStoreForMutation() {
 	    var records = this._records;
-	    var rootCallMap = this._rootCalls;
+	    var rootCallMap = this._rootCallMap;
 
 	    return new RelayRecordStore({ records: records }, { rootCallMap: rootCallMap }, this._nodeRangeMap, this._cacheManager ? this._cacheManager.getMutationWriter() : null);
 	  };
 
 	  RelayStoreData.prototype.getRecordStoreForOptimisticMutation = function getRecordStoreForOptimisticMutation(clientMutationID) {
 	    var cachedRecords = this._cachedRecords;
-	    var cachedRootCallMap = this._cachedRootCalls;
-	    var rootCallMap = this._rootCalls;
+	    var cachedRootCallMap = this._cachedRootCallMap;
+	    var rootCallMap = this._rootCallMap;
 	    var queuedRecords = this._queuedRecords;
 	    var records = this._records;
 
@@ -27456,6 +28719,22 @@
 	  return RelayStoreData;
 	})();
 
+	function createRecordCollection(_ref2) {
+	  var cachedRecords = _ref2.cachedRecords;
+	  var cachedRootCallMap = _ref2.cachedRootCallMap;
+	  var cacheWriter = _ref2.cacheWriter;
+	  var queuedRecords = _ref2.queuedRecords;
+	  var nodeRangeMap = _ref2.nodeRangeMap;
+	  var records = _ref2.records;
+	  var rootCallMap = _ref2.rootCallMap;
+
+	  return {
+	    queuedStore: new RelayRecordStore({ cachedRecords: cachedRecords, queuedRecords: queuedRecords, records: records }, { cachedRootCallMap: cachedRootCallMap, rootCallMap: rootCallMap }, nodeRangeMap),
+	    cachedStore: new RelayRecordStore({ cachedRecords: cachedRecords, records: records }, { cachedRootCallMap: cachedRootCallMap, rootCallMap: rootCallMap }, nodeRangeMap, cacheWriter),
+	    recordStore: new RelayRecordStore({ records: records }, { rootCallMap: rootCallMap }, nodeRangeMap, cacheWriter)
+	  };
+	}
+
 	RelayProfiler.instrumentMethods(RelayStoreData.prototype, {
 	  handleQueryPayload: 'RelayStoreData.prototype.handleQueryPayload',
 	  handleUpdatePayload: 'RelayStoreData.prototype.handleUpdatePayload'
@@ -27465,913 +28744,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 279 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule GraphQLDeferredQueryTracker
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var _Object$assign = __webpack_require__(162)['default'];
-
-	var ErrorUtils = __webpack_require__(211);
-	var Map = __webpack_require__(280);
-
-	var forEachObject = __webpack_require__(230);
-	var forEachRootCallArg = __webpack_require__(221);
-	var invariant = __webpack_require__(222);
-	var isEmpty = __webpack_require__(293);
-	var resolveImmediate = __webpack_require__(246);
-
-	/**
-	 * This module tracks pending queries and maintains information about which
-	 * deferred data is pending or resolved. It also provides a method to observe
-	 * when a deferred query for a given node either resolves or fails.
-	 *
-	 * @internal
-	 */
-
-	var GraphQLDeferredQueryTracker = (function () {
-	  function GraphQLDeferredQueryTracker(recordStore) {
-	    _classCallCheck(this, GraphQLDeferredQueryTracker);
-
-	    this.reset();
-	    this._recordStore = recordStore;
-	  }
-
-	  /**
-	   * Helper to extract the JSONPath value(s) of a query from a response.
-	   */
-
-	  /**
-	   * Add a listener for when the given fragment resolves/fails for dataID.
-	   * Returns a subscription object {remove} where calling remove cancels the
-	   * subscription.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype.addListenerForFragment = function addListenerForFragment(dataID, fragmentID, callbacks) {
-	    var _this = this;
-
-	    var subscriber = {
-	      callbacks: callbacks,
-	      dataID: dataID,
-	      fragmentID: fragmentID
-	    };
-	    this._subscribers.push(subscriber);
-	    return {
-	      remove: function remove() {
-	        var index = _this._subscribers.indexOf(subscriber);
-	        !(index >= 0) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'remove() can only be called once') : invariant(false) : undefined;
-	        _this._subscribers[index] = null;
-	      }
-	    };
-	  };
-
-	  /**
-	   * Record the query as being sent, updating internal tracking to note
-	   * that the dataID/fragment pairs are pending.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype.recordQuery = function recordQuery(query) {
-	    var _this2 = this;
-
-	    var parentID = getQueryParentID(query);
-	    if (parentID) {
-	      // child query: record parent => [children] list
-	      var children = this._parentToChildQueryMap.get(parentID) || [];
-	      children.push(query);
-	      this._parentToChildQueryMap.set(parentID, children);
-	    } else {
-	      var deferredFragmentNames = query.getDeferredFragmentNames();
-	      if (deferredFragmentNames) {
-	        // deferred query: record ID => fragment set
-	        var dataIDs = this._getRootCallToIDMap(query);
-	        forEachObject(dataIDs, function (dataID, storageKey) {
-	          if (dataID) {
-	            var dataIDSet = _this2._dataIDToFragmentNameMap.get(dataID) || {};
-	            _Object$assign(dataIDSet, deferredFragmentNames); // set union
-	            _this2._dataIDToFragmentNameMap.set(dataID, dataIDSet);
-	          } else {
-	            var rootCallSet = _this2._rootCallToFragmentNameMap.get(storageKey) || {};
-	            _Object$assign(rootCallSet, deferredFragmentNames);
-	            _this2._rootCallToFragmentNameMap.set(storageKey, rootCallSet);
-	          }
-	        });
-	      }
-	    }
-	  };
-
-	  /**
-	   * Record the query as being resolved with the given data, updating
-	   * internal tracking and firing subscriptions.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype.resolveQuery = function resolveQuery(query, response, refParams) {
-	    var _this3 = this;
-
-	    var parentID = getQueryParentID(query);
-	    this._resolveFragmentsForRootCall(query);
-	    if (query.isDeferred()) {
-	      this._resolveDeferredQuery(query, function (dataID, fragmentID) {
-	        _this3._broadcastChangeForFragment(dataID, fragmentID);
-	      }, refParams);
-	      if (parentID) {
-	        this._resolveDeferredRefQuery(query);
-	      }
-	    } else if (response) {
-	      this._resolveDeferredParentQuery(query, response);
-	    }
-	  };
-
-	  /**
-	   * Record that the query has resolved with an error.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype.rejectQuery = function rejectQuery(query, error) {
-	    var _this4 = this;
-
-	    var parentID = getQueryParentID(query);
-	    if (query.isDeferred()) {
-	      this._rejectDeferredFragmentsForRootCall(query);
-	      this._resolveDeferredQuery(query, function (dataID, fragmentID) {
-	        _this4._broadcastErrorForFragment(dataID, fragmentID, error);
-	      });
-	      if (parentID) {
-	        this._resolveDeferredRefQuery(query);
-	      }
-	    } else {
-	      this._rejectDeferredParentQuery(query);
-	    }
-	  };
-
-	  /**
-	   * Determine if the given query is pending by checking if it is fetching
-	   * the same dataID/fragments as any pending queries.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype.isQueryPending = function isQueryPending(dataID, fragmentID) {
-	    if (this._dataIDToFragmentNameMap.has(dataID)) {
-	      var dataIDSet = this._dataIDToFragmentNameMap.get(dataID);
-	      if (dataIDSet.hasOwnProperty(fragmentID)) {
-	        return true;
-	      }
-	    }
-
-	    return false;
-	  };
-
-	  /**
-	   * Clear all query tracking and subscriptions.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype.reset = function reset() {
-	    this._dataIDToFragmentNameMap = new Map();
-	    this._parentToChildQueryMap = new Map();
-	    this._rootCallToFragmentNameMap = new Map();
-	    this._subscribers = [];
-	    this._broadcastItems = null;
-	  };
-
-	  /**
-	   * Clears all pending dataID => fragmentID associations for this query
-	   * and calls the callback for each (dataID, fragmentID) pair.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype._resolveDeferredQuery = function _resolveDeferredQuery(query, callback, refParams) {
-	    var _this5 = this;
-
-	    var deferredFragmentNames = query.getDeferredFragmentNames();
-	    if (!deferredFragmentNames) {
-	      return;
-	    }
-	    var dataIDs = {};
-	    var batchCall = query.getBatchCall();
-	    if (batchCall) {
-	      // refParams can be undefined if the node is null in the parent query.
-	      var refIDs = refParams && refParams[batchCall.refParamName];
-	      if (refIDs != null) {
-	        refIDs = Array.isArray(refIDs) ? refIDs : [refIDs];
-	        refIDs.forEach(function (id) {
-	          return dataIDs[id] = id;
-	        });
-	      }
-	    } else {
-	      dataIDs = this._getRootCallToIDMap(query);
-	    }
-	    forEachObject(dataIDs, function (dataID) {
-	      if (dataID && _this5._dataIDToFragmentNameMap.has(dataID)) {
-	        var dataIDSet = _this5._dataIDToFragmentNameMap.get(dataID);
-	        forEachObject(deferredFragmentNames, function (fragmentID) {
-	          delete dataIDSet[fragmentID];
-	          callback(dataID, fragmentID);
-	        });
-	        if (!isEmpty(dataIDSet)) {
-	          _this5._dataIDToFragmentNameMap.set(dataID, dataIDSet);
-	        } else {
-	          _this5._dataIDToFragmentNameMap['delete'](dataID);
-	        }
-	      }
-	    });
-	  };
-
-	  /**
-	   * Clears the deferred query from its parent's list of dependent queries.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype._resolveDeferredRefQuery = function _resolveDeferredRefQuery(query) {
-	    var parentID = getQueryParentID(query);
-	    var children = this._parentToChildQueryMap.get(parentID) || [];
-	    children = children.filter(function (q) {
-	      return q !== query;
-	    });
-	    if (children.length) {
-	      this._parentToChildQueryMap.set(parentID, children);
-	    } else {
-	      this._parentToChildQueryMap['delete'](parentID);
-	    }
-	  };
-
-	  /**
-	   * Resolves the root IDs for any dependent queries of the given query.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype._resolveDeferredParentQuery = function _resolveDeferredParentQuery(query, response) {
-	    var _this6 = this;
-
-	    // resolve IDs in child queries, add to ID => fragment set
-	    var children = this._parentToChildQueryMap.get(query.getID()) || [];
-	    for (var ii = 0; ii < children.length; ii++) {
-	      var childQuery = children[ii];
-	      var childFragmentNames = childQuery.getDeferredFragmentNames();
-	      var childDataIDs = getRefParamFromResponse(response, childQuery);
-	      forEachObject(childDataIDs, function (dataID) {
-	        var dataIDSet = _this6._dataIDToFragmentNameMap.get(dataID) || {};
-	        _Object$assign(dataIDSet, childFragmentNames);
-	        _this6._dataIDToFragmentNameMap.set(dataID, dataIDSet);
-	      });
-	    }
-	  };
-
-	  /**
-	   * Maps the deferred fragments for a root call with a previously unknown ID to
-	   * the resolved ID value.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype._resolveFragmentsForRootCall = function _resolveFragmentsForRootCall(query) {
-	    var _this7 = this;
-
-	    var rootCallMap = this._getRootCallToIDMap(query);
-	    forEachObject(rootCallMap, function (dataID, storageKey) {
-	      if (dataID && _this7._rootCallToFragmentNameMap.has(storageKey)) {
-	        var rootCallSet = _this7._rootCallToFragmentNameMap.get(storageKey) || {};
-	        var dataIDSet = _this7._dataIDToFragmentNameMap.get(dataID) || {};
-	        _Object$assign(dataIDSet, rootCallSet);
-	        _this7._dataIDToFragmentNameMap.set(dataID, dataIDSet);
-	        _this7._rootCallToFragmentNameMap['delete'](storageKey);
-	      }
-	    });
-	  };
-
-	  /**
-	   * Removes the deferred fragments for a previously unresolved root call ID.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype._rejectDeferredFragmentsForRootCall = function _rejectDeferredFragmentsForRootCall(query) {
-	    var _this8 = this;
-
-	    var rootCallMap = this._getRootCallToIDMap(query);
-	    var deferredFragmentNames = query.getDeferredFragmentNames();
-	    forEachObject(rootCallMap, function (dataID, storageKey) {
-	      if (_this8._rootCallToFragmentNameMap.has(storageKey)) {
-	        var rootCallSet = _this8._rootCallToFragmentNameMap.get(storageKey) || {};
-	        forEachObject(deferredFragmentNames, function (fragmentID) {
-	          delete rootCallSet[fragmentID];
-	        });
-	        if (!isEmpty(rootCallSet)) {
-	          _this8._rootCallToFragmentNameMap['delete'](storageKey);
-	        } else {
-	          _this8._rootCallToFragmentNameMap.set(storageKey, rootCallSet);
-	        }
-	      }
-	    });
-	  };
-
-	  /**
-	   * Rejects the parent ID, clearing all tracking for both the parent and all
-	   * its dependent deferred ref queries.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype._rejectDeferredParentQuery = function _rejectDeferredParentQuery(query) {
-	    var parentID = query.getID();
-	    this._parentToChildQueryMap['delete'](parentID);
-	  };
-
-	  /**
-	   * Notify observers that the given deferred fragment has resolved for node
-	   * with dataID.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype._broadcastChangeForFragment = function _broadcastChangeForFragment(dataID, fragmentID) {
-	    var _this9 = this;
-
-	    var broadcastItems = this._broadcastItems;
-	    if (!broadcastItems) {
-	      this._broadcastItems = broadcastItems = [];
-	      resolveImmediate(function () {
-	        return _this9._processBroadcasts();
-	      });
-	    }
-	    broadcastItems.push({ dataID: dataID, fragmentID: fragmentID, error: null });
-	  };
-
-	  /**
-	   * Record that an error occurred for this dataID, fragment pair
-	   * and broadcast an update.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype._broadcastErrorForFragment = function _broadcastErrorForFragment(dataID, fragmentID, error) {
-	    var _this10 = this;
-
-	    var broadcastItems = this._broadcastItems;
-	    if (!broadcastItems) {
-	      this._broadcastItems = broadcastItems = [];
-	      resolveImmediate(function () {
-	        return _this10._processBroadcasts();
-	      });
-	    }
-	    broadcastItems.push({ dataID: dataID, fragmentID: fragmentID, error: error });
-	  };
-
-	  /**
-	   * Process broadcast items from previous event loop.
-	   */
-
-	  GraphQLDeferredQueryTracker.prototype._processBroadcasts = function _processBroadcasts() {
-	    if (!this._broadcastItems) {
-	      return;
-	    }
-
-	    for (var ii = 0; ii < this._subscribers.length; ii++) {
-	      for (var jj = 0; jj < this._broadcastItems.length; jj++) {
-	        var subscriber = this._subscribers[ii];
-	        if (subscriber) {
-	          var _broadcastItems$jj = this._broadcastItems[jj];
-	          var dataID = _broadcastItems$jj.dataID;
-	          var error = _broadcastItems$jj.error;
-	          var fragmentID = _broadcastItems$jj.fragmentID;
-
-	          var method;
-	          var args;
-	          if (error) {
-	            method = subscriber.callbacks.onFailure;
-	            args = [dataID, fragmentID, error];
-	          } else {
-	            method = subscriber.callbacks.onSuccess;
-	            args = [dataID, fragmentID];
-	          }
-	          ErrorUtils.applyWithGuard(method, null, args, null, 'GraphQLDeferredQueryTracker');
-	        }
-	      }
-	    }
-
-	    this._subscribers = this._subscribers.filter(function (subscriber) {
-	      return subscriber !== null;
-	    });
-	    this._broadcastItems = null;
-	  };
-
-	  GraphQLDeferredQueryTracker.prototype._getRootCallToIDMap = function _getRootCallToIDMap(query) {
-	    var _this11 = this;
-
-	    var mapping = {};
-	    if (!query.getBatchCall()) {
-	      (function () {
-	        var storageKey = query.getStorageKey();
-	        forEachRootCallArg(query, function (identifyingArgValue) {
-	          var compositeStorageKey = identifyingArgValue == null ? storageKey : storageKey + ':' + identifyingArgValue;
-	          mapping[compositeStorageKey] = _this11._recordStore.getDataID(storageKey, identifyingArgValue);
-	        });
-	      })();
-	    }
-	    return mapping;
-	  };
-
-	  return GraphQLDeferredQueryTracker;
-	})();
-
-	function getRefParamFromResponse(response, query) {
-	  var batchCall = query.getBatchCall();
-	  var refTarget = batchCall ? batchCall.sourceQueryPath : null;
-	  if (!refTarget) {
-	    return {};
-	  }
-	  var values = {};
-	  var tokens = refTarget.split('.');
-
-	  getRefParamFromNode(values, response, tokens, 1); // skip root '$' marker
-	  return values;
-	}
-
-	/**
-	 * Recursive helper to extract the ref parameter (represented as tokens)
-	 * into the values object.
-	 */
-	function getRefParamFromNode(values, node, tokens, index) {
-	  if (index === tokens.length && typeof node === 'string') {
-	    // base case
-	    values[node] = node;
-	    return;
-	  } else if (
-	  // mismatched path/response
-	  index >= tokens.length || !node || typeof node !== 'object' || Array.isArray(node)) {
-	    return;
-	  }
-	  var token = tokens[index];
-	  if (token === '*') {
-	    forEachObject(node, function (subNode) {
-	      getRefParamFromNode(values, subNode, tokens, index + 1);
-	    });
-	  } else if (node.hasOwnProperty(token)) {
-	    getRefParamFromNode(values, node[token], tokens, index + 1);
-	  }
-	}
-
-	/**
-	 * Helper to get a query's sourceQueryID
-	 */
-	function getQueryParentID(query) {
-	  var batchCall = query.getBatchCall();
-	  if (batchCall) {
-	    return batchCall.sourceQueryID;
-	  }
-	  return null;
-	}
-
-	module.exports = GraphQLDeferredQueryTracker;
-
-	/**
-	 * List of all subscriptions of form {callback, dataID, fragmentID}
-	 */
-
-	/**
-	 * List of all deferred queries that have resolved/failed since the last
-	 * broadcast.
-	 */
-
-	/**
-	 * Map of pending dataID => Set<fragmentID>
-	 * Stores a set as object<string,string> of all pending deferred fragmentIDs
-	 * for a given dataID. Presence of dataID => fragmentID pair
-	 * means that the query is pending, absence that it has resolved.
-	 */
-
-	/**
-	 * Map of pending rootCall => Set<fragmentID>
-	 * Stores a temporary mapping of fragmentIDs when the correct dataID is
-	 * unknown. Entries will get moved to dataIDToFragmentNameMap as the dataID
-	 * for the rootCall is determinble.
-	 */
-
-	/**
-	 * Map of parent query ID => [child queries]
-	 */
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 280 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule Map
-	 */
-
-	'use strict';
-
-	module.exports = __webpack_require__(281);
-
-/***/ },
-/* 281 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(282);
-	__webpack_require__(269);
-	__webpack_require__(251);
-	__webpack_require__(283);
-	module.exports = __webpack_require__(167).Map;
-
-/***/ },
-/* 282 */
-/***/ function(module, exports) {
-
-	
-
-/***/ },
-/* 283 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var strong = __webpack_require__(284);
-
-	// 23.1 Map Objects
-	__webpack_require__(292)('Map', function(get){
-	  return function Map(){ return get(this, arguments.length > 0 ? arguments[0] : undefined); };
-	}, {
-	  // 23.1.3.6 Map.prototype.get(key)
-	  get: function get(key){
-	    var entry = strong.getEntry(this, key);
-	    return entry && entry.v;
-	  },
-	  // 23.1.3.9 Map.prototype.set(key, value)
-	  set: function set(key, value){
-	    return strong.def(this, key === 0 ? 0 : key, value);
-	  }
-	}, strong, true);
-
-/***/ },
-/* 284 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var $            = __webpack_require__(171)
-	  , hide         = __webpack_require__(260)
-	  , redefineAll  = __webpack_require__(285)
-	  , ctx          = __webpack_require__(168)
-	  , strictNew    = __webpack_require__(286)
-	  , defined      = __webpack_require__(173)
-	  , forOf        = __webpack_require__(287)
-	  , $iterDefine  = __webpack_require__(257)
-	  , step         = __webpack_require__(254)
-	  , ID           = __webpack_require__(268)('id')
-	  , $has         = __webpack_require__(263)
-	  , isObject     = __webpack_require__(205)
-	  , setSpecies   = __webpack_require__(291)
-	  , DESCRIPTORS  = __webpack_require__(262)
-	  , isExtensible = Object.isExtensible || isObject
-	  , SIZE         = DESCRIPTORS ? '_s' : 'size'
-	  , id           = 0;
-
-	var fastKey = function(it, create){
-	  // return primitive with prefix
-	  if(!isObject(it))return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
-	  if(!$has(it, ID)){
-	    // can't set id to frozen object
-	    if(!isExtensible(it))return 'F';
-	    // not necessary to add id
-	    if(!create)return 'E';
-	    // add missing object id
-	    hide(it, ID, ++id);
-	  // return object id with prefix
-	  } return 'O' + it[ID];
-	};
-
-	var getEntry = function(that, key){
-	  // fast case
-	  var index = fastKey(key), entry;
-	  if(index !== 'F')return that._i[index];
-	  // frozen object case
-	  for(entry = that._f; entry; entry = entry.n){
-	    if(entry.k == key)return entry;
-	  }
-	};
-
-	module.exports = {
-	  getConstructor: function(wrapper, NAME, IS_MAP, ADDER){
-	    var C = wrapper(function(that, iterable){
-	      strictNew(that, C, NAME);
-	      that._i = $.create(null); // index
-	      that._f = undefined;      // first entry
-	      that._l = undefined;      // last entry
-	      that[SIZE] = 0;           // size
-	      if(iterable != undefined)forOf(iterable, IS_MAP, that[ADDER], that);
-	    });
-	    redefineAll(C.prototype, {
-	      // 23.1.3.1 Map.prototype.clear()
-	      // 23.2.3.2 Set.prototype.clear()
-	      clear: function clear(){
-	        for(var that = this, data = that._i, entry = that._f; entry; entry = entry.n){
-	          entry.r = true;
-	          if(entry.p)entry.p = entry.p.n = undefined;
-	          delete data[entry.i];
-	        }
-	        that._f = that._l = undefined;
-	        that[SIZE] = 0;
-	      },
-	      // 23.1.3.3 Map.prototype.delete(key)
-	      // 23.2.3.4 Set.prototype.delete(value)
-	      'delete': function(key){
-	        var that  = this
-	          , entry = getEntry(that, key);
-	        if(entry){
-	          var next = entry.n
-	            , prev = entry.p;
-	          delete that._i[entry.i];
-	          entry.r = true;
-	          if(prev)prev.n = next;
-	          if(next)next.p = prev;
-	          if(that._f == entry)that._f = next;
-	          if(that._l == entry)that._l = prev;
-	          that[SIZE]--;
-	        } return !!entry;
-	      },
-	      // 23.2.3.6 Set.prototype.forEach(callbackfn, thisArg = undefined)
-	      // 23.1.3.5 Map.prototype.forEach(callbackfn, thisArg = undefined)
-	      forEach: function forEach(callbackfn /*, that = undefined */){
-	        var f = ctx(callbackfn, arguments.length > 1 ? arguments[1] : undefined, 3)
-	          , entry;
-	        while(entry = entry ? entry.n : this._f){
-	          f(entry.v, entry.k, this);
-	          // revert to the last existing entry
-	          while(entry && entry.r)entry = entry.p;
-	        }
-	      },
-	      // 23.1.3.7 Map.prototype.has(key)
-	      // 23.2.3.7 Set.prototype.has(value)
-	      has: function has(key){
-	        return !!getEntry(this, key);
-	      }
-	    });
-	    if(DESCRIPTORS)$.setDesc(C.prototype, 'size', {
-	      get: function(){
-	        return defined(this[SIZE]);
-	      }
-	    });
-	    return C;
-	  },
-	  def: function(that, key, value){
-	    var entry = getEntry(that, key)
-	      , prev, index;
-	    // change existing entry
-	    if(entry){
-	      entry.v = value;
-	    // create new entry
-	    } else {
-	      that._l = entry = {
-	        i: index = fastKey(key, true), // <- index
-	        k: key,                        // <- key
-	        v: value,                      // <- value
-	        p: prev = that._l,             // <- previous entry
-	        n: undefined,                  // <- next entry
-	        r: false                       // <- removed
-	      };
-	      if(!that._f)that._f = entry;
-	      if(prev)prev.n = entry;
-	      that[SIZE]++;
-	      // add to index
-	      if(index !== 'F')that._i[index] = entry;
-	    } return that;
-	  },
-	  getEntry: getEntry,
-	  setStrong: function(C, NAME, IS_MAP){
-	    // add .keys, .values, .entries, [@@iterator]
-	    // 23.1.3.4, 23.1.3.8, 23.1.3.11, 23.1.3.12, 23.2.3.5, 23.2.3.8, 23.2.3.10, 23.2.3.11
-	    $iterDefine(C, NAME, function(iterated, kind){
-	      this._t = iterated;  // target
-	      this._k = kind;      // kind
-	      this._l = undefined; // previous
-	    }, function(){
-	      var that  = this
-	        , kind  = that._k
-	        , entry = that._l;
-	      // revert to the last existing entry
-	      while(entry && entry.r)entry = entry.p;
-	      // get next entry
-	      if(!that._t || !(that._l = entry = entry ? entry.n : that._t._f)){
-	        // or finish the iteration
-	        that._t = undefined;
-	        return step(1);
-	      }
-	      // return step by kind
-	      if(kind == 'keys'  )return step(0, entry.k);
-	      if(kind == 'values')return step(0, entry.v);
-	      return step(0, [entry.k, entry.v]);
-	    }, IS_MAP ? 'entries' : 'values' , !IS_MAP, true);
-
-	    // add [@@species], 23.1.2.2, 23.2.2.2
-	    setSpecies(NAME);
-	  }
-	};
-
-/***/ },
-/* 285 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var redefine = __webpack_require__(259);
-	module.exports = function(target, src){
-	  for(var key in src)redefine(target, key, src[key]);
-	  return target;
-	};
-
-/***/ },
-/* 286 */
-/***/ function(module, exports) {
-
-	module.exports = function(it, Constructor, name){
-	  if(!(it instanceof Constructor))throw TypeError(name + ": use the 'new' operator!");
-	  return it;
-	};
-
-/***/ },
-/* 287 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var ctx         = __webpack_require__(168)
-	  , call        = __webpack_require__(288)
-	  , isArrayIter = __webpack_require__(289)
-	  , anObject    = __webpack_require__(206)
-	  , toLength    = __webpack_require__(290)
-	  , getIterFn   = __webpack_require__(273);
-	module.exports = function(iterable, entries, fn, that){
-	  var iterFn = getIterFn(iterable)
-	    , f      = ctx(fn, that, entries ? 2 : 1)
-	    , index  = 0
-	    , length, step, iterator;
-	  if(typeof iterFn != 'function')throw TypeError(iterable + ' is not iterable!');
-	  // fast case for arrays with default iterator
-	  if(isArrayIter(iterFn))for(length = toLength(iterable.length); length > index; index++){
-	    entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
-	  } else for(iterator = iterFn.call(iterable); !(step = iterator.next()).done; ){
-	    call(iterator, f, step.value, entries);
-	  }
-	};
-
-/***/ },
-/* 288 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// call something on iterator step with safe closing on error
-	var anObject = __webpack_require__(206);
-	module.exports = function(iterator, fn, value, entries){
-	  try {
-	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
-	  // 7.4.6 IteratorClose(iterator, completion)
-	  } catch(e){
-	    var ret = iterator['return'];
-	    if(ret !== undefined)anObject(ret.call(iterator));
-	    throw e;
-	  }
-	};
-
-/***/ },
-/* 289 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// check on default Array iterator
-	var Iterators  = __webpack_require__(255)
-	  , ITERATOR   = __webpack_require__(266)('iterator')
-	  , ArrayProto = Array.prototype;
-
-	module.exports = function(it){
-	  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
-	};
-
-/***/ },
-/* 290 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 7.1.15 ToLength
-	var toInteger = __webpack_require__(271)
-	  , min       = Math.min;
-	module.exports = function(it){
-	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
-	};
-
-/***/ },
-/* 291 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var core        = __webpack_require__(167)
-	  , $           = __webpack_require__(171)
-	  , DESCRIPTORS = __webpack_require__(262)
-	  , SPECIES     = __webpack_require__(266)('species');
-
-	module.exports = function(KEY){
-	  var C = core[KEY];
-	  if(DESCRIPTORS && C && !C[SPECIES])$.setDesc(C, SPECIES, {
-	    configurable: true,
-	    get: function(){ return this; }
-	  });
-	};
-
-/***/ },
 /* 292 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var $              = __webpack_require__(171)
-	  , global         = __webpack_require__(166)
-	  , $export        = __webpack_require__(165)
-	  , fails          = __webpack_require__(176)
-	  , hide           = __webpack_require__(260)
-	  , redefineAll    = __webpack_require__(285)
-	  , forOf          = __webpack_require__(287)
-	  , strictNew      = __webpack_require__(286)
-	  , isObject       = __webpack_require__(205)
-	  , setToStringTag = __webpack_require__(265)
-	  , DESCRIPTORS    = __webpack_require__(262);
-
-	module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK){
-	  var Base  = global[NAME]
-	    , C     = Base
-	    , ADDER = IS_MAP ? 'set' : 'add'
-	    , proto = C && C.prototype
-	    , O     = {};
-	  if(!DESCRIPTORS || typeof C != 'function' || !(IS_WEAK || proto.forEach && !fails(function(){
-	    new C().entries().next();
-	  }))){
-	    // create collection constructor
-	    C = common.getConstructor(wrapper, NAME, IS_MAP, ADDER);
-	    redefineAll(C.prototype, methods);
-	  } else {
-	    C = wrapper(function(target, iterable){
-	      strictNew(target, C, NAME);
-	      target._c = new Base;
-	      if(iterable != undefined)forOf(iterable, IS_MAP, target[ADDER], target);
-	    });
-	    $.each.call('add,clear,delete,forEach,get,has,set,keys,values,entries'.split(','),function(KEY){
-	      var IS_ADDER = KEY == 'add' || KEY == 'set';
-	      if(KEY in proto && !(IS_WEAK && KEY == 'clear'))hide(C.prototype, KEY, function(a, b){
-	        if(!IS_ADDER && IS_WEAK && !isObject(a))return KEY == 'get' ? undefined : false;
-	        var result = this._c[KEY](a === 0 ? 0 : a, b);
-	        return IS_ADDER ? this : result;
-	      });
-	    });
-	    if('size' in proto)$.setDesc(C.prototype, 'size', {
-	      get: function(){
-	        return this._c.size;
-	      }
-	    });
-	  }
-
-	  setToStringTag(C, NAME);
-
-	  O[NAME] = C;
-	  $export($export.G + $export.W + $export.F, O);
-
-	  if(!IS_WEAK)common.setStrong(C, NAME, IS_MAP);
-
-	  return C;
-	};
-
-/***/ },
-/* 293 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule isEmpty
-	 */
-
-	/*eslint-disable no-unused-vars */
-
-	/**
-	 * Mimics empty from PHP.
-	 */
-	'use strict';
-
-	function isEmpty(obj) {
-	  if (Array.isArray(obj)) {
-	    return obj.length === 0;
-	  } else if (typeof obj === 'object') {
-	    for (var i in obj) {
-	      return false;
-	    }
-	    return true;
-	  } else {
-	    return !obj;
-	  }
-	}
-
-	module.exports = isEmpty;
-
-/***/ },
-/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28391,29 +28764,28 @@
 
 	var _classCallCheck = __webpack_require__(178)['default'];
 
-	var _toConsumableArray = __webpack_require__(295)['default'];
+	var _toConsumableArray = __webpack_require__(293)['default'];
 
 	var _Object$keys = __webpack_require__(207)['default'];
 
-	var DliteFetchModeConstants = __webpack_require__(300);
+	var DliteFetchModeConstants = __webpack_require__(301);
 
-	var RelayNetworkLayer = __webpack_require__(302);
-	var RelayPendingQueryTracker = __webpack_require__(303);
+	var RelayNetworkLayer = __webpack_require__(303);
 	var RelayProfiler = __webpack_require__(232);
 
-	var RelayTaskScheduler = __webpack_require__(306);
+	var RelayTaskScheduler = __webpack_require__(304);
 
-	var checkRelayQueryData = __webpack_require__(317);
-	var diffRelayQuery = __webpack_require__(319);
-	var everyObject = __webpack_require__(308);
-	var flattenSplitRelayQueries = __webpack_require__(322);
+	var checkRelayQueryData = __webpack_require__(305);
+	var diffRelayQuery = __webpack_require__(306);
+	var everyObject = __webpack_require__(309);
+	var flattenSplitRelayQueries = __webpack_require__(310);
 	var forEachObject = __webpack_require__(230);
-	var generateForceIndex = __webpack_require__(323);
+	var generateForceIndex = __webpack_require__(311);
 	var invariant = __webpack_require__(222);
-	var mapObject = __webpack_require__(313);
-	var resolveImmediate = __webpack_require__(246);
-	var someObject = __webpack_require__(324);
-	var splitDeferredRelayQueries = __webpack_require__(325);
+	var mapObject = __webpack_require__(312);
+	var resolveImmediate = __webpack_require__(313);
+	var someObject = __webpack_require__(314);
+	var splitDeferredRelayQueries = __webpack_require__(315);
 	var warning = __webpack_require__(194);
 
 	/**
@@ -28595,7 +28967,7 @@
 	    var forceIndex = fetchMode === DliteFetchModeConstants.FETCH_MODE_REFETCH ? generateForceIndex() : null;
 
 	    splitAndFlattenQueries(queries).forEach(function (query) {
-	      var pendingFetch = RelayPendingQueryTracker.add({ query: query, fetchMode: fetchMode, forceIndex: forceIndex, storeData: storeData });
+	      var pendingFetch = storeData.getPendingQueryTracker().add({ query: query, fetchMode: fetchMode, forceIndex: forceIndex, storeData: storeData });
 	      var queryID = query.getID();
 	      remainingFetchMap[queryID] = pendingFetch;
 	      if (!query.isDeferred()) {
@@ -28648,12 +29020,12 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 295 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _Array$from = __webpack_require__(296)["default"];
+	var _Array$from = __webpack_require__(294)["default"];
 
 	exports["default"] = function (arr) {
 	  if (Array.isArray(arr)) {
@@ -28668,32 +29040,32 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 296 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(297), __esModule: true };
+	module.exports = { "default": __webpack_require__(295), __esModule: true };
 
 /***/ },
-/* 297 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(269);
-	__webpack_require__(298);
+	__webpack_require__(266);
+	__webpack_require__(296);
 	module.exports = __webpack_require__(167).Array.from;
 
 /***/ },
-/* 298 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var ctx         = __webpack_require__(168)
 	  , $export     = __webpack_require__(165)
 	  , toObject    = __webpack_require__(172)
-	  , call        = __webpack_require__(288)
-	  , isArrayIter = __webpack_require__(289)
-	  , toLength    = __webpack_require__(290)
-	  , getIterFn   = __webpack_require__(273);
-	$export($export.S + $export.F * !__webpack_require__(299)(function(iter){ Array.from(iter); }), 'Array', {
+	  , call        = __webpack_require__(297)
+	  , isArrayIter = __webpack_require__(298)
+	  , toLength    = __webpack_require__(299)
+	  , getIterFn   = __webpack_require__(270);
+	$export($export.S + $export.F * !__webpack_require__(300)(function(iter){ Array.from(iter); }), 'Array', {
 	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 	  from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
 	    var O       = toObject(arrayLike)
@@ -28724,10 +29096,51 @@
 
 
 /***/ },
+/* 297 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// call something on iterator step with safe closing on error
+	var anObject = __webpack_require__(206);
+	module.exports = function(iterator, fn, value, entries){
+	  try {
+	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+	  // 7.4.6 IteratorClose(iterator, completion)
+	  } catch(e){
+	    var ret = iterator['return'];
+	    if(ret !== undefined)anObject(ret.call(iterator));
+	    throw e;
+	  }
+	};
+
+/***/ },
+/* 298 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// check on default Array iterator
+	var Iterators  = __webpack_require__(252)
+	  , ITERATOR   = __webpack_require__(263)('iterator')
+	  , ArrayProto = Array.prototype;
+
+	module.exports = function(it){
+	  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
+	};
+
+/***/ },
 /* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ITERATOR     = __webpack_require__(266)('iterator')
+	// 7.1.15 ToLength
+	var toInteger = __webpack_require__(268)
+	  , min       = Math.min;
+	module.exports = function(it){
+	  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+	};
+
+/***/ },
+/* 300 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ITERATOR     = __webpack_require__(263)('iterator')
 	  , SAFE_CLOSING = false;
 
 	try {
@@ -28750,7 +29163,7 @@
 	};
 
 /***/ },
-/* 300 */
+/* 301 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -28767,7 +29180,7 @@
 
 	'use strict';
 
-	var keyMirror = __webpack_require__(301);
+	var keyMirror = __webpack_require__(302);
 
 	var DliteFetchModeConstants = keyMirror({
 	  FETCH_MODE_CLIENT: null,
@@ -28778,7 +29191,7 @@
 	module.exports = DliteFetchModeConstants;
 
 /***/ },
-/* 301 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -28832,10 +29245,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 302 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {/**
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	var Promise = __webpack_require__(179);
+
+	/**
 	 * Copyright 2013-2015, Facebook, Inc.
 	 * All rights reserved.
 	 *
@@ -28849,8 +29266,6 @@
 	 */
 
 	'use strict';
-
-	var Promise = __webpack_require__(179);
 
 	var RelayProfiler = __webpack_require__(232);
 
@@ -28904,439 +29319,14 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 303 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayPendingQueryTracker
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var _Object$keys = __webpack_require__(207)['default'];
-
-	var Deferred = __webpack_require__(304);
-	var DliteFetchModeConstants = __webpack_require__(300);
-	var Promise = __webpack_require__(179);
-	var PromiseMap = __webpack_require__(305);
-
-	var RelayTaskScheduler = __webpack_require__(306);
-
-	var containsRelayQueryRootCall = __webpack_require__(307);
-	var everyObject = __webpack_require__(308);
-	var fetchRelayQuery = __webpack_require__(309);
-	var invariant = __webpack_require__(222);
-	var subtractRelayQuery = __webpack_require__(314);
-
-	var pendingFetchMap = {};
-
-	// Asynchronous mapping from preload query IDs to results.
-	var preloadQueryMap = new PromiseMap();
-
-	var PendingFetch = (function () {
-	  function PendingFetch(_ref) {
-	    var fetchMode = _ref.fetchMode;
-	    var forceIndex = _ref.forceIndex;
-	    var query = _ref.query;
-	    var storeData = _ref.storeData;
-
-	    _classCallCheck(this, PendingFetch);
-
-	    var queryID = query.getID();
-	    this._storeData = storeData;
-	    this._query = query;
-	    this._forceIndex = forceIndex;
-
-	    this._resolvedSubtractedQuery = false;
-	    this._resolvedDeferred = new Deferred();
-
-	    this._dependents = [];
-	    this._pendingDependencyMap = {};
-
-	    var subtractedQuery;
-	    if (fetchMode === DliteFetchModeConstants.FETCH_MODE_PRELOAD) {
-	      subtractedQuery = query;
-	      this._fetchSubtractedQueryPromise = preloadQueryMap.get(queryID);
-	    } else {
-	      subtractedQuery = this._subtractPending(query);
-	      this._fetchSubtractedQueryPromise = subtractedQuery ? fetchRelayQuery(subtractedQuery) : Promise.resolve();
-	    }
-
-	    this._fetchedSubtractedQuery = !subtractedQuery;
-	    this._errors = [];
-
-	    if (subtractedQuery) {
-	      pendingFetchMap[queryID] = {
-	        fetch: this,
-	        query: subtractedQuery
-	      };
-	      this._storeData.getDeferredQueryTracker().recordQuery(subtractedQuery);
-	      this._fetchSubtractedQueryPromise.done(this._handleSubtractedQuerySuccess.bind(this, subtractedQuery), this._handleSubtractedQueryFailure.bind(this, subtractedQuery));
-	    } else {
-	      this._markSubtractedQueryAsResolved();
-	    }
-	  }
-
-	  /**
-	   * Subtracts all pending queries from the supplied `query` and returns the
-	   * resulting difference. The difference can be null if the entire query is
-	   * pending.
-	   *
-	   * If any pending queries were subtracted, they will be added as dependencies
-	   * and the query will only resolve once the subtracted query and all
-	   * dependencies have resolved.
-	   *
-	   * This, combined with our use of diff queries (see `diffRelayQuery`) means
-	   * that we only go to the server for things that are not in (or not on their
-	   * way to) the cache (`RelayRecordStore`).
-	   */
-
-	  PendingFetch.prototype._subtractPending = function _subtractPending(query) {
-	    var _this = this;
-
-	    everyObject(pendingFetchMap, function (pending) {
-	      // Stop if the entire query is subtracted.
-	      if (!query) {
-	        return false;
-	      }
-	      if (containsRelayQueryRootCall(pending.query, query)) {
-	        var subtractedQuery = subtractRelayQuery(query, pending.query);
-	        if (subtractedQuery !== query) {
-	          query = subtractedQuery;
-	          _this._addPendingDependency(pending.fetch);
-	        }
-	      }
-	      return true;
-	    });
-	    return query;
-	  };
-
-	  PendingFetch.prototype._addPendingDependency = function _addPendingDependency(pendingFetch) {
-	    var queryID = pendingFetch.getQuery().getID();
-	    this._pendingDependencyMap[queryID] = pendingFetch;
-	    pendingFetch._addDependent(this);
-	  };
-
-	  PendingFetch.prototype._addDependent = function _addDependent(pendingFetch) {
-	    this._dependents.push(pendingFetch);
-	  };
-
-	  PendingFetch.prototype._handleSubtractedQuerySuccess = function _handleSubtractedQuerySuccess(subtractedQuery, result) {
-	    var _this2 = this;
-
-	    this._fetchedSubtractedQuery = true;
-
-	    RelayTaskScheduler.await(function () {
-	      var response = result.response;
-	      !(response && typeof response === 'object') ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayPendingQueryTracker: Expected response to be an object, got ' + '`%s`.', response ? typeof response : response) : invariant(false) : undefined;
-	      _this2._storeData.handleQueryPayload(subtractedQuery, response, _this2._forceIndex);
-	      _this2._storeData.getDeferredQueryTracker().resolveQuery(subtractedQuery, response, result.ref_params);
-	    }).done(this._markSubtractedQueryAsResolved.bind(this), this._markAsRejected.bind(this));
-	  };
-
-	  PendingFetch.prototype._handleSubtractedQueryFailure = function _handleSubtractedQueryFailure(subtractedQuery, error) {
-	    this._storeData.getDeferredQueryTracker().rejectQuery(subtractedQuery, error);
-
-	    this._markAsRejected(error);
-	  };
-
-	  PendingFetch.prototype._markSubtractedQueryAsResolved = function _markSubtractedQueryAsResolved() {
-	    var queryID = this.getQuery().getID();
-	    delete pendingFetchMap[queryID];
-
-	    this._resolvedSubtractedQuery = true;
-	    this._updateResolvedDeferred();
-
-	    this._dependents.forEach(function (dependent) {
-	      return dependent._markDependencyAsResolved(queryID);
-	    });
-	  };
-
-	  PendingFetch.prototype._markAsRejected = function _markAsRejected(error) {
-	    var queryID = this.getQuery().getID();
-	    delete pendingFetchMap[queryID];
-
-	    console.warn(error.message);
-
-	    this._errors.push(error);
-	    this._updateResolvedDeferred();
-
-	    this._dependents.forEach(function (dependent) {
-	      return dependent._markDependencyAsRejected(queryID, error);
-	    });
-	  };
-
-	  PendingFetch.prototype._markDependencyAsResolved = function _markDependencyAsResolved(dependencyQueryID) {
-	    delete this._pendingDependencyMap[dependencyQueryID];
-
-	    this._updateResolvedDeferred();
-	  };
-
-	  PendingFetch.prototype._markDependencyAsRejected = function _markDependencyAsRejected(dependencyQueryID, error) {
-	    delete this._pendingDependencyMap[dependencyQueryID];
-
-	    this._errors.push(error);
-	    this._updateResolvedDeferred();
-
-	    // Dependencies further down the graph are either not affected or informed
-	    // by `dependencyQueryID`.
-	  };
-
-	  PendingFetch.prototype._updateResolvedDeferred = function _updateResolvedDeferred() {
-	    if (this._isSettled() && !this._resolvedDeferred.isSettled()) {
-	      if (this._errors.length) {
-	        this._resolvedDeferred.reject(this._errors[0]);
-	      } else {
-	        this._resolvedDeferred.resolve(undefined);
-	      }
-	    }
-	  };
-
-	  PendingFetch.prototype._isSettled = function _isSettled() {
-	    return this._errors.length > 0 || this._resolvedSubtractedQuery && !hasItems(this._pendingDependencyMap);
-	  };
-
-	  PendingFetch.prototype.getQuery = function getQuery() {
-	    return this._query;
-	  };
-
-	  PendingFetch.prototype.getResolvedPromise = function getResolvedPromise() {
-	    return this._resolvedDeferred.getPromise();
-	  };
-
-	  /**
-	   * A pending query is resolvable if it is already resolved or will be resolved
-	   * imminently (i.e. its subtracted query and the subtracted queries of all its
-	   * pending dependencies have been fetched).
-	   */
-
-	  PendingFetch.prototype.isResolvable = function isResolvable() {
-	    if (this._fetchedSubtractedQuery) {
-	      return everyObject(this._pendingDependencyMap, function (pendingDependency) {
-	        return pendingDependency._fetchedSubtractedQuery;
-	      });
-	      // Pending dependencies further down the graph either don't affect the
-	      // result or are already in `_pendingDependencyMap`.
-	    }
-	    return false;
-	  };
-
-	  return PendingFetch;
-	})();
-
-	function hasItems(map) {
-	  return !!_Object$keys(map).length;
-	}
-
-	/**
-	 * @internal
-	 *
-	 * Tracks pending (in-flight) queries.
-	 *
-	 * In order to send minimal queries and avoid re-retrieving data,
-	 * `RelayPendingQueryTracker` maintains a registry of pending queries, and
-	 * "subtracts" those from any new queries that callers enqueue.
-	 */
-	var RelayPendingQueryTracker = {
-
-	  /**
-	   * Used by `GraphQLQueryRunner` to enqueue new queries.
-	   */
-	  add: function add(params) {
-	    return new PendingFetch(params);
-	  },
-
-	  hasPendingQueries: function hasPendingQueries() {
-	    return hasItems(pendingFetchMap);
-	  },
-
-	  /**
-	   * Clears all pending query tracking. Does not cancel the queries themselves.
-	   */
-	  resetPending: function resetPending() {
-	    pendingFetchMap = {};
-	  },
-
-	  resolvePreloadQuery: function resolvePreloadQuery(queryID, result) {
-	    preloadQueryMap.resolveKey(queryID, result);
-	  },
-
-	  rejectPreloadQuery: function rejectPreloadQuery(queryID, error) {
-	    preloadQueryMap.rejectKey(queryID, error);
-	  },
-
-	  // TODO: Use `export type`.
-	  PendingFetch: PendingFetch
-
-	};
-
-	module.exports = RelayPendingQueryTracker;
-
-	/**
-	 * Error(s) in fetching/handleUpdate-ing its or one of its pending
-	 * dependency's subtracted query. There may be more than one error. However,
-	 * `_resolvedDeferred` is rejected with the earliest encountered error.
-	 */
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
 /* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule Deferred
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 
 	var Promise = __webpack_require__(179);
 
 	/**
-	 * Deferred provides a Promise-like API that exposes methods to resolve and
-	 * reject the Promise. It is most useful when converting non-Promise code to use
-	 * Promises.
-	 *
-	 * If you want to export the Promise without exposing access to the resolve and
-	 * reject methods, you should export `getPromise` which returns a Promise with
-	 * the same semantics excluding those methods.
-	 */
-
-	var Deferred = (function () {
-	  function Deferred() {
-	    var _this = this;
-
-	    _classCallCheck(this, Deferred);
-
-	    this._settled = false;
-	    this._promise = new Promise(function (resolve, reject) {
-	      _this._resolve = resolve;
-	      _this._reject = reject;
-	    });
-	  }
-
-	  Deferred.prototype.getPromise = function getPromise() {
-	    return this._promise;
-	  };
-
-	  Deferred.prototype.resolve = function resolve(value) {
-	    this._settled = true;
-	    this._resolve(value);
-	  };
-
-	  Deferred.prototype.reject = function reject(reason) {
-	    this._settled = true;
-	    this._reject(reason);
-	  };
-
-	  Deferred.prototype.then = function then() {
-	    return Promise.prototype.then.apply(this._promise, arguments);
-	  };
-
-	  Deferred.prototype.done = function done() {
-	    Promise.prototype.done.apply(this._promise, arguments);
-	  };
-
-	  Deferred.prototype.isSettled = function isSettled() {
-	    return this._settled;
-	  };
-
-	  return Deferred;
-	})();
-
-	module.exports = Deferred;
-
-/***/ },
-/* 305 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule PromiseMap
-	 * 
-	 */
-
-	/**
-	 * A map of asynchronous values that can be get or set in any order. Unlike a
-	 * normal map, setting the value for a particular key more than once throws.
-	 * Also unlike a normal map, a key can either be resolved or rejected.
-	 */
-	'use strict';
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	var Deferred = __webpack_require__(304);
-
-	var invariant = __webpack_require__(222);
-
-	var PromiseMap = (function () {
-	  function PromiseMap() {
-	    _classCallCheck(this, PromiseMap);
-
-	    this._deferred = {};
-	  }
-
-	  PromiseMap.prototype.get = function get(key) {
-	    return getDeferred(this._deferred, key).getPromise();
-	  };
-
-	  PromiseMap.prototype.resolveKey = function resolveKey(key, value) {
-	    var entry = getDeferred(this._deferred, key);
-	    !!entry.isSettled() ? process.env.NODE_ENV !== 'production' ? invariant(false, 'PromiseMap: Already settled `%s`.', key) : invariant(false) : undefined;
-	    entry.resolve(value);
-	  };
-
-	  PromiseMap.prototype.rejectKey = function rejectKey(key, reason) {
-	    var entry = getDeferred(this._deferred, key);
-	    !!entry.isSettled() ? process.env.NODE_ENV !== 'production' ? invariant(false, 'PromiseMap: Already settled `%s`.', key) : invariant(false) : undefined;
-	    entry.reject(reason);
-	  };
-
-	  return PromiseMap;
-	})();
-
-	function getDeferred(entries, key) {
-	  if (!entries.hasOwnProperty(key)) {
-	    entries[key] = new Deferred();
-	  }
-	  return entries[key];
-	}
-
-	module.exports = PromiseMap;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 306 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
 	 * Copyright 2013-2015, Facebook, Inc.
 	 * All rights reserved.
 	 *
@@ -29350,8 +29340,6 @@
 	 */
 
 	'use strict';
-
-	var Promise = __webpack_require__(179);
 
 	var invariant = __webpack_require__(222);
 
@@ -29505,7 +29493,1054 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
+/* 305 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule checkRelayQueryData
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _inherits = __webpack_require__(198)['default'];
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var RelayConnectionInterface = __webpack_require__(227);
+
+	var RelayProfiler = __webpack_require__(232);
+
+	var RelayQueryVisitor = __webpack_require__(277);
+	var RelayRecordState = __webpack_require__(278);
+
+	var forEachRootCallArg = __webpack_require__(221);
+
+	var EDGES = RelayConnectionInterface.EDGES;
+	var PAGE_INFO = RelayConnectionInterface.PAGE_INFO;
+
+	/**
+	 * @internal
+	 *
+	 * Traverses a query and data in the record store to determine whether we have
+	 * enough data to satisfy the query.
+	 */
+	function checkRelayQueryData(store, query) {
+
+	  var checker = new RelayQueryChecker(store);
+
+	  var state = {
+	    dataID: undefined,
+	    rangeInfo: undefined,
+	    result: true
+	  };
+
+	  checker.visit(query, state);
+	  return state.result;
+	}
+
+	var RelayQueryChecker = (function (_RelayQueryVisitor) {
+	  _inherits(RelayQueryChecker, _RelayQueryVisitor);
+
+	  function RelayQueryChecker(store) {
+	    _classCallCheck(this, RelayQueryChecker);
+
+	    _RelayQueryVisitor.call(this);
+	    this._store = store;
+	  }
+
+	  /**
+	   * Skip visiting children if result is already false.
+	   */
+
+	  RelayQueryChecker.prototype.traverse = function traverse(node, state) {
+	    var children = node.getChildren();
+	    for (var ii = 0; ii < children.length; ii++) {
+	      if (!state.result) {
+	        return;
+	      }
+	      this.visit(children[ii], state);
+	    }
+	  };
+
+	  RelayQueryChecker.prototype.visitRoot = function visitRoot(root, state) {
+	    var _this = this;
+
+	    var nextState;
+	    var storageKey = root.getStorageKey();
+	    forEachRootCallArg(root, function (identifyingArgValue) {
+	      var dataID = _this._store.getDataID(storageKey, identifyingArgValue);
+	      if (dataID == null) {
+	        state.result = false;
+	      } else {
+	        nextState = {
+	          dataID: dataID,
+	          rangeInfo: undefined,
+	          result: true
+	        };
+	        _this.traverse(root, nextState);
+	        state.result = state.result && nextState.result;
+	      }
+	    });
+	  };
+
+	  RelayQueryChecker.prototype.visitField = function visitField(field, state) {
+	    var dataID = state.dataID;
+	    var recordState = dataID && this._store.getRecordState(dataID);
+	    if (recordState === RelayRecordState.UNKNOWN) {
+	      state.result = false;
+	      return;
+	    } else if (recordState === RelayRecordState.NONEXISTENT) {
+	      return;
+	    }
+	    var rangeInfo = state.rangeInfo;
+	    if (rangeInfo && field.getSchemaName() === EDGES) {
+	      this._checkEdges(field, state);
+	    } else if (rangeInfo && field.getSchemaName() === PAGE_INFO) {
+	      this._checkPageInfo(field, state);
+	    } else if (field.isScalar()) {
+	      this._checkScalar(field, state);
+	    } else if (field.isPlural()) {
+	      this._checkPlural(field, state);
+	    } else if (field.isConnection()) {
+	      this._checkConnection(field, state);
+	    } else {
+	      this._checkLinkedField(field, state);
+	    }
+	  };
+
+	  RelayQueryChecker.prototype._checkScalar = function _checkScalar(field, state) {
+	    var fieldData = state.dataID && this._store.getField(state.dataID, field.getStorageKey());
+	    if (fieldData === undefined) {
+	      state.result = false;
+	    }
+	  };
+
+	  RelayQueryChecker.prototype._checkPlural = function _checkPlural(field, state) {
+	    var dataIDs = state.dataID && this._store.getLinkedRecordIDs(state.dataID, field.getStorageKey());
+	    if (dataIDs === undefined) {
+	      state.result = false;
+	      return;
+	    }
+	    if (dataIDs) {
+	      for (var ii = 0; ii < dataIDs.length; ii++) {
+	        if (!state.result) {
+	          break;
+	        }
+	        var nextState = {
+	          dataID: dataIDs[ii],
+	          rangeInfo: undefined,
+	          result: true
+	        };
+	        this.traverse(field, nextState);
+	        state.result = nextState.result;
+	      }
+	    }
+	  };
+
+	  RelayQueryChecker.prototype._checkConnection = function _checkConnection(field, state) {
+	    var calls = field.getCallsWithValues();
+	    var dataID = state.dataID && this._store.getLinkedRecordID(state.dataID, field.getStorageKey());
+	    if (dataID === undefined) {
+	      state.result = false;
+	      return;
+	    }
+	    var nextState = {
+	      dataID: dataID,
+	      rangeInfo: null, // Flow rejects `undefined` here
+	      result: true
+	    };
+	    var metadata = this._store.getRangeMetadata(dataID, calls);
+	    if (metadata) {
+	      nextState.rangeInfo = metadata;
+	    }
+	    this.traverse(field, nextState);
+	    state.result = state.result && nextState.result;
+	  };
+
+	  RelayQueryChecker.prototype._checkEdges = function _checkEdges(field, state) {
+	    var rangeInfo = state.rangeInfo;
+	    if (!rangeInfo) {
+	      state.result = false;
+	      return;
+	    }
+	    if (rangeInfo.diffCalls.length) {
+	      state.result = false;
+	      return;
+	    }
+	    var edges = rangeInfo.filteredEdges;
+	    for (var ii = 0; ii < edges.length; ii++) {
+	      if (!state.result) {
+	        break;
+	      }
+	      var nextState = {
+	        dataID: edges[ii].edgeID,
+	        rangeInfo: undefined,
+	        result: true
+	      };
+	      this.traverse(field, nextState);
+	      state.result = nextState.result;
+	    }
+	  };
+
+	  RelayQueryChecker.prototype._checkPageInfo = function _checkPageInfo(field, state) {
+	    var rangeInfo = state.rangeInfo;
+	    if (!rangeInfo || !rangeInfo.pageInfo) {
+	      state.result = false;
+	      return;
+	    }
+	  };
+
+	  RelayQueryChecker.prototype._checkLinkedField = function _checkLinkedField(field, state) {
+	    var dataID = state.dataID && this._store.getLinkedRecordID(state.dataID, field.getStorageKey());
+	    if (dataID === undefined) {
+	      state.result = false;
+	      return;
+	    }
+	    if (dataID) {
+	      var nextState = {
+	        dataID: dataID,
+	        rangeInfo: undefined,
+	        result: true
+	      };
+	      this.traverse(field, nextState);
+	      state.result = state.result && nextState.result;
+	    }
+	  };
+
+	  return RelayQueryChecker;
+	})(RelayQueryVisitor);
+
+	module.exports = RelayProfiler.instrument('checkRelayQueryData', checkRelayQueryData);
+
+/***/ },
+/* 306 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule diffRelayQuery
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var GraphQLStoreDataHandler = __webpack_require__(213);
+	var RelayConnectionInterface = __webpack_require__(227);
+	var RelayNodeInterface = __webpack_require__(219);
+	var RelayProfiler = __webpack_require__(232);
+	var RelayQuery = __webpack_require__(214);
+	var RelayQueryPath = __webpack_require__(307);
+
+	var forEachRootCallArg = __webpack_require__(221);
+	var invariant = __webpack_require__(222);
+	var isCompatibleRelayFragmentType = __webpack_require__(308);
+	var warning = __webpack_require__(194);
+
+	var ID = RelayNodeInterface.ID;
+	var NODE_TYPE = RelayNodeInterface.NODE_TYPE;
+	var TYPENAME = RelayNodeInterface.TYPENAME;
+	var EDGES = RelayConnectionInterface.EDGES;
+	var NODE = RelayConnectionInterface.NODE;
+	var PAGE_INFO = RelayConnectionInterface.PAGE_INFO;
+
+	var idField = RelayQuery.Field.build({
+	  fieldName: ID,
+	  metadata: {
+	    isRequisite: true
+	  },
+	  type: 'String'
+	});
+	var typeField = RelayQuery.Field.build({
+	  fieldName: TYPENAME,
+	  metadata: {
+	    isRequisite: true
+	  },
+	  type: 'String'
+	});
+	var nodeWithID = RelayQuery.Field.build({
+	  fieldName: RelayNodeInterface.NODE,
+	  children: [idField, typeField],
+	  type: NODE_TYPE
+	});
+
+	/**
+	 * @internal
+	 *
+	 * Computes the difference between the data requested in `root` and the data
+	 * available in `store`. It returns a minimal set of queries that will fulfill
+	 * the difference, or an empty array if the query can be resolved locally.
+	 */
+	function diffRelayQuery(root, store, tracker) {
+	  var path = new RelayQueryPath(root);
+	  var queries = [];
+
+	  var visitor = new RelayDiffQueryBuilder(store, tracker);
+	  var rootIdentifyingArg = root.getIdentifyingArg();
+	  var rootIdentifyingArgValue = rootIdentifyingArg && rootIdentifyingArg.value || null;
+	  var isPluralCall = Array.isArray(rootIdentifyingArgValue) && rootIdentifyingArgValue.length > 1;
+	  var metadata = undefined;
+	  if (rootIdentifyingArg != null) {
+	    metadata = {};
+	    metadata.identifyingArgName = rootIdentifyingArg.name;
+	    if (rootIdentifyingArg.type != null) {
+	      metadata.identifyingArgType = rootIdentifyingArg.type;
+	    }
+	  }
+	  var fieldName = root.getFieldName();
+	  var storageKey = root.getStorageKey();
+	  forEachRootCallArg(root, function (identifyingArgValue) {
+	    var nodeRoot;
+	    if (isPluralCall) {
+	      !(identifyingArgValue != null) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'diffRelayQuery(): Unexpected null or undefined value in root call ' + 'argument array for query, `%s(...).', fieldName) : invariant(false) : undefined;
+	      nodeRoot = RelayQuery.Root.build(root.getName(), fieldName, [identifyingArgValue], root.getChildren(), metadata, root.getType());
+	    } else {
+	      // Reuse `root` if it only maps to one result.
+	      nodeRoot = root;
+	    }
+
+	    // The whole query must be fetched if the root dataID is unknown.
+	    var dataID = store.getDataID(storageKey, identifyingArgValue);
+	    if (dataID == null) {
+	      queries.push(nodeRoot);
+	      return;
+	    }
+
+	    // Diff the current dataID
+	    var scope = makeScope(dataID);
+	    var diffOutput = visitor.visit(nodeRoot, path, scope);
+	    var diffNode = diffOutput ? diffOutput.diffNode : null;
+	    if (diffNode) {
+	      !(diffNode instanceof RelayQuery.Root) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'diffRelayQuery(): Expected result to be a root query.') : invariant(false) : undefined;
+	      queries.push(diffNode);
+	    }
+	  });
+	  return queries.concat(visitor.getSplitQueries());
+	}
+
+	/**
+	 * @internal
+	 *
+	 * A transform for (node + store) -> (diff + tracked queries). It is analagous
+	 * to `RelayQueryTransform` with the main differences as follows:
+	 * - there is no `state` (which allowed for passing data up and down the tree).
+	 * - data is passed down via `scope`, which flows from a parent field down
+	 *   through intermediary fragments to the nearest child field.
+	 * - data is passed up via the return type `{diffNode, trackedNode}`, where:
+	 *   - `diffNode`: subset of the input that could not diffed out
+	 *   - `trackedNode`: subset of the input that must be tracked
+	 *
+	 * The provided `tracker` is updated whenever the traversal of a node results
+	 * in a `trackedNode` being created. New top-level queries are not returned
+	 * up the tree, and instead are available via `getSplitQueries()`.
+	 */
+
+	var RelayDiffQueryBuilder = (function () {
+	  function RelayDiffQueryBuilder(store, tracker) {
+	    _classCallCheck(this, RelayDiffQueryBuilder);
+
+	    this._store = store;
+	    this._splitQueries = [];
+	    this._tracker = tracker;
+	  }
+
+	  /**
+	   * Helper to construct a plain scope for the given `dataID`.
+	   */
+
+	  RelayDiffQueryBuilder.prototype.splitQuery = function splitQuery(root) {
+	    this._splitQueries.push(root);
+	  };
+
+	  RelayDiffQueryBuilder.prototype.getSplitQueries = function getSplitQueries() {
+	    return this._splitQueries;
+	  };
+
+	  RelayDiffQueryBuilder.prototype.visit = function visit(node, path, scope) {
+	    if (node instanceof RelayQuery.Field) {
+	      return this.visitField(node, path, scope);
+	    } else if (node instanceof RelayQuery.Fragment) {
+	      return this.visitFragment(node, path, scope);
+	    } else if (node instanceof RelayQuery.Root) {
+	      return this.visitRoot(node, path, scope);
+	    }
+	  };
+
+	  RelayDiffQueryBuilder.prototype.visitRoot = function visitRoot(node, path, scope) {
+	    return this.traverse(node, path, scope);
+	  };
+
+	  RelayDiffQueryBuilder.prototype.visitFragment = function visitFragment(node, path, scope) {
+	    return this.traverse(node, path, scope);
+	  };
+
+	  /**
+	   * Diffs the field conditionally based on the `scope` from the nearest
+	   * ancestor field.
+	   */
+
+	  RelayDiffQueryBuilder.prototype.visitField = function visitField(node, path, _ref) {
+	    var connectionField = _ref.connectionField;
+	    var dataID = _ref.dataID;
+	    var edgeID = _ref.edgeID;
+	    var rangeInfo = _ref.rangeInfo;
+
+	    // special case when inside a connection traversal
+	    if (connectionField && rangeInfo) {
+	      if (edgeID) {
+	        // When traversing a specific connection edge only look at `edges`
+	        if (node.getSchemaName() === EDGES) {
+	          return this.diffConnectionEdge(connectionField, node, // edge field
+	          path.getPath(node, edgeID), edgeID, rangeInfo);
+	        } else {
+	          return null;
+	        }
+	      } else {
+	        // When traversing connection metadata fields, edges/page_info are
+	        // only kept if there are range extension calls. Other fields fall
+	        // through to regular diffing.
+	        if (node.getSchemaName() === EDGES || node.getSchemaName() === PAGE_INFO) {
+	          return rangeInfo.diffCalls.length > 0 ? {
+	            diffNode: node,
+	            trackedNode: null
+	          } : null;
+	        }
+	      }
+	    }
+
+	    // default field diffing algorithm
+	    if (node.isScalar()) {
+	      return this.diffScalar(node, dataID);
+	    } else if (node.isGenerated()) {
+	      return {
+	        diffNode: node,
+	        trackedNode: null
+	      };
+	    } else if (node.isConnection()) {
+	      return this.diffConnection(node, path, dataID);
+	    } else if (node.isPlural()) {
+	      return this.diffPluralLink(node, path, dataID);
+	    } else {
+	      return this.diffLink(node, path, dataID);
+	    }
+	  };
+
+	  /**
+	   * Visit all the children of the given `node` and merge their results.
+	   */
+
+	  RelayDiffQueryBuilder.prototype.traverse = function traverse(node, path, scope) {
+	    var _this = this;
+
+	    var diffNode = undefined;
+	    var diffChildren = undefined;
+	    var trackedNode = undefined;
+	    var trackedChildren = undefined;
+	    var hasDiffField = false;
+	    var hasTrackedField = false;
+
+	    node.getChildren().forEach(function (child) {
+	      if (child instanceof RelayQuery.Field) {
+	        var diffOutput = _this.visitField(child, path, scope);
+	        var diffChild = diffOutput ? diffOutput.diffNode : null;
+	        var trackedChild = diffOutput ? diffOutput.trackedNode : null;
+
+	        // Diff uses child nodes and keeps requisite fields
+	        if (diffChild) {
+	          diffChildren = diffChildren || [];
+	          diffChildren.push(diffChild);
+	          hasDiffField = hasDiffField || !diffChild.isGenerated();
+	        } else if (child.isRequisite() && !scope.rangeInfo) {
+	          // The presence of `rangeInfo` indicates that we are traversing
+	          // connection metadata fields, in which case `visitField` will ensure
+	          // that `edges` and `page_info` are kept when necessary. The requisite
+	          // check alone could cause these fields to be added back when not
+	          // needed.
+	          //
+	          // Example: `friends.first(3) {count, edges {...}, page_info {...} }
+	          // If all `edges` were fetched but `count` is unfetched, the diff
+	          // should be `friends.first(3) {count}` and not include `page_info`.
+	          diffChildren = diffChildren || [];
+	          diffChildren.push(child);
+	        }
+	        // Tracker uses tracked children and keeps requisite fields
+	        if (trackedChild) {
+	          trackedChildren = trackedChildren || [];
+	          trackedChildren.push(trackedChild);
+	          hasTrackedField = hasTrackedField || !trackedChild.isGenerated();
+	        } else if (child.isRequisite()) {
+	          trackedChildren = trackedChildren || [];
+	          trackedChildren.push(child);
+	        }
+	      } else if (child instanceof RelayQuery.Fragment) {
+	        var isCompatibleType = isCompatibleRelayFragmentType(child, _this._store.getType(scope.dataID));
+	        if (isCompatibleType) {
+	          var diffOutput = _this.traverse(child, path, scope);
+	          var diffChild = diffOutput ? diffOutput.diffNode : null;
+	          var trackedChild = diffOutput ? diffOutput.trackedNode : null;
+
+	          if (diffChild) {
+	            diffChildren = diffChildren || [];
+	            diffChildren.push(diffChild);
+	            hasDiffField = true;
+	          }
+	          if (trackedChild) {
+	            trackedChildren = trackedChildren || [];
+	            trackedChildren.push(trackedChild);
+	            hasTrackedField = true;
+	          }
+	        } else {
+	          // Non-matching fragment types are similar to requisite fields:
+	          // they don't need to be diffed against and should only be included
+	          // if something *else* is missing from the node.
+	          diffChildren = diffChildren || [];
+	          diffChildren.push(child);
+	        }
+	      }
+	    });
+
+	    // Only return diff/tracked node if there are non-generated fields
+	    if (diffChildren && hasDiffField) {
+	      diffNode = node.clone(diffChildren);
+	    }
+	    if (trackedChildren && hasTrackedField) {
+	      trackedNode = node.clone(trackedChildren);
+	    }
+	    // Record tracked nodes. Fragments can be skipped because these will
+	    // always be composed into, and therefore tracked by, their nearest
+	    // non-fragment parent.
+	    if (trackedNode && !(trackedNode instanceof RelayQuery.Fragment)) {
+	      this._tracker.trackNodeForID(trackedNode, scope.dataID, path);
+	    }
+
+	    return {
+	      diffNode: diffNode,
+	      trackedNode: trackedNode
+	    };
+	  };
+
+	  /**
+	   * Diff a scalar field such as `name` or `id`.
+	   */
+
+	  RelayDiffQueryBuilder.prototype.diffScalar = function diffScalar(field, dataID) {
+	    if (this._store.getField(dataID, field.getStorageKey()) === undefined) {
+	      return {
+	        diffNode: field,
+	        trackedNode: null
+	      };
+	    }
+	    return null;
+	  };
+
+	  /**
+	   * Diff a field-of-fields such as `profile_picture {...}`. Returns early if
+	   * the field has not been fetched, otherwise the result of traversal.
+	   */
+
+	  RelayDiffQueryBuilder.prototype.diffLink = function diffLink(field, path, dataID) {
+	    var nextDataID = this._store.getLinkedRecordID(dataID, field.getStorageKey());
+	    if (nextDataID === undefined) {
+	      return {
+	        diffNode: field,
+	        trackedNode: null
+	      };
+	    }
+	    if (nextDataID === null) {
+	      return null;
+	    }
+
+	    return this.traverse(field, path.getPath(field, nextDataID), makeScope(nextDataID));
+	  };
+
+	  /**
+	   * Diffs a non-connection plural field against each of the fetched items.
+	   * Note that scalar plural fields are handled by `_diffScalar`.
+	   */
+
+	  RelayDiffQueryBuilder.prototype.diffPluralLink = function diffPluralLink(field, path, dataID) {
+	    var _this2 = this;
+
+	    var linkedIDs = this._store.getLinkedRecordIDs(dataID, field.getStorageKey());
+	    if (linkedIDs === undefined) {
+	      // not fetched
+	      return {
+	        diffNode: field,
+	        trackedNode: null
+	      };
+	    } else if (linkedIDs === null || linkedIDs.length === 0) {
+	      // empty array means nothing to fetch
+	      return null;
+	    } else if (field.getInferredRootCallName() === NODE) {
+	      // The items in this array are fetchable and may have been filled in
+	      // from other sources, so check them all. For example, `Story{actors}`
+	      // is an array (but not a range), and the Actors in that array likely
+	      // had data fetched for them elsewhere (like `viewer(){actor}`).
+	      var hasSplitQueries = false;
+	      linkedIDs.forEach(function (itemID) {
+	        var itemState = _this2.traverse(field, path.getPath(field, itemID), makeScope(itemID));
+	        if (itemState) {
+	          // If any child was tracked then `field` will also be tracked
+	          hasSplitQueries = hasSplitQueries || !!itemState.trackedNode || !!itemState.diffNode;
+	          // split diff nodes into root queries
+	          if (itemState.diffNode) {
+	            _this2.splitQuery(buildRoot(itemID, itemState.diffNode.getChildren(), path.getName(), field.getType()));
+	          }
+	        }
+	      });
+	      // if sub-queries are split then this *entire* field will be tracked,
+	      // therefore we don't need to merge the `trackedNode` from each item
+	      if (hasSplitQueries) {
+	        return {
+	          diffNode: null,
+	          trackedNode: field
+	        };
+	      }
+	    } else {
+	      // The items in this array are not fetchable by ID, so nothing else
+	      // could have fetched additional data for individual items. Therefore,
+	      // we only need to diff the first record to figure out which fields have
+	      // previously been fetched.
+	      var sampleItemID = linkedIDs[0];
+	      return this.traverse(field, path.getPath(field, sampleItemID), makeScope(sampleItemID));
+	    }
+	    return null;
+	  };
+
+	  /**
+	   * Diff a connection field such as `news_feed.first(3)`. Returns early if
+	   * the range has not been fetched or the entire range has already been
+	   * fetched. Otherwise the diff output is a clone of `field` with updated
+	   * after/first and before/last calls.
+	   */
+
+	  RelayDiffQueryBuilder.prototype.diffConnection = function diffConnection(field, path, dataID) {
+	    var _this3 = this;
+
+	    var store = this._store;
+	    var connectionID = store.getLinkedRecordID(dataID, field.getStorageKey());
+	    var rangeInfo = store.getRangeMetadata(connectionID, field.getCallsWithValues());
+	    // Keep the field if the connection is unfetched
+	    if (connectionID === undefined) {
+	      return {
+	        diffNode: field,
+	        trackedNode: null
+	      };
+	    }
+	    // Skip if the connection is deleted.
+	    if (connectionID === null) {
+	      return null;
+	    }
+	    // If metadata fields but not edges are fetched, diff as a normal field.
+	    // In practice, `rangeInfo` is `undefined` if unfetched, `null` if the
+	    // connection was deleted (in which case `connectionID` is null too).
+	    if (rangeInfo == null) {
+	      return this.traverse(field, path.getPath(field, connectionID), makeScope(connectionID));
+	    }
+	    var diffCalls = rangeInfo.diffCalls;
+	    var filteredEdges = rangeInfo.filteredEdges;
+
+	    // check existing edges for missing fields
+	    var hasSplitQueries = false;
+	    filteredEdges.forEach(function (edge) {
+	      // Flow loses type information in closures
+	      if (rangeInfo && connectionID) {
+	        var scope = {
+	          connectionField: field,
+	          dataID: connectionID,
+	          edgeID: edge.edgeID,
+	          rangeInfo: rangeInfo
+	        };
+	        var diffOutput = _this3.traverse(field, path.getPath(field, edge.edgeID), scope);
+	        // If any edges were missing data (resulting in a split query),
+	        // then the entire original connection field must be tracked.
+	        if (diffOutput) {
+	          hasSplitQueries = hasSplitQueries || !!diffOutput.trackedNode;
+	        }
+	      }
+	    });
+
+	    // Scope has null `edgeID` to skip looking at `edges` fields.
+	    var scope = {
+	      connectionField: field,
+	      dataID: connectionID,
+	      edgeID: null,
+	      rangeInfo: rangeInfo
+	    };
+	    // diff non-`edges` fields such as `count`
+	    var diffOutput = this.traverse(field, path.getPath(field, connectionID), scope);
+	    var diffNode = diffOutput ? diffOutput.diffNode : null;
+	    var trackedNode = diffOutput ? diffOutput.trackedNode : null;
+	    if (diffCalls.length && diffNode instanceof RelayQuery.Field) {
+	      diffNode = diffNode.cloneFieldWithCalls(diffNode.getChildren(), diffCalls);
+	    }
+	    // if a sub-query was split, then we must track the entire field, which will
+	    // be a superset of the `trackedNode` from traversing any metadata fields.
+	    // Example:
+	    // dataID: `4`
+	    // node: `friends.first(3)`
+	    // diffNode: null
+	    // splitQueries: `node(friend1) {...}`, `node(friend2) {...}`
+	    //
+	    // In this case the two fetched `node` queries do not reflect the fact that
+	    // `friends.first(3)` were fetched for item `4`, so `friends.first(3)` has
+	    // to be tracked as-is.
+	    if (hasSplitQueries) {
+	      trackedNode = field;
+	    }
+
+	    return {
+	      diffNode: diffNode,
+	      trackedNode: trackedNode
+	    };
+	  };
+
+	  /**
+	   * Diff an `edges` field for the edge rooted at `edgeID`, splitting a new
+	   * root query to fetch any missing data (via a `node(id)` root if the
+	   * field is refetchable or a `...{connection.find(id){}}` query if the
+	   * field is not refetchable).
+	   */
+
+	  RelayDiffQueryBuilder.prototype.diffConnectionEdge = function diffConnectionEdge(connectionField, edgeField, path, edgeID, rangeInfo) {
+	    var nodeID = this._store.getLinkedRecordID(edgeID, NODE);
+	    if (!nodeID || GraphQLStoreDataHandler.isClientID(nodeID)) {
+	      process.env.NODE_ENV !== 'production' ? warning(false, 'RelayDiffQueryBuilder: connection `node{*}` can only be refetched ' + 'if the node is refetchable by `id`. Cannot refetch data for field ' + '`%s`.', connectionField.getStorageKey()) : undefined;
+	      return null;
+	    }
+
+	    var hasSplitQueries = false;
+	    var diffOutput = this.traverse(edgeField, path.getPath(edgeField, edgeID), makeScope(edgeID));
+	    var diffNode = diffOutput ? diffOutput.diffNode : null;
+	    var trackedNode = diffOutput ? diffOutput.trackedNode : null;
+
+	    if (diffNode) {
+	      var _splitNodeAndEdgesFields = splitNodeAndEdgesFields(diffNode);
+
+	      var diffEdgesField = _splitNodeAndEdgesFields.edges;
+	      var diffNodeField = _splitNodeAndEdgesFields.node;
+
+	      // split missing `node` fields into a `node(id)` root query
+	      if (diffNodeField) {
+	        hasSplitQueries = true;
+	        var nodeField = edgeField.getFieldByStorageKey('node');
+	        !nodeField ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayDiffQueryBuilder: expected a `node` field for connection `%s`.', connectionField.getSchemaName()) : invariant(false) : undefined;
+	        this.splitQuery(buildRoot(nodeID, diffNodeField.getChildren(), path.getName(), nodeField.getType()));
+	      }
+
+	      // split missing `edges` fields into a `connection.find(id)` query
+	      // if `find` is supported, otherwise warn
+	      if (diffEdgesField) {
+	        if (connectionField.isFindable()) {
+	          diffEdgesField = diffEdgesField.clone(diffEdgesField.getChildren().concat(nodeWithID));
+	          var connectionFind = connectionField.cloneFieldWithCalls([diffEdgesField], rangeInfo.filterCalls.concat({ name: 'find', value: nodeID }));
+	          if (connectionFind) {
+	            hasSplitQueries = true;
+	            // current path has `parent`, `connection`, `edges`; pop to parent
+	            var connectionParent = path.getParent().getParent();
+	            this.splitQuery(connectionParent.getQuery(connectionFind));
+	          }
+	        } else {
+	          process.env.NODE_ENV !== 'production' ? warning(false, 'RelayDiffQueryBuilder: connection `edges{*}` fields can only be ' + 'refetched if the connection supports the `find` call. Cannot ' + 'refetch data for field `%s`.', connectionField.getStorageKey()) : undefined;
+	        }
+	      }
+	    }
+
+	    // Connection edges will never return diff nodes; instead missing fields
+	    // are fetched by new root queries. Tracked nodes are returned if either
+	    // a child field was tracked or missing fields were split into a new query.
+	    // The returned `trackedNode` is never tracked directly: instead it serves
+	    // as an indicator to `diffConnection` that the entire connection field must
+	    // be tracked.
+	    return {
+	      diffNode: null,
+	      trackedNode: hasSplitQueries ? edgeField : trackedNode
+	    };
+	  };
+
+	  return RelayDiffQueryBuilder;
+	})();
+
+	function makeScope(dataID) {
+	  return {
+	    connectionField: null,
+	    dataID: dataID,
+	    edgeID: null,
+	    rangeInfo: null
+	  };
+	}
+
+	/**
+	 * Returns a clone of the input with `edges` and `node` sub-fields split into
+	 * separate `edges` and `node` roots. Example:
+	 *
+	 * Input:
+	 * edges {
+	 *   edge_field,
+	 *   node {
+	 *     a,
+	 *     b
+	 *   },
+	 *   ${
+	 *     Fragment {
+	 *       edge_field_2,
+	 *       node {
+	 *         c
+	 *       }
+	 *     }
+	 *   }
+	 * }
+	 *
+	 * Output:
+	 * node:
+	 *   edges {
+	 *     a,      // flattened
+	 *     b,      // flattend
+	 *     ${
+	 *       Fragment {
+	 *         c  // flattened
+	 *       }
+	 *     }
+	 *   }
+	 * edges:
+	 *   edges {
+	 *     edge_field,
+	 *     ${
+	 *       Fragment {
+	 *         edge_field_2
+	 *       }
+	 *     }
+	 *   }
+	 */
+	function splitNodeAndEdgesFields(edgeOrFragment) {
+	  var children = edgeOrFragment.getChildren();
+	  var edgeChildren = [];
+	  var hasNodeChild = false;
+	  var nodeChildren = [];
+	  var hasEdgeChild = false;
+	  for (var ii = 0; ii < children.length; ii++) {
+	    var child = children[ii];
+	    if (child instanceof RelayQuery.Field) {
+	      if (child.getSchemaName() === NODE) {
+	        var subFields = child.getChildren();
+	        nodeChildren = nodeChildren.concat(subFields);
+	        // can skip if `node` only has an `id` field
+	        hasNodeChild = hasNodeChild || subFields.length !== 1 || !(subFields[0] instanceof RelayQuery.Field) ||
+	        /* $FlowFixMe(>=0.13.0) - subFields[0] needs to be in a local for Flow to
+	         * narrow its type, otherwise Flow thinks its a RelayQueryNode without
+	         * method `getSchemaName`
+	         */
+	        subFields[0].getSchemaName() !== 'id';
+	      } else {
+	        edgeChildren.push(child);
+	        hasEdgeChild = hasEdgeChild || !child.isRequisite();
+	      }
+	    } else if (child instanceof RelayQuery.Fragment) {
+	      var _splitNodeAndEdgesFields2 = splitNodeAndEdgesFields(child);
+
+	      var edges = _splitNodeAndEdgesFields2.edges;
+	      var node = _splitNodeAndEdgesFields2.node;
+
+	      if (edges) {
+	        edgeChildren.push(edges);
+	        hasEdgeChild = true;
+	      }
+	      if (node) {
+	        nodeChildren.push(node);
+	        hasNodeChild = true;
+	      }
+	    }
+	  }
+	  return {
+	    edges: hasEdgeChild ? edgeOrFragment.clone(edgeChildren) : null,
+	    node: hasNodeChild ? edgeOrFragment.clone(nodeChildren) : null
+	  };
+	}
+
+	function buildRoot(rootID, nodes, name, type) {
+	  var children = [idField, typeField];
+	  var fields = [];
+	  nodes.forEach(function (node) {
+	    if (node instanceof RelayQuery.Field) {
+	      fields.push(node);
+	    } else {
+	      children.push(node);
+	    }
+	  });
+	  children.push(RelayQuery.Fragment.build('diffRelayQuery', type, fields));
+
+	  return RelayQuery.Root.build(name, NODE, rootID, children, { identifyingArgName: RelayNodeInterface.ID }, NODE_TYPE);
+	}
+
+	module.exports = RelayProfiler.instrument('diffRelayQuery', diffRelayQuery);
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
 /* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayQueryPath
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var _extends = __webpack_require__(161)['default'];
+
+	var GraphQLStoreDataHandler = __webpack_require__(213);
+
+	var RelayNodeInterface = __webpack_require__(219);
+	var RelayQuery = __webpack_require__(214);
+
+	var invariant = __webpack_require__(222);
+
+	var ID = RelayNodeInterface.ID;
+	var NODE_TYPE = RelayNodeInterface.NODE_TYPE;
+	var TYPENAME = RelayNodeInterface.TYPENAME;
+
+	var idField = RelayQuery.Field.build({
+	  fieldName: ID,
+	  type: 'String'
+	});
+	var typeField = RelayQuery.Field.build({
+	  fieldName: TYPENAME,
+	  type: 'String'
+	});
+
+	/**
+	 * @internal
+	 *
+	 * Represents the path (root plus fields) within a query that fetched a
+	 * particular node. Each step of the path may represent a root query (for
+	 * refetchable nodes) or the field path from the nearest refetchable node.
+	 */
+
+	var RelayQueryPath = (function () {
+	  function RelayQueryPath(node, parent) {
+	    _classCallCheck(this, RelayQueryPath);
+
+	    if (node instanceof RelayQuery.Root) {
+	      !!parent ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath: Root paths may not have a parent.') : invariant(false) : undefined;
+	      this._name = node.getName();
+	    } else {
+	      !parent ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath: A parent is required for field paths.') : invariant(false) : undefined;
+	      this._name = parent.getName();
+	    }
+	    this._node = node;
+	    this._parent = parent;
+	  }
+
+	  /**
+	   * Returns true if this is a root path (the node is a root node with an ID),
+	   * false otherwise.
+	   */
+
+	  RelayQueryPath.prototype.isRootPath = function isRootPath() {
+	    return !this._parent;
+	  };
+
+	  /**
+	   * Gets the parent path, throwing if it does not exist. Use `!isRootPath()`
+	   * to check if there is a parent.
+	   */
+
+	  RelayQueryPath.prototype.getParent = function getParent() {
+	    var parent = this._parent;
+	    !parent ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath.getParent(): Cannot get the parent of a root path.') : invariant(false) : undefined;
+	    return parent;
+	  };
+
+	  /**
+	   * Helper to get the name of the root query node.
+	   */
+
+	  RelayQueryPath.prototype.getName = function getName() {
+	    return this._name;
+	  };
+
+	  /**
+	   * Gets a new path that describes how to access the given `node` via the
+	   * current path. Returns a new, root path if `dataID` is provided and
+	   * refetchable, otherwise returns an extension of the current path.
+	   */
+
+	  RelayQueryPath.prototype.getPath = function getPath(node, dataID) {
+	    if (GraphQLStoreDataHandler.isClientID(dataID)) {
+	      return new RelayQueryPath(node, this);
+	    } else {
+	      var root = RelayQuery.Root.build(this.getName(), RelayNodeInterface.NODE, dataID, [idField, typeField], { identifyingArgName: RelayNodeInterface.ID }, NODE_TYPE);
+	      return new RelayQueryPath(root);
+	    }
+	  };
+
+	  /**
+	   * Returns a new root query that follows only the fields in this path and then
+	   * appends the specified field/fragment at the node reached by the path.
+	   *
+	   * The query also includes any ID fields along the way.
+	   */
+
+	  RelayQueryPath.prototype.getQuery = function getQuery(appendNode) {
+	    var node = this._node;
+	    var path = this;
+	    var child = appendNode;
+	    while (node instanceof RelayQuery.Field || node instanceof RelayQuery.Fragment) {
+	      var idFieldName = node instanceof RelayQuery.Field ? node.getInferredPrimaryKey() : ID;
+	      if (idFieldName) {
+	        child = node.clone([child, node.getFieldByStorageKey(idFieldName), node.getFieldByStorageKey(TYPENAME)]);
+	      } else {
+	        child = node.clone([child]);
+	      }
+	      path = path._parent;
+	      !path ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath.getQuery(): Expected a parent path.') : invariant(false) : undefined;
+	      node = path._node;
+	    }
+	    !child ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath: Expected a leaf node.') : invariant(false) : undefined;
+	    !(node instanceof RelayQuery.Root) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath: Expected a root node.') : invariant(false) : undefined;
+	    var metadata = _extends({}, node.__concreteNode__.metadata);
+	    var identifyingArg = node.getIdentifyingArg();
+	    if (identifyingArg && identifyingArg.name != null) {
+	      metadata.identifyingArgName = identifyingArg.name;
+	    }
+	    return RelayQuery.Root.build(this.getName(), node.getFieldName(), identifyingArg && identifyingArg.value || null, [child, node.getFieldByStorageKey(ID), node.getFieldByStorageKey(TYPENAME)], metadata, node.getType());
+	  };
+
+	  return RelayQueryPath;
+	})();
+
+	module.exports = RelayQueryPath;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 308 */
 /***/ function(module, exports) {
 
 	/**
@@ -29516,77 +30551,32 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * @providesModule containsRelayQueryRootCall
-	 * @typechecks
+	 * @providesModule isCompatibleRelayFragmentType
 	 * 
+	 * @typechecks
 	 */
 
 	/**
 	 * @internal
 	 *
-	 * Compares two query root nodes and returns true if the nodes fetched by
-	 * `thisRoot` would be a superset of the nodes fetched by `thatRoot`.
+	 * Determine if the given fragment's type is compatible with the given record
+	 * type. The types are considered compatible if they exactly match or in the
+	 * following cases:
+	 * - Types are not recorded for optimistic records; if the record type is null
+	 *   it is assumed to be compatible with the fragment.
+	 * - Abstract fragments are assumed to be compatible with all types; being more
+	 *   precise would require access to the full schema inheritance hierarchy.
 	 */
 	'use strict';
 
-	function containsRelayQueryRootCall(thisRoot, thatRoot) {
-	  if (thisRoot === thatRoot) {
-	    return true;
-	  }
-	  if (getCanonicalName(thisRoot.getFieldName()) !== getCanonicalName(thatRoot.getFieldName())) {
-	    return false;
-	  }
-	  var thisIdentifyingArg = thisRoot.getIdentifyingArg();
-	  var thatIdentifyingArg = thatRoot.getIdentifyingArg();
-	  var thisValue = thisIdentifyingArg && thisIdentifyingArg.value || null;
-	  var thatValue = thatIdentifyingArg && thatIdentifyingArg.value || null;
-	  if (thisValue == null && thatValue == null) {
-	    return true;
-	  }
-	  if (thisValue == null || thatValue == null) {
-	    return false;
-	  }
-	  if (Array.isArray(thisValue)) {
-	    var thisArray = thisValue;
-	    if (Array.isArray(thatValue)) {
-	      return thatValue.every(function (eachValue) {
-	        return thisArray.indexOf(eachValue) >= 0;
-	      });
-	    } else {
-	      return thisValue.indexOf(thatValue) >= 0;
-	    }
-	  } else {
-	    if (Array.isArray(thatValue)) {
-	      return thatValue.every(function (eachValue) {
-	        return eachValue === thisValue;
-	      });
-	    } else {
-	      return thatValue === thisValue;
-	    }
-	  }
+	function isCompatibleRelayFragmentType(fragment, recordType) {
+	  return recordType === fragment.getType() || !recordType || fragment.isAbstract();
 	}
 
-	var canonicalRootCalls = {
-	  'nodes': 'node',
-	  'usernames': 'username'
-	};
-
-	/**
-	 * @private
-	 *
-	 * This is required to support legacy versions of GraphQL.
-	 */
-	function getCanonicalName(name) {
-	  if (canonicalRootCalls.hasOwnProperty(name)) {
-	    return canonicalRootCalls[name];
-	  }
-	  return name;
-	}
-
-	module.exports = containsRelayQueryRootCall;
+	module.exports = isCompatibleRelayFragmentType;
 
 /***/ },
-/* 308 */
+/* 309 */
 /***/ function(module, exports) {
 
 	/**
@@ -29638,85 +30628,6 @@
 	module.exports = everyObject;
 
 /***/ },
-/* 309 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule fetchRelayQuery
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var Promise = __webpack_require__(179);
-	var RelayNetworkLayer = __webpack_require__(302);
-	var RelayProfiler = __webpack_require__(232);
-	var RelayQueryRequest = __webpack_require__(310);
-
-	var resolveImmediate = __webpack_require__(246);
-
-	var queue = null;
-
-	/**
-	 * @internal
-	 *
-	 * Schedules the supplied `query` to be sent to the server.
-	 *
-	 * This is a low-level transport API; application code should use higher-level
-	 * interfaces exposed by RelayContainer for retrieving data transparently via
-	 * queries defined on components.
-	 */
-	function fetchRelayQuery(query) {
-	  if (!queue) {
-	    (function () {
-	      queue = [];
-	      var currentQueue = queue;
-	      resolveImmediate(function () {
-	        queue = null;
-	        profileQueue(currentQueue);
-	        processQueue(currentQueue);
-	      });
-	    })();
-	  }
-	  var request = new RelayQueryRequest(query);
-	  queue.push(request);
-	  return request.getPromise();
-	}
-
-	function processQueue(currentQueue) {
-	  RelayNetworkLayer.sendQueries(currentQueue);
-	}
-
-	/**
-	 * Profiles time from request to receiving the first server response.
-	 */
-	function profileQueue(currentQueue) {
-	  // TODO #8783781: remove aggregate `fetchRelayQuery` profiler
-	  var firstResultProfiler = RelayProfiler.profile('fetchRelayQuery');
-	  currentQueue.forEach(function (query) {
-	    var profiler = RelayProfiler.profile('fetchRelayQuery.query');
-	    var onSettle = function onSettle() {
-	      profiler.stop();
-	      if (firstResultProfiler) {
-	        firstResultProfiler.stop();
-	        firstResultProfiler = null;
-	      }
-	    };
-	    query.getPromise().done(onSettle, onSettle);
-	  });
-	}
-
-	module.exports = fetchRelayQuery;
-
-/***/ },
 /* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -29728,7 +30639,2565 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * @providesModule RelayQueryRequest
+	 * @providesModule flattenSplitRelayQueries
+	 * 
+	 * @typechecks
+	 */
+
+	/**
+	 * Flattens the nested structure returned by `splitDeferredRelayQueries`.
+	 *
+	 * Right now our internals discard the information about the relationship
+	 * between the queries that is encoded in the nested structure.
+	 *
+	 * @internal
+	 */
+	'use strict';
+
+	var _toConsumableArray = __webpack_require__(293)['default'];
+
+	function flattenSplitRelayQueries(splitQueries) {
+	  var flattenedQueries = [];
+	  var queue = [splitQueries];
+	  while (queue.length) {
+	    splitQueries = queue.shift();
+	    var _splitQueries = splitQueries;
+	    var required = _splitQueries.required;
+	    var deferred = _splitQueries.deferred;
+
+	    if (required) {
+	      flattenedQueries.push(required);
+	    }
+	    if (deferred.length) {
+	      queue.push.apply(queue, _toConsumableArray(deferred));
+	    }
+	  }
+	  return flattenedQueries;
+	}
+
+	module.exports = flattenSplitRelayQueries;
+
+/***/ },
+/* 311 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule generateForceIndex
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _index = 1;
+
+	/**
+	 * Generate a new force index used to write GraphQL data in the store. A new
+	 * force index can be used to overwrite previous ranges.
+	 *
+	 * @internal
+	 */
+	function generateForceIndex() {
+	  return _index++;
+	}
+
+	module.exports = generateForceIndex;
+
+/***/ },
+/* 312 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule mapObject
+	 */
+
+	'use strict';
+
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+	/**
+	 * Executes the provided `callback` once for each enumerable own property in the
+	 * object and constructs a new object from the results. The `callback` is
+	 * invoked with three arguments:
+	 *
+	 *  - the property value
+	 *  - the property name
+	 *  - the object being traversed
+	 *
+	 * Properties that are added after the call to `mapObject` will not be visited
+	 * by `callback`. If the values of existing properties are changed, the value
+	 * passed to `callback` will be the value at the time `mapObject` visits them.
+	 * Properties that are deleted before being visited are not visited.
+	 *
+	 * @grep function objectMap()
+	 * @grep function objMap()
+	 *
+	 * @param {?object} object
+	 * @param {function} callback
+	 * @param {*} context
+	 * @return {?object}
+	 */
+	function mapObject(object, callback, context) {
+	  if (!object) {
+	    return null;
+	  }
+	  var result = {};
+	  for (var name in object) {
+	    if (hasOwnProperty.call(object, name)) {
+	      result[name] = callback.call(context, object[name], name, object);
+	    }
+	  }
+	  return result;
+	}
+
+	module.exports = mapObject;
+
+/***/ },
+/* 313 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule resolveImmediate
+	 * 
+	 */
+
+	'use strict';
+
+	var Promise = __webpack_require__(179);
+
+	var resolvedPromise = Promise.resolve();
+
+	/**
+	 * An alternative to setImmediate based on Promise.
+	 */
+	function resolveImmediate(callback) {
+	  resolvedPromise.then(callback)['catch'](throwNext);
+	}
+
+	function throwNext(error) {
+	  setTimeout(function () {
+	    throw error;
+	  }, 0);
+	}
+
+	module.exports = resolveImmediate;
+
+/***/ },
+/* 314 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule someObject
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+	/**
+	 * Executes the provided `callback` once for each enumerable own property in the
+	 * object until it finds one where callback returns a truthy value. If such a
+	 * property is found, `someObject` immediately returns true. Otherwise, it
+	 * returns false.
+	 *
+	 * The `callback` is invoked with three arguments:
+	 *
+	 *  - the property value
+	 *  - the property name
+	 *  - the object being traversed
+	 *
+	 * Properties that are added after the call to `someObject` will not be
+	 * visited by `callback`. If the values of existing properties are changed, the
+	 * value passed to `callback` will be the value at the time `someObject`
+	 * visits them. Properties that are deleted before being visited are not
+	 * visited.
+	 */
+	function someObject(object, callback, context) {
+	  for (var name in object) {
+	    if (hasOwnProperty.call(object, name)) {
+	      if (callback.call(context, object[name], name, object)) {
+	        return true;
+	      }
+	    }
+	  }
+	  return false;
+	}
+
+	module.exports = someObject;
+
+/***/ },
+/* 315 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule splitDeferredRelayQueries
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _inherits = __webpack_require__(198)['default'];
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	var QueryBuilder = __webpack_require__(218);
+	var RelayNodeInterface = __webpack_require__(219);
+	var RelayProfiler = __webpack_require__(232);
+	var RelayQuery = __webpack_require__(214);
+	var RelayQueryTransform = __webpack_require__(316);
+	var RelayRefQueryDescriptor = __webpack_require__(317);
+
+	var invariant = __webpack_require__(222);
+
+	/**
+	 * Traverse `node` splitting off deferred query fragments into separate queries.
+	 *
+	 * @internal
+	 */
+	function splitDeferredRelayQueries(node) {
+	  var splitter = new GraphQLSplitDeferredQueries();
+	  var splitQueries = {
+	    __parent__: null,
+	    __path__: [],
+	    __refQuery__: null,
+	    deferred: [],
+	    required: null
+	  };
+	  splitter.visit(node, splitQueries);
+
+	  return buildQueries(splitQueries);
+	}
+
+	/**
+	 * Returns the requisite siblings of `node`, but filters any non-requisite
+	 * children of those siblings.
+	 */
+	function getRequisiteSiblings(node, parent) {
+	  // Get the requisite siblings.
+	  var siblings = parent.getChildren().filter(function (child) {
+	    return child !== node && child instanceof RelayQuery.Field && child.isRequisite();
+	  });
+
+	  // Filter the non-requisite children from those siblings.
+	  return siblings.map(function (sibling) {
+	    var children = sibling.getChildren().filter(function (child) {
+	      return child instanceof RelayQuery.Field && child.isRequisite();
+	    });
+	    var clone = sibling.clone(children);
+	    !clone ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Unexpected non-scalar, requisite field.') : invariant(false) : undefined;
+	    return clone;
+	  });
+	}
+
+	/**
+	 * Traverse the parent chain of `node` wrapping it at each level until it is
+	 * either:
+	 *
+	 * - wrapped in a RelayQuery.Root node
+	 * - wrapped in a non-root node that can be split off in a "ref query" (ie. a
+	 *   root call with a ref param that references another query)
+	 *
+	 * Additionally ensures that any requisite sibling fields are embedded in each
+	 * layer of the wrapper.
+	 */
+	function wrapNode(node, path) {
+	  for (var ii = path.length - 1; ii >= 0; ii--) {
+	    var parent = path[ii];
+	    if (parent instanceof RelayQuery.Field && parent.getInferredRootCallName()) {
+	      // We can make a "ref query" at this point, so stop wrapping.
+	      return new RelayRefQueryDescriptor(node, path.slice(0, ii + 1));
+	    }
+
+	    var siblings = getRequisiteSiblings(node, parent);
+	    var children = [node].concat(siblings);
+
+	    // Cast here because we know that `clone` will never return `null` (because
+	    // we always give it at least one child).
+	    node = parent.clone(children);
+	  }
+	  !(node instanceof RelayQuery.Root) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Cannot build query without a root node.') : invariant(false) : undefined;
+	  var identifyingArg = node.getIdentifyingArg();
+	  var identifyingArgName = identifyingArg && identifyingArg.name || null;
+	  var identifyingArgValue = identifyingArg && identifyingArg.value || null;
+	  var metadata = {
+	    identifyingArgName: identifyingArgName,
+	    isDeferred: true
+	  };
+	  return RelayQuery.Root.build(node.getName(), node.getFieldName(), identifyingArgValue, node.getChildren(), metadata, node.getType());
+	}
+
+	/**
+	 * Returns `true` if `node` is considered "empty", which means that it contains
+	 * no non-generated fields, and no ref query dependencies.
+	 */
+	function isEmpty(node) {
+	  if (node.isScalar()) {
+	    return node.isGenerated() && !node.isRefQueryDependency();
+	  } else {
+	    return node.getChildren().every(isEmpty);
+	  }
+	}
+
+	/**
+	 * Mutates and returns a nested `SplitQueries` structure, updating any deferred
+	 * "ref queries" to actually reference their contexts.
+	 */
+	function buildQueries(splitQueries) {
+	  if (splitQueries.required && isEmpty(splitQueries.required)) {
+	    splitQueries.required = null;
+	  }
+	  splitQueries.deferred = splitQueries.deferred.map(function (nestedSplitQueries) {
+	    var descriptor = nestedSplitQueries.__refQuery__;
+	    if (descriptor) {
+	      // Wrap the ref query node with a reference to the required query that is
+	      // its context.
+	      var context = splitQueries.required;
+	      if (!context) {
+	        // Traverse upwards looking for context.
+	        var parentSplitQueries = splitQueries;
+	        while (parentSplitQueries.__parent__) {
+	          context = parentSplitQueries.__parent__.required;
+	          if (context) {
+	            break;
+	          }
+	          parentSplitQueries = parentSplitQueries.__parent__;
+	        }
+	      }
+	      !context ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Expected a context root query.') : invariant(false) : undefined;
+	      nestedSplitQueries.required = createRefQuery(descriptor, context);
+	    }
+
+	    return buildQueries(nestedSplitQueries);
+	  });
+	  return splitQueries;
+	}
+
+	/**
+	 * Wraps `descriptor` in a new top-level ref query.
+	 */
+	function createRefQuery(descriptor, context) {
+	  var node = descriptor.node;
+	  !(node instanceof RelayQuery.Field || node instanceof RelayQuery.Fragment) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Ref query requires a field or fragment.') : invariant(false) : undefined;
+
+	  // Build up JSONPath.
+	  var path = ['$', '*'];
+	  var parent;
+	  for (var ii = 0; ii < descriptor.path.length; ii++) {
+	    parent = descriptor.path[ii];
+	    if (parent instanceof RelayQuery.Field) {
+	      path.push(parent.getSerializationKey());
+	      if (parent.isPlural()) {
+	        path.push('*');
+	      }
+	    }
+	  }
+	  !(path.length > 2) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Ref query requires a complete path.') : invariant(false) : undefined;
+	  var field = parent; // Flow
+	  var primaryKey = field.getInferredPrimaryKey();
+	  !primaryKey ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Ref query requires a primary key.') : invariant(false) : undefined;
+	  path.push(primaryKey);
+
+	  // Create the wrapper root query.
+	  var root = RelayQuery.Root.build(context.getName(), RelayNodeInterface.NODES, QueryBuilder.createBatchCallVariable(context.getID(), path.join('.')), [node], {
+	    identifyingArgName: RelayNodeInterface.ID,
+	    isDeferred: true
+	  }, RelayNodeInterface.NODE_TYPE);
+
+	  var result = root; // Flow
+	  return result;
+	}
+
+	/**
+	 * Traverses an input query, updating the passed in `SplitQueries` state object
+	 * to contain a nested structure representing the required and deferred portions
+	 * of the input query.
+	 */
+
+	var GraphQLSplitDeferredQueries = (function (_RelayQueryTransform) {
+	  _inherits(GraphQLSplitDeferredQueries, _RelayQueryTransform);
+
+	  function GraphQLSplitDeferredQueries() {
+	    _classCallCheck(this, GraphQLSplitDeferredQueries);
+
+	    _RelayQueryTransform.apply(this, arguments);
+	  }
+
+	  GraphQLSplitDeferredQueries.prototype.visitField = function visitField(node, splitQueries) {
+	    if (!node.hasDeferredDescendant()) {
+	      return node;
+	    }
+
+	    splitQueries.__path__.push(node);
+	    var result = this.traverse(node, splitQueries);
+	    splitQueries.__path__.pop();
+
+	    if (result && node.getInferredRootCallName()) {
+	      // The node is a ref query dependency; mark it as one.
+	      var key = node.getInferredPrimaryKey();
+	      var children = result.getChildren().map(function (child) {
+	        if (child instanceof RelayQuery.Field && child.getSchemaName() === key) {
+	          return child.cloneAsRefQueryDependency();
+	        } else {
+	          return child;
+	        }
+	      });
+	      result = result.clone(children);
+	    }
+
+	    return result;
+	  };
+
+	  GraphQLSplitDeferredQueries.prototype.visitFragment = function visitFragment(node, splitQueries) {
+	    if (!node.getChildren().length) {
+	      return null;
+	    }
+
+	    if (node.isDeferred()) {
+	      var path = splitQueries.__path__;
+	      var deferred = {
+	        __parent__: splitQueries,
+	        __path__: path,
+	        __refQuery__: null,
+	        deferred: [],
+	        required: null
+	      };
+	      var result = this.traverse(node, deferred);
+	      if (result) {
+	        var wrapped = wrapNode(result, path);
+	        if (wrapped instanceof RelayQuery.Root) {
+	          deferred.required = wrapped;
+	        } else if (wrapped instanceof RelayRefQueryDescriptor) {
+	          // for Flow
+	          deferred.__refQuery__ = wrapped;
+	        }
+	      }
+	      if (result || deferred.deferred.length) {
+	        splitQueries.deferred.push(deferred);
+	      }
+	      return null;
+	    } else if (node.hasDeferredDescendant()) {
+	      return this.traverse(node, splitQueries);
+	    } else {
+	      return node;
+	    }
+	  };
+
+	  GraphQLSplitDeferredQueries.prototype.visitRoot = function visitRoot(node, splitQueries) {
+	    var result;
+	    if (!node.hasDeferredDescendant()) {
+	      splitQueries.required = node;
+	      return node;
+	    } else {
+	      splitQueries.__path__.push(node);
+	      result = this.traverse(node, splitQueries);
+	      splitQueries.__path__.pop();
+	      splitQueries.required = result;
+	      return result;
+	    }
+	  };
+
+	  return GraphQLSplitDeferredQueries;
+	})(RelayQueryTransform);
+
+	var instrumented = RelayProfiler.instrument('splitDeferredRelayQueries', splitDeferredRelayQueries);
+
+	// #7573861: Type export collides with CommonJS export in presence of
+	// `instrument()` call:
+	module.exports = instrumented;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 316 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayQueryTransform
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _inherits = __webpack_require__(198)['default'];
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var RelayQueryVisitor = __webpack_require__(277);
+
+	/**
+	 * @internal
+	 *
+	 * `RelayQueryTransform` is a `RelayQueryVisitor` subclass that simplifies the
+	 * process of traversing, filtering, or transforming a Relay Query.
+	 *
+	 * The traversal is a map operation from `RelayQuery` nodes to nodes. The
+	 * default implementation traverses all nodes and maps each one to its
+	 * original value (ie. a no-op).
+	 *
+	 * Just like `RelayQueryVisitor`, subclasses of `RelayQueryTransform` can
+	 * optionally implement methods to customize the traversal and mapping of
+	 * different RelayQuery node types:
+	 *
+	 * - `visitField(field, state)`: Returns the new value for the visited field, or
+	 *   `null` to remove it from the output.
+	 * - `visitFragment(fragment, state)`: Returns the new value for the visited
+	 *   fragment, or `null` to remove it from the output.
+	 * - `visitQuery(fragment, state)`: Returns the new value for the top-level
+	 *   query, or `null` to transform the entire query out of existence.
+	 *
+	 * There are two additional methods for controlling the traversal:
+	 *
+	 * - `traverse(parent, state)`: Returns a cloned copy of the parent node after
+	 *   processing all of its children. Does not clone if nothing changed.
+	 * - `visit(child, state)`: Processes the child node, calling the appropriate
+	 *   `visit{Field,Fragment,Root` method based on the node type.
+	 *
+	 * All of these methods may return the original node in order to leave it
+	 * intact.
+	 *
+	 * @see RelayQueryVisitor
+	 */
+
+	var RelayQueryTransform = (function (_RelayQueryVisitor) {
+	  _inherits(RelayQueryTransform, _RelayQueryVisitor);
+
+	  function RelayQueryTransform() {
+	    _classCallCheck(this, RelayQueryTransform);
+
+	    _RelayQueryVisitor.apply(this, arguments);
+	  }
+
+	  RelayQueryTransform.prototype.traverse = function traverse(node, nextState) {
+	    if (node.isScalar()) {
+	      return node;
+	    }
+
+	    var nextChildren;
+	    var children = node.getChildren();
+	    for (var ii = 0; ii < children.length; ii++) {
+	      var prevChild = children[ii];
+	      var nextChild = this.visit(prevChild, nextState);
+	      if (nextChild !== prevChild) {
+	        nextChildren = nextChildren || children.slice(0, ii);
+	      }
+	      if (nextChildren && nextChild) {
+	        nextChildren.push(nextChild);
+	      }
+	    }
+	    if (nextChildren) {
+	      if (!nextChildren.length) {
+	        return null;
+	      }
+	      return node.clone(nextChildren);
+	    }
+	    return node;
+	  };
+
+	  return RelayQueryTransform;
+	})(RelayQueryVisitor);
+
+	module.exports = RelayQueryTransform;
+
+/***/ },
+/* 317 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayRefQueryDescriptor
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	/**
+	 * @internal
+	 *
+	 * Represents a node that will eventually become a "ref query".
+	 *
+	 * Includes the "path" context (ancestor nodes) that can be used to construct an
+	 * appropriate the JSONPath for the query.
+	 *
+	 * @see splitDeferredRelayQueries
+	 */
+
+	var RelayRefQueryDescriptor = function RelayRefQueryDescriptor(node, path) {
+	  _classCallCheck(this, RelayRefQueryDescriptor);
+
+	  this.node = node;
+	  this.path = path;
+	};
+
+	module.exports = RelayRefQueryDescriptor;
+
+/***/ },
+/* 318 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule GraphQLStoreChangeEmitter
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	var ErrorUtils = __webpack_require__(211);
+
+	var resolveImmediate = __webpack_require__(313);
+
+	/**
+	 * Asynchronous change emitter for nodes stored in the Relay cache.
+	 *
+	 * Changes are produced by `RelayStoreData` after writing query and mutation
+	 * payloads into the store and consumed by `GraphQLStoreQueryResolver`, which
+	 * subscribes to all records that are part of an active query result set.
+	 *
+	 * @internal
+	 */
+
+	var GraphQLStoreChangeEmitter = (function () {
+	  function GraphQLStoreChangeEmitter(rangeData) {
+	    _classCallCheck(this, GraphQLStoreChangeEmitter);
+
+	    this._batchUpdate = function (callback) {
+	      return callback();
+	    };
+	    this._executingIDs = {};
+	    this._rangeData = rangeData;
+	    this._scheduledIDs = null;
+	    this._subscribers = [];
+	  }
+
+	  GraphQLStoreChangeEmitter.prototype.addListenerForIDs = function addListenerForIDs(ids, callback) {
+	    var _this = this;
+
+	    var subscribedIDs = ids.map(function (id) {
+	      return _this._getBroadcastID(id);
+	    });
+	    var index = this._subscribers.length;
+	    this._subscribers.push({ subscribedIDs: subscribedIDs, callback: callback });
+	    return {
+	      remove: function remove() {
+	        delete _this._subscribers[index];
+	      }
+	    };
+	  };
+
+	  GraphQLStoreChangeEmitter.prototype.broadcastChangeForID = function broadcastChangeForID(id) {
+	    var _this2 = this;
+
+	    var scheduledIDs = this._scheduledIDs;
+	    if (scheduledIDs == null) {
+	      resolveImmediate(function () {
+	        return _this2._processBroadcasts();
+	      });
+	      scheduledIDs = this._scheduledIDs = {};
+	    }
+	    // Record index of the last subscriber so we do not later unintentionally
+	    // invoke callbacks that were subscribed after this broadcast.
+	    scheduledIDs[this._getBroadcastID(id)] = this._subscribers.length - 1;
+	  };
+
+	  GraphQLStoreChangeEmitter.prototype.injectBatchingStrategy = function injectBatchingStrategy(batchStrategy) {
+	    this._batchUpdate = batchStrategy;
+	  };
+
+	  GraphQLStoreChangeEmitter.prototype._processBroadcasts = function _processBroadcasts() {
+	    var _this3 = this;
+
+	    if (this._scheduledIDs) {
+	      this._executingIDs = this._scheduledIDs;
+	      this._scheduledIDs = null;
+	      this._batchUpdate(function () {
+	        return _this3._processSubscribers();
+	      });
+	    }
+	  };
+
+	  /**
+	   * Exposed for profiling reasons.
+	   * @private
+	   */
+
+	  GraphQLStoreChangeEmitter.prototype._processSubscribers = function _processSubscribers() {
+	    var _this4 = this;
+
+	    this._subscribers.forEach(function (subscriber, subscriberIndex) {
+	      return _this4._processSubscriber(subscriber, subscriberIndex);
+	    });
+	  };
+
+	  GraphQLStoreChangeEmitter.prototype._processSubscriber = function _processSubscriber(_ref, subscriberIndex) {
+	    var subscribedIDs = _ref.subscribedIDs;
+	    var callback = _ref.callback;
+
+	    for (var broadcastID in this._executingIDs) {
+	      if (this._executingIDs.hasOwnProperty(broadcastID)) {
+	        var broadcastIndex = this._executingIDs[broadcastID];
+	        if (broadcastIndex < subscriberIndex) {
+	          // Callback was subscribed after this particular broadcast.
+	          break;
+	        }
+	        if (subscribedIDs.indexOf(broadcastID) >= 0) {
+	          ErrorUtils.applyWithGuard(callback, null, null, null, 'GraphQLStoreChangeEmitter');
+	          break;
+	        }
+	      }
+	    }
+	  };
+
+	  /**
+	   * Ranges publish events for the entire range, not the specific view of that
+	   * range. For example, if "client:1" is a range, the event is on "client:1",
+	   * not "client:1_first(5)".
+	   */
+
+	  GraphQLStoreChangeEmitter.prototype._getBroadcastID = function _getBroadcastID(id) {
+	    return this._rangeData.getCanonicalClientID(id);
+	  };
+
+	  return GraphQLStoreChangeEmitter;
+	})();
+
+	module.exports = GraphQLStoreChangeEmitter;
+
+/***/ },
+/* 319 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule GraphQLStoreRangeUtils
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var callsFromGraphQL = __webpack_require__(236);
+	var printRelayQueryCall = __webpack_require__(240);
+
+	/**
+	 * Utilities used by GraphQLStore for storing ranges
+	 *
+	 * GraphQLStore stores all of the parts of a range in a single GraphQLRange
+	 * object. For example, `node(4808495){friends.first(5){id,name}}` might be
+	 * stored similar to this (pseudo-code):
+	 *
+	 *   "4808495": {
+	 *     "friends": { __dataID__: "client:1" }
+	 *   },
+	 *   "client:1": {
+	 *     "nodes": new GraphQLRange(...) // all friends, not just the first 5
+	 *   }
+	 *
+	 * and when that query is run, the store would return a result pointing at
+	 * a specific part of the range, encoded into the data ID:
+	 *
+	 * {
+	 *   "4808495": {
+	 *     "friends": { __dataID__: "client:1_first(5)" }
+	 *   }
+	 * }
+	 *
+	 * That "client:1_first(5)" ID can then be used to query for the first 5
+	 * friends.
+	 *
+	 * @internal
+	 */
+
+	var GraphQLStoreRangeUtils = (function () {
+	  function GraphQLStoreRangeUtils() {
+	    _classCallCheck(this, GraphQLStoreRangeUtils);
+
+	    this._rangeData = {};
+	  }
+
+	  /**
+	   * Returns a token that can be parsed using parseRangeClientID to recover
+	   * the attributes needed to retrieve the corresponding items from a
+	   * GraphQLRange.
+	   *
+	   * @param {array<*>} calls
+	   * @param {object} callValues
+	   * @param {string} dataID
+	   * @return {string}
+	   */
+
+	  GraphQLStoreRangeUtils.prototype.getClientIDForRangeWithID = function getClientIDForRangeWithID(calls, callValues, dataID) {
+	    var callsAsString = callsFromGraphQL(calls, callValues).map(function (call) {
+	      return printRelayQueryCall(call).substring(1);
+	    }).join(',');
+	    var key = dataID + '_' + callsAsString;
+	    var edge = this._rangeData[key];
+	    if (!edge) {
+	      this._rangeData[key] = {
+	        dataID: dataID,
+	        calls: calls,
+	        callValues: callValues
+	      };
+	    }
+	    return key;
+	  };
+
+	  /**
+	   * Parses an ID back into its data ID and calls
+	   *
+	   * @param {string} rangeSpecificClientID
+	   * @return {?object}
+	   */
+
+	  GraphQLStoreRangeUtils.prototype.parseRangeClientID = function parseRangeClientID(rangeSpecificClientID) {
+	    return this._rangeData[rangeSpecificClientID] || null;
+	  };
+
+	  /**
+	   * If given the client id for a range view, returns the canonical client id
+	   * for the entire range. e.g. converts "client:1_first(5)" to "client:1".
+	   * Otherwise returns the input.
+	   *
+	   * @param {string} dataID
+	   * @return {string}
+	   */
+
+	  GraphQLStoreRangeUtils.prototype.getCanonicalClientID = function getCanonicalClientID(dataID) {
+	    return this._rangeData[dataID] ? this._rangeData[dataID].dataID : dataID;
+	  };
+
+	  return GraphQLStoreRangeUtils;
+	})();
+
+	module.exports = GraphQLStoreRangeUtils;
+
+/***/ },
+/* 320 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayChangeTracker
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var _Object$freeze = __webpack_require__(215)['default'];
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	/**
+	 * @internal
+	 *
+	 * Keeps track of records that have been created or updated; used primarily to
+	 * record changes during the course of a `write` operation.
+	 */
+
+	var RelayChangeTracker = (function () {
+	  function RelayChangeTracker() {
+	    _classCallCheck(this, RelayChangeTracker);
+
+	    this._created = {};
+	    this._updated = {};
+	  }
+
+	  /**
+	   * Record the creation of a record.
+	   */
+
+	  RelayChangeTracker.prototype.createID = function createID(recordID) {
+	    this._created[recordID] = true;
+	  };
+
+	  /**
+	   * Record an update to a record.
+	   */
+
+	  RelayChangeTracker.prototype.updateID = function updateID(recordID) {
+	    if (!this._created.hasOwnProperty(recordID)) {
+	      this._updated[recordID] = true;
+	    }
+	  };
+
+	  /**
+	   * Determine if the record has any changes (was created or updated).
+	   */
+
+	  RelayChangeTracker.prototype.hasChange = function hasChange(recordID) {
+	    return !!(this._updated[recordID] || this._created[recordID]);
+	  };
+
+	  /**
+	   * Determine if the record was created.
+	   */
+
+	  RelayChangeTracker.prototype.isNewRecord = function isNewRecord(recordID) {
+	    return !!this._created[recordID];
+	  };
+
+	  /**
+	   * Get the ids of records that were created/updated.
+	   */
+
+	  RelayChangeTracker.prototype.getChangeSet = function getChangeSet() {
+	    if (process.env.NODE_ENV !== 'production') {
+	      return {
+	        created: _Object$freeze(this._created),
+	        updated: _Object$freeze(this._updated)
+	      };
+	    }
+	    return {
+	      created: this._created,
+	      updated: this._updated
+	    };
+	  };
+
+	  return RelayChangeTracker;
+	})();
+
+	module.exports = RelayChangeTracker;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 321 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayMutationQueue
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var _extends = __webpack_require__(161)['default'];
+
+	var _defineProperty = __webpack_require__(322)['default'];
+
+	var ErrorUtils = __webpack_require__(211);
+	var QueryBuilder = __webpack_require__(218);
+	var RelayConnectionInterface = __webpack_require__(227);
+	var RelayMutationQuery = __webpack_require__(325);
+	var RelayMutationRequest = __webpack_require__(342);
+	var RelayMutationTransaction = __webpack_require__(285);
+	var RelayMutationTransactionStatus = __webpack_require__(286);
+	var RelayNetworkLayer = __webpack_require__(303);
+
+	var flattenRelayQuery = __webpack_require__(327);
+	var fromGraphQL = __webpack_require__(346);
+	var invariant = __webpack_require__(222);
+	var nullthrows = __webpack_require__(339);
+	var resolveImmediate = __webpack_require__(313);
+
+	var CLIENT_MUTATION_ID = RelayConnectionInterface.CLIENT_MUTATION_ID;
+
+	var transactionIDCounter = 0;
+
+	/**
+	 * @internal
+	 *
+	 * Coordinates execution of concurrent mutations, including application and
+	 * rollback of optimistic payloads and enqueueing mutations with the same
+	 * collision key.
+	 */
+
+	var RelayMutationQueue = (function () {
+	  function RelayMutationQueue(storeData) {
+	    _classCallCheck(this, RelayMutationQueue);
+
+	    this._collisionQueueMap = {};
+	    this._pendingTransactionMap = {};
+	    this._queue = [];
+	    this._storeData = storeData;
+	    this._willBatchRefreshQueuedData = false;
+	  }
+
+	  /**
+	   * @private
+	   */
+
+	  RelayMutationQueue.prototype.createTransaction = function createTransaction(mutation, callbacks) {
+	    var id = (transactionIDCounter++).toString(36);
+	    var mutationTransaction = new RelayMutationTransaction(this, id);
+	    var transaction = new PendingTransaction({
+	      id: id,
+	      mutation: mutation,
+	      mutationTransaction: mutationTransaction,
+	      onFailure: callbacks && callbacks.onFailure,
+	      onSuccess: callbacks && callbacks.onSuccess
+	    });
+	    this._pendingTransactionMap[id] = transaction;
+	    this._queue.push(transaction);
+	    this._handleOptimisticUpdate(transaction);
+
+	    return mutationTransaction;
+	  };
+
+	  RelayMutationQueue.prototype.getTransaction = function getTransaction(id) {
+	    return this._get(id).mutationTransaction;
+	  };
+
+	  RelayMutationQueue.prototype.getError = function getError(id) {
+	    return this._get(id).error;
+	  };
+
+	  RelayMutationQueue.prototype.getStatus = function getStatus(id) {
+	    return this._get(id).status;
+	  };
+
+	  RelayMutationQueue.prototype.commit = function commit(id) {
+	    var transaction = this._get(id);
+	    var collisionKey = transaction.getCollisionKey();
+	    var collisionQueue = collisionKey && this._collisionQueueMap[collisionKey];
+	    if (collisionQueue) {
+	      collisionQueue.push(transaction);
+	      transaction.status = RelayMutationTransactionStatus.COMMIT_QUEUED;
+	      transaction.error = null;
+	      return;
+	    }
+	    if (collisionKey) {
+	      this._collisionQueueMap[collisionKey] = [transaction];
+	    }
+	    this._handleCommit(transaction);
+	  };
+
+	  RelayMutationQueue.prototype.rollback = function rollback(id) {
+	    var transaction = this._get(id);
+	    this._handleRollback(transaction);
+	  };
+
+	  RelayMutationQueue.prototype._get = function _get(id) {
+	    var transaction = this._pendingTransactionMap[id];
+	    !transaction ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationQueue: `%s` is not a valid pending transaction ID.', id) : invariant(false) : undefined;
+	    return transaction;
+	  };
+
+	  RelayMutationQueue.prototype._handleOptimisticUpdate = function _handleOptimisticUpdate(transaction) {
+	    var optimisticResponse = transaction.getOptimisticResponse();
+	    var optimisticQuery = transaction.getOptimisticQuery(this._storeData);
+	    if (optimisticResponse && optimisticQuery) {
+	      var configs = transaction.getOptimisticConfigs() || transaction.getConfigs();
+	      this._storeData.handleUpdatePayload(optimisticQuery, optimisticResponse, {
+	        configs: configs,
+	        isOptimisticUpdate: true
+	      });
+	    }
+	  };
+
+	  RelayMutationQueue.prototype._handleCommitFailure = function _handleCommitFailure(transaction, error) {
+	    var status = error ? RelayMutationTransactionStatus.COMMIT_FAILED : RelayMutationTransactionStatus.COLLISION_COMMIT_FAILED;
+	    transaction.status = status;
+	    transaction.error = error;
+
+	    var shouldRollback = true;
+	    var onFailure = transaction.onFailure;
+	    if (onFailure) {
+	      var preventAutoRollback = function preventAutoRollback() {
+	        shouldRollback = false;
+	      };
+	      ErrorUtils.applyWithGuard(onFailure, null, [transaction.mutationTransaction, preventAutoRollback], null, 'RelayMutationTransaction:onCommitFailure');
+	    }
+
+	    if (error) {
+	      this._failCollisionQueue(transaction);
+	    }
+
+	    // Might have already been rolled back via `onFailure`.
+	    if (shouldRollback && this._pendingTransactionMap.hasOwnProperty(transaction.id)) {
+	      this._handleRollback(transaction);
+	    }
+	    this._batchRefreshQueuedData();
+	  };
+
+	  RelayMutationQueue.prototype._handleCommitSuccess = function _handleCommitSuccess(transaction, response) {
+	    this._advanceCollisionQueue(transaction);
+	    this._clearPendingTransaction(transaction);
+
+	    this._refreshQueuedData();
+	    this._storeData.handleUpdatePayload(transaction.getQuery(this._storeData), response[transaction.getCallName()], {
+	      configs: transaction.getConfigs(),
+	      isOptimisticUpdate: false
+	    });
+
+	    var onSuccess = transaction.onSuccess;
+	    if (onSuccess) {
+	      ErrorUtils.applyWithGuard(onSuccess, null, [response], null, 'RelayMutationTransaction:onCommitSuccess');
+	    }
+	  };
+
+	  RelayMutationQueue.prototype._handleCommit = function _handleCommit(transaction) {
+	    var _this = this;
+
+	    transaction.status = RelayMutationTransactionStatus.COMMITTING;
+	    transaction.error = null;
+
+	    var request = new RelayMutationRequest(transaction.getQuery(this._storeData), transaction.getFiles());
+	    RelayNetworkLayer.sendMutation(request);
+
+	    request.getPromise().done(function (result) {
+	      return _this._handleCommitSuccess(transaction, result.response);
+	    }, function (error) {
+	      return _this._handleCommitFailure(transaction, error);
+	    });
+	  };
+
+	  RelayMutationQueue.prototype._handleRollback = function _handleRollback(transaction) {
+	    this._clearPendingTransaction(transaction);
+	    this._batchRefreshQueuedData();
+	  };
+
+	  RelayMutationQueue.prototype._clearPendingTransaction = function _clearPendingTransaction(transaction) {
+	    delete this._pendingTransactionMap[transaction.id];
+	    this._queue = this._queue.filter(function (tx) {
+	      return tx !== transaction;
+	    });
+	  };
+
+	  RelayMutationQueue.prototype._advanceCollisionQueue = function _advanceCollisionQueue(transaction) {
+	    var collisionKey = transaction.getCollisionKey();
+	    if (collisionKey) {
+	      var collisionQueue = nullthrows(this._collisionQueueMap[collisionKey]);
+	      // Remove the transaction that called this function.
+	      collisionQueue.shift();
+
+	      if (collisionQueue.length) {
+	        this._handleCommit(collisionQueue[0]);
+	      } else {
+	        delete this._collisionQueueMap[collisionKey];
+	      }
+	    }
+	  };
+
+	  RelayMutationQueue.prototype._failCollisionQueue = function _failCollisionQueue(transaction) {
+	    var _this2 = this;
+
+	    var collisionKey = transaction.getCollisionKey();
+	    if (collisionKey) {
+	      var collisionQueue = nullthrows(this._collisionQueueMap[collisionKey]);
+	      // Remove the transaction that called this function.
+	      collisionQueue.shift();
+	      collisionQueue.forEach(function (transaction) {
+	        return _this2._handleCommitFailure(transaction, null);
+	      });
+	      delete this._collisionQueueMap[collisionKey];
+	    }
+	  };
+
+	  RelayMutationQueue.prototype._batchRefreshQueuedData = function _batchRefreshQueuedData() {
+	    var _this3 = this;
+
+	    if (!this._willBatchRefreshQueuedData) {
+	      this._willBatchRefreshQueuedData = true;
+	      resolveImmediate(function () {
+	        _this3._willBatchRefreshQueuedData = false;
+	        _this3._refreshQueuedData();
+	      });
+	    }
+	  };
+
+	  RelayMutationQueue.prototype._refreshQueuedData = function _refreshQueuedData() {
+	    var _this4 = this;
+
+	    this._storeData.clearQueuedData();
+	    this._queue.forEach(function (transaction) {
+	      return _this4._handleOptimisticUpdate(transaction);
+	    });
+	  };
+
+	  return RelayMutationQueue;
+	})();
+
+	var PendingTransaction = (function () {
+	  function PendingTransaction(transactionData) {
+	    _classCallCheck(this, PendingTransaction);
+
+	    this.error = null;
+	    this.id = transactionData.id;
+	    this.mutation = transactionData.mutation;
+	    this.mutationTransaction = transactionData.mutationTransaction;
+	    this.onFailure = transactionData.onFailure;
+	    this.onSuccess = transactionData.onSuccess;
+	    this.status = RelayMutationTransactionStatus.UNCOMMITTED;
+	  }
+
+	  PendingTransaction.prototype.getCallName = function getCallName() {
+	    if (!this._callName) {
+	      this._callName = this.getMutationNode().calls[0].name;
+	    }
+	    return this._callName;
+	  };
+
+	  PendingTransaction.prototype.getCollisionKey = function getCollisionKey() {
+	    if (this._collisionKey === undefined) {
+	      this._collisionKey = this.mutation.getCollisionKey() || null;
+	    }
+	    return this._collisionKey;
+	  };
+
+	  PendingTransaction.prototype.getConfigs = function getConfigs() {
+	    if (!this._configs) {
+	      this._configs = this.mutation.getConfigs();
+	    }
+	    return this._configs;
+	  };
+
+	  PendingTransaction.prototype.getFatQuery = function getFatQuery() {
+	    if (!this._fatQuery) {
+	      this._fatQuery = nullthrows(flattenRelayQuery(fromGraphQL.Fragment(this.mutation.getFatQuery()), { shouldRemoveFragments: true }));
+	    }
+	    return this._fatQuery;
+	  };
+
+	  PendingTransaction.prototype.getFiles = function getFiles() {
+	    if (this._files === undefined) {
+	      this._files = this.mutation.getFiles() || null;
+	    }
+	    return this._files;
+	  };
+
+	  PendingTransaction.prototype.getInputVariable = function getInputVariable() {
+	    if (!this._inputVariable) {
+	      var inputVariable = _extends({}, this.mutation.getVariables(), _defineProperty({}, CLIENT_MUTATION_ID, this.id));
+	      this._inputVariable = inputVariable;
+	    }
+	    return this._inputVariable;
+	  };
+
+	  PendingTransaction.prototype.getMutationNode = function getMutationNode() {
+	    if (!this._mutationNode) {
+	      var mutationNode = QueryBuilder.getMutation(this.mutation.getMutation());
+	      !mutationNode ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutation: Expected `getMutation` to return a mutation created ' + 'with Relay.QL`mutation { ... }`.') : invariant(false) : undefined;
+	      this._mutationNode = mutationNode;
+	    }
+	    return this._mutationNode;
+	  };
+
+	  PendingTransaction.prototype.getOptimisticConfigs = function getOptimisticConfigs() {
+	    if (this._optimisticConfigs === undefined) {
+	      this._optimisticConfigs = this.mutation.getOptimisticConfigs() || null;
+	    }
+	    return this._optimisticConfigs;
+	  };
+
+	  PendingTransaction.prototype.getOptimisticQuery = function getOptimisticQuery(storeData) {
+	    if (this._optimisticQuery === undefined) {
+	      var optimisticResponse = this.getOptimisticResponse();
+	      if (optimisticResponse) {
+	        var optimisticConfigs = this.getOptimisticConfigs();
+	        if (optimisticConfigs) {
+	          this._optimisticQuery = RelayMutationQuery.buildQuery({
+	            configs: optimisticConfigs,
+	            fatQuery: this.getFatQuery(),
+	            input: this.getInputVariable(),
+	            mutationName: this.mutation.constructor.name,
+	            mutation: this.getMutationNode(),
+	            tracker: storeData.getQueryTracker()
+	          });
+	        } else {
+	          this._optimisticQuery = RelayMutationQuery.buildQueryForOptimisticUpdate({
+	            response: optimisticResponse,
+	            fatQuery: this.getFatQuery(),
+	            mutation: this.getMutationNode(),
+	            tracker: storeData.getQueryTracker()
+	          });
+	        }
+	      } else {
+	        this._optimisticQuery = null;
+	      }
+	    }
+	    return this._optimisticQuery;
+	  };
+
+	  PendingTransaction.prototype.getOptimisticResponse = function getOptimisticResponse() {
+	    if (this._optimisticResponse === undefined) {
+	      var optimisticResponse = this.mutation.getOptimisticResponse() || null;
+	      if (optimisticResponse) {
+	        optimisticResponse[CLIENT_MUTATION_ID] = this.id;
+	      }
+	      this._optimisticResponse = optimisticResponse;
+	    }
+	    return this._optimisticResponse;
+	  };
+
+	  PendingTransaction.prototype.getQuery = function getQuery(storeData) {
+	    if (!this._query) {
+	      this._query = RelayMutationQuery.buildQuery({
+	        configs: this.getConfigs(),
+	        fatQuery: this.getFatQuery(),
+	        input: this.getInputVariable(),
+	        mutationName: this.getMutationNode().name,
+	        mutation: this.getMutationNode(),
+	        tracker: storeData.getQueryTracker()
+	      });
+	    }
+	    return this._query;
+	  };
+
+	  return PendingTransaction;
+	})();
+
+	module.exports = RelayMutationQueue;
+
+	// Lazily computed and memoized private properties
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 322 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _Object$defineProperty = __webpack_require__(323)["default"];
+
+	exports["default"] = function (obj, key, value) {
+	  if (key in obj) {
+	    _Object$defineProperty(obj, key, {
+	      value: value,
+	      enumerable: true,
+	      configurable: true,
+	      writable: true
+	    });
+	  } else {
+	    obj[key] = value;
+	  }
+
+	  return obj;
+	};
+
+	exports.__esModule = true;
+
+/***/ },
+/* 323 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(324), __esModule: true };
+
+/***/ },
+/* 324 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(171);
+	module.exports = function defineProperty(it, key, desc){
+	  return $.setDesc(it, key, desc);
+	};
+
+/***/ },
+/* 325 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayMutationQuery
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var _toConsumableArray = __webpack_require__(293)['default'];
+
+	var GraphQLStoreDataHandler = __webpack_require__(213);
+	var RelayConnectionInterface = __webpack_require__(227);
+
+	var RelayMetaRoute = __webpack_require__(231);
+	var RelayMutationType = __webpack_require__(326);
+	var RelayNodeInterface = __webpack_require__(219);
+	var RelayQuery = __webpack_require__(214);
+
+	var flattenRelayQuery = __webpack_require__(327);
+	var forEachObject = __webpack_require__(230);
+	var nullthrows = __webpack_require__(339);
+	var inferRelayFieldsFromData = __webpack_require__(340);
+	var intersectRelayQuery = __webpack_require__(341);
+	var invariant = __webpack_require__(222);
+
+	var CLIENT_MUTATION_ID = RelayConnectionInterface.CLIENT_MUTATION_ID;
+	var ANY_TYPE = RelayNodeInterface.ANY_TYPE;
+	var ID = RelayNodeInterface.ID;
+	var TYPENAME = RelayNodeInterface.TYPENAME;
+
+	/**
+	 * @internal
+	 *
+	 * Constructs query fragments that are sent with mutations, which should ensure
+	 * that any records changed as a result of mutations are brought up-to-date.
+	 *
+	 * The fragments are a minimal subset created by intersecting the "fat query"
+	 * (fields that a mutation declares may have changed) with the "tracked query"
+	 * (fields representing data previously queried and written into the store).
+	 */
+	var RelayMutationQuery = {
+	  /**
+	   * Accepts a mapping from field names to data IDs. The field names must exist
+	   * as top-level fields in the fat query. These top-level fields are used to
+	   * re-fetch any data that has changed for records identified by the data IDs.
+	   *
+	   * The supplied mapping may contain multiple field names. In addition, each
+	   * field name may map to an array of data IDs if the field is plural.
+	   */
+	  buildFragmentForFields: function buildFragmentForFields(_ref) {
+	    var fatQuery = _ref.fatQuery;
+	    var fieldIDs = _ref.fieldIDs;
+	    var tracker = _ref.tracker;
+
+	    var mutatedFields = [];
+	    forEachObject(fieldIDs, function (dataIDOrIDs, fieldName) {
+	      var fatField = getFieldFromFatQuery(fatQuery, fieldName);
+	      var dataIDs = [].concat(dataIDOrIDs);
+	      var trackedChildren = [];
+	      dataIDs.forEach(function (dataID) {
+	        trackedChildren.push.apply(trackedChildren, _toConsumableArray(tracker.getTrackedChildrenForID(dataID)));
+	      });
+	      var trackedField = fatField.clone(trackedChildren);
+	      if (trackedField) {
+	        var mutationField = intersectRelayQuery(trackedField, fatField);
+	        if (mutationField) {
+	          mutatedFields.push(mutationField);
+	        }
+	      }
+	    });
+	    return buildMutationFragment(fatQuery, mutatedFields);
+	  },
+
+	  /**
+	   * Creates a fragment used to update any data as a result of a mutation that
+	   * deletes an edge from a connection. The primary difference between this and
+	   * `createForFields` is whether or not the connection edges are re-fetched.
+	   *
+	   * `connectionName`
+	   *   Name of the connection field from which the edge is being deleted.
+	   *
+	   * `parentID`
+	   *   ID of the parent record containing the connection which may have metadata
+	   *   that needs to be re-fetched.
+	   *
+	   * `parentName`
+	   *   Name of the top-level field in the fat query that corresponds to the
+	   *   parent record.
+	   */
+	  buildFragmentForEdgeDeletion: function buildFragmentForEdgeDeletion(_ref2) {
+	    var fatQuery = _ref2.fatQuery;
+	    var connectionName = _ref2.connectionName;
+	    var parentID = _ref2.parentID;
+	    var parentName = _ref2.parentName;
+	    var tracker = _ref2.tracker;
+
+	    var fatParent = getFieldFromFatQuery(fatQuery, parentName);
+	    var mutatedFields = [];
+	    var trackedParent = fatParent.clone(tracker.getTrackedChildrenForID(parentID));
+	    if (trackedParent) {
+	      var filterUnterminatedRange = function filterUnterminatedRange(node) {
+	        return node.getSchemaName() === connectionName;
+	      };
+	      var mutatedField = intersectRelayQuery(trackedParent, fatParent, filterUnterminatedRange);
+	      if (mutatedField) {
+	        mutatedFields.push(mutatedField);
+	      }
+	    }
+	    return buildMutationFragment(fatQuery, mutatedFields);
+	  },
+
+	  /**
+	   * Creates a fragment used to fetch data necessary to insert a new edge into
+	   * an existing connection.
+	   *
+	   * `connectionName`
+	   *   Name of the connection field into which the edge is being inserted.
+	   *
+	   * `parentID`
+	   *   ID of the parent record containing the connection which may have metadata
+	   *   that needs to be re-fetched.
+	   *
+	   * `edgeName`
+	   *   Name of the top-level field in the fat query that corresponds to the
+	   *   newly inserted edge.
+	   *
+	   * `parentName`
+	   *   Name of the top-level field in the fat query that corresponds to the
+	   *   parent record. If not supplied, metadata on the parent record and any
+	   *   connections without entries in `rangeBehaviors` will not be updated.
+	   */
+	  buildFragmentForEdgeInsertion: function buildFragmentForEdgeInsertion(_ref3) {
+	    var fatQuery = _ref3.fatQuery;
+	    var connectionName = _ref3.connectionName;
+	    var parentID = _ref3.parentID;
+	    var edgeName = _ref3.edgeName;
+	    var parentName = _ref3.parentName;
+	    var rangeBehaviors = _ref3.rangeBehaviors;
+	    var tracker = _ref3.tracker;
+
+	    var trackedChildren = tracker.getTrackedChildrenForID(parentID);
+
+	    var mutatedFields = [];
+	    var trackedConnections = [];
+	    trackedChildren.forEach(function (trackedChild) {
+	      trackedConnections.push.apply(trackedConnections, _toConsumableArray(findDescendantFields(trackedChild, connectionName)));
+	    });
+
+	    if (trackedConnections.length) {
+	      var keysWithoutRangeBehavior = {};
+	      var mutatedEdgeFields = [];
+	      trackedConnections.forEach(function (trackedConnection) {
+	        var trackedEdges = findDescendantFields(trackedConnection, 'edges');
+	        if (!trackedEdges.length) {
+	          return;
+	        }
+	        if (trackedConnection.getRangeBehaviorKey() in rangeBehaviors) {
+	          // Include edges from all connections that exist in `rangeBehaviors`.
+	          // This may add duplicates, but they will eventually be flattened.
+	          trackedEdges.forEach(function (trackedEdge) {
+	            mutatedEdgeFields.push.apply(mutatedEdgeFields, _toConsumableArray(trackedEdge.getChildren()));
+	          });
+	        } else {
+	          // If the connection is not in `rangeBehaviors`, re-fetch it.
+	          var key = trackedConnection.getSerializationKey();
+	          keysWithoutRangeBehavior[key] = true;
+	        }
+	      });
+	      if (mutatedEdgeFields.length) {
+	        mutatedFields.push(buildEdgeField(parentID, edgeName, mutatedEdgeFields));
+	      }
+
+	      // TODO: Do this even if there are no tracked connections.
+	      if (parentName != null) {
+	        var fatParent = getFieldFromFatQuery(fatQuery, parentName);
+	        var trackedParent = fatParent.clone(trackedChildren);
+	        if (trackedParent) {
+	          var filterUnterminatedRange = function filterUnterminatedRange(node) {
+	            return !keysWithoutRangeBehavior.hasOwnProperty(node.getSerializationKey());
+	          };
+	          var mutatedParent = intersectRelayQuery(trackedParent, fatParent, filterUnterminatedRange);
+	          if (mutatedParent) {
+	            mutatedFields.push(mutatedParent);
+	          }
+	        }
+	      }
+	    }
+	    return buildMutationFragment(fatQuery, mutatedFields);
+	  },
+
+	  /**
+	   * Creates a fragment used to fetch the given optimistic response.
+	   */
+	  buildFragmentForOptimisticUpdate: function buildFragmentForOptimisticUpdate(_ref4) {
+	    var response = _ref4.response;
+	    var fatQuery = _ref4.fatQuery;
+
+	    // Silences RelayQueryNode being incompatible with sub-class RelayQueryField
+	    // A detailed error description is available in #7635477
+	    var mutatedFields = inferRelayFieldsFromData(response);
+	    return buildMutationFragment(fatQuery, mutatedFields);
+	  },
+
+	  /**
+	   * Creates a RelayQuery.Mutation used to fetch the given optimistic response.
+	   */
+	  buildQueryForOptimisticUpdate: function buildQueryForOptimisticUpdate(_ref5) {
+	    var fatQuery = _ref5.fatQuery;
+	    var mutation = _ref5.mutation;
+	    var response = _ref5.response;
+	    var tracker = _ref5.tracker;
+
+	    var children = [nullthrows(RelayMutationQuery.buildFragmentForOptimisticUpdate({
+	      response: response,
+	      fatQuery: fatQuery,
+	      tracker: tracker
+	    }))];
+	    return RelayQuery.Mutation.build('OptimisticQuery', fatQuery.getType(), mutation.calls[0].name, null, children, mutation.metadata);
+	  },
+
+	  /**
+	   * Creates a RelayQuery.Mutation for the given config. See type
+	   * `MutationConfig` and the `buildFragmentForEdgeInsertion`,
+	   * `buildFragmentForEdgeDeletion` and `buildFragmentForFields` methods above
+	   * for possible configs.
+	   */
+	  buildQuery: function buildQuery(_ref6) {
+	    var configs = _ref6.configs;
+	    var fatQuery = _ref6.fatQuery;
+	    var input = _ref6.input;
+	    var mutationName = _ref6.mutationName;
+	    var mutation = _ref6.mutation;
+	    var tracker = _ref6.tracker;
+	    return (function () {
+	      var children = [RelayQuery.Field.build({
+	        fieldName: CLIENT_MUTATION_ID,
+	        type: 'String',
+	        metadata: { isRequisite: true }
+	      })];
+
+	      configs.forEach(function (config) {
+	        switch (config.type) {
+	          case RelayMutationType.REQUIRED_CHILDREN:
+	            children = children.concat(config.children.map(function (child) {
+	              return RelayQuery.Fragment.create(child, RelayMetaRoute.get('$buildQuery'), {});
+	            }));
+	            break;
+
+	          case RelayMutationType.RANGE_ADD:
+	            children.push(RelayMutationQuery.buildFragmentForEdgeInsertion({
+	              connectionName: config.connectionName,
+	              edgeName: config.edgeName,
+	              fatQuery: fatQuery,
+	              parentID: config.parentID,
+	              parentName: config.parentName,
+	              rangeBehaviors: sanitizeRangeBehaviors(config.rangeBehaviors),
+	              tracker: tracker
+	            }));
+	            break;
+
+	          case RelayMutationType.RANGE_DELETE:
+	          case RelayMutationType.NODE_DELETE:
+	            children.push(RelayMutationQuery.buildFragmentForEdgeDeletion({
+	              connectionName: config.connectionName,
+	              fatQuery: fatQuery,
+	              parentID: config.parentID,
+	              parentName: config.parentName,
+	              tracker: tracker
+	            }));
+	            children.push(RelayQuery.Field.build({
+	              fieldName: config.deletedIDFieldName,
+	              type: 'String'
+	            }));
+	            break;
+
+	          case RelayMutationType.FIELDS_CHANGE:
+	            children.push(RelayMutationQuery.buildFragmentForFields({
+	              fatQuery: fatQuery,
+	              fieldIDs: config.fieldIDs,
+	              tracker: tracker
+	            }));
+	            break;
+	        }
+	      });
+
+	      return RelayQuery.Mutation.build(mutationName, fatQuery.getType(), mutation.calls[0].name, input, children.filter(function (child) {
+	        return child != null;
+	      }), mutation.metadata);
+	    })();
+	  }
+	};
+
+	function getFieldFromFatQuery(fatQuery, fieldName) {
+	  var field = fatQuery.getFieldByStorageKey(fieldName);
+	  !field ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationQuery: Invalid field name on fat query, `%s`.', fieldName) : invariant(false) : undefined;
+	  return field;
+	}
+
+	function buildMutationFragment(fatQuery, fields) {
+	  var fragment = RelayQuery.Fragment.build('MutationQuery', fatQuery.getType(), fields);
+	  if (fragment) {
+	    !(fragment instanceof RelayQuery.Fragment) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationQuery: Expected a fragment.') : invariant(false) : undefined;
+	    return fragment;
+	  }
+	  return null;
+	}
+
+	function buildEdgeField(parentID, edgeName, edgeFields) {
+	  var fields = [RelayQuery.Field.build({
+	    fieldName: 'cursor',
+	    type: 'String'
+	  })];
+	  if (RelayConnectionInterface.EDGES_HAVE_SOURCE_FIELD && !GraphQLStoreDataHandler.isClientID(parentID)) {
+	    fields.push(RelayQuery.Field.build({
+	      fieldName: 'source',
+	      type: ANY_TYPE,
+	      children: [RelayQuery.Field.build({
+	        fieldName: ID,
+	        type: 'String'
+	      }), RelayQuery.Field.build({
+	        fieldName: TYPENAME,
+	        type: 'String'
+	      })]
+	    }));
+	  }
+	  fields.push.apply(fields, edgeFields);
+	  var edgeField = flattenRelayQuery(RelayQuery.Field.build({
+	    fieldName: edgeName,
+	    type: ANY_TYPE,
+	    children: fields
+	  }));
+	  !(edgeField instanceof RelayQuery.Field) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationQuery: Expected a field.') : invariant(false) : undefined;
+	  return edgeField;
+	}
+
+	function sanitizeRangeBehaviors(rangeBehaviors) {
+	  // Prior to 0.4.1 you would have to specify the args in your range behaviors
+	  // in the same order they appeared in your query. From 0.4.1 onward, args in a
+	  // range behavior key must be in alphabetical order.
+	  var unsortedKeys = undefined;
+	  forEachObject(rangeBehaviors, function (value, key) {
+	    if (key !== '') {
+	      var keyParts = key
+	      // Remove the last parenthesis
+	      .slice(0, -1)
+	      // Slice on unescaped parentheses followed immediately by a `.`
+	      .split(/\)\./);
+	      var sortedKey = keyParts.sort().join(').') + (keyParts.length ? ')' : '');
+	      if (sortedKey !== key) {
+	        unsortedKeys = unsortedKeys || [];
+	        unsortedKeys.push(key);
+	      }
+	    }
+	  });
+	  if (unsortedKeys) {
+	     true ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutation: To define a range behavior key without sorting ' + 'the arguments alphabetically is disallowed as of Relay 0.5.1. Please ' + 'sort the argument names of the range behavior key%s `%s`%s.', unsortedKeys.length === 1 ? '' : 's', unsortedKeys.length === 1 ? unsortedKeys[0] : unsortedKeys.length === 2 ? unsortedKeys[0] + '` and `' + unsortedKeys[1] : unsortedKeys.slice(0, -1).join('`, `'), unsortedKeys.length > 2 ? ', and `' + unsortedKeys.slice(-1) + '`' : '') : invariant(false) : undefined;
+	  }
+	  return rangeBehaviors;
+	}
+
+	/**
+	 * Finds all direct and indirect child fields of `node` with the given
+	 * field name.
+	 */
+	function findDescendantFields(rootNode, fieldName) {
+	  var fields = [];
+	  function traverse(node) {
+	    if (node instanceof RelayQuery.Field) {
+	      if (node.getSchemaName() === fieldName) {
+	        fields.push(node);
+	        return;
+	      }
+	    }
+	    if (node === rootNode || node instanceof RelayQuery.Fragment) {
+	      // Search fragments and the root node for matching fields, but skip
+	      // descendant non-matching fields.
+	      node.getChildren().forEach(function (child) {
+	        return traverse(child);
+	      });
+	    }
+	  }
+	  traverse(rootNode);
+	  return fields;
+	}
+
+	module.exports = RelayMutationQuery;
+
+	/* Previously each element of configs had the type mixed, which meant
+	 * that they couldn't be used in configs.forEach without being
+	 * inspected at runtime. I think this is probably a good use case for
+	 * disjoin unions (flowtype.org/blog/2015/07/03/Disjoint-Unions.html)
+	 */
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 326 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayMutationType
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var RelayMutationType = {
+	  FIELDS_CHANGE: 'FIELDS_CHANGE',
+	  NODE_DELETE: 'NODE_DELETE',
+	  RANGE_ADD: 'RANGE_ADD',
+	  RANGE_DELETE: 'RANGE_DELETE',
+	  REQUIRED_CHILDREN: 'REQUIRED_CHILDREN'
+	};
+
+	module.exports = RelayMutationType;
+
+/***/ },
+/* 327 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule flattenRelayQuery
+	 * 
+	 * @typechecks
+	 */
+
+	'use strict';
+
+	var _inherits = __webpack_require__(198)['default'];
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var _Array$from = __webpack_require__(294)['default'];
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	var Map = __webpack_require__(328);
+	var RelayProfiler = __webpack_require__(232);
+
+	var RelayQueryVisitor = __webpack_require__(277);
+
+	var sortTypeFirst = __webpack_require__(338);
+
+	/**
+	 * @internal
+	 *
+	 * `flattenRelayQuery(query)` returns a clone of `query` with fields inside of
+	 * fragments recursively flattened into the nearest ancestor field.
+	 *
+	 * The result can be null if `node` only contains empty fragments or fragments
+	 * that only contain empty fragments.
+	 */
+	function flattenRelayQuery(node, options) {
+	  var flattener = new RelayQueryFlattener(options && options.shouldRemoveFragments);
+	  var state = {
+	    node: node,
+	    type: node.getType(),
+	    flattenedFieldMap: new Map(),
+	    flattenedFragmentMap: new Map()
+	  };
+	  flattener.traverse(node, state);
+	  return toQuery(node, state);
+	}
+
+	function toQuery(node, _ref) {
+	  var flattenedFieldMap = _ref.flattenedFieldMap;
+	  var flattenedFragmentMap = _ref.flattenedFragmentMap;
+
+	  var children = [];
+	  var aliases = _Array$from(flattenedFieldMap.keys()).sort(sortTypeFirst);
+	  aliases.forEach(function (alias) {
+	    var field = flattenedFieldMap.get(alias);
+	    if (field) {
+	      children.push(toQuery(field.node, field));
+	    }
+	  });
+	  _Array$from(flattenedFragmentMap.keys()).forEach(function (type) {
+	    var fragment = flattenedFragmentMap.get(type);
+	    if (fragment) {
+	      children.push(toQuery(fragment.node, fragment));
+	    }
+	  });
+	  return node.clone(children);
+	}
+
+	var RelayQueryFlattener = (function (_RelayQueryVisitor) {
+	  _inherits(RelayQueryFlattener, _RelayQueryVisitor);
+
+	  function RelayQueryFlattener(shouldRemoveFragments) {
+	    _classCallCheck(this, RelayQueryFlattener);
+
+	    _RelayQueryVisitor.call(this);
+	    this._shouldRemoveFragments = !!shouldRemoveFragments;
+	  }
+
+	  RelayQueryFlattener.prototype.visitFragment = function visitFragment(node, state) {
+	    var type = node.getType();
+	    if (this._shouldRemoveFragments || type === state.type) {
+	      this.traverse(node, state);
+	      return;
+	    }
+	    var flattenedFragment = state.flattenedFragmentMap.get(type);
+	    if (!flattenedFragment) {
+	      flattenedFragment = {
+	        node: node,
+	        type: type,
+	        flattenedFieldMap: new Map(),
+	        flattenedFragmentMap: new Map()
+	      };
+	      state.flattenedFragmentMap.set(type, flattenedFragment);
+	    }
+	    this.traverse(node, flattenedFragment);
+	  };
+
+	  RelayQueryFlattener.prototype.visitField = function visitField(node, state) {
+	    var serializationKey = node.getSerializationKey();
+	    var flattenedField = state.flattenedFieldMap.get(serializationKey);
+	    if (!flattenedField) {
+	      flattenedField = {
+	        node: node,
+	        type: node.getType(),
+	        flattenedFieldMap: new Map(),
+	        flattenedFragmentMap: new Map()
+	      };
+	      state.flattenedFieldMap.set(serializationKey, flattenedField);
+	    }
+	    this.traverse(node, flattenedField);
+	  };
+
+	  return RelayQueryFlattener;
+	})(RelayQueryVisitor);
+
+	module.exports = RelayProfiler.instrument('flattenRelayQuery', flattenRelayQuery);
+
+/***/ },
+/* 328 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule Map
+	 */
+
+	'use strict';
+
+	module.exports = __webpack_require__(329);
+
+/***/ },
+/* 329 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(330);
+	__webpack_require__(266);
+	__webpack_require__(248);
+	__webpack_require__(331);
+	module.exports = __webpack_require__(167).Map;
+
+/***/ },
+/* 330 */
+/***/ function(module, exports) {
+
+	
+
+/***/ },
+/* 331 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var strong = __webpack_require__(332);
+
+	// 23.1 Map Objects
+	__webpack_require__(337)('Map', function(get){
+	  return function Map(){ return get(this, arguments.length > 0 ? arguments[0] : undefined); };
+	}, {
+	  // 23.1.3.6 Map.prototype.get(key)
+	  get: function get(key){
+	    var entry = strong.getEntry(this, key);
+	    return entry && entry.v;
+	  },
+	  // 23.1.3.9 Map.prototype.set(key, value)
+	  set: function set(key, value){
+	    return strong.def(this, key === 0 ? 0 : key, value);
+	  }
+	}, strong, true);
+
+/***/ },
+/* 332 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var $            = __webpack_require__(171)
+	  , hide         = __webpack_require__(257)
+	  , redefineAll  = __webpack_require__(333)
+	  , ctx          = __webpack_require__(168)
+	  , strictNew    = __webpack_require__(334)
+	  , defined      = __webpack_require__(173)
+	  , forOf        = __webpack_require__(335)
+	  , $iterDefine  = __webpack_require__(254)
+	  , step         = __webpack_require__(251)
+	  , ID           = __webpack_require__(265)('id')
+	  , $has         = __webpack_require__(260)
+	  , isObject     = __webpack_require__(205)
+	  , setSpecies   = __webpack_require__(336)
+	  , DESCRIPTORS  = __webpack_require__(259)
+	  , isExtensible = Object.isExtensible || isObject
+	  , SIZE         = DESCRIPTORS ? '_s' : 'size'
+	  , id           = 0;
+
+	var fastKey = function(it, create){
+	  // return primitive with prefix
+	  if(!isObject(it))return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
+	  if(!$has(it, ID)){
+	    // can't set id to frozen object
+	    if(!isExtensible(it))return 'F';
+	    // not necessary to add id
+	    if(!create)return 'E';
+	    // add missing object id
+	    hide(it, ID, ++id);
+	  // return object id with prefix
+	  } return 'O' + it[ID];
+	};
+
+	var getEntry = function(that, key){
+	  // fast case
+	  var index = fastKey(key), entry;
+	  if(index !== 'F')return that._i[index];
+	  // frozen object case
+	  for(entry = that._f; entry; entry = entry.n){
+	    if(entry.k == key)return entry;
+	  }
+	};
+
+	module.exports = {
+	  getConstructor: function(wrapper, NAME, IS_MAP, ADDER){
+	    var C = wrapper(function(that, iterable){
+	      strictNew(that, C, NAME);
+	      that._i = $.create(null); // index
+	      that._f = undefined;      // first entry
+	      that._l = undefined;      // last entry
+	      that[SIZE] = 0;           // size
+	      if(iterable != undefined)forOf(iterable, IS_MAP, that[ADDER], that);
+	    });
+	    redefineAll(C.prototype, {
+	      // 23.1.3.1 Map.prototype.clear()
+	      // 23.2.3.2 Set.prototype.clear()
+	      clear: function clear(){
+	        for(var that = this, data = that._i, entry = that._f; entry; entry = entry.n){
+	          entry.r = true;
+	          if(entry.p)entry.p = entry.p.n = undefined;
+	          delete data[entry.i];
+	        }
+	        that._f = that._l = undefined;
+	        that[SIZE] = 0;
+	      },
+	      // 23.1.3.3 Map.prototype.delete(key)
+	      // 23.2.3.4 Set.prototype.delete(value)
+	      'delete': function(key){
+	        var that  = this
+	          , entry = getEntry(that, key);
+	        if(entry){
+	          var next = entry.n
+	            , prev = entry.p;
+	          delete that._i[entry.i];
+	          entry.r = true;
+	          if(prev)prev.n = next;
+	          if(next)next.p = prev;
+	          if(that._f == entry)that._f = next;
+	          if(that._l == entry)that._l = prev;
+	          that[SIZE]--;
+	        } return !!entry;
+	      },
+	      // 23.2.3.6 Set.prototype.forEach(callbackfn, thisArg = undefined)
+	      // 23.1.3.5 Map.prototype.forEach(callbackfn, thisArg = undefined)
+	      forEach: function forEach(callbackfn /*, that = undefined */){
+	        var f = ctx(callbackfn, arguments.length > 1 ? arguments[1] : undefined, 3)
+	          , entry;
+	        while(entry = entry ? entry.n : this._f){
+	          f(entry.v, entry.k, this);
+	          // revert to the last existing entry
+	          while(entry && entry.r)entry = entry.p;
+	        }
+	      },
+	      // 23.1.3.7 Map.prototype.has(key)
+	      // 23.2.3.7 Set.prototype.has(value)
+	      has: function has(key){
+	        return !!getEntry(this, key);
+	      }
+	    });
+	    if(DESCRIPTORS)$.setDesc(C.prototype, 'size', {
+	      get: function(){
+	        return defined(this[SIZE]);
+	      }
+	    });
+	    return C;
+	  },
+	  def: function(that, key, value){
+	    var entry = getEntry(that, key)
+	      , prev, index;
+	    // change existing entry
+	    if(entry){
+	      entry.v = value;
+	    // create new entry
+	    } else {
+	      that._l = entry = {
+	        i: index = fastKey(key, true), // <- index
+	        k: key,                        // <- key
+	        v: value,                      // <- value
+	        p: prev = that._l,             // <- previous entry
+	        n: undefined,                  // <- next entry
+	        r: false                       // <- removed
+	      };
+	      if(!that._f)that._f = entry;
+	      if(prev)prev.n = entry;
+	      that[SIZE]++;
+	      // add to index
+	      if(index !== 'F')that._i[index] = entry;
+	    } return that;
+	  },
+	  getEntry: getEntry,
+	  setStrong: function(C, NAME, IS_MAP){
+	    // add .keys, .values, .entries, [@@iterator]
+	    // 23.1.3.4, 23.1.3.8, 23.1.3.11, 23.1.3.12, 23.2.3.5, 23.2.3.8, 23.2.3.10, 23.2.3.11
+	    $iterDefine(C, NAME, function(iterated, kind){
+	      this._t = iterated;  // target
+	      this._k = kind;      // kind
+	      this._l = undefined; // previous
+	    }, function(){
+	      var that  = this
+	        , kind  = that._k
+	        , entry = that._l;
+	      // revert to the last existing entry
+	      while(entry && entry.r)entry = entry.p;
+	      // get next entry
+	      if(!that._t || !(that._l = entry = entry ? entry.n : that._t._f)){
+	        // or finish the iteration
+	        that._t = undefined;
+	        return step(1);
+	      }
+	      // return step by kind
+	      if(kind == 'keys'  )return step(0, entry.k);
+	      if(kind == 'values')return step(0, entry.v);
+	      return step(0, [entry.k, entry.v]);
+	    }, IS_MAP ? 'entries' : 'values' , !IS_MAP, true);
+
+	    // add [@@species], 23.1.2.2, 23.2.2.2
+	    setSpecies(NAME);
+	  }
+	};
+
+/***/ },
+/* 333 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var redefine = __webpack_require__(256);
+	module.exports = function(target, src){
+	  for(var key in src)redefine(target, key, src[key]);
+	  return target;
+	};
+
+/***/ },
+/* 334 */
+/***/ function(module, exports) {
+
+	module.exports = function(it, Constructor, name){
+	  if(!(it instanceof Constructor))throw TypeError(name + ": use the 'new' operator!");
+	  return it;
+	};
+
+/***/ },
+/* 335 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var ctx         = __webpack_require__(168)
+	  , call        = __webpack_require__(297)
+	  , isArrayIter = __webpack_require__(298)
+	  , anObject    = __webpack_require__(206)
+	  , toLength    = __webpack_require__(299)
+	  , getIterFn   = __webpack_require__(270);
+	module.exports = function(iterable, entries, fn, that){
+	  var iterFn = getIterFn(iterable)
+	    , f      = ctx(fn, that, entries ? 2 : 1)
+	    , index  = 0
+	    , length, step, iterator;
+	  if(typeof iterFn != 'function')throw TypeError(iterable + ' is not iterable!');
+	  // fast case for arrays with default iterator
+	  if(isArrayIter(iterFn))for(length = toLength(iterable.length); length > index; index++){
+	    entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
+	  } else for(iterator = iterFn.call(iterable); !(step = iterator.next()).done; ){
+	    call(iterator, f, step.value, entries);
+	  }
+	};
+
+/***/ },
+/* 336 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var core        = __webpack_require__(167)
+	  , $           = __webpack_require__(171)
+	  , DESCRIPTORS = __webpack_require__(259)
+	  , SPECIES     = __webpack_require__(263)('species');
+
+	module.exports = function(KEY){
+	  var C = core[KEY];
+	  if(DESCRIPTORS && C && !C[SPECIES])$.setDesc(C, SPECIES, {
+	    configurable: true,
+	    get: function(){ return this; }
+	  });
+	};
+
+/***/ },
+/* 337 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var $              = __webpack_require__(171)
+	  , global         = __webpack_require__(166)
+	  , $export        = __webpack_require__(165)
+	  , fails          = __webpack_require__(176)
+	  , hide           = __webpack_require__(257)
+	  , redefineAll    = __webpack_require__(333)
+	  , forOf          = __webpack_require__(335)
+	  , strictNew      = __webpack_require__(334)
+	  , isObject       = __webpack_require__(205)
+	  , setToStringTag = __webpack_require__(262)
+	  , DESCRIPTORS    = __webpack_require__(259);
+
+	module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK){
+	  var Base  = global[NAME]
+	    , C     = Base
+	    , ADDER = IS_MAP ? 'set' : 'add'
+	    , proto = C && C.prototype
+	    , O     = {};
+	  if(!DESCRIPTORS || typeof C != 'function' || !(IS_WEAK || proto.forEach && !fails(function(){
+	    new C().entries().next();
+	  }))){
+	    // create collection constructor
+	    C = common.getConstructor(wrapper, NAME, IS_MAP, ADDER);
+	    redefineAll(C.prototype, methods);
+	  } else {
+	    C = wrapper(function(target, iterable){
+	      strictNew(target, C, NAME);
+	      target._c = new Base;
+	      if(iterable != undefined)forOf(iterable, IS_MAP, target[ADDER], target);
+	    });
+	    $.each.call('add,clear,delete,forEach,get,has,set,keys,values,entries'.split(','),function(KEY){
+	      var IS_ADDER = KEY == 'add' || KEY == 'set';
+	      if(KEY in proto && !(IS_WEAK && KEY == 'clear'))hide(C.prototype, KEY, function(a, b){
+	        if(!IS_ADDER && IS_WEAK && !isObject(a))return KEY == 'get' ? undefined : false;
+	        var result = this._c[KEY](a === 0 ? 0 : a, b);
+	        return IS_ADDER ? this : result;
+	      });
+	    });
+	    if('size' in proto)$.setDesc(C.prototype, 'size', {
+	      get: function(){
+	        return this._c.size;
+	      }
+	    });
+	  }
+
+	  setToStringTag(C, NAME);
+
+	  O[NAME] = C;
+	  $export($export.G + $export.W + $export.F, O);
+
+	  if(!IS_WEAK)common.setStrong(C, NAME, IS_MAP);
+
+	  return C;
+	};
+
+/***/ },
+/* 338 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule sortTypeFirst
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var TYPE = '__type__';
+
+	function sortTypeFirst(a, b) {
+	  if (a === b) {
+	    return 0;
+	  }
+	  if (a === TYPE) {
+	    return -1;
+	  }
+	  if (b === TYPE) {
+	    return 1;
+	  }
+	  return 0;
+	}
+
+	module.exports = sortTypeFirst;
+
+/***/ },
+/* 339 */
+/***/ function(module, exports) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule nullthrows
+	 * 
+	 */
+
+	"use strict";
+
+	var nullthrows = function (x) {
+	  if (x != null) {
+	    return x;
+	  }
+	  throw new Error("Got unexpected null or undefined");
+	};
+
+	module.exports = nullthrows;
+
+/***/ },
+/* 340 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule inferRelayFieldsFromData
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var _Object$keys = __webpack_require__(207)['default'];
+
+	var GraphQLStoreDataHandler = __webpack_require__(213);
+	var RelayConnectionInterface = __webpack_require__(227);
+	var RelayNodeInterface = __webpack_require__(219);
+	var RelayQuery = __webpack_require__(214);
+
+	var forEachObject = __webpack_require__(230);
+	var invariant = __webpack_require__(222);
+	var warning = __webpack_require__(194);
+
+	var ARGUMENTS = /^(\w+)(?:\((.+?)\))?$/;
+	var ARGUMENT_NAME = /(\w+)(?=\s*:)/;
+	var DEPRECATED_CALLS = /^\w+(?:\.\w+\(.*?\))+$/;
+	var DEPRECATED_CALL = /^(\w+)\((.*?)\)$/;
+	var NODE = RelayConnectionInterface.NODE;
+	var EDGES = RelayConnectionInterface.EDGES;
+	var ANY_TYPE = RelayNodeInterface.ANY_TYPE;
+	var ID = RelayNodeInterface.ID;
+
+	var idField = RelayQuery.Field.build({
+	  fieldName: ID,
+	  type: 'String'
+	});
+	var cursorField = RelayQuery.Field.build({
+	  fieldName: 'cursor',
+	  type: 'String'
+	});
+
+	/**
+	 * @internal
+	 *
+	 * Given a record-like object, infers fields that could be used to fetch them.
+	 * Properties that are fetched via fields with arguments can be encoded by
+	 * serializing the arguments in property keys.
+	 */
+	function inferRelayFieldsFromData(data) {
+	  var fields = [];
+	  forEachObject(data, function (value, key) {
+	    if (!GraphQLStoreDataHandler.isMetadataKey(key)) {
+	      fields.push(inferField(value, key));
+	    }
+	  });
+	  return fields;
+	}
+
+	function inferField(value, key) {
+	  var metadata = {
+	    isPlural: false
+	  };
+	  var children = undefined;
+	  if (Array.isArray(value)) {
+	    var element = value[0];
+	    if (element && typeof element === 'object') {
+	      children = inferRelayFieldsFromData(element);
+	    } else {
+	      children = [];
+	    }
+	    metadata.isPlural = true;
+	  } else if (typeof value === 'object' && value !== null) {
+	    children = inferRelayFieldsFromData(value);
+	  } else {
+	    children = [];
+	  }
+	  if (key === NODE) {
+	    children.push(idField);
+	  } else if (key === EDGES) {
+	    children.push(cursorField);
+	  }
+	  return buildField(key, children, metadata);
+	}
+
+	function buildField(key, children, metadata) {
+	  var fieldName = key;
+	  var calls = null;
+	  if (DEPRECATED_CALLS.test(key)) {
+	    process.env.NODE_ENV !== 'production' ? warning(false, 'inferRelayFieldsFromData(): Encountered an optimistic payload with ' + 'a deprecated field call string, `%s`. Use valid GraphQL OSS syntax.', key) : undefined;
+	    var parts = key.split('.');
+	    if (parts.length > 1) {
+	      fieldName = parts.shift();
+	      calls = parts.map(function (callString) {
+	        var captures = callString.match(DEPRECATED_CALL);
+	        !captures ? process.env.NODE_ENV !== 'production' ? invariant(false, 'inferRelayFieldsFromData(): Malformed data key, `%s`.', key) : invariant(false) : undefined;
+	        var value = captures[2].split(',');
+	        return {
+	          name: captures[1],
+	          value: value.length === 1 ? value[0] : value
+	        };
+	      });
+	    }
+	  } else {
+	    var captures = key.match(ARGUMENTS);
+	    !captures ? process.env.NODE_ENV !== 'production' ? invariant(false, 'inferRelayFieldsFromData(): Malformed data key, `%s`.', key) : invariant(false) : undefined;
+	    fieldName = captures[1];
+	    if (captures[2]) {
+	      try {
+	        (function () {
+	          // Relay does not currently have a GraphQL argument parser, so...
+	          var args = JSON.parse('{' + captures[2].replace(ARGUMENT_NAME, '"$1"') + '}');
+	          calls = _Object$keys(args).map(function (name) {
+	            return { name: name, value: args[name] };
+	          });
+	        })();
+	      } catch (error) {
+	         true ? process.env.NODE_ENV !== 'production' ? invariant(false, 'inferRelayFieldsFromData(): Malformed or unsupported data key, ' + '`%s`. Only booleans, strings, and numbers are currenly supported, ' + 'and commas are required. Parse failure reason was `%s`.', key, error.message) : invariant(false) : undefined;
+	      }
+	    }
+	  }
+	  return RelayQuery.Field.build({
+	    calls: calls,
+	    children: children,
+	    fieldName: fieldName,
+	    metadata: metadata,
+	    type: ANY_TYPE
+	  });
+	}
+
+	module.exports = inferRelayFieldsFromData;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 341 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule intersectRelayQuery
 	 * @typechecks
 	 * 
 	 */
@@ -29739,25 +33208,172 @@
 
 	var _classCallCheck = __webpack_require__(178)['default'];
 
-	var Deferred = __webpack_require__(304);
+	var RelayConnectionInterface = __webpack_require__(227);
+	var RelayQuery = __webpack_require__(214);
+	var RelayQueryTransform = __webpack_require__(316);
 
-	var printRelayQuery = __webpack_require__(311);
+	var invariant = __webpack_require__(222);
 
 	/**
 	 * @internal
 	 *
-	 * Instances of these are made available via `RelayNetworkLayer.sendQueries`.
+	 * `intersectRelayQuery(subjectNode, patternNode)` returns a node with fields in
+	 * `subjectNode` that also exist in `patternNode`. `patternNode` is expected to
+	 * be flattened (and not contain fragments).
+	 *
+	 * If any field in `patternNode` is unterminated (i.e. has no sub-fields), we
+	 * treat the field as though it contains every descendant sub-field.
+	 *
+	 * If `filterUnterminatedRange` is supplied, it will be invoked with any fields
+	 * from `subjectNode` that are connections and unterminated in `patternNode`. If
+	 * it returns true, the `edges` and `page_info` fields will be filtered out.
+	 */
+	function intersectRelayQuery(subjectNode, patternNode, filterUnterminatedRange) {
+	  filterUnterminatedRange = filterUnterminatedRange || returnsFalse;
+	  var visitor = new RelayQueryIntersector(filterUnterminatedRange);
+	  return visitor.traverse(subjectNode, patternNode);
+	}
+
+	var RelayQueryIntersector = (function (_RelayQueryTransform) {
+	  _inherits(RelayQueryIntersector, _RelayQueryTransform);
+
+	  function RelayQueryIntersector(filterUnterminatedRange) {
+	    _classCallCheck(this, RelayQueryIntersector);
+
+	    _RelayQueryTransform.call(this);
+	    this._filterUnterminatedRange = filterUnterminatedRange;
+	  }
+
+	  /**
+	   * @private
+	   */
+
+	  RelayQueryIntersector.prototype.traverse = function traverse(subjectNode, patternNode) {
+	    var _this = this;
+
+	    if (subjectNode.isScalar()) {
+	      // Since `patternNode` exists, `subjectNode` must be in the intersection.
+	      return subjectNode;
+	    }
+	    if (!hasChildren(patternNode)) {
+	      if (subjectNode instanceof RelayQuery.Field && subjectNode.isConnection() && this._filterUnterminatedRange(subjectNode)) {
+	        return filterRangeFields(subjectNode);
+	      }
+	      // Unterminated `patternNode` is the same as containing every descendant
+	      // sub-field, so `subjectNode` must be in the intersection.
+	      return subjectNode;
+	    }
+	    return subjectNode.clone(subjectNode.getChildren().map(function (subjectChild) {
+	      if (subjectChild instanceof RelayQuery.Fragment) {
+	        return _this.visit(subjectChild, patternNode);
+	      }
+	      if (subjectChild instanceof RelayQuery.Field) {
+	        var schemaName = subjectChild.getSchemaName();
+	        var patternChild;
+	        var patternChildren = patternNode.getChildren();
+	        for (var ii = 0; ii < patternChildren.length; ii++) {
+	          var child = patternChildren[ii];
+	          !(child instanceof RelayQuery.Field) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'intersectRelayQuery(): Nodes in `patternNode` must be fields.') : invariant(false) : undefined;
+	          if (child.getSchemaName() === schemaName) {
+	            patternChild = child;
+	            break;
+	          }
+	        }
+	        if (patternChild) {
+	          return _this.visit(subjectChild, patternChild);
+	        }
+	      }
+	      return null;
+	    }));
+	  };
+
+	  return RelayQueryIntersector;
+	})(RelayQueryTransform);
+
+	var RelayQueryRangeFilter = (function (_RelayQueryTransform2) {
+	  _inherits(RelayQueryRangeFilter, _RelayQueryTransform2);
+
+	  function RelayQueryRangeFilter() {
+	    _classCallCheck(this, RelayQueryRangeFilter);
+
+	    _RelayQueryTransform2.apply(this, arguments);
+	  }
+
+	  RelayQueryRangeFilter.prototype.visitField = function visitField(node) {
+	    var schemaName = node.getSchemaName();
+	    if (schemaName === RelayConnectionInterface.EDGES || schemaName === RelayConnectionInterface.PAGE_INFO) {
+	      return null;
+	    } else {
+	      return node;
+	    }
+	  };
+
+	  return RelayQueryRangeFilter;
+	})(RelayQueryTransform);
+
+	var rangeFilter = new RelayQueryRangeFilter();
+	function filterRangeFields(node) {
+	  return rangeFilter.traverse(node, undefined);
+	}
+
+	function returnsFalse() {
+	  return false;
+	}
+
+	function hasChildren(node) {
+	  return !node.getChildren().every(isGenerated);
+	}
+
+	function isGenerated(node) {
+	  return node.isGenerated();
+	}
+
+	module.exports = intersectRelayQuery;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 342 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayMutationRequest
+	 * @typechecks
+	 * 
 	 */
 
-	var RelayQueryRequest = (function (_Deferred) {
-	  _inherits(RelayQueryRequest, _Deferred);
+	'use strict';
 
-	  function RelayQueryRequest(query) {
-	    _classCallCheck(this, RelayQueryRequest);
+	var _inherits = __webpack_require__(198)['default'];
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var Deferred = __webpack_require__(343);
+
+	var printRelayQuery = __webpack_require__(344);
+
+	/**
+	 * @internal
+	 *
+	 * Instances of these are made available via `RelayNetworkLayer.sendMutation`.
+	 */
+
+	var RelayMutationRequest = (function (_Deferred) {
+	  _inherits(RelayMutationRequest, _Deferred);
+
+	  function RelayMutationRequest(mutation, files) {
+	    _classCallCheck(this, RelayMutationRequest);
 
 	    _Deferred.call(this);
+	    this._mutation = mutation;
 	    this._printedQuery = null;
-	    this._query = query;
+	    this._files = files;
 	  }
 
 	  /**
@@ -29766,33 +33382,31 @@
 	   * Gets a string name used to refer to this request for printing debug output.
 	   */
 
-	  RelayQueryRequest.prototype.getDebugName = function getDebugName() {
-	    return this._query.getName();
+	  RelayMutationRequest.prototype.getDebugName = function getDebugName() {
+	    return this._mutation.getName();
 	  };
 
 	  /**
 	   * @public
 	   *
-	   * Gets a unique identifier for this query. These identifiers are useful for
-	   * assigning response payloads to their corresponding queries when sent in a
-	   * single GraphQL request.
+	   * Gets an optional map from name to File objects.
 	   */
 
-	  RelayQueryRequest.prototype.getID = function getID() {
-	    return this._query.getID();
+	  RelayMutationRequest.prototype.getFiles = function getFiles() {
+	    return this._files;
 	  };
 
 	  /**
 	   * @public
 	   *
-	   * Gets the variables used by the query. These variables should be serialized
-	   * and sent in the GraphQL request.
+	   * Gets the variables used by the mutation. These variables should be
+	   * serialized and sent in the GraphQL request.
 	   */
 
-	  RelayQueryRequest.prototype.getVariables = function getVariables() {
+	  RelayMutationRequest.prototype.getVariables = function getVariables() {
 	    var printedQuery = this._printedQuery;
 	    if (!printedQuery) {
-	      printedQuery = printRelayQuery(this._query);
+	      printedQuery = printRelayQuery(this._mutation);
 	      this._printedQuery = printedQuery;
 	    }
 	    return printedQuery.variables;
@@ -29801,13 +33415,13 @@
 	  /**
 	   * @public
 	   *
-	   * Gets a string representation of the GraphQL query.
+	   * Gets a string representation of the GraphQL mutation.
 	   */
 
-	  RelayQueryRequest.prototype.getQueryString = function getQueryString() {
+	  RelayMutationRequest.prototype.getQueryString = function getQueryString() {
 	    var printedQuery = this._printedQuery;
 	    if (!printedQuery) {
-	      printedQuery = printRelayQuery(this._query);
+	      printedQuery = printRelayQuery(this._mutation);
 	      this._printedQuery = printedQuery;
 	    }
 	    return printedQuery.text;
@@ -29818,17 +33432,94 @@
 	   * @unstable
 	   */
 
-	  RelayQueryRequest.prototype.getQuery = function getQuery() {
-	    return this._query;
+	  RelayMutationRequest.prototype.getMutation = function getMutation() {
+	    return this._mutation;
 	  };
 
-	  return RelayQueryRequest;
+	  return RelayMutationRequest;
 	})(Deferred);
 
-	module.exports = RelayQueryRequest;
+	module.exports = RelayMutationRequest;
 
 /***/ },
-/* 311 */
+/* 343 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule Deferred
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	var Promise = __webpack_require__(179);
+
+	/**
+	 * Deferred provides a Promise-like API that exposes methods to resolve and
+	 * reject the Promise. It is most useful when converting non-Promise code to use
+	 * Promises.
+	 *
+	 * If you want to export the Promise without exposing access to the resolve and
+	 * reject methods, you should export `getPromise` which returns a Promise with
+	 * the same semantics excluding those methods.
+	 */
+
+	var Deferred = (function () {
+	  function Deferred() {
+	    var _this = this;
+
+	    _classCallCheck(this, Deferred);
+
+	    this._settled = false;
+	    this._promise = new Promise(function (resolve, reject) {
+	      _this._resolve = resolve;
+	      _this._reject = reject;
+	    });
+	  }
+
+	  Deferred.prototype.getPromise = function getPromise() {
+	    return this._promise;
+	  };
+
+	  Deferred.prototype.resolve = function resolve(value) {
+	    this._settled = true;
+	    this._resolve(value);
+	  };
+
+	  Deferred.prototype.reject = function reject(reason) {
+	    this._settled = true;
+	    this._reject(reason);
+	  };
+
+	  Deferred.prototype.then = function then() {
+	    return Promise.prototype.then.apply(this._promise, arguments);
+	  };
+
+	  Deferred.prototype.done = function done() {
+	    Promise.prototype.done.apply(this._promise, arguments);
+	  };
+
+	  Deferred.prototype.isSettled = function isSettled() {
+	    return this._settled;
+	  };
+
+	  return Deferred;
+	})();
+
+	module.exports = Deferred;
+
+/***/ },
+/* 344 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -29844,10 +33535,10 @@
 
 	'use strict';
 
-	module.exports = __webpack_require__(312);
+	module.exports = __webpack_require__(345);
 
 /***/ },
-/* 312 */
+/* 345 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -29870,7 +33561,7 @@
 
 	var forEachObject = __webpack_require__(230);
 	var invariant = __webpack_require__(222);
-	var mapObject = __webpack_require__(313);
+	var mapObject = __webpack_require__(312);
 
 	/**
 	 * @internal
@@ -29963,6 +33654,9 @@
 	}
 
 	function printInlineFragment(node, printerState) {
+	  if (!node.getChildren().length) {
+	    return null;
+	  }
 	  var fragmentID = node.getFragmentID();
 	  var fragmentMap = printerState.fragmentMap;
 
@@ -30000,15 +33694,21 @@
 	}
 
 	function printChildren(node, printerState) {
-	  var children = node.getChildren().map(function (node) {
+	  var children = undefined;
+	  node.getChildren().forEach(function (node) {
 	    if (node instanceof RelayQuery.Field) {
-	      return printField(node, printerState);
+	      children = children || [];
+	      children.push(printField(node, printerState));
 	    } else {
 	      !(node instanceof RelayQuery.Fragment) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'printRelayOSSQuery(): expected child node to be a `Field` or ' + '`Fragment`, got `%s`.', node.constructor.name) : invariant(false) : undefined;
-	      return printInlineFragment(node, printerState);
+	      var printedFragment = printInlineFragment(node, printerState);
+	      if (printedFragment) {
+	        children = children || [];
+	        children.push(printedFragment);
+	      }
 	    }
 	  });
-	  if (!children.length) {
+	  if (!children) {
 	    return '';
 	  }
 	  return '{' + children.join(',') + '}';
@@ -30066,7 +33766,470 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 313 */
+/* 346 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule fromGraphQL
+	 * 
+	 */
+
+	'use strict';
+
+	var RelayQuery = __webpack_require__(214);
+	var RelayMetaRoute = __webpack_require__(231);
+
+	var invariant = __webpack_require__(222);
+
+	/**
+	 * @internal
+	 *
+	 * Converts GraphQL nodes to RelayQuery nodes.
+	 */
+	var fromGraphQL = {
+	  Field: (function (_Field) {
+	    function Field(_x) {
+	      return _Field.apply(this, arguments);
+	    }
+
+	    Field.toString = function () {
+	      return _Field.toString();
+	    };
+
+	    return Field;
+	  })(function (query) {
+	    var node = createNode(query, RelayQuery.Field);
+	    !(node instanceof RelayQuery.Field) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'fromGraphQL.Field(): Expected a GraphQL field node.') : invariant(false) : undefined;
+	    return node;
+	  }),
+	  Fragment: (function (_Fragment) {
+	    function Fragment(_x2) {
+	      return _Fragment.apply(this, arguments);
+	    }
+
+	    Fragment.toString = function () {
+	      return _Fragment.toString();
+	    };
+
+	    return Fragment;
+	  })(function (query) {
+	    var node = createNode(query, RelayQuery.Fragment);
+	    !(node instanceof RelayQuery.Fragment) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'fromGraphQL.Field(): Expected a GraphQL fragment node.') : invariant(false) : undefined;
+	    return node;
+	  }),
+	  Query: function Query(query) {
+	    var node = createNode(query, RelayQuery.Root);
+	    !(node instanceof RelayQuery.Root) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'fromGraphQL.Operation(): Expected a root node.') : invariant(false) : undefined;
+	    return node;
+	  },
+	  Operation: (function (_Operation) {
+	    function Operation(_x3) {
+	      return _Operation.apply(this, arguments);
+	    }
+
+	    Operation.toString = function () {
+	      return _Operation.toString();
+	    };
+
+	    return Operation;
+	  })(function (query) {
+	    var node = createNode(query, RelayQuery.Operation);
+	    !(node instanceof RelayQuery.Operation) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'fromGraphQL.Operation(): Expected a mutation/subscription node.') : invariant(false) : undefined;
+	    return node;
+	  })
+	};
+
+	function createNode(query, desiredType) {
+	  var variables = {};
+	  var route = RelayMetaRoute.get('$fromGraphQL');
+	  return desiredType.create(query, route, variables);
+	}
+
+	module.exports = fromGraphQL;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 347 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var _Object$keys = __webpack_require__(207)['default'];
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var Promise = __webpack_require__(179);
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayPendingQueryTracker
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var Deferred = __webpack_require__(343);
+	var DliteFetchModeConstants = __webpack_require__(301);
+	var PromiseMap = __webpack_require__(348);
+
+	var RelayTaskScheduler = __webpack_require__(304);
+
+	var containsRelayQueryRootCall = __webpack_require__(349);
+	var everyObject = __webpack_require__(309);
+	var fetchRelayQuery = __webpack_require__(350);
+	var invariant = __webpack_require__(222);
+	var subtractRelayQuery = __webpack_require__(352);
+
+	/**
+	 * @internal
+	 *
+	 * Tracks pending (in-flight) queries.
+	 *
+	 * In order to send minimal queries and avoid re-retrieving data,
+	 * `RelayPendingQueryTracker` maintains a registry of pending queries, and
+	 * "subtracts" those from any new queries that callers enqueue.
+	 */
+
+	var RelayPendingQueryTracker = (function () {
+	  function RelayPendingQueryTracker(storeData) {
+	    _classCallCheck(this, RelayPendingQueryTracker);
+
+	    this._pendingFetchMap = {};
+	    this._preloadQueryMap = new PromiseMap();
+	    this._storeData = storeData;
+	  }
+
+	  /**
+	   * @private
+	   */
+
+	  /**
+	   * Used by `GraphQLQueryRunner` to enqueue new queries.
+	   */
+
+	  RelayPendingQueryTracker.prototype.add = function add(params) {
+	    return new PendingFetch(params, {
+	      pendingFetchMap: this._pendingFetchMap,
+	      preloadQueryMap: this._preloadQueryMap,
+	      storeData: this._storeData
+	    });
+	  };
+
+	  RelayPendingQueryTracker.prototype.hasPendingQueries = function hasPendingQueries() {
+	    return hasItems(this._pendingFetchMap);
+	  };
+
+	  /**
+	   * Clears all pending query tracking. Does not cancel the queries themselves.
+	   */
+
+	  RelayPendingQueryTracker.prototype.resetPending = function resetPending() {
+	    this._pendingFetchMap = {};
+	  };
+
+	  RelayPendingQueryTracker.prototype.resolvePreloadQuery = function resolvePreloadQuery(queryID, result) {
+	    this._preloadQueryMap.resolveKey(queryID, result);
+	  };
+
+	  RelayPendingQueryTracker.prototype.rejectPreloadQuery = function rejectPreloadQuery(queryID, error) {
+	    this._preloadQueryMap.rejectKey(queryID, error);
+	  };
+
+	  return RelayPendingQueryTracker;
+	})();
+
+	var PendingFetch = (function () {
+	  function PendingFetch(_ref, _ref2) {
+	    var fetchMode = _ref.fetchMode;
+	    var forceIndex = _ref.forceIndex;
+	    var query = _ref.query;
+	    var pendingFetchMap = _ref2.pendingFetchMap;
+	    var preloadQueryMap = _ref2.preloadQueryMap;
+	    var storeData = _ref2.storeData;
+	    return (function () {
+	      _classCallCheck(this, PendingFetch);
+
+	      var queryID = query.getID();
+	      this._dependents = [];
+	      this._forceIndex = forceIndex;
+	      this._pendingDependencyMap = {};
+	      this._pendingFetchMap = pendingFetchMap;
+	      this._preloadQueryMap = preloadQueryMap;
+	      this._query = query;
+	      this._resolvedDeferred = new Deferred();
+	      this._resolvedSubtractedQuery = false;
+	      this._storeData = storeData;
+
+	      var subtractedQuery;
+	      if (fetchMode === DliteFetchModeConstants.FETCH_MODE_PRELOAD) {
+	        subtractedQuery = query;
+	        this._fetchSubtractedQueryPromise = this._preloadQueryMap.get(queryID);
+	      } else {
+	        subtractedQuery = this._subtractPending(query);
+	        this._fetchSubtractedQueryPromise = subtractedQuery ? fetchRelayQuery(subtractedQuery) : Promise.resolve();
+	      }
+
+	      this._fetchedSubtractedQuery = !subtractedQuery;
+	      this._errors = [];
+
+	      if (subtractedQuery) {
+	        this._pendingFetchMap[queryID] = {
+	          fetch: this,
+	          query: subtractedQuery
+	        };
+	        this._fetchSubtractedQueryPromise.done(this._handleSubtractedQuerySuccess.bind(this, subtractedQuery), this._handleSubtractedQueryFailure.bind(this, subtractedQuery));
+	      } else {
+	        this._markSubtractedQueryAsResolved();
+	      }
+	    }).apply(this, arguments);
+	  }
+
+	  /**
+	   * A pending query is resolvable if it is already resolved or will be resolved
+	   * imminently (i.e. its subtracted query and the subtracted queries of all its
+	   * pending dependencies have been fetched).
+	   */
+
+	  PendingFetch.prototype.isResolvable = function isResolvable() {
+	    if (this._fetchedSubtractedQuery) {
+	      return everyObject(this._pendingDependencyMap, function (pendingDependency) {
+	        return pendingDependency._fetchedSubtractedQuery;
+	      });
+	      // Pending dependencies further down the graph either don't affect the
+	      // result or are already in `_pendingDependencyMap`.
+	    }
+	    return false;
+	  };
+
+	  PendingFetch.prototype.getQuery = function getQuery() {
+	    return this._query;
+	  };
+
+	  PendingFetch.prototype.getResolvedPromise = function getResolvedPromise() {
+	    return this._resolvedDeferred.getPromise();
+	  };
+
+	  /**
+	   * Subtracts all pending queries from the supplied `query` and returns the
+	   * resulting difference. The difference can be null if the entire query is
+	   * pending.
+	   *
+	   * If any pending queries were subtracted, they will be added as dependencies
+	   * and the query will only resolve once the subtracted query and all
+	   * dependencies have resolved.
+	   *
+	   * This, combined with our use of diff queries (see `diffRelayQuery`) means
+	   * that we only go to the server for things that are not in (or not on their
+	   * way to) the cache (`RelayRecordStore`).
+	   */
+
+	  PendingFetch.prototype._subtractPending = function _subtractPending(query) {
+	    var _this = this;
+
+	    everyObject(this._pendingFetchMap, function (pending) {
+	      // Stop if the entire query is subtracted.
+	      if (!query) {
+	        return false;
+	      }
+	      if (containsRelayQueryRootCall(pending.query, query)) {
+	        var subtractedQuery = subtractRelayQuery(query, pending.query);
+	        if (subtractedQuery !== query) {
+	          query = subtractedQuery;
+	          _this._addPendingDependency(pending.fetch);
+	        }
+	      }
+	      return true;
+	    });
+	    return query;
+	  };
+
+	  PendingFetch.prototype._addPendingDependency = function _addPendingDependency(pendingFetch) {
+	    var queryID = pendingFetch.getQuery().getID();
+	    this._pendingDependencyMap[queryID] = pendingFetch;
+	    pendingFetch._addDependent(this);
+	  };
+
+	  PendingFetch.prototype._addDependent = function _addDependent(pendingFetch) {
+	    this._dependents.push(pendingFetch);
+	  };
+
+	  PendingFetch.prototype._handleSubtractedQuerySuccess = function _handleSubtractedQuerySuccess(subtractedQuery, result) {
+	    var _this2 = this;
+
+	    this._fetchedSubtractedQuery = true;
+
+	    RelayTaskScheduler.await(function () {
+	      var response = result.response;
+	      !(response && typeof response === 'object') ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayPendingQueryTracker: Expected response to be an object, got ' + '`%s`.', response ? typeof response : response) : invariant(false) : undefined;
+	      _this2._storeData.handleQueryPayload(subtractedQuery, response, _this2._forceIndex);
+	    }).done(this._markSubtractedQueryAsResolved.bind(this), this._markAsRejected.bind(this));
+	  };
+
+	  PendingFetch.prototype._handleSubtractedQueryFailure = function _handleSubtractedQueryFailure(subtractedQuery, error) {
+	    this._markAsRejected(error);
+	  };
+
+	  PendingFetch.prototype._markSubtractedQueryAsResolved = function _markSubtractedQueryAsResolved() {
+	    var queryID = this.getQuery().getID();
+	    delete this._pendingFetchMap[queryID];
+
+	    this._resolvedSubtractedQuery = true;
+	    this._updateResolvedDeferred();
+
+	    this._dependents.forEach(function (dependent) {
+	      return dependent._markDependencyAsResolved(queryID);
+	    });
+	  };
+
+	  PendingFetch.prototype._markAsRejected = function _markAsRejected(error) {
+	    var queryID = this.getQuery().getID();
+	    delete this._pendingFetchMap[queryID];
+
+	    console.warn(error.message);
+
+	    this._errors.push(error);
+	    this._updateResolvedDeferred();
+
+	    this._dependents.forEach(function (dependent) {
+	      return dependent._markDependencyAsRejected(queryID, error);
+	    });
+	  };
+
+	  PendingFetch.prototype._markDependencyAsResolved = function _markDependencyAsResolved(dependencyQueryID) {
+	    delete this._pendingDependencyMap[dependencyQueryID];
+
+	    this._updateResolvedDeferred();
+	  };
+
+	  PendingFetch.prototype._markDependencyAsRejected = function _markDependencyAsRejected(dependencyQueryID, error) {
+	    delete this._pendingDependencyMap[dependencyQueryID];
+
+	    this._errors.push(error);
+	    this._updateResolvedDeferred();
+
+	    // Dependencies further down the graph are either not affected or informed
+	    // by `dependencyQueryID`.
+	  };
+
+	  PendingFetch.prototype._updateResolvedDeferred = function _updateResolvedDeferred() {
+	    if (this._isSettled() && !this._resolvedDeferred.isSettled()) {
+	      if (this._errors.length) {
+	        this._resolvedDeferred.reject(this._errors[0]);
+	      } else {
+	        this._resolvedDeferred.resolve(undefined);
+	      }
+	    }
+	  };
+
+	  PendingFetch.prototype._isSettled = function _isSettled() {
+	    return this._errors.length > 0 || this._resolvedSubtractedQuery && !hasItems(this._pendingDependencyMap);
+	  };
+
+	  return PendingFetch;
+	})();
+
+	function hasItems(map) {
+	  return !!_Object$keys(map).length;
+	}
+
+	exports.PendingFetch = PendingFetch;
+
+	module.exports = RelayPendingQueryTracker;
+
+	// Asynchronous mapping from preload query IDs to results.
+
+	/**
+	 * Error(s) in fetching/handleUpdate-ing its or one of its pending
+	 * dependency's subtracted query. There may be more than one error. However,
+	 * `_resolvedDeferred` is rejected with the earliest encountered error.
+	 */
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 348 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule PromiseMap
+	 * 
+	 */
+
+	/**
+	 * A map of asynchronous values that can be get or set in any order. Unlike a
+	 * normal map, setting the value for a particular key more than once throws.
+	 * Also unlike a normal map, a key can either be resolved or rejected.
+	 */
+	'use strict';
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	var Deferred = __webpack_require__(343);
+
+	var invariant = __webpack_require__(222);
+
+	var PromiseMap = (function () {
+	  function PromiseMap() {
+	    _classCallCheck(this, PromiseMap);
+
+	    this._deferred = {};
+	  }
+
+	  PromiseMap.prototype.get = function get(key) {
+	    return getDeferred(this._deferred, key).getPromise();
+	  };
+
+	  PromiseMap.prototype.resolveKey = function resolveKey(key, value) {
+	    var entry = getDeferred(this._deferred, key);
+	    !!entry.isSettled() ? process.env.NODE_ENV !== 'production' ? invariant(false, 'PromiseMap: Already settled `%s`.', key) : invariant(false) : undefined;
+	    entry.resolve(value);
+	  };
+
+	  PromiseMap.prototype.rejectKey = function rejectKey(key, reason) {
+	    var entry = getDeferred(this._deferred, key);
+	    !!entry.isSettled() ? process.env.NODE_ENV !== 'production' ? invariant(false, 'PromiseMap: Already settled `%s`.', key) : invariant(false) : undefined;
+	    entry.reject(reason);
+	  };
+
+	  return PromiseMap;
+	})();
+
+	function getDeferred(entries, key) {
+	  if (!entries.hasOwnProperty(key)) {
+	    entries[key] = new Deferred();
+	  }
+	  return entries[key];
+	}
+
+	module.exports = PromiseMap;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 349 */
 /***/ function(module, exports) {
 
 	/**
@@ -30077,52 +34240,270 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * @providesModule mapObject
+	 * @providesModule containsRelayQueryRootCall
+	 * @typechecks
+	 * 
+	 */
+
+	/**
+	 * @internal
+	 *
+	 * Compares two query root nodes and returns true if the nodes fetched by
+	 * `thisRoot` would be a superset of the nodes fetched by `thatRoot`.
+	 */
+	'use strict';
+
+	function containsRelayQueryRootCall(thisRoot, thatRoot) {
+	  if (thisRoot === thatRoot) {
+	    return true;
+	  }
+	  if (getCanonicalName(thisRoot.getFieldName()) !== getCanonicalName(thatRoot.getFieldName())) {
+	    return false;
+	  }
+	  var thisIdentifyingArg = thisRoot.getIdentifyingArg();
+	  var thatIdentifyingArg = thatRoot.getIdentifyingArg();
+	  var thisValue = thisIdentifyingArg && thisIdentifyingArg.value || null;
+	  var thatValue = thatIdentifyingArg && thatIdentifyingArg.value || null;
+	  if (thisValue == null && thatValue == null) {
+	    return true;
+	  }
+	  if (thisValue == null || thatValue == null) {
+	    return false;
+	  }
+	  if (Array.isArray(thisValue)) {
+	    var thisArray = thisValue;
+	    if (Array.isArray(thatValue)) {
+	      return thatValue.every(function (eachValue) {
+	        return thisArray.indexOf(eachValue) >= 0;
+	      });
+	    } else {
+	      return thisValue.indexOf(thatValue) >= 0;
+	    }
+	  } else {
+	    if (Array.isArray(thatValue)) {
+	      return thatValue.every(function (eachValue) {
+	        return eachValue === thisValue;
+	      });
+	    } else {
+	      return thatValue === thisValue;
+	    }
+	  }
+	}
+
+	var canonicalRootCalls = {
+	  'nodes': 'node',
+	  'usernames': 'username'
+	};
+
+	/**
+	 * @private
+	 *
+	 * This is required to support legacy versions of GraphQL.
+	 */
+	function getCanonicalName(name) {
+	  if (canonicalRootCalls.hasOwnProperty(name)) {
+	    return canonicalRootCalls[name];
+	  }
+	  return name;
+	}
+
+	module.exports = containsRelayQueryRootCall;
+
+/***/ },
+/* 350 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var Promise = __webpack_require__(179);
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule fetchRelayQuery
+	 * @typechecks
+	 * 
 	 */
 
 	'use strict';
 
-	var hasOwnProperty = Object.prototype.hasOwnProperty;
+	var RelayNetworkLayer = __webpack_require__(303);
+	var RelayProfiler = __webpack_require__(232);
+	var RelayQueryRequest = __webpack_require__(351);
+
+	var resolveImmediate = __webpack_require__(313);
+
+	var queue = null;
 
 	/**
-	 * Executes the provided `callback` once for each enumerable own property in the
-	 * object and constructs a new object from the results. The `callback` is
-	 * invoked with three arguments:
+	 * @internal
 	 *
-	 *  - the property value
-	 *  - the property name
-	 *  - the object being traversed
+	 * Schedules the supplied `query` to be sent to the server.
 	 *
-	 * Properties that are added after the call to `mapObject` will not be visited
-	 * by `callback`. If the values of existing properties are changed, the value
-	 * passed to `callback` will be the value at the time `mapObject` visits them.
-	 * Properties that are deleted before being visited are not visited.
-	 *
-	 * @grep function objectMap()
-	 * @grep function objMap()
-	 *
-	 * @param {?object} object
-	 * @param {function} callback
-	 * @param {*} context
-	 * @return {?object}
+	 * This is a low-level transport API; application code should use higher-level
+	 * interfaces exposed by RelayContainer for retrieving data transparently via
+	 * queries defined on components.
 	 */
-	function mapObject(object, callback, context) {
-	  if (!object) {
-	    return null;
+	function fetchRelayQuery(query) {
+	  if (!queue) {
+	    (function () {
+	      queue = [];
+	      var currentQueue = queue;
+	      resolveImmediate(function () {
+	        queue = null;
+	        profileQueue(currentQueue);
+	        processQueue(currentQueue);
+	      });
+	    })();
 	  }
-	  var result = {};
-	  for (var name in object) {
-	    if (hasOwnProperty.call(object, name)) {
-	      result[name] = callback.call(context, object[name], name, object);
-	    }
-	  }
-	  return result;
+	  var request = new RelayQueryRequest(query);
+	  queue.push(request);
+	  return request.getPromise();
 	}
 
-	module.exports = mapObject;
+	function processQueue(currentQueue) {
+	  RelayNetworkLayer.sendQueries(currentQueue);
+	}
+
+	/**
+	 * Profiles time from request to receiving the first server response.
+	 */
+	function profileQueue(currentQueue) {
+	  // TODO #8783781: remove aggregate `fetchRelayQuery` profiler
+	  var firstResultProfiler = RelayProfiler.profile('fetchRelayQuery');
+	  currentQueue.forEach(function (query) {
+	    var profiler = RelayProfiler.profile('fetchRelayQuery.query');
+	    var onSettle = function onSettle() {
+	      profiler.stop();
+	      if (firstResultProfiler) {
+	        firstResultProfiler.stop();
+	        firstResultProfiler = null;
+	      }
+	    };
+	    query.getPromise().done(onSettle, onSettle);
+	  });
+	}
+
+	module.exports = fetchRelayQuery;
 
 /***/ },
-/* 314 */
+/* 351 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Copyright 2013-2015, Facebook, Inc.
+	 * All rights reserved.
+	 *
+	 * This source code is licensed under the BSD-style license found in the
+	 * LICENSE file in the root directory of this source tree. An additional grant
+	 * of patent rights can be found in the PATENTS file in the same directory.
+	 *
+	 * @providesModule RelayQueryRequest
+	 * @typechecks
+	 * 
+	 */
+
+	'use strict';
+
+	var _inherits = __webpack_require__(198)['default'];
+
+	var _classCallCheck = __webpack_require__(178)['default'];
+
+	var Deferred = __webpack_require__(343);
+
+	var printRelayQuery = __webpack_require__(344);
+
+	/**
+	 * @internal
+	 *
+	 * Instances of these are made available via `RelayNetworkLayer.sendQueries`.
+	 */
+
+	var RelayQueryRequest = (function (_Deferred) {
+	  _inherits(RelayQueryRequest, _Deferred);
+
+	  function RelayQueryRequest(query) {
+	    _classCallCheck(this, RelayQueryRequest);
+
+	    _Deferred.call(this);
+	    this._printedQuery = null;
+	    this._query = query;
+	  }
+
+	  /**
+	   * @public
+	   *
+	   * Gets a string name used to refer to this request for printing debug output.
+	   */
+
+	  RelayQueryRequest.prototype.getDebugName = function getDebugName() {
+	    return this._query.getName();
+	  };
+
+	  /**
+	   * @public
+	   *
+	   * Gets a unique identifier for this query. These identifiers are useful for
+	   * assigning response payloads to their corresponding queries when sent in a
+	   * single GraphQL request.
+	   */
+
+	  RelayQueryRequest.prototype.getID = function getID() {
+	    return this._query.getID();
+	  };
+
+	  /**
+	   * @public
+	   *
+	   * Gets the variables used by the query. These variables should be serialized
+	   * and sent in the GraphQL request.
+	   */
+
+	  RelayQueryRequest.prototype.getVariables = function getVariables() {
+	    var printedQuery = this._printedQuery;
+	    if (!printedQuery) {
+	      printedQuery = printRelayQuery(this._query);
+	      this._printedQuery = printedQuery;
+	    }
+	    return printedQuery.variables;
+	  };
+
+	  /**
+	   * @public
+	   *
+	   * Gets a string representation of the GraphQL query.
+	   */
+
+	  RelayQueryRequest.prototype.getQueryString = function getQueryString() {
+	    var printedQuery = this._printedQuery;
+	    if (!printedQuery) {
+	      printedQuery = printRelayQuery(this._query);
+	      this._printedQuery = printedQuery;
+	    }
+	    return printedQuery.text;
+	  };
+
+	  /**
+	   * @public
+	   * @unstable
+	   */
+
+	  RelayQueryRequest.prototype.getQuery = function getQuery() {
+	    return this._query;
+	  };
+
+	  return RelayQueryRequest;
+	})(Deferred);
+
+	module.exports = RelayQueryRequest;
+
+/***/ },
+/* 352 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -30146,7 +34527,7 @@
 
 	var RelayProfiler = __webpack_require__(232);
 	var RelayQuery = __webpack_require__(214);
-	var RelayQueryTransform = __webpack_require__(315);
+	var RelayQueryTransform = __webpack_require__(316);
 
 	var areEqual = __webpack_require__(235);
 	var invariant = __webpack_require__(222);
@@ -30360,2011 +34741,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 315 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayQueryTransform
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _inherits = __webpack_require__(198)['default'];
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var RelayQueryVisitor = __webpack_require__(316);
-
-	/**
-	 * @internal
-	 *
-	 * `RelayQueryTransform` is a `RelayQueryVisitor` subclass that simplifies the
-	 * process of traversing, filtering, or transforming a Relay Query.
-	 *
-	 * The traversal is a map operation from `RelayQuery` nodes to nodes. The
-	 * default implementation traverses all nodes and maps each one to its
-	 * original value (ie. a no-op).
-	 *
-	 * Just like `RelayQueryVisitor`, subclasses of `RelayQueryTransform` can
-	 * optionally implement methods to customize the traversal and mapping of
-	 * different RelayQuery node types:
-	 *
-	 * - `visitField(field, state)`: Returns the new value for the visited field, or
-	 *   `null` to remove it from the output.
-	 * - `visitFragment(fragment, state)`: Returns the new value for the visited
-	 *   fragment, or `null` to remove it from the output.
-	 * - `visitQuery(fragment, state)`: Returns the new value for the top-level
-	 *   query, or `null` to transform the entire query out of existence.
-	 *
-	 * There are two additional methods for controlling the traversal:
-	 *
-	 * - `traverse(parent, state)`: Returns a cloned copy of the parent node after
-	 *   processing all of its children. Does not clone if nothing changed.
-	 * - `visit(child, state)`: Processes the child node, calling the appropriate
-	 *   `visit{Field,Fragment,Root` method based on the node type.
-	 *
-	 * All of these methods may return the original node in order to leave it
-	 * intact.
-	 *
-	 * @see RelayQueryVisitor
-	 */
-
-	var RelayQueryTransform = (function (_RelayQueryVisitor) {
-	  _inherits(RelayQueryTransform, _RelayQueryVisitor);
-
-	  function RelayQueryTransform() {
-	    _classCallCheck(this, RelayQueryTransform);
-
-	    _RelayQueryVisitor.apply(this, arguments);
-	  }
-
-	  RelayQueryTransform.prototype.traverse = function traverse(node, nextState) {
-	    if (node.isScalar()) {
-	      return node;
-	    }
-
-	    var nextChildren;
-	    var children = node.getChildren();
-	    for (var ii = 0; ii < children.length; ii++) {
-	      var prevChild = children[ii];
-	      var nextChild = this.visit(prevChild, nextState);
-	      if (nextChild !== prevChild) {
-	        nextChildren = nextChildren || children.slice(0, ii);
-	      }
-	      if (nextChildren && nextChild) {
-	        nextChildren.push(nextChild);
-	      }
-	    }
-	    if (nextChildren) {
-	      if (!nextChildren.length) {
-	        return null;
-	      }
-	      return node.clone(nextChildren);
-	    }
-	    return node;
-	  };
-
-	  return RelayQueryTransform;
-	})(RelayQueryVisitor);
-
-	module.exports = RelayQueryTransform;
-
-/***/ },
-/* 316 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayQueryVisitor
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var RelayQuery = __webpack_require__(214);
-
-	/**
-	 * @internal
-	 *
-	 * Base class for traversing a Relay Query.
-	 *
-	 * Subclasses can optionally implement methods to customize the traversal:
-	 *
-	 * - `visitField(field, state)`: Called for each field.
-	 * - `visitFragment(fragment, state)`: Called for each fragment.
-	 * - `visitQuery(fragment, state)`: Called for the top level query.
-	 *
-	 * A `state` variable is passed along to all callbacks and can be used to
-	 * accumulate data while traversing (effectively passing data back up the tree),
-	 * or modify the behavior of later callbacks (effectively passing data down the
-	 * tree).
-	 *
-	 * There are two additional methods for controlling the traversal:
-	 *
-	 * - `traverse(parent, state)`: Visits all children of `parent`. Subclasses
-	 *   may override in order to short-circuit traversal. Note that
-	 *   `visit{Field,Fragment,Query}` are //not// called on `parent`, as it will
-	 *   already have been visited by the time this method is called.
-	 * - `visit(child, state)`: Processes the `child` node, calling the appropriate
-	 *   `visit{Field,Fragment,Query}` method based on the node type.
-	 *
-	 * By convention, each of the callback methods returns the visited node. This is
-	 * used by the `RelayQueryTransform` subclass to implement mapping and filtering
-	 * behavior, but purely-visitor subclases do not need to follow this convention.
-	 *
-	 * @see RelayQueryTransform
-	 */
-
-	var RelayQueryVisitor = (function () {
-	  function RelayQueryVisitor() {
-	    _classCallCheck(this, RelayQueryVisitor);
-	  }
-
-	  RelayQueryVisitor.prototype.visit = function visit(node, nextState) {
-	    if (node instanceof RelayQuery.Field) {
-	      return this.visitField(node, nextState);
-	    } else if (node instanceof RelayQuery.Fragment) {
-	      return this.visitFragment(node, nextState);
-	    } else if (node instanceof RelayQuery.Root) {
-	      return this.visitRoot(node, nextState);
-	    }
-	  };
-
-	  RelayQueryVisitor.prototype.traverse = function traverse(node, nextState) {
-	    var _this = this;
-
-	    if (!node.isScalar()) {
-	      node.getChildren().forEach(function (child) {
-	        return _this.visit(child, nextState);
-	      });
-	    }
-	    return node;
-	  };
-
-	  RelayQueryVisitor.prototype.visitField = function visitField(node, nextState) {
-	    return this.traverse(node, nextState);
-	  };
-
-	  RelayQueryVisitor.prototype.visitFragment = function visitFragment(node, nextState) {
-	    return this.traverse(node, nextState);
-	  };
-
-	  RelayQueryVisitor.prototype.visitRoot = function visitRoot(node, nextState) {
-	    return this.traverse(node, nextState);
-	  };
-
-	  return RelayQueryVisitor;
-	})();
-
-	module.exports = RelayQueryVisitor;
-
-/***/ },
-/* 317 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule checkRelayQueryData
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _inherits = __webpack_require__(198)['default'];
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var RelayConnectionInterface = __webpack_require__(227);
-
-	var RelayProfiler = __webpack_require__(232);
-
-	var RelayQueryVisitor = __webpack_require__(316);
-	var RelayRecordState = __webpack_require__(318);
-
-	var forEachRootCallArg = __webpack_require__(221);
-
-	var EDGES = RelayConnectionInterface.EDGES;
-	var PAGE_INFO = RelayConnectionInterface.PAGE_INFO;
-
-	/**
-	 * @internal
-	 *
-	 * Traverses a query and data in the record store to determine whether we have
-	 * enough data to satisfy the query.
-	 */
-	function checkRelayQueryData(store, query) {
-
-	  var checker = new RelayQueryChecker(store);
-
-	  var state = {
-	    dataID: undefined,
-	    rangeInfo: undefined,
-	    result: true
-	  };
-
-	  checker.visit(query, state);
-	  return state.result;
-	}
-
-	var RelayQueryChecker = (function (_RelayQueryVisitor) {
-	  _inherits(RelayQueryChecker, _RelayQueryVisitor);
-
-	  function RelayQueryChecker(store) {
-	    _classCallCheck(this, RelayQueryChecker);
-
-	    _RelayQueryVisitor.call(this);
-	    this._store = store;
-	  }
-
-	  /**
-	   * Skip visiting children if result is already false.
-	   */
-
-	  RelayQueryChecker.prototype.traverse = function traverse(node, state) {
-	    var children = node.getChildren();
-	    for (var ii = 0; ii < children.length; ii++) {
-	      if (!state.result) {
-	        return;
-	      }
-	      this.visit(children[ii], state);
-	    }
-	  };
-
-	  RelayQueryChecker.prototype.visitRoot = function visitRoot(root, state) {
-	    var _this = this;
-
-	    var nextState;
-	    var storageKey = root.getStorageKey();
-	    forEachRootCallArg(root, function (identifyingArgValue) {
-	      var dataID = _this._store.getDataID(storageKey, identifyingArgValue);
-	      if (dataID == null) {
-	        state.result = false;
-	      } else {
-	        nextState = {
-	          dataID: dataID,
-	          rangeInfo: undefined,
-	          result: true
-	        };
-	        _this.traverse(root, nextState);
-	        state.result = state.result && nextState.result;
-	      }
-	    });
-	  };
-
-	  RelayQueryChecker.prototype.visitField = function visitField(field, state) {
-	    var dataID = state.dataID;
-	    var recordState = dataID && this._store.getRecordState(dataID);
-	    if (recordState === RelayRecordState.UNKNOWN) {
-	      state.result = false;
-	      return;
-	    } else if (recordState === RelayRecordState.NONEXISTENT) {
-	      return;
-	    }
-	    var rangeInfo = state.rangeInfo;
-	    if (rangeInfo && field.getSchemaName() === EDGES) {
-	      this._checkEdges(field, state);
-	    } else if (rangeInfo && field.getSchemaName() === PAGE_INFO) {
-	      this._checkPageInfo(field, state);
-	    } else if (field.isScalar()) {
-	      this._checkScalar(field, state);
-	    } else if (field.isPlural()) {
-	      this._checkPlural(field, state);
-	    } else if (field.isConnection()) {
-	      this._checkConnection(field, state);
-	    } else {
-	      this._checkLinkedField(field, state);
-	    }
-	  };
-
-	  RelayQueryChecker.prototype._checkScalar = function _checkScalar(field, state) {
-	    var fieldData = state.dataID && this._store.getField(state.dataID, field.getStorageKey());
-	    if (fieldData === undefined) {
-	      state.result = false;
-	    }
-	  };
-
-	  RelayQueryChecker.prototype._checkPlural = function _checkPlural(field, state) {
-	    var dataIDs = state.dataID && this._store.getLinkedRecordIDs(state.dataID, field.getStorageKey());
-	    if (dataIDs === undefined) {
-	      state.result = false;
-	      return;
-	    }
-	    if (dataIDs) {
-	      for (var ii = 0; ii < dataIDs.length; ii++) {
-	        if (!state.result) {
-	          break;
-	        }
-	        var nextState = {
-	          dataID: dataIDs[ii],
-	          rangeInfo: undefined,
-	          result: true
-	        };
-	        this.traverse(field, nextState);
-	        state.result = nextState.result;
-	      }
-	    }
-	  };
-
-	  RelayQueryChecker.prototype._checkConnection = function _checkConnection(field, state) {
-	    var calls = field.getCallsWithValues();
-	    var dataID = state.dataID && this._store.getLinkedRecordID(state.dataID, field.getStorageKey());
-	    if (dataID === undefined) {
-	      state.result = false;
-	      return;
-	    }
-	    var nextState = {
-	      dataID: dataID,
-	      rangeInfo: null, // Flow rejects `undefined` here
-	      result: true
-	    };
-	    var metadata = this._store.getRangeMetadata(dataID, calls);
-	    if (metadata) {
-	      nextState.rangeInfo = metadata;
-	    }
-	    this.traverse(field, nextState);
-	    state.result = state.result && nextState.result;
-	  };
-
-	  RelayQueryChecker.prototype._checkEdges = function _checkEdges(field, state) {
-	    var rangeInfo = state.rangeInfo;
-	    if (!rangeInfo) {
-	      state.result = false;
-	      return;
-	    }
-	    if (rangeInfo.diffCalls.length) {
-	      state.result = false;
-	      return;
-	    }
-	    var edges = rangeInfo.filteredEdges;
-	    for (var ii = 0; ii < edges.length; ii++) {
-	      if (!state.result) {
-	        break;
-	      }
-	      var nextState = {
-	        dataID: edges[ii].edgeID,
-	        rangeInfo: undefined,
-	        result: true
-	      };
-	      this.traverse(field, nextState);
-	      state.result = nextState.result;
-	    }
-	  };
-
-	  RelayQueryChecker.prototype._checkPageInfo = function _checkPageInfo(field, state) {
-	    var rangeInfo = state.rangeInfo;
-	    if (!rangeInfo || !rangeInfo.pageInfo) {
-	      state.result = false;
-	      return;
-	    }
-	  };
-
-	  RelayQueryChecker.prototype._checkLinkedField = function _checkLinkedField(field, state) {
-	    var dataID = state.dataID && this._store.getLinkedRecordID(state.dataID, field.getStorageKey());
-	    if (dataID === undefined) {
-	      state.result = false;
-	      return;
-	    }
-	    if (dataID) {
-	      var nextState = {
-	        dataID: dataID,
-	        rangeInfo: undefined,
-	        result: true
-	      };
-	      this.traverse(field, nextState);
-	      state.result = state.result && nextState.result;
-	    }
-	  };
-
-	  return RelayQueryChecker;
-	})(RelayQueryVisitor);
-
-	module.exports = RelayProfiler.instrument('checkRelayQueryData', checkRelayQueryData);
-
-/***/ },
-/* 318 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayRecordState
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	var RelayRecordState = {
-	  /**
-	   * Record exists (either fetched from the server or produced by a local,
-	   * optimistic update).
-	   */
-	  EXISTENT: 'EXISTENT',
-
-	  /**
-	   * Record is known not to exist (either as the result of a mutation, or
-	   * because the server returned `null` when queried for the record).
-	   */
-	  NONEXISTENT: 'NONEXISTENT',
-
-	  /**
-	   * Record State is unknown because it has not yet been fetched from the
-	   * server.
-	   */
-	  UNKNOWN: 'UNKNOWN'
-	};
-
-	module.exports = RelayRecordState;
-
-/***/ },
-/* 319 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule diffRelayQuery
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var _Object$keys = __webpack_require__(207)['default'];
-
-	var GraphQLStoreDataHandler = __webpack_require__(213);
-	var RelayConnectionInterface = __webpack_require__(227);
-	var RelayNodeInterface = __webpack_require__(219);
-	var RelayProfiler = __webpack_require__(232);
-	var RelayQuery = __webpack_require__(214);
-	var RelayQueryPath = __webpack_require__(320);
-
-	var forEachRootCallArg = __webpack_require__(221);
-	var invariant = __webpack_require__(222);
-	var warning = __webpack_require__(194);
-
-	var ID = RelayNodeInterface.ID;
-	var TYPENAME = RelayNodeInterface.TYPENAME;
-	var EDGES = RelayConnectionInterface.EDGES;
-	var NODE = RelayConnectionInterface.NODE;
-	var PAGE_INFO = RelayConnectionInterface.PAGE_INFO;
-
-	var idField = RelayQuery.Field.build(ID, null, null, {
-	  parentType: RelayNodeInterface.NODE_TYPE,
-	  isRequisite: true
-	});
-	var typeField = RelayQuery.Field.build(TYPENAME, null, null, {
-	  parentType: RelayNodeInterface.NODE_TYPE,
-	  isRequisite: true
-	});
-	var nodeWithID = RelayQuery.Field.build(RelayNodeInterface.NODE, null, [idField, typeField]);
-
-	/**
-	 * @internal
-	 *
-	 * Computes the difference between the data requested in `root` and the data
-	 * available in `store`. It returns a minimal set of queries that will fulfill
-	 * the difference, or an empty array if the query can be resolved locally.
-	 */
-	function diffRelayQuery(root, store, tracker) {
-	  var path = new RelayQueryPath(root);
-	  var queries = [];
-
-	  var visitor = new RelayDiffQueryBuilder(store, tracker);
-	  var rootIdentifyingArg = root.getIdentifyingArg();
-	  var rootIdentifyingArgValue = rootIdentifyingArg && rootIdentifyingArg.value || null;
-	  var isPluralCall = Array.isArray(rootIdentifyingArgValue) && rootIdentifyingArgValue.length > 1;
-	  var metadata = undefined;
-	  if (rootIdentifyingArg != null) {
-	    metadata = {};
-	    metadata.identifyingArgName = rootIdentifyingArg.name;
-	    if (rootIdentifyingArg.type != null) {
-	      metadata.identifyingArgType = rootIdentifyingArg.type;
-	    }
-	  }
-	  var fieldName = root.getFieldName();
-	  var storageKey = root.getStorageKey();
-	  forEachRootCallArg(root, function (identifyingArgValue) {
-	    var nodeRoot;
-	    if (isPluralCall) {
-	      !(identifyingArgValue != null) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'diffRelayQuery(): Unexpected null or undefined value in root call ' + 'argument array for query, `%s(...).', fieldName) : invariant(false) : undefined;
-	      nodeRoot = RelayQuery.Root.build(root.getName(), fieldName, [identifyingArgValue], root.getChildren(), metadata);
-	    } else {
-	      // Reuse `root` if it only maps to one result.
-	      nodeRoot = root;
-	    }
-
-	    // The whole query must be fetched if the root dataID is unknown.
-	    var dataID = store.getDataID(storageKey, identifyingArgValue);
-	    if (dataID == null) {
-	      queries.push(nodeRoot);
-	      return;
-	    }
-
-	    // Diff the current dataID
-	    var scope = makeScope(dataID);
-	    var diffOutput = visitor.visit(nodeRoot, path, scope);
-	    var diffNode = diffOutput ? diffOutput.diffNode : null;
-	    if (diffNode) {
-	      !(diffNode instanceof RelayQuery.Root) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'diffRelayQuery(): Expected result to be a root query.') : invariant(false) : undefined;
-	      queries.push(diffNode);
-	    }
-	  });
-	  return queries.concat(visitor.getSplitQueries());
-	}
-
-	/**
-	 * @internal
-	 *
-	 * A transform for (node + store) -> (diff + tracked queries). It is analagous
-	 * to `RelayQueryTransform` with the main differences as follows:
-	 * - there is no `state` (which allowed for passing data up and down the tree).
-	 * - data is passed down via `scope`, which flows from a parent field down
-	 *   through intermediary fragments to the nearest child field.
-	 * - data is passed up via the return type `{diffNode, trackedNode}`, where:
-	 *   - `diffNode`: subset of the input that could not diffed out
-	 *   - `trackedNode`: subset of the input that must be tracked
-	 *
-	 * The provided `tracker` is updated whenever the traversal of a node results
-	 * in a `trackedNode` being created. New top-level queries are not returned
-	 * up the tree, and instead are available via `getSplitQueries()`.
-	 */
-
-	var RelayDiffQueryBuilder = (function () {
-	  function RelayDiffQueryBuilder(store, tracker) {
-	    _classCallCheck(this, RelayDiffQueryBuilder);
-
-	    this._store = store;
-	    this._splitQueries = [];
-	    this._tracker = tracker;
-	  }
-
-	  /**
-	   * Helper to construct a plain scope for the given `dataID`.
-	   */
-
-	  RelayDiffQueryBuilder.prototype.splitQuery = function splitQuery(root) {
-	    this._splitQueries.push(root);
-	  };
-
-	  RelayDiffQueryBuilder.prototype.getSplitQueries = function getSplitQueries() {
-	    return this._splitQueries;
-	  };
-
-	  RelayDiffQueryBuilder.prototype.visit = function visit(node, path, scope) {
-	    if (node instanceof RelayQuery.Field) {
-	      return this.visitField(node, path, scope);
-	    } else if (node instanceof RelayQuery.Fragment) {
-	      return this.visitFragment(node, path, scope);
-	    } else if (node instanceof RelayQuery.Root) {
-	      return this.visitRoot(node, path, scope);
-	    }
-	  };
-
-	  RelayDiffQueryBuilder.prototype.visitRoot = function visitRoot(node, path, scope) {
-	    return this.traverse(node, path, scope);
-	  };
-
-	  RelayDiffQueryBuilder.prototype.visitFragment = function visitFragment(node, path, scope) {
-	    return this.traverse(node, path, scope);
-	  };
-
-	  /**
-	   * Diffs the field conditionally based on the `scope` from the nearest
-	   * ancestor field.
-	   */
-
-	  RelayDiffQueryBuilder.prototype.visitField = function visitField(node, path, _ref) {
-	    var connectionField = _ref.connectionField;
-	    var dataID = _ref.dataID;
-	    var edgeID = _ref.edgeID;
-	    var rangeInfo = _ref.rangeInfo;
-
-	    // special case when inside a connection traversal
-	    if (connectionField && rangeInfo) {
-	      if (edgeID) {
-	        // When traversing a specific connection edge only look at `edges`
-	        if (node.getSchemaName() === EDGES) {
-	          return this.diffConnectionEdge(connectionField, node, // edge field
-	          path.getPath(node, edgeID), edgeID, rangeInfo);
-	        } else {
-	          return null;
-	        }
-	      } else {
-	        // When traversing connection metadata fields, edges/page_info are
-	        // only kept if there are range extension calls. Other fields fall
-	        // through to regular diffing.
-	        if (node.getSchemaName() === EDGES || node.getSchemaName() === PAGE_INFO) {
-	          return rangeInfo.diffCalls.length > 0 ? {
-	            diffNode: node,
-	            trackedNode: null
-	          } : null;
-	        }
-	      }
-	    }
-
-	    // default field diffing algorithm
-	    if (node.isScalar()) {
-	      return this.diffScalar(node, dataID);
-	    } else if (node.isGenerated()) {
-	      return {
-	        diffNode: node,
-	        trackedNode: null
-	      };
-	    } else if (node.isConnection()) {
-	      return this.diffConnection(node, path, dataID);
-	    } else if (node.isPlural()) {
-	      return this.diffPluralLink(node, path, dataID);
-	    } else {
-	      return this.diffLink(node, path, dataID);
-	    }
-	  };
-
-	  /**
-	   * Visit all the children of the given `node` and merge their results.
-	   */
-
-	  RelayDiffQueryBuilder.prototype.traverse = function traverse(node, path, scope) {
-	    var _this = this;
-
-	    var diffNode;
-	    var diffChildren;
-	    var trackedNode;
-	    var trackedChildren;
-	    var hasDiffField = false;
-	    var hasTrackedField = false;
-
-	    node.getChildren().forEach(function (child) {
-	      var diffOutput = _this.visit(child, path, scope);
-	      var diffChild = diffOutput ? diffOutput.diffNode : null;
-	      var trackedChild = diffOutput ? diffOutput.trackedNode : null;
-
-	      // Diff uses child nodes and keeps requisite fields
-	      if (diffChild) {
-	        diffChildren = diffChildren || [];
-	        diffChildren.push(diffChild);
-	        hasDiffField = hasDiffField || !diffChild.isGenerated();
-	      } else if (child.isRequisite() && !scope.rangeInfo) {
-	        // The presence of `rangeInfo` indicates that we are traversing
-	        // connection metadata fields, in which case `visitField` will ensure
-	        // that `edges` and `page_info` are kept when necessary. The requisite
-	        // check alone could cause these fields to be added back when not
-	        // needed.
-	        //
-	        // Example: `friends.first(3) {count, edges {...}, page_info {...} }
-	        // If all `edges` were fetched but `count` is unfetched, the diff
-	        // should be `friends.first(3) {count}` and not include `page_info`.
-	        diffChildren = diffChildren || [];
-	        diffChildren.push(child);
-	      }
-	      // Tracker uses tracked children and keeps requisite fields
-	      if (trackedChild) {
-	        trackedChildren = trackedChildren || [];
-	        trackedChildren.push(trackedChild);
-	        hasTrackedField = hasTrackedField || !trackedChild.isGenerated();
-	      } else if (child.isRequisite()) {
-	        trackedChildren = trackedChildren || [];
-	        trackedChildren.push(child);
-	      }
-	    });
-
-	    // Only return diff/tracked node if there are non-generated fields
-	    if (diffChildren && hasDiffField) {
-	      diffNode = node.clone(diffChildren);
-	    }
-	    if (trackedChildren && hasTrackedField) {
-	      trackedNode = node.clone(trackedChildren);
-	    }
-	    // Record tracked nodes. Fragments can be skipped because these will
-	    // always be composed into, and therefore tracked by, their nearest
-	    // non-fragment parent.
-	    if (trackedNode && !(trackedNode instanceof RelayQuery.Fragment)) {
-	      this._tracker.trackNodeForID(trackedNode, scope.dataID, path);
-	    }
-
-	    return {
-	      diffNode: diffNode,
-	      trackedNode: trackedNode
-	    };
-	  };
-
-	  /**
-	   * Diff a scalar field such as `name` or `id`.
-	   */
-
-	  RelayDiffQueryBuilder.prototype.diffScalar = function diffScalar(field, dataID) {
-	    if (this._store.getField(dataID, field.getStorageKey()) === undefined) {
-	      return {
-	        diffNode: field,
-	        trackedNode: null
-	      };
-	    }
-	    return null;
-	  };
-
-	  /**
-	   * Diff a field-of-fields such as `profile_picture {...}`. Returns early if
-	   * the field has not been fetched, otherwise the result of traversal.
-	   */
-
-	  RelayDiffQueryBuilder.prototype.diffLink = function diffLink(field, path, dataID) {
-	    var nextDataID = this._store.getLinkedRecordID(dataID, field.getStorageKey());
-	    if (nextDataID === undefined) {
-	      return {
-	        diffNode: field,
-	        trackedNode: null
-	      };
-	    }
-	    if (nextDataID === null) {
-	      return null;
-	    }
-
-	    return this.traverse(field, path.getPath(field, nextDataID), makeScope(nextDataID));
-	  };
-
-	  /**
-	   * Diffs a non-connection plural field against each of the fetched items.
-	   * Note that scalar plural fields are handled by `_diffScalar`.
-	   */
-
-	  RelayDiffQueryBuilder.prototype.diffPluralLink = function diffPluralLink(field, path, dataID) {
-	    var _this2 = this;
-
-	    var linkedIDs = this._store.getLinkedRecordIDs(dataID, field.getStorageKey());
-	    if (linkedIDs === undefined) {
-	      // not fetched
-	      return {
-	        diffNode: field,
-	        trackedNode: null
-	      };
-	    } else if (linkedIDs === null || linkedIDs.length === 0) {
-	      // empty array means nothing to fetch
-	      return null;
-	    } else if (field.getInferredRootCallName() === NODE) {
-	      // The items in this array are fetchable and may have been filled in
-	      // from other sources, so check them all. For example, `Story{actors}`
-	      // is an array (but not a range), and the Actors in that array likely
-	      // had data fetched for them elsewhere (like `viewer(){actor}`).
-	      var hasSplitQueries = false;
-	      linkedIDs.forEach(function (itemID) {
-	        var itemState = _this2.traverse(field, path.getPath(field, itemID), makeScope(itemID));
-	        if (itemState) {
-	          // If any child was tracked then `field` will also be tracked
-	          hasSplitQueries = hasSplitQueries || !!itemState.trackedNode || !!itemState.diffNode;
-	          // split diff nodes into root queries
-	          if (itemState.diffNode) {
-	            _this2.splitQuery(buildRoot(itemID, itemState.diffNode.getChildren(), path.getName()));
-	          }
-	        }
-	      });
-	      // if sub-queries are split then this *entire* field will be tracked,
-	      // therefore we don't need to merge the `trackedNode` from each item
-	      if (hasSplitQueries) {
-	        return {
-	          diffNode: null,
-	          trackedNode: field
-	        };
-	      }
-	    } else {
-	      // The items in this array are not fetchable by ID, so nothing else
-	      // could have fetched additional data for individual items. Therefore,
-	      // we only need to diff the first record to figure out which fields have
-	      // previously been fetched.
-	      var sampleItemID = linkedIDs[0];
-	      return this.traverse(field, path.getPath(field, sampleItemID), makeScope(sampleItemID));
-	    }
-	    return null;
-	  };
-
-	  /**
-	   * Diff a connection field such as `news_feed.first(3)`. Returns early if
-	   * the range has not been fetched or the entire range has already been
-	   * fetched. Otherwise the diff output is a clone of `field` with updated
-	   * after/first and before/last calls.
-	   */
-
-	  RelayDiffQueryBuilder.prototype.diffConnection = function diffConnection(field, path, dataID) {
-	    var _this3 = this;
-
-	    var store = this._store;
-	    var connectionID = store.getLinkedRecordID(dataID, field.getStorageKey());
-	    var rangeInfo = store.getRangeMetadata(connectionID, field.getCallsWithValues());
-	    // Keep the field if the connection is unfetched
-	    if (connectionID === undefined) {
-	      return {
-	        diffNode: field,
-	        trackedNode: null
-	      };
-	    }
-	    // Skip if the connection is deleted.
-	    if (connectionID === null) {
-	      return null;
-	    }
-	    // If metadata fields but not edges are fetched, diff as a normal field.
-	    // In practice, `rangeInfo` is `undefined` if unfetched, `null` if the
-	    // connection was deleted (in which case `connectionID` is null too).
-	    if (rangeInfo == null) {
-	      return this.traverse(field, path.getPath(field, connectionID), makeScope(connectionID));
-	    }
-	    var diffCalls = rangeInfo.diffCalls;
-	    var filteredEdges = rangeInfo.filteredEdges;
-
-	    // check existing edges for missing fields
-	    var hasSplitQueries = false;
-	    filteredEdges.forEach(function (edge) {
-	      // Flow loses type information in closures
-	      if (rangeInfo && connectionID) {
-	        var scope = {
-	          connectionField: field,
-	          dataID: connectionID,
-	          edgeID: edge.edgeID,
-	          rangeInfo: rangeInfo
-	        };
-	        var diffOutput = _this3.traverse(field, path.getPath(field, edge.edgeID), scope);
-	        // If any edges were missing data (resulting in a split query),
-	        // then the entire original connection field must be tracked.
-	        if (diffOutput) {
-	          hasSplitQueries = hasSplitQueries || !!diffOutput.trackedNode;
-	        }
-	      }
-	    });
-
-	    // Scope has null `edgeID` to skip looking at `edges` fields.
-	    var scope = {
-	      connectionField: field,
-	      dataID: connectionID,
-	      edgeID: null,
-	      rangeInfo: rangeInfo
-	    };
-	    // diff non-`edges` fields such as `count`
-	    var diffOutput = this.traverse(field, path.getPath(field, connectionID), scope);
-	    var diffNode = diffOutput ? diffOutput.diffNode : null;
-	    var trackedNode = diffOutput ? diffOutput.trackedNode : null;
-	    if (diffCalls.length && diffNode instanceof RelayQuery.Field) {
-	      diffNode = diffNode.cloneFieldWithCalls(diffNode.getChildren(), diffCalls);
-	    }
-	    // if a sub-query was split, then we must track the entire field, which will
-	    // be a superset of the `trackedNode` from traversing any metadata fields.
-	    // Example:
-	    // dataID: `4`
-	    // node: `friends.first(3)`
-	    // diffNode: null
-	    // splitQueries: `node(friend1) {...}`, `node(friend2) {...}`
-	    //
-	    // In this case the two fetched `node` queries do not reflect the fact that
-	    // `friends.first(3)` were fetched for item `4`, so `friends.first(3)` has
-	    // to be tracked as-is.
-	    if (hasSplitQueries) {
-	      trackedNode = field;
-	    }
-
-	    return {
-	      diffNode: diffNode,
-	      trackedNode: trackedNode
-	    };
-	  };
-
-	  /**
-	   * Diff an `edges` field for the edge rooted at `edgeID`, splitting a new
-	   * root query to fetch any missing data (via a `node(id)` root if the
-	   * field is refetchable or a `...{connection.find(id){}}` query if the
-	   * field is not refetchable).
-	   */
-
-	  RelayDiffQueryBuilder.prototype.diffConnectionEdge = function diffConnectionEdge(connectionField, edgeField, path, edgeID, rangeInfo) {
-	    var nodeID = this._store.getLinkedRecordID(edgeID, NODE);
-	    if (!nodeID || GraphQLStoreDataHandler.isClientID(nodeID)) {
-	      process.env.NODE_ENV !== 'production' ? warning(false, 'RelayDiffQueryBuilder: connection `node{*}` can only be refetched ' + 'if the node is refetchable by `id`. Cannot refetch data for field ' + '`%s`.', connectionField.getStorageKey()) : undefined;
-	      return null;
-	    }
-
-	    var hasSplitQueries = false;
-	    var diffOutput = this.traverse(edgeField, path.getPath(edgeField, edgeID), makeScope(edgeID));
-	    var diffNode = diffOutput ? diffOutput.diffNode : null;
-	    var trackedNode = diffOutput ? diffOutput.trackedNode : null;
-
-	    if (diffNode) {
-	      var _splitNodeAndEdgesFields = splitNodeAndEdgesFields(diffNode);
-
-	      var diffEdgesField = _splitNodeAndEdgesFields.edges;
-	      var diffNodeField = _splitNodeAndEdgesFields.node;
-
-	      // split missing `node` fields into a `node(id)` root query
-	      if (diffNodeField) {
-	        hasSplitQueries = true;
-	        this.splitQuery(buildRoot(nodeID, diffNodeField.getChildren(), path.getName()));
-	      }
-
-	      // split missing `edges` fields into a `connection.find(id)` query
-	      // if `find` is supported, otherwise warn
-	      if (diffEdgesField) {
-	        if (connectionField.isFindable()) {
-	          diffEdgesField = diffEdgesField.clone(diffEdgesField.getChildren().concat(nodeWithID));
-	          var connectionFind = connectionField.cloneFieldWithCalls([diffEdgesField], rangeInfo.filterCalls.concat({ name: 'find', value: nodeID }));
-	          if (connectionFind) {
-	            hasSplitQueries = true;
-	            // current path has `parent`, `connection`, `edges`; pop to parent
-	            var connectionParent = path.getParent().getParent();
-	            this.splitQuery(connectionParent.getQuery(connectionFind));
-	          }
-	        } else {
-	          process.env.NODE_ENV !== 'production' ? warning(false, 'RelayDiffQueryBuilder: connection `edges{*}` fields can only be ' + 'refetched if the connection supports the `find` call. Cannot ' + 'refetch data for field `%s`.', connectionField.getStorageKey()) : undefined;
-	        }
-	      }
-	    }
-
-	    // Connection edges will never return diff nodes; instead missing fields
-	    // are fetched by new root queries. Tracked nodes are returned if either
-	    // a child field was tracked or missing fields were split into a new query.
-	    // The returned `trackedNode` is never tracked directly: instead it serves
-	    // as an indicator to `diffConnection` that the entire connection field must
-	    // be tracked.
-	    return {
-	      diffNode: null,
-	      trackedNode: hasSplitQueries ? edgeField : trackedNode
-	    };
-	  };
-
-	  return RelayDiffQueryBuilder;
-	})();
-
-	function makeScope(dataID) {
-	  return {
-	    connectionField: null,
-	    dataID: dataID,
-	    edgeID: null,
-	    rangeInfo: null
-	  };
-	}
-
-	/**
-	 * Returns a clone of the input with `edges` and `node` sub-fields split into
-	 * separate `edges` and `node` roots. Example:
-	 *
-	 * Input:
-	 * edges {
-	 *   edge_field,
-	 *   node {
-	 *     a,
-	 *     b
-	 *   },
-	 *   ${
-	 *     Fragment {
-	 *       edge_field_2,
-	 *       node {
-	 *         c
-	 *       }
-	 *     }
-	 *   }
-	 * }
-	 *
-	 * Output:
-	 * node:
-	 *   edges {
-	 *     a,      // flattened
-	 *     b,      // flattend
-	 *     ${
-	 *       Fragment {
-	 *         c  // flattened
-	 *       }
-	 *     }
-	 *   }
-	 * edges:
-	 *   edges {
-	 *     edge_field,
-	 *     ${
-	 *       Fragment {
-	 *         edge_field_2
-	 *       }
-	 *     }
-	 *   }
-	 */
-	function splitNodeAndEdgesFields(edgeOrFragment) {
-	  var children = edgeOrFragment.getChildren();
-	  var edgeChildren = [];
-	  var hasNodeChild = false;
-	  var nodeChildren = [];
-	  var hasEdgeChild = false;
-	  for (var ii = 0; ii < children.length; ii++) {
-	    var child = children[ii];
-	    if (child instanceof RelayQuery.Field) {
-	      if (child.getSchemaName() === NODE) {
-	        var subFields = child.getChildren();
-	        nodeChildren = nodeChildren.concat(subFields);
-	        // can skip if `node` only has an `id` field
-	        hasNodeChild = hasNodeChild || subFields.length !== 1 || !(subFields[0] instanceof RelayQuery.Field) ||
-	        /* $FlowFixMe(>=0.13.0) - subFields[0] needs to be in a local for Flow to
-	         * narrow its type, otherwise Flow thinks its a RelayQueryNode without
-	         * method `getSchemaName`
-	         */
-	        subFields[0].getSchemaName() !== 'id';
-	      } else {
-	        edgeChildren.push(child);
-	        hasEdgeChild = hasEdgeChild || !child.isRequisite();
-	      }
-	    } else if (child instanceof RelayQuery.Fragment) {
-	      var _splitNodeAndEdgesFields2 = splitNodeAndEdgesFields(child);
-
-	      var edges = _splitNodeAndEdgesFields2.edges;
-	      var node = _splitNodeAndEdgesFields2.node;
-
-	      if (edges) {
-	        edgeChildren.push(edges);
-	        hasEdgeChild = true;
-	      }
-	      if (node) {
-	        nodeChildren.push(node);
-	        hasNodeChild = true;
-	      }
-	    }
-	  }
-	  return {
-	    edges: hasEdgeChild ? edgeOrFragment.clone(edgeChildren) : null,
-	    node: hasNodeChild ? edgeOrFragment.clone(nodeChildren) : null
-	  };
-	}
-
-	function buildRoot(rootID, children, name) {
-	  // Child fields are always collapsed into fragments so a root `id` field
-	  // must be added.
-	  var fragments = [idField, typeField];
-	  var childTypes = {};
-	  children.forEach(function (child) {
-	    if (child instanceof RelayQuery.Field) {
-	      var parentType = child.getParentType();
-	      childTypes[parentType] = childTypes[parentType] || [];
-	      childTypes[parentType].push(child);
-	    } else {
-	      fragments.push(child);
-	    }
-	  });
-	  _Object$keys(childTypes).map(function (type) {
-	    fragments.push(RelayQuery.Fragment.build('diffRelayQuery', type, childTypes[type]));
-	  });
-	  return RelayQuery.Root.build(name, NODE, rootID, fragments, { identifyingArgName: RelayNodeInterface.ID });
-	}
-
-	module.exports = RelayProfiler.instrument('diffRelayQuery', diffRelayQuery);
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 320 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayQueryPath
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var _extends = __webpack_require__(161)['default'];
-
-	var GraphQLStoreDataHandler = __webpack_require__(213);
-	var RelayMetaRoute = __webpack_require__(231);
-	var RelayNodeInterface = __webpack_require__(219);
-	var RelayQuery = __webpack_require__(214);
-
-	var invariant = __webpack_require__(222);
-	var toGraphQL = __webpack_require__(321);
-
-	var ID = RelayNodeInterface.ID;
-	var TYPENAME = RelayNodeInterface.TYPENAME;
-
-	// Placeholder to mark fields as non-scalar
-	var EMPTY_FRAGMENT = RelayQuery.Fragment.build('$RelayQueryPath', 'Node');
-
-	/**
-	 * @internal
-	 *
-	 * Represents the path (root plus fields) within a query that fetched a
-	 * particular node. Each step of the path may represent a root query (for
-	 * refetchable nodes) or the field path from the nearest refetchable node.
-	 */
-
-	var RelayQueryPath = (function () {
-	  function RelayQueryPath(node, parent) {
-	    _classCallCheck(this, RelayQueryPath);
-
-	    if (node instanceof RelayQuery.Root) {
-	      !!parent ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath: Root paths may not have a parent.') : invariant(false) : undefined;
-	      this._name = node.getName();
-	    } else {
-	      !parent ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath: A parent is required for field paths.') : invariant(false) : undefined;
-	      this._name = parent.getName();
-	    }
-	    this._node = node;
-	    this._parent = parent;
-	  }
-
-	  /**
-	   * Creates a shallow version of `node` with only a primary key field. If the
-	   * node is not scalar and would otherwise be empty, an empty fragment is added.
-	   */
-
-	  /**
-	   * Returns true if this is a root path (the node is a root node with an ID),
-	   * false otherwise.
-	   */
-
-	  RelayQueryPath.prototype.isRootPath = function isRootPath() {
-	    return !this._parent;
-	  };
-
-	  /**
-	   * Gets the parent path, throwing if it does not exist. Use `!isRootPath()`
-	   * to check if there is a parent.
-	   */
-
-	  RelayQueryPath.prototype.getParent = function getParent() {
-	    var parent = this._parent;
-	    !parent ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath.getParent(): Cannot get the parent of a root path.') : invariant(false) : undefined;
-	    return parent;
-	  };
-
-	  /**
-	   * Helper to get the name of the root query node.
-	   */
-
-	  RelayQueryPath.prototype.getName = function getName() {
-	    return this._name;
-	  };
-
-	  /**
-	   * Gets a new path that describes how to access the given `node` via the
-	   * current path. Returns a new, root path if `dataID` is provided and
-	   * refetchable, otherwise returns an extension of the current path.
-	   */
-
-	  RelayQueryPath.prototype.getPath = function getPath(node, dataID) {
-	    if (GraphQLStoreDataHandler.isClientID(dataID)) {
-	      return new RelayQueryPath(node, this);
-	    } else {
-	      var idField = RelayQuery.Field.build(ID, null, null, {
-	        parentType: RelayNodeInterface.NODE_TYPE
-	      });
-	      var typeField = RelayQuery.Field.build(TYPENAME, null, null, {
-	        parentType: RelayNodeInterface.NODE_TYPE
-	      });
-	      var root = RelayQuery.Root.build(this.getName(), RelayNodeInterface.NODE, dataID, [idField, typeField], { identifyingArgName: RelayNodeInterface.ID });
-	      return new RelayQueryPath(root);
-	    }
-	  };
-
-	  /**
-	   * Returns a new root query that follows only the fields in this path and then
-	   * appends the specified field/fragment at the node reached by the path.
-	   *
-	   * The query also includes any ID fields along the way.
-	   */
-
-	  RelayQueryPath.prototype.getQuery = function getQuery(appendNode) {
-	    var node = this._node;
-	    var path = this;
-	    var child = appendNode;
-	    while (node instanceof RelayQuery.Field) {
-	      var idFieldName = node.getInferredPrimaryKey();
-	      if (idFieldName) {
-	        child = node.clone([child, node.getFieldByStorageKey(idFieldName), node.getFieldByStorageKey(TYPENAME)]);
-	      } else {
-	        child = node.clone([child]);
-	      }
-	      path = path._parent;
-	      !path ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath.getQuery(): Expected field to have a parent path.') : invariant(false) : undefined;
-	      node = path._node;
-	    }
-	    !child ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath: Expected a leaf node.') : invariant(false) : undefined;
-	    !(node instanceof RelayQuery.Root) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath: Expected a root node.') : invariant(false) : undefined;
-	    var metadata = _extends({}, node.__concreteNode__.metadata);
-	    var identifyingArg = node.getIdentifyingArg();
-	    if (identifyingArg && identifyingArg.name != null) {
-	      metadata.identifyingArgName = identifyingArg.name;
-	    }
-	    return RelayQuery.Root.build(this.getName(), node.getFieldName(), identifyingArg && identifyingArg.value || null, [child, node.getFieldByStorageKey(ID), node.getFieldByStorageKey(TYPENAME)], metadata);
-	  };
-
-	  RelayQueryPath.prototype.toJSON = function toJSON() {
-	    var path = [];
-	    var next = this;
-	    while (next) {
-	      var node = getShallowClone(next._node);
-	      if (node instanceof RelayQuery.Root) {
-	        path.unshift(toGraphQL.Query(node));
-	      } else {
-	        path.unshift(toGraphQL.Field(node));
-	      }
-	      next = next._parent;
-	    }
-	    return path;
-	  };
-
-	  RelayQueryPath.fromJSON = function fromJSON(data) {
-	    !(Array.isArray(data) && data.length > 0) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryPath.fromJSON(): expected an array with at least one item.') : invariant(false) : undefined;
-	    var root = RelayQuery.Root.create(data[0], RelayMetaRoute.get('$RelayQueryPath'), {});
-	    var path = new RelayQueryPath(root);
-
-	    for (var ii = 1; ii < data.length; ii++) {
-	      var field = RelayQuery.Field.create(data[ii], RelayMetaRoute.get('$RelayQueryPath'), {});
-	      path = new RelayQueryPath(field, path);
-	    }
-	    return path;
-	  };
-
-	  return RelayQueryPath;
-	})();
-
-	function getShallowClone(node) {
-	  var idFieldName = node instanceof RelayQuery.Field ? node.getInferredPrimaryKey() : ID;
-	  var children = [];
-	  var idField = idFieldName && node.getFieldByStorageKey(idFieldName);
-	  if (idField) {
-	    children.push(idField);
-	  }
-	  var typeField = node.getFieldByStorageKey(TYPENAME);
-	  if (typeField) {
-	    children.push(typeField);
-	  }
-	  // Add an empty fragment if children are empty to ensure the clone result
-	  // is non-null.
-	  if (!children.length) {
-	    children.push(EMPTY_FRAGMENT);
-	  }
-	  return node.clone(children);
-	}
-
-	module.exports = RelayQueryPath;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 321 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule toGraphQL
-	 * 
-	 */
-
-	'use strict';
-
-	var QueryBuilder = __webpack_require__(218);
-	var RelayQuery = __webpack_require__(214);
-
-	var callsToGraphQL = __webpack_require__(237);
-	var invariant = __webpack_require__(222);
-
-	/**
-	 * @internal
-	 *
-	 * Converts a RelayQuery.Node into a plain object representation. This is
-	 * equivalent to the AST produced by `babel-relay-plugin` and is intended for
-	 * use in serializing RelayQuery nodes.
-	 */
-	var toGraphQL = {
-	  Query: function Query(node) {
-	    return node.getConcreteQueryNode(function () {
-	      var batchCall = node.getBatchCall();
-	      var identifyingArgValue = undefined;
-	      if (batchCall) {
-	        identifyingArgValue = QueryBuilder.createBatchCallVariable(batchCall.sourceQueryID, batchCall.sourceQueryPath);
-	      } else {
-	        var identifyingArg = node.getIdentifyingArg();
-	        if (identifyingArg) {
-	          if (Array.isArray(identifyingArg.value)) {
-	            identifyingArgValue = identifyingArg.value.map(QueryBuilder.createCallValue);
-	          } else {
-	            identifyingArgValue = QueryBuilder.createCallValue(identifyingArg.value);
-	          }
-	        }
-	      }
-
-	      var children = node.getChildren().map(toGraphQLSelection);
-	      // Use `QueryBuilder` to generate the correct calls from the
-	      // identifying argument & metadata.
-	      return QueryBuilder.createQuery({
-	        children: children,
-	        fieldName: node.getFieldName(),
-	        identifyingArgValue: identifyingArgValue,
-	        isDeferred: node.isDeferred(),
-	        metadata: node.__concreteNode__.metadata,
-	        name: node.getName()
-	      });
-	    });
-	  },
-	  Fragment: (function (_Fragment) {
-	    function Fragment(_x) {
-	      return _Fragment.apply(this, arguments);
-	    }
-
-	    Fragment.toString = function () {
-	      return _Fragment.toString();
-	    };
-
-	    return Fragment;
-	  })(function (node) {
-	    return node.getConcreteQueryNode(function () {
-	      var children = node.getChildren().map(toGraphQLSelection);
-	      var fragment = {
-	        children: children,
-	        kind: 'Fragment',
-	        metadata: {
-	          plural: node.isPlural()
-	        },
-	        name: node.getDebugName(),
-	        type: node.getType()
-	      };
-	      return fragment;
-	    });
-	  }),
-	  Field: (function (_Field) {
-	    function Field(_x2) {
-	      return _Field.apply(this, arguments);
-	    }
-
-	    Field.toString = function () {
-	      return _Field.toString();
-	    };
-
-	    return Field;
-	  })(function (node) {
-	    return node.getConcreteQueryNode(function () {
-	      var calls = callsToGraphQL(node.getCallsWithValues());
-	      var children = node.getChildren().map(toGraphQLSelection);
-	      var field = {
-	        alias: node.__concreteNode__.alias,
-	        calls: calls,
-	        children: children,
-	        fieldName: node.getSchemaName(),
-	        kind: 'Field',
-	        metadata: node.__concreteNode__.metadata
-	      };
-	      return field;
-	    });
-	  })
-	};
-
-	function toGraphQLSelection(node) {
-	  if (node instanceof RelayQuery.Fragment) {
-	    return toGraphQL.Fragment(node);
-	  } else {
-	    !(node instanceof RelayQuery.Field) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'toGraphQL: Invalid node.') : invariant(false) : undefined;
-	    return toGraphQL.Field(node);
-	  }
-	}
-
-	module.exports = toGraphQL;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 322 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule flattenSplitRelayQueries
-	 * 
-	 * @typechecks
-	 */
-
-	/**
-	 * Flattens the nested structure returned by `splitDeferredRelayQueries`.
-	 *
-	 * Right now our internals discard the information about the relationship
-	 * between the queries that is encoded in the nested structure.
-	 *
-	 * @internal
-	 */
-	'use strict';
-
-	var _toConsumableArray = __webpack_require__(295)['default'];
-
-	function flattenSplitRelayQueries(splitQueries) {
-	  var flattenedQueries = [];
-	  var queue = [splitQueries];
-	  while (queue.length) {
-	    splitQueries = queue.shift();
-	    var _splitQueries = splitQueries;
-	    var required = _splitQueries.required;
-	    var deferred = _splitQueries.deferred;
-
-	    if (required) {
-	      flattenedQueries.push(required);
-	    }
-	    if (deferred.length) {
-	      queue.push.apply(queue, _toConsumableArray(deferred));
-	    }
-	  }
-	  return flattenedQueries;
-	}
-
-	module.exports = flattenSplitRelayQueries;
-
-/***/ },
-/* 323 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule generateForceIndex
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _index = 1;
-
-	/**
-	 * Generate a new force index used to write GraphQL data in the store. A new
-	 * force index can be used to overwrite previous ranges.
-	 *
-	 * @internal
-	 */
-	function generateForceIndex() {
-	  return _index++;
-	}
-
-	module.exports = generateForceIndex;
-
-/***/ },
-/* 324 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule someObject
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var hasOwnProperty = Object.prototype.hasOwnProperty;
-
-	/**
-	 * Executes the provided `callback` once for each enumerable own property in the
-	 * object until it finds one where callback returns a truthy value. If such a
-	 * property is found, `someObject` immediately returns true. Otherwise, it
-	 * returns false.
-	 *
-	 * The `callback` is invoked with three arguments:
-	 *
-	 *  - the property value
-	 *  - the property name
-	 *  - the object being traversed
-	 *
-	 * Properties that are added after the call to `someObject` will not be
-	 * visited by `callback`. If the values of existing properties are changed, the
-	 * value passed to `callback` will be the value at the time `someObject`
-	 * visits them. Properties that are deleted before being visited are not
-	 * visited.
-	 */
-	function someObject(object, callback, context) {
-	  for (var name in object) {
-	    if (hasOwnProperty.call(object, name)) {
-	      if (callback.call(context, object[name], name, object)) {
-	        return true;
-	      }
-	    }
-	  }
-	  return false;
-	}
-
-	module.exports = someObject;
-
-/***/ },
-/* 325 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule splitDeferredRelayQueries
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _inherits = __webpack_require__(198)['default'];
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	var QueryBuilder = __webpack_require__(218);
-	var RelayNodeInterface = __webpack_require__(219);
-	var RelayProfiler = __webpack_require__(232);
-	var RelayQuery = __webpack_require__(214);
-	var RelayQueryTransform = __webpack_require__(315);
-	var RelayRefQueryDescriptor = __webpack_require__(326);
-
-	var invariant = __webpack_require__(222);
-
-	/**
-	 * Traverse `node` splitting off deferred query fragments into separate queries.
-	 *
-	 * @internal
-	 */
-	function splitDeferredRelayQueries(node) {
-	  var splitter = new GraphQLSplitDeferredQueries();
-	  var splitQueries = {
-	    __parent__: null,
-	    __path__: [],
-	    __refQuery__: null,
-	    deferred: [],
-	    required: null
-	  };
-	  splitter.visit(node, splitQueries);
-
-	  return buildQueries(splitQueries);
-	}
-
-	/**
-	 * Returns the requisite siblings of `node`, but filters any non-requisite
-	 * children of those siblings.
-	 */
-	function getRequisiteSiblings(node, parent) {
-	  // Get the requisite siblings.
-	  var siblings = parent.getChildren().filter(function (child) {
-	    return child !== node && child instanceof RelayQuery.Field && child.isRequisite();
-	  });
-
-	  // Filter the non-requisite children from those siblings.
-	  return siblings.map(function (sibling) {
-	    var children = sibling.getChildren().filter(function (child) {
-	      return child instanceof RelayQuery.Field && child.isRequisite();
-	    });
-	    var clone = sibling.clone(children);
-	    !clone ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Unexpected non-scalar, requisite field.') : invariant(false) : undefined;
-	    return clone;
-	  });
-	}
-
-	/**
-	 * Traverse the parent chain of `node` wrapping it at each level until it is
-	 * either:
-	 *
-	 * - wrapped in a RelayQuery.Root node
-	 * - wrapped in a non-root node that can be split off in a "ref query" (ie. a
-	 *   root call with a ref param that references another query)
-	 *
-	 * Additionally ensures that any requisite sibling fields are embedded in each
-	 * layer of the wrapper.
-	 */
-	function wrapNode(node, path) {
-	  for (var ii = path.length - 1; ii >= 0; ii--) {
-	    var parent = path[ii];
-	    if (parent instanceof RelayQuery.Field && parent.getInferredRootCallName()) {
-	      // We can make a "ref query" at this point, so stop wrapping.
-	      return new RelayRefQueryDescriptor(node, path.slice(0, ii + 1));
-	    }
-
-	    var siblings = getRequisiteSiblings(node, parent);
-	    var children = [node].concat(siblings);
-
-	    // Cast here because we know that `clone` will never return `null` (because
-	    // we always give it at least one child).
-	    node = parent.clone(children);
-	  }
-	  !(node instanceof RelayQuery.Root) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Cannot build query without a root node.') : invariant(false) : undefined;
-	  var identifyingArg = node.getIdentifyingArg();
-	  var identifyingArgName = identifyingArg && identifyingArg.name || null;
-	  var identifyingArgValue = identifyingArg && identifyingArg.value || null;
-	  var metadata = {
-	    identifyingArgName: identifyingArgName,
-	    isDeferred: true
-	  };
-	  return RelayQuery.Root.build(node.getName(), node.getFieldName(), identifyingArgValue, node.getChildren(), metadata);
-	}
-
-	/**
-	 * Returns `true` if `node` is considered "empty", which means that it contains
-	 * no non-generated fields, and no ref query dependencies.
-	 */
-	function isEmpty(node) {
-	  if (node.isScalar()) {
-	    return node.isGenerated() && !node.isRefQueryDependency();
-	  } else {
-	    return node.getChildren().every(isEmpty);
-	  }
-	}
-
-	/**
-	 * Mutates and returns a nested `SplitQueries` structure, updating any deferred
-	 * "ref queries" to actually reference their contexts.
-	 */
-	function buildQueries(splitQueries) {
-	  if (splitQueries.required && isEmpty(splitQueries.required)) {
-	    splitQueries.required = null;
-	  }
-	  splitQueries.deferred = splitQueries.deferred.map(function (nestedSplitQueries) {
-	    var descriptor = nestedSplitQueries.__refQuery__;
-	    if (descriptor) {
-	      // Wrap the ref query node with a reference to the required query that is
-	      // its context.
-	      var context = splitQueries.required;
-	      if (!context) {
-	        // Traverse upwards looking for context.
-	        var parentSplitQueries = splitQueries;
-	        while (parentSplitQueries.__parent__) {
-	          context = parentSplitQueries.__parent__.required;
-	          if (context) {
-	            break;
-	          }
-	          parentSplitQueries = parentSplitQueries.__parent__;
-	        }
-	      }
-	      !context ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Expected a context root query.') : invariant(false) : undefined;
-	      nestedSplitQueries.required = createRefQuery(descriptor, context);
-	    }
-
-	    return buildQueries(nestedSplitQueries);
-	  });
-	  return splitQueries;
-	}
-
-	/**
-	 * Wraps `descriptor` in a new top-level ref query.
-	 */
-	function createRefQuery(descriptor, context) {
-	  var node = descriptor.node;
-	  !(node instanceof RelayQuery.Field || node instanceof RelayQuery.Fragment) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Ref query requires a field or fragment.') : invariant(false) : undefined;
-
-	  // Build up JSONPath.
-	  var path = ['$', '*'];
-	  var parent;
-	  for (var ii = 0; ii < descriptor.path.length; ii++) {
-	    parent = descriptor.path[ii];
-	    if (parent instanceof RelayQuery.Field) {
-	      path.push(parent.getSerializationKey());
-	      if (parent.isPlural()) {
-	        path.push('*');
-	      }
-	    }
-	  }
-	  !(path.length > 2) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Ref query requires a complete path.') : invariant(false) : undefined;
-	  var field = parent; // Flow
-	  var primaryKey = field.getInferredPrimaryKey();
-	  !primaryKey ? process.env.NODE_ENV !== 'production' ? invariant(false, 'splitDeferredRelayQueries(): Ref query requires a primary key.') : invariant(false) : undefined;
-	  path.push(primaryKey);
-
-	  // Create the wrapper root query.
-	  var root = RelayQuery.Root.build(context.getName(), RelayNodeInterface.NODES, QueryBuilder.createBatchCallVariable(context.getID(), path.join('.')), [node], {
-	    identifyingArgName: RelayNodeInterface.ID,
-	    isDeferred: true
-	  });
-
-	  var result = root; // Flow
-	  return result;
-	}
-
-	/**
-	 * Traverses an input query, updating the passed in `SplitQueries` state object
-	 * to contain a nested structure representing the required and deferred portions
-	 * of the input query.
-	 */
-
-	var GraphQLSplitDeferredQueries = (function (_RelayQueryTransform) {
-	  _inherits(GraphQLSplitDeferredQueries, _RelayQueryTransform);
-
-	  function GraphQLSplitDeferredQueries() {
-	    _classCallCheck(this, GraphQLSplitDeferredQueries);
-
-	    _RelayQueryTransform.apply(this, arguments);
-	  }
-
-	  GraphQLSplitDeferredQueries.prototype.visitField = function visitField(node, splitQueries) {
-	    if (!node.hasDeferredDescendant()) {
-	      return node;
-	    }
-
-	    splitQueries.__path__.push(node);
-	    var result = this.traverse(node, splitQueries);
-	    splitQueries.__path__.pop();
-
-	    if (result && node.getInferredRootCallName()) {
-	      // The node is a ref query dependency; mark it as one.
-	      var key = node.getInferredPrimaryKey();
-	      var children = result.getChildren().map(function (child) {
-	        if (child instanceof RelayQuery.Field && child.getSchemaName() === key) {
-	          return child.cloneAsRefQueryDependency();
-	        } else {
-	          return child;
-	        }
-	      });
-	      result = result.clone(children);
-	    }
-
-	    return result;
-	  };
-
-	  GraphQLSplitDeferredQueries.prototype.visitFragment = function visitFragment(node, splitQueries) {
-	    if (!node.getChildren().length) {
-	      return null;
-	    }
-
-	    if (node.isDeferred()) {
-	      var path = splitQueries.__path__;
-	      var deferred = {
-	        __parent__: splitQueries,
-	        __path__: path,
-	        __refQuery__: null,
-	        deferred: [],
-	        required: null
-	      };
-	      var result = this.traverse(node, deferred);
-	      if (result) {
-	        var wrapped = wrapNode(result, path);
-	        if (wrapped instanceof RelayQuery.Root) {
-	          deferred.required = wrapped;
-	        } else if (wrapped instanceof RelayRefQueryDescriptor) {
-	          // for Flow
-	          deferred.__refQuery__ = wrapped;
-	        }
-	      }
-	      if (result || deferred.deferred.length) {
-	        splitQueries.deferred.push(deferred);
-	      }
-	      return null;
-	    } else if (node.hasDeferredDescendant()) {
-	      return this.traverse(node, splitQueries);
-	    } else {
-	      return node;
-	    }
-	  };
-
-	  GraphQLSplitDeferredQueries.prototype.visitRoot = function visitRoot(node, splitQueries) {
-	    var result;
-	    if (!node.hasDeferredDescendant()) {
-	      splitQueries.required = node;
-	      return node;
-	    } else {
-	      splitQueries.__path__.push(node);
-	      result = this.traverse(node, splitQueries);
-	      splitQueries.__path__.pop();
-	      splitQueries.required = result;
-	      return result;
-	    }
-	  };
-
-	  return GraphQLSplitDeferredQueries;
-	})(RelayQueryTransform);
-
-	var instrumented = RelayProfiler.instrument('splitDeferredRelayQueries', splitDeferredRelayQueries);
-
-	// #7573861: Type export collides with CommonJS export in presence of
-	// `instrument()` call:
-	module.exports = instrumented;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 326 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayRefQueryDescriptor
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	/**
-	 * @internal
-	 *
-	 * Represents a node that will eventually become a "ref query".
-	 *
-	 * Includes the "path" context (ancestor nodes) that can be used to construct an
-	 * appropriate the JSONPath for the query.
-	 *
-	 * @see splitDeferredRelayQueries
-	 */
-
-	var RelayRefQueryDescriptor = function RelayRefQueryDescriptor(node, path) {
-	  _classCallCheck(this, RelayRefQueryDescriptor);
-
-	  this.node = node;
-	  this.path = path;
-	};
-
-	module.exports = RelayRefQueryDescriptor;
-
-/***/ },
-/* 327 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayChangeTracker
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var _Object$freeze = __webpack_require__(215)['default'];
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-
-	/**
-	 * @internal
-	 *
-	 * Keeps track of records that have been created or updated; used primarily to
-	 * record changes during the course of a `write` operation.
-	 */
-
-	var RelayChangeTracker = (function () {
-	  function RelayChangeTracker() {
-	    _classCallCheck(this, RelayChangeTracker);
-
-	    this._created = {};
-	    this._updated = {};
-	  }
-
-	  /**
-	   * Record the creation of a record.
-	   */
-
-	  RelayChangeTracker.prototype.createID = function createID(recordID) {
-	    this._created[recordID] = true;
-	  };
-
-	  /**
-	   * Record an update to a record.
-	   */
-
-	  RelayChangeTracker.prototype.updateID = function updateID(recordID) {
-	    if (!this._created.hasOwnProperty(recordID)) {
-	      this._updated[recordID] = true;
-	    }
-	  };
-
-	  /**
-	   * Determine if the record has any changes (was created or updated).
-	   */
-
-	  RelayChangeTracker.prototype.hasChange = function hasChange(recordID) {
-	    return !!(this._updated[recordID] || this._created[recordID]);
-	  };
-
-	  /**
-	   * Determine if the record was created.
-	   */
-
-	  RelayChangeTracker.prototype.isNewRecord = function isNewRecord(recordID) {
-	    return !!this._created[recordID];
-	  };
-
-	  /**
-	   * Get the ids of records that were created/updated.
-	   */
-
-	  RelayChangeTracker.prototype.getChangeSet = function getChangeSet() {
-	    if (process.env.NODE_ENV !== 'production') {
-	      return {
-	        created: _Object$freeze(this._created),
-	        updated: _Object$freeze(this._updated)
-	      };
-	    }
-	    return {
-	      created: this._created,
-	      updated: this._updated
-	    };
-	  };
-
-	  return RelayChangeTracker;
-	})();
-
-	module.exports = RelayChangeTracker;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 328 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -32384,12 +34761,12 @@
 
 	var _classCallCheck = __webpack_require__(178)['default'];
 
-	var _toConsumableArray = __webpack_require__(295)['default'];
+	var _toConsumableArray = __webpack_require__(293)['default'];
 
 	var GraphQLStoreDataHandler = __webpack_require__(213);
+	var RelayNodeInterface = __webpack_require__(219);
 	var RelayQuery = __webpack_require__(214);
 
-	var flattenRelayQuery = __webpack_require__(329);
 	var invariant = __webpack_require__(222);
 
 	var TYPE = '__type__';
@@ -32417,10 +34794,10 @@
 
 	    this._trackedNodesByID[dataID] = this._trackedNodesByID[dataID] || {
 	      trackedNodes: [],
-	      isFlattened: false
+	      isMerged: false
 	    };
 	    this._trackedNodesByID[dataID].trackedNodes.push(node);
-	    this._trackedNodesByID[dataID].isFlattened = false;
+	    this._trackedNodesByID[dataID].isMerged = false;
 	  };
 
 	  /**
@@ -32432,23 +34809,22 @@
 	    if (!trackedNodesByID) {
 	      return [];
 	    }
-	    var isFlattened = trackedNodesByID.isFlattened;
+	    var isMerged = trackedNodesByID.isMerged;
 	    var trackedNodes = trackedNodesByID.trackedNodes;
 
-	    if (!isFlattened) {
-	      var trackedChildren = [];
-	      trackedNodes.forEach(function (trackedQuery) {
-	        trackedChildren.push.apply(trackedChildren, _toConsumableArray(trackedQuery.getChildren()));
-	      });
-	      trackedNodes.length = 0;
-	      trackedNodesByID.isFlattened = true;
-	      var containerNode = RelayQuery.Fragment.build('RelayQueryTracker', 'Node', trackedChildren);
-	      if (containerNode) {
-	        var flattenedNode = flattenRelayQuery(containerNode);
-	        if (flattenedNode) {
-	          trackedNodes.push(flattenedNode);
+	    if (!isMerged) {
+	      (function () {
+	        var trackedChildren = [];
+	        trackedNodes.forEach(function (trackedQuery) {
+	          trackedChildren.push.apply(trackedChildren, _toConsumableArray(trackedQuery.getChildren()));
+	        });
+	        trackedNodes.length = 0;
+	        trackedNodesByID.isMerged = true;
+	        var containerNode = RelayQuery.Fragment.build('RelayQueryTracker', RelayNodeInterface.NODE_TYPE, trackedChildren);
+	        if (containerNode) {
+	          trackedNodes.push(containerNode);
 	        }
-	      }
+	      })();
 	    }
 	    var trackedNode = trackedNodes[0];
 	    if (trackedNode) {
@@ -32473,128 +34849,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 329 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule flattenRelayQuery
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _inherits = __webpack_require__(198)['default'];
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var _Array$from = __webpack_require__(296)['default'];
-
-	var Map = __webpack_require__(280);
-	var RelayProfiler = __webpack_require__(232);
-
-	var RelayQueryVisitor = __webpack_require__(316);
-
-	var sortTypeFirst = __webpack_require__(330);
-
-	/**
-	 * @internal
-	 *
-	 * `flattenRelayQuery(query)` returns a clone of `query` with fields inside of
-	 * fragments recursively flattened into the nearest ancestor field.
-	 *
-	 * The result can be null if `node` only contains empty fragments or fragments
-	 * that only contain empty fragments.
-	 */
-	function flattenRelayQuery(node) {
-	  var flattener = new RelayQueryFlattener();
-	  var flattenedFieldMap = new Map();
-	  flattener.traverse(node, { node: node, flattenedFieldMap: flattenedFieldMap });
-	  return toQuery(node, flattenedFieldMap);
-	}
-
-	function toQuery(node, flattenedFieldMap) {
-	  var keys = _Array$from(flattenedFieldMap.keys()).sort(sortTypeFirst);
-	  return node.clone(keys.map(function (alias) {
-	    var field = flattenedFieldMap.get(alias);
-	    if (field) {
-	      return toQuery(field.node, field.flattenedFieldMap);
-	    }
-	  }));
-	}
-
-	var RelayQueryFlattener = (function (_RelayQueryVisitor) {
-	  _inherits(RelayQueryFlattener, _RelayQueryVisitor);
-
-	  function RelayQueryFlattener() {
-	    _classCallCheck(this, RelayQueryFlattener);
-
-	    _RelayQueryVisitor.apply(this, arguments);
-	  }
-
-	  RelayQueryFlattener.prototype.visitField = function visitField(node, state) {
-	    var serializationKey = node.getSerializationKey();
-	    var flattenedField = state.flattenedFieldMap.get(serializationKey);
-	    if (!flattenedField) {
-	      flattenedField = {
-	        node: node,
-	        flattenedFieldMap: new Map()
-	      };
-	      state.flattenedFieldMap.set(serializationKey, flattenedField);
-	    }
-	    this.traverse(node, flattenedField);
-	  };
-
-	  return RelayQueryFlattener;
-	})(RelayQueryVisitor);
-
-	module.exports = RelayProfiler.instrument('flattenRelayQuery', flattenRelayQuery);
-
-/***/ },
-/* 330 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule sortTypeFirst
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var TYPE = '__type__';
-
-	function sortTypeFirst(a, b) {
-	  if (a === b) {
-	    return 0;
-	  }
-	  if (a === TYPE) {
-	    return -1;
-	  }
-	  if (b === TYPE) {
-	    return 1;
-	  }
-	  return 0;
-	}
-
-	module.exports = sortTypeFirst;
-
-/***/ },
-/* 331 */
+/* 354 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -32616,20 +34871,23 @@
 
 	var _classCallCheck = __webpack_require__(178)['default'];
 
-	var GraphQLStoreDataHandler = __webpack_require__(213);
+	var _extends = __webpack_require__(161)['default'];
+
 	var RelayQuery = __webpack_require__(214);
 
 	var RelayConnectionInterface = __webpack_require__(227);
 	var RelayNodeInterface = __webpack_require__(219);
 
-	var RelayQueryVisitor = __webpack_require__(316);
-	var RelayRecordState = __webpack_require__(318);
+	var RelayQueryVisitor = __webpack_require__(277);
+	var RelayRecordState = __webpack_require__(278);
 
-	var generateClientEdgeID = __webpack_require__(332);
+	var generateClientEdgeID = __webpack_require__(355);
 	var generateClientID = __webpack_require__(223);
 	var invariant = __webpack_require__(222);
+	var isCompatibleRelayFragmentType = __webpack_require__(308);
 	var warning = __webpack_require__(194);
 
+	var ANY_TYPE = RelayNodeInterface.ANY_TYPE;
 	var ID = RelayNodeInterface.ID;
 	var TYPENAME = RelayNodeInterface.TYPENAME;
 	var EDGES = RelayConnectionInterface.EDGES;
@@ -32652,6 +34910,7 @@
 	    _RelayQueryVisitor.call(this);
 	    this._changeTracker = changeTracker;
 	    this._forceIndex = options && options.forceIndex ? options.forceIndex : 0;
+	    this._isOptimisticUpdate = !!(options && options.isOptimisticUpdate);
 	    this._store = store;
 	    this._queryTracker = queryTracker;
 	    this._updateTrackedQueries = !!(options && options.updateTrackedQueries);
@@ -32661,18 +34920,16 @@
 	    return this._store;
 	  };
 
-	  RelayQueryWriter.prototype.getRecordTypeName = function getRecordTypeName(field, recordID, payload) {
-	    if (GraphQLStoreDataHandler.isClientID(recordID)) {
+	  RelayQueryWriter.prototype.getRecordTypeName = function getRecordTypeName(node, recordID, payload) {
+	    if (this._isOptimisticUpdate) {
+	      // Optimistic queries are inferred and fields have a generic 'any' type.
 	      return null;
 	    }
 	    var typeName = payload[TYPENAME];
-	    if (typeName == null) {
-	      var idField = field.getFieldByStorageKey(ID);
-	      if (idField) {
-	        typeName = idField.getParentType();
-	      }
+	    if (typeName == null && !node.isAbstract()) {
+	      typeName = node.getType();
 	    }
-	    process.env.NODE_ENV !== 'production' ? warning(typeName, 'RelayQueryWriter: Could not find a type name for record `%s`.', recordID) : undefined;
+	    process.env.NODE_ENV !== 'production' ? warning(typeName && typeName !== ANY_TYPE, 'RelayQueryWriter: Could not find a type name for record `%s`.', recordID) : undefined;
 	    return typeName || null;
 	  };
 
@@ -32777,6 +35034,24 @@
 	      this._queryTracker.trackNodeForID(root, recordID, path);
 	    }
 	    this.traverse(root, state);
+	  };
+
+	  RelayQueryWriter.prototype.visitFragment = function visitFragment(fragment, state) {
+	    var recordID = state.recordID;
+
+	    if (fragment.isDeferred()) {
+	      this._store.setHasDeferredFragmentData(recordID, fragment.getFragmentID());
+	      this.recordUpdate(recordID);
+	    }
+	    // Skip fragments that do not match the record's concrete type. Fragments
+	    // cannot be skipped for optimistic writes because optimistically created
+	    // records *may* have a default `Node` type.
+	    if (this._isOptimisticUpdate || isCompatibleRelayFragmentType(fragment, this._store.getType(recordID))) {
+	      var _path = state.path.getPath(fragment, recordID);
+	      this.traverse(fragment, _extends({}, state, {
+	        path: _path
+	      }));
+	    }
 	  };
 
 	  RelayQueryWriter.prototype.visitField = function visitField(field, state) {
@@ -33085,7 +35360,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 332 */
+/* 355 */
 /***/ function(module, exports) {
 
 	/**
@@ -33116,7 +35391,7 @@
 	module.exports = generateClientEdgeID;
 
 /***/ },
-/* 333 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -33141,15 +35416,14 @@
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
-	var GraphQLMutatorConstants = __webpack_require__(334);
-	var GraphQLRange = __webpack_require__(335);
+	var GraphQLMutatorConstants = __webpack_require__(357);
+	var GraphQLRange = __webpack_require__(358);
 	var GraphQLStoreDataHandler = __webpack_require__(213);
-	var GraphQLStoreRangeUtils = __webpack_require__(245);
 	var RelayConnectionInterface = __webpack_require__(227);
 
 	var RelayNodeInterface = __webpack_require__(219);
 
-	var RelayRecordStatusMap = __webpack_require__(340);
+	var RelayRecordStatusMap = __webpack_require__(360);
 
 	var forEachObject = __webpack_require__(230);
 	var invariant = __webpack_require__(222);
@@ -33162,6 +35436,8 @@
 	var FILTER_CALLS = '__filterCalls__';
 	var FORCE_INDEX = '__forceIndex__';
 	var RANGE = '__range__';
+	var RESOLVED_FRAGMENT_MAP = '__resolvedFragmentMap__';
+	var RESOLVED_FRAGMENT_MAP_GENERATION = '__resolvedFragmentMapGeneration__';
 	var PATH = '__path__';
 	var APPEND = GraphQLMutatorConstants.APPEND;
 	var PREPEND = GraphQLMutatorConstants.PREPEND;
@@ -33288,10 +35564,6 @@
 	    var cacheWriter = this._cacheWriter;
 	    if (!this._queuedRecords && cacheWriter) {
 	      cacheWriter.writeField(dataID, '__dataID__', dataID, typeName);
-	      var cachedPath = nextRecord[PATH];
-	      if (cachedPath) {
-	        cacheWriter.writeField(dataID, '__path__', cachedPath, typeName);
-	      }
 	    }
 	  };
 
@@ -33309,7 +35581,6 @@
 	   */
 
 	  RelayRecordStore.prototype.hasOptimisticUpdate = function hasOptimisticUpdate(dataID) {
-	    dataID = GraphQLStoreRangeUtils.getCanonicalClientID(dataID);
 	    !this._queuedRecords ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayRecordStore.hasOptimisticUpdate(): Optimistic updates require ' + 'queued records.') : invariant(false) : undefined;
 	    return this._queuedRecords.hasOwnProperty(dataID);
 	  };
@@ -33321,7 +35592,6 @@
 	   */
 
 	  RelayRecordStore.prototype.getClientMutationIDs = function getClientMutationIDs(dataID) {
-	    dataID = GraphQLStoreRangeUtils.getCanonicalClientID(dataID);
 	    !this._queuedRecords ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayRecordStore.getClientMutationIDs(): Optimistic updates require ' + 'queued records.') : invariant(false) : undefined;
 	    var record = this._queuedRecords[dataID];
 	    return record ? record.__mutationIDs__ : null;
@@ -33349,6 +35619,36 @@
 	    var record = this._queuedRecords[dataID];
 	    !record ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayRecordStore.setMutationErrorStatus(): Expected record `%s` to ' + 'exist before settings its mutation error status.', dataID) : invariant(false) : undefined;
 	    record.__status__ = RelayRecordStatusMap.setErrorStatus(record.__status__, hasError);
+	  };
+
+	  /**
+	   * Check whether a given record has received data for a deferred fragment.
+	   */
+
+	  RelayRecordStore.prototype.hasDeferredFragmentData = function hasDeferredFragmentData(dataID, fragmentID) {
+	    var resolvedFragmentMap = this._getField(dataID, RESOLVED_FRAGMENT_MAP);
+	    !(typeof resolvedFragmentMap === 'object' || resolvedFragmentMap == null) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayRecordStore.hasDeferredFragmentData(): Expected the map of ' + 'resolved deferred fragments associated with record `%s` to be null or ' + 'an object. Found a(n) `%s`.', dataID, typeof resolvedFragmentMap) : invariant(false) : undefined;
+	    return !!(resolvedFragmentMap && resolvedFragmentMap[fragmentID]);
+	  };
+
+	  /**
+	   * Mark a given record as having received data for a deferred fragment.
+	   */
+
+	  RelayRecordStore.prototype.setHasDeferredFragmentData = function setHasDeferredFragmentData(dataID, fragmentID) {
+	    var record = this._getRecord(dataID);
+	    !record ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayRecordStore.setHasDeferredFragmentData(): Expected record `%s` ' + 'to exist before marking it as having received data for the deferred ' + 'fragment with id `%s`.', dataID, fragmentID) : invariant(false) : undefined;
+	    var resolvedFragmentMap = record[RESOLVED_FRAGMENT_MAP];
+	    if (typeof resolvedFragmentMap !== 'object' || !resolvedFragmentMap) {
+	      resolvedFragmentMap = {};
+	    }
+	    resolvedFragmentMap[fragmentID] = true;
+	    record[RESOLVED_FRAGMENT_MAP] = resolvedFragmentMap;
+	    if (typeof record[RESOLVED_FRAGMENT_MAP_GENERATION] === 'number') {
+	      record[RESOLVED_FRAGMENT_MAP_GENERATION]++;
+	    } else {
+	      record[RESOLVED_FRAGMENT_MAP_GENERATION] = 0;
+	    }
 	  };
 
 	  /**
@@ -33878,7 +36178,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 334 */
+/* 357 */
 /***/ function(module, exports) {
 
 	/**
@@ -33930,7 +36230,7 @@
 	module.exports = GraphQLMutatorConstants;
 
 /***/ },
-/* 335 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -33949,16 +36249,16 @@
 
 	var _classCallCheck = __webpack_require__(178)['default'];
 
-	var _defineProperty = __webpack_require__(336)['default'];
+	var _defineProperty = __webpack_require__(322)['default'];
 
 	var _extends = __webpack_require__(161)['default'];
 
-	var _slicedToArray = __webpack_require__(248)['default'];
+	var _slicedToArray = __webpack_require__(245)['default'];
 
-	var _toConsumableArray = __webpack_require__(295)['default'];
+	var _toConsumableArray = __webpack_require__(293)['default'];
 
-	var GraphQLMutatorConstants = __webpack_require__(334);
-	var GraphQLSegment = __webpack_require__(339);
+	var GraphQLMutatorConstants = __webpack_require__(357);
+	var GraphQLSegment = __webpack_require__(359);
 	var GraphQLStoreDataHandler = __webpack_require__(213);
 	var RelayConnectionInterface = __webpack_require__(227);
 
@@ -34921,47 +37221,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 336 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _Object$defineProperty = __webpack_require__(337)["default"];
-
-	exports["default"] = function (obj, key, value) {
-	  if (key in obj) {
-	    _Object$defineProperty(obj, key, {
-	      value: value,
-	      enumerable: true,
-	      configurable: true,
-	      writable: true
-	    });
-	  } else {
-	    obj[key] = value;
-	  }
-
-	  return obj;
-	};
-
-	exports.__esModule = true;
-
-/***/ },
-/* 337 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(338), __esModule: true };
-
-/***/ },
-/* 338 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var $ = __webpack_require__(171);
-	module.exports = function defineProperty(it, key, desc){
-	  return $.setDesc(it, key, desc);
-	};
-
-/***/ },
-/* 339 */
+/* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -34980,7 +37240,7 @@
 
 	var _classCallCheck = __webpack_require__(178)['default'];
 
-	var _slicedToArray = __webpack_require__(248)['default'];
+	var _slicedToArray = __webpack_require__(245)['default'];
 
 	var _Object$assign = __webpack_require__(162)['default'];
 
@@ -35592,7 +37852,7 @@
 	module.exports = GraphQLSegment;
 
 /***/ },
-/* 340 */
+/* 360 */
 /***/ function(module, exports) {
 
 	/**
@@ -35655,7 +37915,7 @@
 	module.exports = RelayRecordStatusMap;
 
 /***/ },
-/* 341 */
+/* 361 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -35676,16 +37936,16 @@
 	var _classCallCheck = __webpack_require__(178)['default'];
 
 	var GraphQLStoreDataHandler = __webpack_require__(213);
-	var RelayBufferedNeglectionStateMap = __webpack_require__(342);
+	var RelayBufferedNeglectionStateMap = __webpack_require__(362);
 
-	var RelayNeglectionStateMap = __webpack_require__(343);
+	var RelayNeglectionStateMap = __webpack_require__(363);
 
 	var RelayProfiler = __webpack_require__(232);
 
-	var RelayTaskScheduler = __webpack_require__(306);
+	var RelayTaskScheduler = __webpack_require__(304);
 
 	var forEachObject = __webpack_require__(230);
-	var resolveImmediate = __webpack_require__(246);
+	var resolveImmediate = __webpack_require__(313);
 
 	var RANGE = '__range__';
 
@@ -35946,7 +38206,7 @@
 	module.exports = RelayStoreGarbageCollector;
 
 /***/ },
-/* 342 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -36083,7 +38343,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 343 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -36106,7 +38366,7 @@
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
-	var Map = __webpack_require__(280);
+	var Map = __webpack_require__(328);
 
 	var invariant = __webpack_require__(222);
 
@@ -36225,7 +38485,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 344 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -36245,14 +38505,17 @@
 
 	var _classCallCheck = __webpack_require__(178)['default'];
 
-	var RelayQuery = __webpack_require__(214);
+	var GraphQLStoreDataHandler = __webpack_require__(213);
 
-	var findRelayQueryLeaves = __webpack_require__(345);
+	var RelayQuery = __webpack_require__(214);
+	var RelayQueryPath = __webpack_require__(307);
+
+	var findRelayQueryLeaves = __webpack_require__(365);
 
 	var forEachObject = __webpack_require__(230);
 	var forEachRootCallArg = __webpack_require__(221);
 	var invariant = __webpack_require__(222);
-	var isEmpty = __webpack_require__(293);
+	var isEmpty = __webpack_require__(366);
 
 	/**
 	 * @internal
@@ -36316,7 +38579,11 @@
 	        this._queueRoot(storageKey, identifyingArgValue, query);
 	      }
 	    } else {
-	      this._visitNode(dataID, { node: query, rangeCalls: undefined });
+	      this._visitNode(dataID, {
+	        node: query,
+	        path: new RelayQueryPath(query),
+	        rangeCalls: undefined
+	      });
 	    }
 	  };
 
@@ -36351,7 +38618,11 @@
 	              if (_this2._hasFailed) {
 	                return;
 	              }
-	              _this2._visitNode(dataID, { node: root, rangeCalls: undefined });
+	              _this2._visitNode(dataID, {
+	                node: root,
+	                path: new RelayQueryPath(root),
+	                rangeCalls: undefined
+	              });
 	            });
 	          })();
 	        }
@@ -36365,7 +38636,7 @@
 	  RelayCacheReader.prototype._visitNode = function _visitNode(dataID, pendingItem) {
 	    var _this3 = this;
 
-	    var _findRelayQueryLeaves = findRelayQueryLeaves(this._store, this._cachedRecords, pendingItem.node, dataID, pendingItem.rangeCalls);
+	    var _findRelayQueryLeaves = findRelayQueryLeaves(this._store, this._cachedRecords, pendingItem.node, dataID, pendingItem.path, pendingItem.rangeCalls);
 
 	    var missingData = _findRelayQueryLeaves.missingData;
 	    var pendingNodes = _findRelayQueryLeaves.pendingNodes;
@@ -36374,8 +38645,8 @@
 	      this._handleFailed();
 	      return;
 	    }
-	    forEachObject(pendingNodes, function (pendingItem, dataID) {
-	      _this3._queueNode(dataID, pendingItem);
+	    forEachObject(pendingNodes, function (pendingItems, dataID) {
+	      _this3._queueNode(dataID, pendingItems);
 	    });
 	  };
 
@@ -36395,6 +38666,9 @@
 	        if (error) {
 	          _this4._handleFailed();
 	          return;
+	        }
+	        if (value && GraphQLStoreDataHandler.isClientID(dataID)) {
+	          value.__path__ = pendingItems[0].path;
 	        }
 	        _this4._cachedRecords[dataID] = value;
 	        var items = _this4._pendingNodes[dataID];
@@ -36435,21 +38709,21 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 345 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule findRelayQueryLeaves
-	 * 
-	 * @typechecks
-	 */
+	* Copyright 2013-2015, Facebook, Inc.
+	* All rights reserved.
+	*
+	* This source code is licensed under the BSD-style license found in the
+	* LICENSE file in the root directory of this source tree. An additional grant
+	* of patent rights can be found in the PATENTS file in the same directory.
+	*
+	* @providesModule findRelayQueryLeaves
+	* 
+	* @typechecks
+	*/
 
 	'use strict';
 
@@ -36462,8 +38736,11 @@
 	});
 	var RelayConnectionInterface = __webpack_require__(227);
 
-	var RelayQueryVisitor = __webpack_require__(316);
-	var RelayRecordState = __webpack_require__(318);
+	var RelayQueryVisitor = __webpack_require__(277);
+	var RelayRecordState = __webpack_require__(278);
+
+	var isCompatibleRelayFragmentType = __webpack_require__(308);
+
 	var EDGES = RelayConnectionInterface.EDGES;
 	var PAGE_INFO = RelayConnectionInterface.PAGE_INFO;
 
@@ -36478,12 +38755,13 @@
 	 * there is no way for us to satisfy this query even with additional data from
 	 * disk cache and resturn
 	 */
-	function findRelayQueryLeaves(store, cachedRecords, queryNode, dataID, rangeCalls) {
+	function findRelayQueryLeaves(store, cachedRecords, queryNode, dataID, path, rangeCalls) {
 	  var finder = new RelayQueryLeavesFinder(store, cachedRecords);
 
 	  var state = {
 	    dataID: dataID,
 	    missingData: false,
+	    path: path,
 	    rangeCalls: rangeCalls,
 	    rangeInfo: undefined
 	  };
@@ -36523,6 +38801,21 @@
 	        return;
 	      }
 	      this.visit(children[ii], state);
+	    }
+	  };
+
+	  RelayQueryLeavesFinder.prototype.visitFragment = function visitFragment(fragment, state) {
+	    var dataID = state.dataID;
+	    var recordState = this._store.getRecordState(dataID);
+	    if (recordState === RelayRecordState.UNKNOWN) {
+	      this._handleMissingData(fragment, state);
+	      return;
+	    } else if (recordState === RelayRecordState.NONEXISTENT) {
+	      return;
+	    }
+
+	    if (isCompatibleRelayFragmentType(fragment, this._store.getType(dataID))) {
+	      this.traverse(fragment, state);
 	    }
 	  };
 
@@ -36579,6 +38872,7 @@
 	        var nextState = {
 	          dataID: dataIDs[ii],
 	          missingData: false,
+	          path: state.path.getPath(field, dataIDs[ii]),
 	          rangeCalls: undefined,
 	          rangeInfo: undefined
 	        };
@@ -36599,6 +38893,7 @@
 	      var nextState = {
 	        dataID: dataID,
 	        missingData: false,
+	        path: state.path.getPath(field, dataID),
 	        rangeCalls: calls,
 	        rangeInfo: null
 	      };
@@ -36630,6 +38925,7 @@
 	      var nextState = {
 	        dataID: edgeIDs[ii],
 	        missingData: false,
+	        path: state.path.getPath(field, edgeIDs[ii]),
 	        rangeCalls: undefined,
 	        rangeInfo: undefined
 	      };
@@ -36657,6 +38953,7 @@
 	      var nextState = {
 	        dataID: dataID,
 	        missingData: false,
+	        path: state.path.getPath(field, dataID),
 	        rangeCalls: undefined,
 	        rangeInfo: undefined
 	      };
@@ -36665,7 +38962,7 @@
 	    }
 	  };
 
-	  RelayQueryLeavesFinder.prototype._handleMissingData = function _handleMissingData(field, state) {
+	  RelayQueryLeavesFinder.prototype._handleMissingData = function _handleMissingData(node, state) {
 	    var dataID = state.dataID;
 	    if (this._cachedRecords.hasOwnProperty(dataID)) {
 	      // We have read data for this `dataID` from disk, but
@@ -36676,7 +38973,8 @@
 	      // this `dataID` from disk.
 	      this._pendingNodes[dataID] = this._pendingNodes[dataID] || [];
 	      this._pendingNodes[dataID].push({
-	        node: field,
+	        node: node,
+	        path: state.path,
 	        rangeCalls: state.rangeCalls
 	      });
 	    }
@@ -36688,10 +38986,10 @@
 	module.exports = findRelayQueryLeaves;
 
 /***/ },
-/* 346 */
-/***/ function(module, exports, __webpack_require__) {
+/* 366 */
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {/**
+	/**
 	 * Copyright 2013-2015, Facebook, Inc.
 	 * All rights reserved.
 	 *
@@ -36699,86 +38997,33 @@
 	 * LICENSE file in the root directory of this source tree. An additional grant
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 *
-	 * @providesModule refragmentRelayQuery
-	 * 
-	 * @typechecks
+	 * @providesModule isEmpty
 	 */
 
-	'use strict';
-
-	var _Object$keys = __webpack_require__(207)['default'];
-
-	var RelayQuery = __webpack_require__(214);
-
-	var invariant = __webpack_require__(222);
+	/*eslint-disable no-unused-vars */
 
 	/**
-	 * @internal
-	 *
-	 * `refragmentRelayQuery(query)` returns a clone of `query` such that child
-	 * fields of dynamically-typed nodes are split into fragments by type. This is
-	 * necessary when refetching information about a record. The fields fetched for
-	 * a record may only be available via certain types:
-	 *
-	 * ```
-	 * // Input:
-	 * {
-	 *   id,    // fetched via a field of type `Node`
-	 *   name,  // fetched via a field of type `User`
-	 * }
-	 *
-	 * // Becomes:
-	 * {
-	 *   ...on Node { id },
-	 *   ...on User { name },
-	 * }
-	 * ```
+	 * Mimics empty from PHP.
 	 */
-	function refragmentRelayQuery(node) {
-	  // Refragmenting is not necessary in these cases:
-	  // - fragments are primarily constructed by end users, and their fields are
-	  //   validated at transpile-time.
-	  // - fields that have a concrete type will always have valid fields.
-	  if (node instanceof RelayQuery.Fragment || node instanceof RelayQuery.Field && !node.isUnionOrInterface()) {
-	    return node.clone(node.getChildren().map(refragmentRelayQuery));
-	  }
+	'use strict';
 
-	  // In all other cases, the fields of a node may be type-dependent:
-	  // - fields with union/interface types may have varying fields that must
-	  //   be fragmented.
-	  // - root fields are fragmented for simplicity, though they can eventually
-	  //   be annotated with the `isUnionOrInterface` metadata and be treated as
-	  //   fields.
-	  var children = [];
-	  var fieldsByType = {};
-	  node.getChildren().forEach(function (child) {
-	    var clone = refragmentRelayQuery(child);
-	    if (clone == null) {
-	      return;
+	function isEmpty(obj) {
+	  if (Array.isArray(obj)) {
+	    return obj.length === 0;
+	  } else if (typeof obj === 'object') {
+	    for (var i in obj) {
+	      return false;
 	    }
-	    if (clone instanceof RelayQuery.Fragment) {
-	      children.push(clone);
-	    } else {
-	      !(clone instanceof RelayQuery.Field) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'refragmentRelayQuery(): invalid node type, expected a `Field` or ' + '`Fragment`.') : invariant(false) : undefined;
-	      var parentType = clone.getParentType();
-	      var fields = fieldsByType[parentType];
-	      if (!fields) {
-	        fieldsByType[parentType] = fields = [];
-	      }
-	      fields.push(clone);
-	    }
-	  });
-	  _Object$keys(fieldsByType).forEach(function (type) {
-	    children.push(RelayQuery.Fragment.build('refragmentRelayQuery', type, fieldsByType[type]));
-	  });
-	  return node.clone(children);
+	    return true;
+	  } else {
+	    return !obj;
+	  }
 	}
 
-	module.exports = refragmentRelayQuery;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+	module.exports = isEmpty;
 
 /***/ },
-/* 347 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -36805,7 +39050,7 @@
 	var RelayNodeInterface = __webpack_require__(219);
 	var RelayProfiler = __webpack_require__(232);
 
-	var RelayQueryPath = __webpack_require__(320);
+	var RelayQueryPath = __webpack_require__(307);
 	function writeRelayQueryPayload(writer, query, payload) {
 	  var store = writer.getRecordStore();
 	  var path = new RelayQueryPath(query);
@@ -36821,7 +39066,7 @@
 	module.exports = RelayProfiler.instrument('writeRelayQueryPayload', writeRelayQueryPayload);
 
 /***/ },
-/* 348 */
+/* 368 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -36839,23 +39084,23 @@
 
 	'use strict';
 
-	var _defineProperty = __webpack_require__(336)['default'];
+	var _defineProperty = __webpack_require__(322)['default'];
 
 	var _extends = __webpack_require__(161)['default'];
 
-	var GraphQLMutatorConstants = __webpack_require__(334);
+	var GraphQLMutatorConstants = __webpack_require__(357);
 	var RelayConnectionInterface = __webpack_require__(227);
 
-	var RelayMutationTracker = __webpack_require__(349);
-	var RelayMutationType = __webpack_require__(350);
+	var RelayMutationTracker = __webpack_require__(369);
+	var RelayMutationType = __webpack_require__(326);
 	var RelayNodeInterface = __webpack_require__(219);
 	var RelayQuery = __webpack_require__(214);
-	var RelayQueryPath = __webpack_require__(320);
+	var RelayQueryPath = __webpack_require__(307);
 
 	var RelayProfiler = __webpack_require__(232);
-	var RelayRecordState = __webpack_require__(318);
+	var RelayRecordState = __webpack_require__(278);
 
-	var generateClientEdgeID = __webpack_require__(332);
+	var generateClientEdgeID = __webpack_require__(355);
 	var generateClientID = __webpack_require__(223);
 	var invariant = __webpack_require__(222);
 	var printRelayQueryCall = __webpack_require__(240);
@@ -36868,13 +39113,19 @@
 	 * are ending up everywhere and are not being inspected */
 	var CLIENT_MUTATION_ID = RelayConnectionInterface.CLIENT_MUTATION_ID;
 	var EDGES = RelayConnectionInterface.EDGES;
+	var ANY_TYPE = RelayNodeInterface.ANY_TYPE;
 	var ID = RelayNodeInterface.ID;
 	var NODE = RelayNodeInterface.NODE;
+	var NODE_TYPE = RelayNodeInterface.NODE_TYPE;
 	var APPEND = GraphQLMutatorConstants.APPEND;
 	var PREPEND = GraphQLMutatorConstants.PREPEND;
 	var REMOVE = GraphQLMutatorConstants.REMOVE;
 
-	var EDGES_FIELD = RelayQuery.Field.build(EDGES, null, null, { isPlural: true });
+	var EDGES_FIELD = RelayQuery.Field.build({
+	  fieldName: EDGES,
+	  type: ANY_TYPE,
+	  metadata: { isPlural: true }
+	});
 	var IGNORED_KEYS = _defineProperty({
 	  error: true
 	}, CLIENT_MUTATION_ID, true);
@@ -37021,11 +39272,11 @@
 	  var path;
 
 	  if (recordID != null) {
-	    path = new RelayQueryPath(RelayQuery.Root.build('writeRelayUpdatePayload', NODE, recordID, null, { identifyingArgName: ID }));
+	    path = new RelayQueryPath(RelayQuery.Root.build('writeRelayUpdatePayload', NODE, recordID, null, { identifyingArgName: ID }, NODE_TYPE));
 	  } else {
 	    recordID = store.getDataID(fieldName);
 	    // Root fields that do not accept arguments
-	    path = new RelayQueryPath(RelayQuery.Root.build('writeRelayUpdatePayload', fieldName));
+	    path = new RelayQueryPath(RelayQuery.Root.build('writeRelayUpdatePayload', fieldName, null, null, null, ANY_TYPE));
 	  }
 	  !recordID ? process.env.NODE_ENV !== 'production' ? invariant(false, 'writeRelayUpdatePayload(): Expected a record ID in the response payload ' + 'supplied to update the store.') : invariant(false) : undefined;
 
@@ -37217,7 +39468,7 @@
 	 * Returns `'append'`
 	 */
 	function getRangeBehavior(rangeBehaviors, calls) {
-	  var call = calls.map(printRelayQueryCall).join('').slice(1);
+	  var call = calls.map(printRelayQueryCall).sort().join('').slice(1);
 	  return rangeBehaviors[call] || null;
 	}
 
@@ -37271,11 +39522,10 @@
 	}
 
 	module.exports = RelayProfiler.instrument('writeRelayUpdatePayload', writeRelayUpdatePayload);
-	/* $FlowIssue #7728187 - Computed Property */
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 349 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -37405,2488 +39655,7 @@
 	module.exports = RelayMutationTracker;
 
 /***/ },
-/* 350 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayMutationType
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var RelayMutationType = {
-	  FIELDS_CHANGE: 'FIELDS_CHANGE',
-	  NODE_DELETE: 'NODE_DELETE',
-	  RANGE_ADD: 'RANGE_ADD',
-	  RANGE_DELETE: 'RANGE_DELETE',
-	  REQUIRED_CHILDREN: 'REQUIRED_CHILDREN'
-	};
-
-	module.exports = RelayMutationType;
-
-/***/ },
-/* 351 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule filterExclusiveKeys
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var _Object$keys = __webpack_require__(207)['default'];
-
-	var hasOwnProperty = Object.prototype.hasOwnProperty;
-
-	/**
-	 * Returns two arrays of keys that contain each object's exclusive keys.
-	 */
-	function filterExclusiveKeys(a, b) {
-	  var keysA = a ? _Object$keys(a) : [];
-	  var keysB = b ? _Object$keys(b) : [];
-
-	  if (keysA.length === 0 || keysB.length === 0) {
-	    return [keysA, keysB];
-	  }
-	  return [keysA.filter(function (key) {
-	    return !hasOwnProperty.call(b, key);
-	  }), keysB.filter(function (key) {
-	    return !hasOwnProperty.call(a, key);
-	  })];
-	}
-
-	module.exports = filterExclusiveKeys;
-
-/***/ },
-/* 352 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule readRelayQueryData
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _inherits = __webpack_require__(198)['default'];
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	Object.defineProperty(exports, '__esModule', {
-	  value: true
-	});
-	var GraphQLStoreDataHandler = __webpack_require__(213);
-	var GraphQLFragmentPointer = __webpack_require__(212);
-	var GraphQLStoreRangeUtils = __webpack_require__(245);
-	var RelayConnectionInterface = __webpack_require__(227);
-
-	var RelayProfiler = __webpack_require__(232);
-	var RelayQuery = __webpack_require__(214);
-	var RelayQueryVisitor = __webpack_require__(316);
-	var RelayRecordState = __webpack_require__(318);
-
-	var callsFromGraphQL = __webpack_require__(236);
-	var callsToGraphQL = __webpack_require__(237);
-	var invariant = __webpack_require__(222);
-	var validateRelayReadQuery = __webpack_require__(353);
-
-	var EDGES = RelayConnectionInterface.EDGES;
-	var PAGE_INFO = RelayConnectionInterface.PAGE_INFO;
-
-	/**
-	 * @internal
-	 *
-	 * Retrieves data from the `RelayStore`.
-	 */
-	function readRelayQueryData(store, queryNode, dataID, options) {
-	  var reader = new RelayStoreReader(store, options);
-	  var data = reader.retrieveData(queryNode, dataID);
-
-	  // We validate only after retrieving the data, to give our `invariant`
-	  // checks below a chance to fail fast.
-	  validateRelayReadQuery(queryNode, options);
-
-	  return data;
-	}
-
-	var RelayStoreReader = (function (_RelayQueryVisitor) {
-	  _inherits(RelayStoreReader, _RelayQueryVisitor);
-
-	  function RelayStoreReader(recordStore, options) {
-	    _classCallCheck(this, RelayStoreReader);
-
-	    _RelayQueryVisitor.call(this);
-	    this._recordStore = recordStore;
-	    this._traverseFragmentReferences = options && options.traverseFragmentReferences || false;
-	    this._traverseGeneratedFields = options && options.traverseGeneratedFields || false;
-	  }
-
-	  /**
-	   * Checks that `parent` either has range calls on it or does not contain either
-	   * `page_info` or `edges` fields. This enforcement intentionally transcends
-	   * traverseFragmentReferences boundaries.
-	   */
-
-	  /**
-	   * Runs `queryNode` against the data in `dataID` and returns the result.
-	   */
-
-	  RelayStoreReader.prototype.retrieveData = function retrieveData(queryNode, dataID) {
-	    var result = {
-	      data: undefined,
-	      dataIDs: {}
-	    };
-	    var rangeData = GraphQLStoreRangeUtils.parseRangeClientID(dataID);
-	    var status = this._recordStore.getRecordState(rangeData ? rangeData.dataID : dataID);
-	    if (status === RelayRecordState.EXISTENT) {
-	      var state = {
-	        componentDataID: null,
-	        data: undefined,
-	        parent: null,
-	        rangeInfo: null,
-	        seenDataIDs: result.dataIDs,
-	        storeDataID: dataID
-	      };
-	      this.visit(queryNode, state);
-	      result.data = state.data;
-	    } else if (status === RelayRecordState.NONEXISTENT) {
-	      result.data = null;
-	    }
-	    return result;
-	  };
-
-	  RelayStoreReader.prototype.visitField = function visitField(node, state) {
-	    // Check for range client IDs (eg. `someID_first(25)`) and unpack if
-	    // present, overriding `state`.
-	    this._handleRangeInfo(node, state);
-
-	    if (!node.isScalar() || node.isGenerated()) {
-	      // Make sure we return at least the __dataID__.
-	      getDataObject(state);
-	    }
-
-	    if (node.isGenerated() && !this._traverseGeneratedFields) {
-	      return;
-	    }
-	    var rangeInfo = state.rangeInfo;
-	    if (rangeInfo && node.getSchemaName() === EDGES) {
-	      this._readEdges(node, rangeInfo, state);
-	    } else if (rangeInfo && node.getSchemaName() === PAGE_INFO) {
-	      this._readPageInfo(node, rangeInfo, state);
-	    } else if (node.isScalar()) {
-	      this._readScalar(node, state);
-	    } else if (node.isPlural()) {
-	      this._readPlural(node, state);
-	    } else if (node.isConnection()) {
-	      this._readConnection(node, state);
-	    } else {
-	      this._readLinkedField(node, state);
-	    }
-	    state.seenDataIDs[state.storeDataID] = true;
-	  };
-
-	  RelayStoreReader.prototype.visitFragment = function visitFragment(node, state) {
-	    if (node.isContainerFragment() && !this._traverseFragmentReferences) {
-	      var dataID = getComponentDataID(state);
-	      var fragmentPointer = new GraphQLFragmentPointer(node.isPlural() ? [dataID] : dataID, node);
-	      this._setDataValue(state, fragmentPointer.getFragment().getConcreteFragmentID(), fragmentPointer);
-	    } else {
-	      this.traverse(node, state);
-	    }
-	  };
-
-	  RelayStoreReader.prototype._readScalar = function _readScalar(node, state) {
-	    var storageKey = node.getStorageKey();
-	    var field = this._recordStore.getField(state.storeDataID, storageKey);
-	    if (field === undefined) {
-	      return;
-	    } else if (field === null && !state.data) {
-	      state.data = null;
-	    } else {
-	      this._setDataValue(state, node.getApplicationName(), Array.isArray(field) ? field.slice() : field);
-	    }
-	  };
-
-	  RelayStoreReader.prototype._readPlural = function _readPlural(node, state) {
-	    var _this = this;
-
-	    var storageKey = node.getStorageKey();
-	    var dataIDs = this._recordStore.getLinkedRecordIDs(state.storeDataID, storageKey);
-	    if (dataIDs) {
-	      var applicationName = node.getApplicationName();
-	      var previousData = getDataValue(state, applicationName);
-	      var nextData = dataIDs.map(function (dataID, ii) {
-	        var data;
-	        if (previousData instanceof Object) {
-	          data = previousData[ii];
-	        }
-	        var nextState = {
-	          componentDataID: null,
-	          data: data,
-	          parent: node,
-	          rangeInfo: null,
-	          seenDataIDs: state.seenDataIDs,
-	          storeDataID: dataID
-	        };
-	        node.getChildren().forEach(function (child) {
-	          return _this.visit(child, nextState);
-	        });
-	        return nextState.data;
-	      });
-	      this._setDataValue(state, applicationName, nextData);
-	    }
-	  };
-
-	  RelayStoreReader.prototype._readConnection = function _readConnection(node, state) {
-	    var applicationName = node.getApplicationName();
-	    var storageKey = node.getStorageKey();
-	    var calls = node.getCallsWithValues();
-	    var dataID = this._recordStore.getLinkedRecordID(state.storeDataID, storageKey);
-	    if (!dataID) {
-	      return;
-	    }
-	    enforceRangeCalls(node);
-	    var metadata = this._recordStore.getRangeMetadata(dataID, calls);
-	    var nextState = {
-	      componentDataID: getConnectionClientID(node, dataID),
-	      data: getDataValue(state, applicationName),
-	      parent: node,
-	      rangeInfo: metadata && calls.length ? metadata : null,
-	      seenDataIDs: state.seenDataIDs,
-	      storeDataID: dataID
-	    };
-	    this.traverse(node, nextState);
-	    this._setDataValue(state, applicationName, nextState.data);
-	  };
-
-	  RelayStoreReader.prototype._readEdges = function _readEdges(node, rangeInfo, state) {
-	    var _this2 = this;
-
-	    var previousData = getDataValue(state, EDGES);
-	    var edges = rangeInfo.filteredEdges.map(function (edgeData, ii) {
-	      var data;
-	      if (previousData instanceof Object) {
-	        data = previousData[ii];
-	      }
-	      var nextState = {
-	        componentDataID: null,
-	        data: data,
-	        parent: node,
-	        rangeInfo: null,
-	        seenDataIDs: state.seenDataIDs,
-	        storeDataID: edgeData.edgeID
-	      };
-	      _this2.traverse(node, nextState);
-	      return nextState.data;
-	    });
-	    this._setDataValue(state, EDGES, edges);
-	  };
-
-	  RelayStoreReader.prototype._readPageInfo = function _readPageInfo(node, rangeInfo, state) {
-	    var _this3 = this;
-
-	    var pageInfo = rangeInfo.pageInfo;
-
-	    !pageInfo ? process.env.NODE_ENV !== 'production' ? invariant(false, 'readRelayQueryData(): Missing field, `%s`.', PAGE_INFO) : invariant(false) : undefined;
-	    var info = pageInfo; // for Flow
-	    var nextData;
-
-	    // Page info comes from the range metadata, so we do a custom traversal here
-	    // which is simpler than passing through page-info-related state as a hint
-	    // for the normal traversal.
-	    var read = function read(child) {
-	      if (child instanceof RelayQuery.Fragment) {
-	        if (child.isContainerFragment() && !_this3._traverseFragmentReferences) {
-	          var fragmentPointer = new GraphQLFragmentPointer(getComponentDataID(state), child);
-	          nextData = nextData || {};
-	          var concreteFragmentID = fragmentPointer.getFragment().getConcreteFragmentID();
-	          nextData[concreteFragmentID] = fragmentPointer;
-	        } else {
-	          child.getChildren().forEach(read);
-	        }
-	      } else {
-	        var field = child;
-	        if (!field.isGenerated() || _this3._traverseGeneratedFields) {
-	          nextData = nextData || {};
-	          nextData[field.getApplicationName()] = info[field.getStorageKey()];
-	        }
-	      }
-	    };
-	    node.getChildren().forEach(read);
-
-	    this._setDataValue(state, PAGE_INFO, nextData);
-	  };
-
-	  RelayStoreReader.prototype._readLinkedField = function _readLinkedField(node, state) {
-	    var storageKey = node.getStorageKey();
-	    var applicationName = node.getApplicationName();
-	    var dataID = this._recordStore.getLinkedRecordID(state.storeDataID, storageKey);
-	    if (dataID == null) {
-	      this._setDataValue(state, applicationName, dataID);
-	      return;
-	    }
-	    var nextState = {
-	      componentDataID: null,
-	      data: getDataValue(state, applicationName),
-	      parent: node,
-	      rangeInfo: null,
-	      seenDataIDs: state.seenDataIDs,
-	      storeDataID: dataID
-	    };
-	    var status = this._recordStore.getRecordState(dataID);
-	    if (status === RelayRecordState.EXISTENT) {
-	      // Make sure we return at least the __dataID__.
-	      getDataObject(nextState);
-	    }
-	    this.traverse(node, nextState);
-	    this._setDataValue(state, applicationName, nextState.data);
-	  };
-
-	  /**
-	   * Assigns `value` to the property of `state.data` identified by `key`.
-	   *
-	   * Pre-populates `state` with a suitable `data` object if needed, and copies
-	   * over any `__status__` field, if present.
-	   */
-
-	  RelayStoreReader.prototype._setDataValue = function _setDataValue(state, key, value) {
-	    var data = getDataObject(state); // ensure __dataID__
-	    if (value === undefined) {
-	      return;
-	    }
-	    data[key] = value;
-
-	    // Copy over the status, if any.
-	    var status = this._recordStore.getField(state.storeDataID, '__status__');
-	    if (status != null) {
-	      data.__status__ = status;
-	    }
-	  };
-
-	  /**
-	   * Checks to see if we have a range client ID (eg. `someID_first(25)`), and if
-	   * so, unpacks the range metadata, stashing it into (and overriding) `state`.
-	   */
-
-	  RelayStoreReader.prototype._handleRangeInfo = function _handleRangeInfo(node, state) {
-	    var rangeData = GraphQLStoreRangeUtils.parseRangeClientID(state.storeDataID);
-	    if (rangeData != null) {
-	      state.componentDataID = state.storeDataID;
-	      state.storeDataID = rangeData.dataID;
-	      state.rangeInfo = this._recordStore.getRangeMetadata(state.storeDataID, callsFromGraphQL(rangeData.calls, rangeData.callValues));
-	    }
-	  };
-
-	  return RelayStoreReader;
-	})(RelayQueryVisitor);
-
-	function enforceRangeCalls(parent) {
-	  if (!parent.__hasValidatedConnectionCalls__) {
-	    var calls = parent.getCallsWithValues();
-	    if (!RelayConnectionInterface.hasRangeCalls(calls)) {
-	      rangeCallEnforcer.traverse(parent, parent);
-	    }
-	    parent.__hasValidatedConnectionCalls__ = true;
-	  }
-	}
-
-	var RelayRangeCallEnforcer = (function (_RelayQueryVisitor2) {
-	  _inherits(RelayRangeCallEnforcer, _RelayQueryVisitor2);
-
-	  function RelayRangeCallEnforcer() {
-	    _classCallCheck(this, RelayRangeCallEnforcer);
-
-	    _RelayQueryVisitor2.apply(this, arguments);
-	  }
-
-	  RelayRangeCallEnforcer.prototype.visitField = function visitField(node, parent) {
-	    var schemaName = node.getSchemaName();
-	    !(schemaName !== EDGES && schemaName !== PAGE_INFO) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'readRelayQueryData(): The field `%s` is a connection. Fields `%s` and ' + '`%s` cannot be fetched without a `first`, `last` or `find` argument.', parent.getApplicationName(), EDGES, PAGE_INFO) : invariant(false) : undefined;
-	  };
-
-	  return RelayRangeCallEnforcer;
-	})(RelayQueryVisitor);
-
-	var rangeCallEnforcer = new RelayRangeCallEnforcer();
-
-	/**
-	 * Obtains a client ID (eg. `someDataID_first(10)`) for the connection
-	 * identified by `connectionID`. If there are no range calls on the supplied
-	 * `node`, then a call-less connection ID (eg. `someDataID`) will be returned
-	 * instead.
-	 */
-	function getConnectionClientID(node, connectionID) {
-	  var calls = node.getCallsWithValues();
-	  if (!RelayConnectionInterface.hasRangeCalls(calls)) {
-	    return connectionID;
-	  }
-	  return GraphQLStoreRangeUtils.getClientIDForRangeWithID(callsToGraphQL(calls), {}, connectionID);
-	}
-
-	/**
-	 * Returns the component-specific DataID stored in `state`, falling back to the
-	 * generic "store" DataID.
-	 *
-	 * For most nodes, the generic "store" DataID can be used for both reading out
-	 * of the store and writing into the result object that will be passed back to
-	 * the component. For connections with range calls on them the "store" and
-	 * "component" ID will be different because the component needs a special
-	 * client-ID that encodes the range calls.
-	 */
-	function getComponentDataID(state) {
-	  if (state.componentDataID != null) {
-	    return state.componentDataID;
-	  } else {
-	    return state.storeDataID;
-	  }
-	}
-
-	/**
-	 * Retrieves `state.data`, initializing it if necessary.
-	 */
-	function getDataObject(state) {
-	  var data = state.data;
-	  if (!data) {
-	    var pointer = GraphQLStoreDataHandler.createPointerWithID(getComponentDataID(state));
-	    data = state.data = pointer;
-	  }
-	  !(data instanceof Object) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'readRelayQueryData(): Unable to read field on non-object.') : invariant(false) : undefined;
-	  return data;
-	}
-
-	/**
-	 * Looks up the value identified by `key` in `state.data`.
-	 *
-	 * Pre-populates `state` with a suitable `data` objects if needed.
-	 */
-	function getDataValue(state, key) {
-	  var data = getDataObject(state);
-	  return data[key];
-	}
-
-	var instrumented = RelayProfiler.instrument('readRelayQueryData', readRelayQueryData);
-
-	// #7573861: Type export collides with CommonJS export in presence of
-	// `instrument()` call:
-	module.exports = instrumented;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 353 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule validateRelayReadQuery
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _inherits = __webpack_require__(198)['default'];
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var RelayQueryVisitor = __webpack_require__(316);
-
-	var emptyFunction = __webpack_require__(195);
-
-	var SERIALIZATION_KEY = '__serializationKey__'; // task #7117200
-
-	var validateRelayReadQuery = emptyFunction;
-
-	if (process.env.NODE_ENV !== 'production') {
-	  // Wrap in an IIFE to avoid unwanted function hoisting.
-	  (function () {
-	    /**
-	     * @internal
-	     *
-	     * `validateRelayReadQuery` is a `__DEV__`-only validator that checks that a
-	     * query used to read data from `RelayStore` is well-formed. Validation
-	     * problems are reported via `console.error`.
-	     *
-	     * At the moment, "well-formed" means that the query does not contain
-	     * duplicate aliases.
-	     */
-	    validateRelayReadQuery = function validateRelayReadQuery(queryNode, options) {
-	      var validator = new RelayStoreReadValidator(options);
-	      validator.visit(queryNode, {});
-	    };
-
-	    function assertUniqueAlias(field, aliasMap) {
-	      var serializationKey = field.getSerializationKey();
-	      if (aliasMap[SERIALIZATION_KEY]) {
-	        if (aliasMap[SERIALIZATION_KEY] !== serializationKey) {
-	          console.error('`%s` is used as an alias more than once. Please use unique ' + 'aliases.', field.getApplicationName());
-	        }
-	      } else {
-	        aliasMap[SERIALIZATION_KEY] = serializationKey;
-	      }
-	    }
-
-	    /**
-	     * Returns the nested AliasMap for `node`, initializing it to an empty map
-	     * if it does not already exist.
-	     */
-	    function getAliasMap(node, aliasMap) {
-	      var applicationName = node.getApplicationName();
-	      if (!aliasMap[applicationName]) {
-	        aliasMap[applicationName] = {};
-	      }
-	      return aliasMap[applicationName];
-	    }
-
-	    var RelayStoreReadValidator = (function (_RelayQueryVisitor) {
-	      _inherits(RelayStoreReadValidator, _RelayQueryVisitor);
-
-	      function RelayStoreReadValidator(options) {
-	        _classCallCheck(this, RelayStoreReadValidator);
-
-	        _RelayQueryVisitor.call(this);
-	        this._traverseFragmentReferences = options && options.traverseFragmentReferences || false;
-	      }
-
-	      RelayStoreReadValidator.prototype.visitField = function visitField(node, aliasMap) {
-	        aliasMap = getAliasMap(node, aliasMap);
-	        assertUniqueAlias(node, aliasMap);
-
-	        if (node.isGenerated()) {
-	          return;
-	        } else if (node.isScalar()) {
-	          return;
-	        } else if (node.isPlural()) {
-	          this._readPlural(node, aliasMap);
-	        } else {
-	          // No special handling needed for connections, edges, page_info etc.
-	          this._readLinkedField(node, aliasMap);
-	        }
-	      };
-
-	      RelayStoreReadValidator.prototype.visitFragment = function visitFragment(node, aliasMap) {
-	        if (this._traverseFragmentReferences || !node.isContainerFragment()) {
-	          this.traverse(node, aliasMap);
-	        }
-	      };
-
-	      RelayStoreReadValidator.prototype._readPlural = function _readPlural(node, aliasMap) {
-	        var _this = this;
-
-	        node.getChildren().forEach(function (child) {
-	          return _this.visit(child, aliasMap);
-	        });
-	      };
-
-	      RelayStoreReadValidator.prototype._readLinkedField = function _readLinkedField(node, aliasMap) {
-	        aliasMap = getAliasMap(node, aliasMap);
-	        this.traverse(node, aliasMap);
-	      };
-
-	      return RelayStoreReadValidator;
-	    })(RelayQueryVisitor);
-	  })();
-	}
-
-	module.exports = validateRelayReadQuery;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 354 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule recycleNodesInto
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var _Object$keys = __webpack_require__(207)['default'];
-
-	var GraphQLFragmentPointer = __webpack_require__(212);
-
-	/**
-	 * Recycles subtrees from `prevData` by replacing equal subtrees in `nextData`.
-	 */
-	function recycleNodesInto(prevData, nextData) {
-	  if (typeof prevData !== 'object' || !prevData || typeof nextData !== 'object' || !nextData) {
-	    return nextData;
-	  }
-	  var canRecycle = false;
-	  if (prevData instanceof GraphQLFragmentPointer) {
-	    canRecycle = nextData instanceof GraphQLFragmentPointer && nextData.equals(prevData);
-	  } else {
-	    var isPrevArray = Array.isArray(prevData);
-	    var isNextArray = Array.isArray(nextData);
-	    if (isPrevArray && isNextArray) {
-	      // Assign local variables to preserve Flow type refinement.
-	      var prevArray = prevData;
-	      var nextArray = nextData;
-	      canRecycle = nextArray.reduce(function (wasEqual, nextItem, ii) {
-	        nextArray[ii] = recycleNodesInto(prevArray[ii], nextItem);
-	        return wasEqual && nextArray[ii] === prevArray[ii];
-	      }, true) && prevArray.length === nextArray.length;
-	    } else if (!isPrevArray && !isNextArray) {
-	      // Assign local variables to preserve Flow type refinement.
-	      var prevObject = prevData;
-	      var nextObject = nextData;
-	      var prevKeys = _Object$keys(prevObject);
-	      var nextKeys = _Object$keys(nextObject);
-	      canRecycle = nextKeys.reduce(function (wasEqual, key) {
-	        var nextValue = nextObject[key];
-	        nextObject[key] = recycleNodesInto(prevObject[key], nextValue);
-	        return wasEqual && nextObject[key] === prevObject[key];
-	      }, true) && prevKeys.length === nextKeys.length;
-	    }
-	  }
-	  return canRecycle ? prevData : nextData;
-	}
-
-	module.exports = recycleNodesInto;
-
-/***/ },
-/* 355 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayContainerComparators
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	/**
-	 * Compares `objectA` and `objectB` using the provided `isEqual` function.
-	 *
-	 * If a `filter` object is provided, only its keys will be checked during
-	 * comparison.
-	 */
-	function compareObjects(isEqual, objectA, objectB, filter) {
-	  var key;
-
-	  // Test for A's keys different from B.
-	  for (key in objectA) {
-	    if (filter && !filter.hasOwnProperty(key)) {
-	      continue;
-	    }
-
-	    if (objectA.hasOwnProperty(key) && (!objectB.hasOwnProperty(key) || !isEqual(objectA[key], objectB[key], key))) {
-	      return false;
-	    }
-	  }
-	  // Test for B's keys missing from A.
-	  for (key in objectB) {
-	    if (filter && !filter.hasOwnProperty(key)) {
-	      continue;
-	    }
-
-	    if (objectB.hasOwnProperty(key) && !objectA.hasOwnProperty(key)) {
-	      return false;
-	    }
-	  }
-	  return true;
-	}
-
-	function isScalarAndEqual(valueA, valueB) {
-	  return valueA === valueB && (valueA === null || typeof valueA !== 'object');
-	}
-
-	function isQueryDataEqual(fragmentPointers, currProp, nextProp, propName) {
-	  return(
-	    // resolved data did not change
-	    fragmentPointers[propName] && currProp === nextProp ||
-	    // otherwise compare fake data
-	    isScalarAndEqual(currProp, nextProp)
-	  );
-	}
-
-	function isNonQueryPropEqual(fragments, currProp, nextProp, propName) {
-	  return(
-	    // ignore props with fragments (instead resolved values are compared)
-	    fragments.hasOwnProperty(propName) ||
-	    // otherwise props must be scalar and === in order to skip
-	    isScalarAndEqual(currProp, nextProp)
-	  );
-	}
-
-	/**
-	 * Relay-aware comparators for props and state provide a reasonable default
-	 * implementation of `shouldComponentUpdate`.
-	 */
-	var RelayContainerComparators = {
-	  areQueryResultsEqual: function areQueryResultsEqual(fragmentPointers, prevQueryData, nextQueryData) {
-	    return compareObjects(isQueryDataEqual.bind(null, fragmentPointers), prevQueryData, nextQueryData);
-	  },
-
-	  areNonQueryPropsEqual: function areNonQueryPropsEqual(fragments, props, nextProps) {
-	    return compareObjects(isNonQueryPropEqual.bind(null, fragments), props, nextProps);
-	  },
-
-	  areQueryVariablesEqual: function areQueryVariablesEqual(variables, nextVariables) {
-	    return compareObjects(isScalarAndEqual, variables, nextVariables);
-	  }
-	};
-
-	module.exports = RelayContainerComparators;
-
-/***/ },
-/* 356 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayContainerProxy
-	 */
-
-	'use strict';
-
-	module.exports = __webpack_require__(357);
-
-/***/ },
-/* 357 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayOSSContainerProxy
-	 * @typechecks
-	 * 
-	 */
-
-	/**
-	 * This feature is deprecated and unavailable in open source.
-	 */
-	'use strict';
-
-	var RelayOSSContainerProxy = {
-	  proxyMethods: function proxyMethods(RelayContainer, Component) {}
-	};
-
-	module.exports = RelayOSSContainerProxy;
-
-/***/ },
-/* 358 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayDeprecated
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var forEachObject = __webpack_require__(230);
-	var invariant = __webpack_require__(222);
-	var warning = __webpack_require__(194);
-
-	/**
-	 * @internal
-	 */
-	var RelayDeprecated = {
-
-	  /**
-	   * Detects deprecated API usage.
-	   *
-	   * TODO(jkassens, #8978552): delete this
-	   */
-	  upgradeContainerSpec: function upgradeContainerSpec(spec) {
-	    ['queries', 'queryParams'].forEach(function (property) {
-	      !!spec.hasOwnProperty(property) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Relay.createContainer(...): Found no longer supported property: %s', property) : invariant(false) : undefined;
-	    });
-	    return spec;
-	  },
-
-	  upgradeRangeBehaviors: function upgradeRangeBehaviors(rangeBehaviors) {
-	    // Prior to 0.4.1 you would have to specify the args in your range
-	    // behaviors in the same order they appeared in your query. From 0.4.1
-	    // onward, args in a range behavior key must be in alphabetical order.
-	    // What follows is code to produce a deprecation warning in case we
-	    // encounter a range behavior key that's out of order. We will remove this
-	    // warning with the 0.5.0 breaking version.
-	    var rangeBehaviorsWithSortedKeys = {};
-	    forEachObject(rangeBehaviors, function (value, key) {
-	      var sortedKey = undefined;
-	      if (key === '') {
-	        sortedKey = '';
-	      } else {
-	        var keyParts = key
-	        // Remove the last parenthesis
-	        .slice(0, -1)
-	        // Slice on unescaped parentheses followed immediately by a `.`
-	        .split(/\)\./);
-	        sortedKey = keyParts.sort().join(').') + (keyParts.length ? ')' : '');
-	        process.env.NODE_ENV !== 'production' ? warning(sortedKey === key, 'RelayMutation: To define a range behavior key without sorting ' + 'the arguments alphabetically is deprecated as of Relay 0.4.1 and ' + 'will be disallowed in 0.5.0. Please sort the argument names of ' + 'the range behavior key `%s`', key) : undefined;
-	      }
-	      rangeBehaviorsWithSortedKeys[sortedKey] = value;
-	    });
-	    return rangeBehaviorsWithSortedKeys;
-	  }
-
-	};
-
-	module.exports = RelayDeprecated;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 359 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayMutationTransaction
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var _extends = __webpack_require__(161)['default'];
-
-	var _defineProperty = __webpack_require__(336)['default'];
-
-	var ErrorUtils = __webpack_require__(211);
-	var QueryBuilder = __webpack_require__(218);
-	var RelayConnectionInterface = __webpack_require__(227);
-	var RelayMutationQuery = __webpack_require__(360);
-	var RelayMutationRequest = __webpack_require__(364);
-	var RelayMutationTransactionStatus = __webpack_require__(365);
-	var RelayNetworkLayer = __webpack_require__(302);
-	var RelayStoreData = __webpack_require__(278);
-
-	var fromGraphQL = __webpack_require__(366);
-	var invariant = __webpack_require__(222);
-	var nullthrows = __webpack_require__(361);
-	var resolveImmediate = __webpack_require__(246);
-
-	var CLIENT_MUTATION_ID = RelayConnectionInterface.CLIENT_MUTATION_ID;
-
-	var collisionQueueMap = {};
-	var pendingTransactionMap = {};
-	var queue = [];
-	var transactionIDCounter = 0;
-
-	/**
-	 * @internal
-	 */
-
-	var RelayMutationTransaction = (function () {
-	  function RelayMutationTransaction(mutation) {
-	    _classCallCheck(this, RelayMutationTransaction);
-
-	    this._id = (transactionIDCounter++).toString(36);
-	    this._mutation = mutation;
-	    this._status = RelayMutationTransactionStatus.UNCOMMITTED;
-
-	    pendingTransactionMap[this._id] = this;
-	    queue.push(this);
-	    this._handleOptimisticUpdate();
-	  }
-
-	  RelayMutationTransaction.get = function get(id) {
-	    var transaction = pendingTransactionMap[id];
-	    !transaction ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationTransaction: `%s` is not a valid pending transaction ID.', id) : invariant(false) : undefined;
-	    return transaction;
-	  };
-
-	  RelayMutationTransaction.prototype._assertIsPending = function _assertIsPending() {
-	    !pendingTransactionMap[this._id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationTransaction: Only pending transactions can be interacted ' + 'with.') : invariant(false) : undefined;
-	  };
-
-	  RelayMutationTransaction.prototype.commit = function commit(callbacks) {
-	    this._assertIsPending();
-	    !(this._status === RelayMutationTransactionStatus.UNCOMMITTED) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationTransaction: Only transactions with status `UNCOMMITTED` ' + 'can be comitted.') : invariant(false) : undefined;
-
-	    if (callbacks) {
-	      this._onCommitFailureCallback = callbacks.onFailure;
-	      this._onCommitSuccessCallback = callbacks.onSuccess;
-	    }
-
-	    this._queueForCommit();
-	  };
-
-	  RelayMutationTransaction.prototype.getError = function getError() {
-	    this._assertIsPending();
-	    return this._error;
-	  };
-
-	  RelayMutationTransaction.prototype.getStatus = function getStatus() {
-	    this._assertIsPending();
-	    return this._status;
-	  };
-
-	  RelayMutationTransaction.prototype.recommit = function recommit() {
-	    this._assertIsPending();
-	    !(this._status === RelayMutationTransactionStatus.COMMIT_FAILED || this._status === RelayMutationTransactionStatus.COLLISION_COMMIT_FAILED) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationTransaction: Only transaction with status ' + '`COMMIT_FAILED` or `COLLISION_COMMIT_FAILED` can be comitted.') : invariant(false) : undefined;
-
-	    this._queueForCommit();
-	  };
-
-	  RelayMutationTransaction.prototype.rollback = function rollback() {
-	    this._assertIsPending();
-	    !(this._status === RelayMutationTransactionStatus.UNCOMMITTED || this._status === RelayMutationTransactionStatus.COMMIT_FAILED || this._status === RelayMutationTransactionStatus.COLLISION_COMMIT_FAILED) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationTransaction: Only transactions with status `UNCOMMITTED` ' + '`COMMIT_FAILED` or `COLLISION_COMMIT_FAILED` can be rolledback.') : invariant(false) : undefined;
-
-	    this._handleRollback();
-	  };
-
-	  RelayMutationTransaction.prototype._getCallName = function _getCallName() {
-	    if (!this._callName) {
-	      this._callName = this._getMutationNode().calls[0].name;
-	    }
-	    return this._callName;
-	  };
-
-	  RelayMutationTransaction.prototype._getConfigs = function _getConfigs() {
-	    if (!this._configs) {
-	      this._configs = this._mutation.getConfigs();
-	    }
-	    return this._configs;
-	  };
-
-	  RelayMutationTransaction.prototype._getCollisionKey = function _getCollisionKey() {
-	    if (this._collisionKey === undefined) {
-	      this._collisionKey = this._mutation.getCollisionKey() || null;
-	    }
-	    return this._collisionKey;
-	  };
-
-	  RelayMutationTransaction.prototype._getFatQuery = function _getFatQuery() {
-	    if (!this._fatQuery) {
-	      this._fatQuery = fromGraphQL.Fragment(this._mutation.getFatQuery());
-	    }
-	    return this._fatQuery;
-	  };
-
-	  RelayMutationTransaction.prototype._getMutationNode = function _getMutationNode() {
-	    if (!this._mutationNode) {
-	      var mutationNode = QueryBuilder.getMutation(this._mutation.getMutation());
-	      !mutationNode ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutation: Expected `getMutation` to return a mutation created ' + 'with Relay.QL`mutation { ... }`.') : invariant(false) : undefined;
-	      this._mutationNode = mutationNode;
-	    }
-	    return this._mutationNode;
-	  };
-
-	  RelayMutationTransaction.prototype._getQuery = function _getQuery() {
-	    if (!this._query) {
-	      this._query = RelayMutationQuery.buildQuery({
-	        configs: this._getConfigs(),
-	        fatQuery: this._getFatQuery(),
-	        mutationName: this._getMutationNode().name,
-	        mutation: this._getMutationNode(),
-	        input: this._getInputVariable()
-	      });
-	    }
-	    return this._query;
-	  };
-
-	  RelayMutationTransaction.prototype._getInputVariable = function _getInputVariable() {
-	    if (!this._inputVariable) {
-	      var inputVariable = _extends({}, this._mutation.getVariables(), _defineProperty({}, CLIENT_MUTATION_ID, this._id));
-	      this._inputVariable = inputVariable;
-	    }
-	    return this._inputVariable;
-	  };
-
-	  RelayMutationTransaction.prototype._getFiles = function _getFiles() {
-	    if (this._files === undefined) {
-	      this._files = this._mutation.getFiles() || null;
-	    }
-	    return this._files;
-	  };
-
-	  RelayMutationTransaction.prototype._getOptimisticConfigs = function _getOptimisticConfigs() {
-	    if (this._optimisticConfigs === undefined) {
-	      this._optimisticConfigs = this._mutation.getOptimisticConfigs() || null;
-	    }
-	    return this._optimisticConfigs;
-	  };
-
-	  RelayMutationTransaction.prototype._getOptimisticQuery = function _getOptimisticQuery() {
-	    if (this._optimisticQuery === undefined) {
-	      var optimisticResponse = this._getOptimisticResponse();
-	      if (optimisticResponse) {
-	        var optimisticConfigs = this._getOptimisticConfigs();
-	        if (optimisticConfigs) {
-	          this._optimisticQuery = RelayMutationQuery.buildQuery({
-	            configs: optimisticConfigs,
-	            fatQuery: this._getFatQuery(),
-	            input: this._getInputVariable(),
-	            mutationName: this._mutation.constructor.name,
-	            mutation: this._getMutationNode()
-	          });
-	        } else {
-	          this._optimisticQuery = RelayMutationQuery.buildQueryForOptimisticUpdate({
-	            response: optimisticResponse,
-	            fatQuery: this._getFatQuery(),
-	            mutation: this._getMutationNode()
-	          });
-	        }
-	      } else {
-	        this._optimisticQuery = null;
-	      }
-	    }
-	    return this._optimisticQuery;
-	  };
-
-	  RelayMutationTransaction.prototype._getOptimisticResponse = function _getOptimisticResponse() {
-	    if (this._optimisticResponse === undefined) {
-	      var optimisticResponse = this._mutation.getOptimisticResponse() || null;
-	      if (optimisticResponse) {
-	        optimisticResponse[CLIENT_MUTATION_ID] = this._id;
-	      }
-	      this._optimisticResponse = optimisticResponse;
-	    }
-	    return this._optimisticResponse;
-	  };
-
-	  RelayMutationTransaction.prototype._queueForCommit = function _queueForCommit() {
-	    var collisionKey = this._getCollisionKey();
-	    if (collisionKey) {
-	      if (!collisionQueueMap.hasOwnProperty(collisionKey)) {
-	        collisionQueueMap[collisionKey] = [this];
-	        this._handleCommit();
-	      } else {
-	        collisionQueueMap[collisionKey].push(this);
-	        this._status = RelayMutationTransactionStatus.COMMIT_QUEUED;
-	      }
-	    } else {
-	      this._handleCommit();
-	    }
-	  };
-
-	  RelayMutationTransaction.prototype._markAsNotPending = function _markAsNotPending() {
-	    var _this = this;
-
-	    delete pendingTransactionMap[this._id];
-	    queue = queue.filter(function (transaction) {
-	      return transaction !== _this;
-	    });
-	  };
-
-	  RelayMutationTransaction.prototype._handleOptimisticUpdate = function _handleOptimisticUpdate() {
-	    var optimisticResponse = this._getOptimisticResponse();
-	    var optimisticQuery = this._getOptimisticQuery();
-	    if (optimisticResponse && optimisticQuery) {
-	      var configs = this._getOptimisticConfigs() || this._getConfigs();
-	      optimisticResponse[CLIENT_MUTATION_ID] = this._id; // Repeating for Flow
-	      RelayStoreData.getDefaultInstance().handleUpdatePayload(optimisticQuery, optimisticResponse, { configs: configs, isOptimisticUpdate: true });
-	    }
-	  };
-
-	  RelayMutationTransaction.prototype._handleCommit = function _handleCommit() {
-	    var _this2 = this;
-
-	    this._status = RelayMutationTransactionStatus.COMMITTING;
-
-	    var request = new RelayMutationRequest(this._getQuery(), this._getFiles());
-	    RelayNetworkLayer.sendMutation(request);
-
-	    request.getPromise().done(function (result) {
-	      return _this2._handleCommitSuccess(result.response);
-	    }, function (error) {
-	      _this2._error = error;
-	      _this2._handleCommitFailure(true);
-	    });
-	  };
-
-	  RelayMutationTransaction.prototype._handleCommitFailure = function _handleCommitFailure(isServerError) {
-	    this._status = isServerError ? RelayMutationTransactionStatus.COMMIT_FAILED : RelayMutationTransactionStatus.COLLISION_COMMIT_FAILED;
-
-	    var shouldRollback = true;
-	    var commitFailureCallback = this._onCommitFailureCallback;
-	    if (commitFailureCallback) {
-	      var preventAutoRollback = function preventAutoRollback() {
-	        shouldRollback = false;
-	      };
-	      ErrorUtils.applyWithGuard(commitFailureCallback, null, [this, preventAutoRollback], null, 'RelayMutationTransaction:onCommitFailure');
-	    }
-
-	    if (isServerError) {
-	      RelayMutationTransaction._failCollisionQueue(this._getCollisionKey());
-	    }
-
-	    // Might have already been rolled back via `commitFailureCallback`.
-	    var wasRolledback = !pendingTransactionMap[this._id];
-	    if (shouldRollback && !wasRolledback) {
-	      this._handleRollback();
-	    } else {
-	      RelayMutationTransaction._batchRefreshQueuedData();
-	    }
-	  };
-
-	  RelayMutationTransaction.prototype._handleRollback = function _handleRollback() {
-	    this._markAsNotPending();
-	    RelayMutationTransaction._batchRefreshQueuedData();
-	  };
-
-	  RelayMutationTransaction.prototype._handleCommitSuccess = function _handleCommitSuccess(response) {
-	    RelayMutationTransaction._advanceCollisionQueue(this._getCollisionKey());
-	    this._markAsNotPending();
-
-	    RelayMutationTransaction._refreshQueuedData();
-	    RelayStoreData.getDefaultInstance().handleUpdatePayload(this._getQuery(), response[this._getCallName()], { configs: this._getConfigs(), isOptimisticUpdate: false });
-
-	    if (this._onCommitSuccessCallback) {
-	      ErrorUtils.applyWithGuard(this._onCommitSuccessCallback, null, [response], null, 'RelayMutationTransaction:onCommitSuccess');
-	    }
-	  };
-
-	  RelayMutationTransaction._advanceCollisionQueue = function _advanceCollisionQueue(collisionKey) {
-	    if (collisionKey) {
-	      var collisionQueue = nullthrows(collisionQueueMap[collisionKey]);
-	      // Remove the transaction that called this function.
-	      collisionQueue.shift();
-
-	      if (collisionQueue.length) {
-	        collisionQueue[0]._handleCommit();
-	      } else {
-	        delete collisionQueueMap[collisionKey];
-	      }
-	    }
-	  };
-
-	  RelayMutationTransaction._failCollisionQueue = function _failCollisionQueue(collisionKey) {
-	    if (collisionKey) {
-	      var collisionQueue = nullthrows(collisionQueueMap[collisionKey]);
-	      // Remove the transaction that called this function.
-	      collisionQueue.shift();
-	      collisionQueue.forEach(function (transaction) {
-	        return transaction._handleCommitFailure(false);
-	      });
-	      delete collisionQueueMap[collisionKey];
-	    }
-	  };
-
-	  RelayMutationTransaction._refreshQueuedData = function _refreshQueuedData() {
-	    RelayStoreData.getDefaultInstance().clearQueuedData();
-	    queue.forEach(function (transaction) {
-	      return transaction._handleOptimisticUpdate();
-	    });
-	  };
-
-	  RelayMutationTransaction._batchRefreshQueuedData = function _batchRefreshQueuedData() {
-	    if (!RelayMutationTransaction._willBatchRefreshQueuedData) {
-	      RelayMutationTransaction._willBatchRefreshQueuedData = true;
-	      resolveImmediate(function () {
-	        RelayMutationTransaction._willBatchRefreshQueuedData = false;
-	        RelayMutationTransaction._refreshQueuedData();
-	      });
-	    }
-	  };
-
-	  return RelayMutationTransaction;
-	})();
-
-	module.exports = RelayMutationTransaction;
-
-	// These are lazily computed and memoized.
-
-	/* $FlowIssue #7728187 - Computed Property */
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 360 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayMutationQuery
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var _toConsumableArray = __webpack_require__(295)['default'];
-
-	var GraphQLStoreDataHandler = __webpack_require__(213);
-	var RelayConnectionInterface = __webpack_require__(227);
-
-	var RelayDeprecated = __webpack_require__(358);
-	var RelayMetaRoute = __webpack_require__(231);
-	var RelayMutationType = __webpack_require__(350);
-	var RelayNodeInterface = __webpack_require__(219);
-	var RelayQuery = __webpack_require__(214);
-
-	var RelayStoreData = __webpack_require__(278);
-
-	var flattenRelayQuery = __webpack_require__(329);
-	var forEachObject = __webpack_require__(230);
-	var nullthrows = __webpack_require__(361);
-	var inferRelayFieldsFromData = __webpack_require__(362);
-	var intersectRelayQuery = __webpack_require__(363);
-	var invariant = __webpack_require__(222);
-	var refragmentRelayQuery = __webpack_require__(346);
-
-	var CLIENT_MUTATION_ID = RelayConnectionInterface.CLIENT_MUTATION_ID;
-
-	/**
-	 * @internal
-	 *
-	 * Constructs query fragments that are sent with mutations, which should ensure
-	 * that any records changed as a result of mutations are brought up-to-date.
-	 *
-	 * The fragments are a minimal subset created by intersecting the "fat query"
-	 * (fields that a mutation declares may have changed) with the "tracked query"
-	 * (fields representing data previously queried and written into the store).
-	 */
-	var RelayMutationQuery = {
-	  /**
-	   * Accepts a mapping from field names to data IDs. The field names must exist
-	   * as top-level fields in the fat query. These top-level fields are used to
-	   * re-fetch any data that has changed for records identified by the data IDs.
-	   *
-	   * The supplied mapping may contain multiple field names. In addition, each
-	   * field name may map to an array of data IDs if the field is plural.
-	   */
-	  buildFragmentForFields: function buildFragmentForFields(_ref) {
-	    var tracker = _ref.tracker;
-	    var fatQuery = _ref.fatQuery;
-	    var fieldIDs = _ref.fieldIDs;
-
-	    var queryTracker = tracker || RelayStoreData.getDefaultInstance().getQueryTracker();
-	    var mutatedFields = [];
-	    forEachObject(fieldIDs, function (dataIDOrIDs, fieldName) {
-	      var fatField = getFieldFromFatQuery(fatQuery, fieldName);
-	      var dataIDs = [].concat(dataIDOrIDs);
-	      var trackedChildren = [];
-	      dataIDs.forEach(function (dataID) {
-	        trackedChildren.push.apply(trackedChildren, _toConsumableArray(queryTracker.getTrackedChildrenForID(dataID)));
-	      });
-	      var trackedField = fatField.clone(trackedChildren);
-	      if (trackedField) {
-	        var mutationField = intersectRelayQuery(trackedField, fatField);
-	        if (mutationField) {
-	          mutatedFields.push(mutationField);
-	        }
-	      }
-	    });
-	    return buildMutationFragment(fatQuery, mutatedFields);
-	  },
-
-	  /**
-	   * Creates a fragment used to update any data as a result of a mutation that
-	   * deletes an edge from a connection. The primary difference between this and
-	   * `createForFields` is whether or not the connection edges are re-fetched.
-	   *
-	   * `connectionName`
-	   *   Name of the connection field from which the edge is being deleted.
-	   *
-	   * `parentID`
-	   *   ID of the parent record containing the connection which may have metadata
-	   *   that needs to be re-fetched.
-	   *
-	   * `parentName`
-	   *   Name of the top-level field in the fat query that corresponds to the
-	   *   parent record.
-	   */
-	  buildFragmentForEdgeDeletion: function buildFragmentForEdgeDeletion(_ref2) {
-	    var tracker = _ref2.tracker;
-	    var fatQuery = _ref2.fatQuery;
-	    var connectionName = _ref2.connectionName;
-	    var parentID = _ref2.parentID;
-	    var parentName = _ref2.parentName;
-
-	    tracker = tracker || RelayStoreData.getDefaultInstance().getQueryTracker();
-	    var fatParent = getFieldFromFatQuery(fatQuery, parentName);
-	    var mutatedFields = [];
-	    var trackedParent = fatParent.clone(tracker.getTrackedChildrenForID(parentID));
-	    if (trackedParent) {
-	      var filterUnterminatedRange = function filterUnterminatedRange(node) {
-	        return node.getSchemaName() === connectionName;
-	      };
-	      var mutatedField = intersectRelayQuery(trackedParent, fatParent, filterUnterminatedRange);
-	      if (mutatedField) {
-	        mutatedFields.push(mutatedField);
-	      }
-	    }
-	    return buildMutationFragment(fatQuery, mutatedFields);
-	  },
-
-	  /**
-	   * Creates a fragment used to fetch data necessary to insert a new edge into
-	   * an existing connection.
-	   *
-	   * `connectionName`
-	   *   Name of the connection field into which the edge is being inserted.
-	   *
-	   * `parentID`
-	   *   ID of the parent record containing the connection which may have metadata
-	   *   that needs to be re-fetched.
-	   *
-	   * `edgeName`
-	   *   Name of the top-level field in the fat query that corresponds to the
-	   *   newly inserted edge.
-	   *
-	   * `parentName`
-	   *   Name of the top-level field in the fat query that corresponds to the
-	   *   parent record. If not supplied, metadata on the parent record and any
-	   *   connections without entries in `rangeBehaviors` will not be updated.
-	   */
-	  buildFragmentForEdgeInsertion: function buildFragmentForEdgeInsertion(_ref3) {
-	    var tracker = _ref3.tracker;
-	    var fatQuery = _ref3.fatQuery;
-	    var connectionName = _ref3.connectionName;
-	    var parentID = _ref3.parentID;
-	    var edgeName = _ref3.edgeName;
-	    var parentName = _ref3.parentName;
-	    var rangeBehaviors = _ref3.rangeBehaviors;
-
-	    tracker = tracker || RelayStoreData.getDefaultInstance().getQueryTracker();
-	    var trackedChildren = tracker.getTrackedChildrenForID(parentID);
-
-	    var mutatedFields = [];
-	    var trackedConnections = trackedChildren.filter(function (trackedChild) {
-	      return trackedChild instanceof RelayQuery.Field && trackedChild.getSchemaName() === connectionName;
-	    }); // $FlowIssue
-
-	    if (trackedConnections.length) {
-	      var keysWithoutRangeBehavior = {};
-	      var mutatedEdgeFields = [];
-	      trackedConnections.forEach(function (trackedConnection) {
-	        var trackedEdge = trackedConnection.getFieldByStorageKey('edges');
-	        if (trackedEdge == null) {
-	          return;
-	        }
-	        if (trackedConnection.getRangeBehaviorKey() in rangeBehaviors) {
-	          // Include edges from all connections that exist in `rangeBehaviors`.
-	          // This may add duplicates, but they will eventually be flattened.
-	          mutatedEdgeFields.push.apply(mutatedEdgeFields, _toConsumableArray(trackedEdge.getChildren()));
-	        } else {
-	          // If the connection is not in `rangeBehaviors`, re-fetch it.
-	          var key = trackedConnection.getSerializationKey();
-	          keysWithoutRangeBehavior[key] = true;
-	        }
-	      });
-	      if (mutatedEdgeFields.length) {
-	        mutatedFields.push(buildEdgeField(parentID, edgeName, mutatedEdgeFields));
-	      }
-
-	      // TODO: Do this even if there are no tracked connections.
-	      if (parentName != null) {
-	        var fatParent = getFieldFromFatQuery(fatQuery, parentName);
-	        var trackedParent = fatParent.clone(trackedChildren);
-	        if (trackedParent) {
-	          var filterUnterminatedRange = function filterUnterminatedRange(node) {
-	            return !keysWithoutRangeBehavior.hasOwnProperty(node.getSerializationKey());
-	          };
-	          var mutatedParent = intersectRelayQuery(trackedParent, fatParent, filterUnterminatedRange);
-	          if (mutatedParent) {
-	            mutatedFields.push(mutatedParent);
-	          }
-	        }
-	      }
-	    }
-	    return buildMutationFragment(fatQuery, mutatedFields);
-	  },
-
-	  /**
-	   * Creates a fragment used to fetch the given optimistic response.
-	   */
-	  buildFragmentForOptimisticUpdate: function buildFragmentForOptimisticUpdate(_ref4) {
-	    var response = _ref4.response;
-	    var fatQuery = _ref4.fatQuery;
-
-	    // Silences RelayQueryNode being incompatible with sub-class RelayQueryField
-	    // A detailed error description is available in #7635477
-	    var mutatedFields = inferRelayFieldsFromData(response);
-	    return buildMutationFragment(fatQuery, mutatedFields);
-	  },
-
-	  /**
-	   * Creates a RelayQuery.Mutation used to fetch the given optimistic response.
-	   */
-	  buildQueryForOptimisticUpdate: function buildQueryForOptimisticUpdate(_ref5) {
-	    var response = _ref5.response;
-	    var fatQuery = _ref5.fatQuery;
-	    var mutation = _ref5.mutation;
-
-	    var children = [nullthrows(RelayMutationQuery.buildFragmentForOptimisticUpdate({
-	      response: response,
-	      fatQuery: fatQuery
-	    }))];
-	    return RelayQuery.Mutation.build('OptimisticQuery', fatQuery.getType(), mutation.calls[0].name, null, children, mutation.metadata);
-	  },
-
-	  /**
-	   * Creates a RelayQuery.Mutation for the given config. See type
-	   * `MutationConfig` and the `buildFragmentForEdgeInsertion`,
-	   * `buildFragmentForEdgeDeletion` and `buildFragmentForFields` methods above
-	   * for possible configs.
-	   */
-	  buildQuery: function buildQuery(_ref6) {
-	    var configs = _ref6.configs;
-	    var fatQuery = _ref6.fatQuery;
-	    var mutationName = _ref6.mutationName;
-	    var mutation = _ref6.mutation;
-	    var tracker = _ref6.tracker;
-	    var input = _ref6.input;
-	    return (function () {
-	      tracker = tracker || RelayStoreData.getDefaultInstance().getQueryTracker();
-
-	      var children = [RelayQuery.Field.build(CLIENT_MUTATION_ID, null, null, { 'requisite': true })];
-
-	      configs.forEach(function (config) {
-	        switch (config.type) {
-	          case RelayMutationType.REQUIRED_CHILDREN:
-	            children = children.concat(config.children.map(function (child) {
-	              return RelayQuery.Fragment.create(child, RelayMetaRoute.get('$buildQuery'), {});
-	            }));
-	            break;
-
-	          case RelayMutationType.RANGE_ADD:
-	            children.push(RelayMutationQuery.buildFragmentForEdgeInsertion({
-	              connectionName: config.connectionName,
-	              edgeName: config.edgeName,
-	              fatQuery: fatQuery,
-	              parentID: config.parentID,
-	              parentName: config.parentName,
-	              rangeBehaviors: RelayDeprecated.upgradeRangeBehaviors(config.rangeBehaviors),
-	              tracker: tracker
-	            }));
-	            break;
-
-	          case RelayMutationType.RANGE_DELETE:
-	          case RelayMutationType.NODE_DELETE:
-	            children.push(RelayMutationQuery.buildFragmentForEdgeDeletion({
-	              connectionName: config.connectionName,
-	              fatQuery: fatQuery,
-	              parentID: config.parentID,
-	              parentName: config.parentName,
-	              tracker: tracker
-	            }));
-	            children.push(RelayQuery.Field.build(config.deletedIDFieldName));
-	            break;
-
-	          case RelayMutationType.FIELDS_CHANGE:
-	            children.push(RelayMutationQuery.buildFragmentForFields({
-	              fatQuery: fatQuery,
-	              fieldIDs: config.fieldIDs,
-	              tracker: tracker
-	            }));
-	            break;
-	        }
-	      });
-
-	      // create a dummy field to re-fragment the input `fields`
-	      var fragmentedFields = children.length ? refragmentRelayQuery(RelayQuery.Field.build('build_mutation_field', null, children)) : null;
-
-	      return RelayQuery.Mutation.build(mutationName, fatQuery.getType(), mutation.calls[0].name, input, fragmentedFields ? fragmentedFields.getChildren() : null, mutation.metadata);
-	    })();
-	  }
-	};
-
-	function getFieldFromFatQuery(fatQuery, fieldName) {
-	  var field = fatQuery.getFieldByStorageKey(fieldName);
-	  !field ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationQuery: Invalid field name on fat query, `%s`.', fieldName) : invariant(false) : undefined;
-	  return field;
-	}
-
-	function buildMutationFragment(fatQuery, fields) {
-	  var fragment = RelayQuery.Fragment.build('MutationQuery', fatQuery.getType(), fields);
-	  if (fragment) {
-	    !(fragment instanceof RelayQuery.Fragment) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationQuery: Expected a fragment.') : invariant(false) : undefined;
-	    return fragment;
-	  }
-	  return null;
-	}
-
-	function buildEdgeField(parentID, edgeName, edgeFields) {
-	  var fields = [RelayQuery.Field.build('cursor')];
-	  if (RelayConnectionInterface.EDGES_HAVE_SOURCE_FIELD && !GraphQLStoreDataHandler.isClientID(parentID)) {
-	    fields.push(RelayQuery.Field.build('source', null, [RelayQuery.Field.build('id', null, null, {
-	      parentType: RelayNodeInterface.NODE_TYPE
-	    })]));
-	  }
-	  fields.push.apply(fields, edgeFields);
-	  var edgeField = flattenRelayQuery(RelayQuery.Field.build(edgeName, null, fields));
-	  !(edgeField instanceof RelayQuery.Field) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayMutationQuery: Expected a field.') : invariant(false) : undefined;
-	  return edgeField;
-	}
-
-	module.exports = RelayMutationQuery;
-
-	/* Previously each element of configs had the type mixed, which meant
-	 * that they couldn't be used in configs.forEach without being
-	 * inspected at runtime. I think this is probably a good use case for
-	 * disjoin unions (flowtype.org/blog/2015/07/03/Disjoint-Unions.html)
-	 */
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 361 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule nullthrows
-	 * 
-	 */
-
-	"use strict";
-
-	var nullthrows = function (x) {
-	  if (x != null) {
-	    return x;
-	  }
-	  throw new Error("Got unexpected null or undefined");
-	};
-
-	module.exports = nullthrows;
-
-/***/ },
-/* 362 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule inferRelayFieldsFromData
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var _Object$keys = __webpack_require__(207)['default'];
-
-	var GraphQLStoreDataHandler = __webpack_require__(213);
-	var RelayConnectionInterface = __webpack_require__(227);
-	var RelayNodeInterface = __webpack_require__(219);
-	var RelayQuery = __webpack_require__(214);
-
-	var forEachObject = __webpack_require__(230);
-	var invariant = __webpack_require__(222);
-	var warning = __webpack_require__(194);
-
-	var ARGUMENTS = /^(\w+)(?:\((.+?)\))?$/;
-	var ARGUMENT_NAME = /(\w+)(?=\s*:)/;
-	var DEPRECATED_CALLS = /^\w+(?:\.\w+\(.*?\))+$/;
-	var DEPRECATED_CALL = /^(\w+)\((.*?)\)$/;
-	var NODE = RelayConnectionInterface.NODE;
-	var EDGES = RelayConnectionInterface.EDGES;
-	var ID = RelayNodeInterface.ID;
-	var NODE_TYPE = RelayNodeInterface.NODE_TYPE;
-
-	/**
-	 * @internal
-	 *
-	 * Given a record-like object, infers fields that could be used to fetch them.
-	 * Properties that are fetched via fields with arguments can be encoded by
-	 * serializing the arguments in property keys.
-	 */
-	function inferRelayFieldsFromData(data) {
-	  var fields = [];
-	  forEachObject(data, function (value, key) {
-	    if (!GraphQLStoreDataHandler.isMetadataKey(key)) {
-	      fields.push(inferField(value, key));
-	    }
-	  });
-	  return fields;
-	}
-
-	function inferField(value, key) {
-	  var metadata = {
-	    isPlural: false,
-	    parentType: NODE_TYPE
-	  };
-	  var children = undefined;
-	  if (Array.isArray(value)) {
-	    var element = value[0];
-	    if (element && typeof element === 'object') {
-	      children = inferRelayFieldsFromData(element);
-	    } else {
-	      children = [];
-	    }
-	    metadata.isPlural = true;
-	  } else if (typeof value === 'object' && value !== null) {
-	    children = inferRelayFieldsFromData(value);
-	  } else {
-	    children = [];
-	  }
-	  if (key === NODE) {
-	    children.push(RelayQuery.Field.build(ID, null, null, {
-	      parentType: NODE_TYPE
-	    }));
-	  } else if (key === EDGES) {
-	    children.push(RelayQuery.Field.build('cursor'));
-	  }
-	  return buildField(key, children, metadata);
-	}
-
-	function buildField(key, children, metadata) {
-	  var fieldName = key;
-	  var calls = null;
-	  if (DEPRECATED_CALLS.test(key)) {
-	    process.env.NODE_ENV !== 'production' ? warning(false, 'inferRelayFieldsFromData(): Encountered an optimistic payload with ' + 'a deprecated field call string, `%s`. Use valid GraphQL OSS syntax.', key) : undefined;
-	    var parts = key.split('.');
-	    if (parts.length > 1) {
-	      fieldName = parts.shift();
-	      calls = parts.map(function (callString) {
-	        var captures = callString.match(DEPRECATED_CALL);
-	        !captures ? process.env.NODE_ENV !== 'production' ? invariant(false, 'inferRelayFieldsFromData(): Malformed data key, `%s`.', key) : invariant(false) : undefined;
-	        var value = captures[2].split(',');
-	        return {
-	          name: captures[1],
-	          value: value.length === 1 ? value[0] : value
-	        };
-	      });
-	    }
-	  } else {
-	    var captures = key.match(ARGUMENTS);
-	    !captures ? process.env.NODE_ENV !== 'production' ? invariant(false, 'inferRelayFieldsFromData(): Malformed data key, `%s`.', key) : invariant(false) : undefined;
-	    fieldName = captures[1];
-	    if (captures[2]) {
-	      try {
-	        (function () {
-	          // Relay does not currently have a GraphQL argument parser, so...
-	          var args = JSON.parse('{' + captures[2].replace(ARGUMENT_NAME, '"$1"') + '}');
-	          calls = _Object$keys(args).map(function (name) {
-	            return { name: name, value: args[name] };
-	          });
-	        })();
-	      } catch (error) {
-	         true ? process.env.NODE_ENV !== 'production' ? invariant(false, 'inferRelayFieldsFromData(): Malformed or unsupported data key, ' + '`%s`. Only booleans, strings, and numbers are currenly supported, ' + 'and commas are required. Parse failure reason was `%s`.', key, error.message) : invariant(false) : undefined;
-	      }
-	    }
-	  }
-	  return RelayQuery.Field.build(fieldName, calls, children, metadata);
-	}
-
-	module.exports = inferRelayFieldsFromData;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 363 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule intersectRelayQuery
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var _inherits = __webpack_require__(198)['default'];
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var RelayConnectionInterface = __webpack_require__(227);
-	var RelayQuery = __webpack_require__(214);
-	var RelayQueryTransform = __webpack_require__(315);
-
-	var invariant = __webpack_require__(222);
-
-	/**
-	 * @internal
-	 *
-	 * `intersectRelayQuery(subjectNode, patternNode)` returns a node with fields in
-	 * `subjectNode` that also exist in `patternNode`. `patternNode` is expected to
-	 * be flattened (and not contain fragments).
-	 *
-	 * If any field in `patternNode` is unterminated (i.e. has no sub-fields), we
-	 * treat the field as though it contains every descendant sub-field.
-	 *
-	 * If `filterUnterminatedRange` is supplied, it will be invoked with any fields
-	 * from `subjectNode` that are connections and unterminated in `patternNode`. If
-	 * it returns true, the `edges` and `page_info` fields will be filtered out.
-	 */
-	function intersectRelayQuery(subjectNode, patternNode, filterUnterminatedRange) {
-	  filterUnterminatedRange = filterUnterminatedRange || returnsFalse;
-	  var visitor = new RelayQueryIntersector(filterUnterminatedRange);
-	  return visitor.traverse(subjectNode, patternNode);
-	}
-
-	var RelayQueryIntersector = (function (_RelayQueryTransform) {
-	  _inherits(RelayQueryIntersector, _RelayQueryTransform);
-
-	  function RelayQueryIntersector(filterUnterminatedRange) {
-	    _classCallCheck(this, RelayQueryIntersector);
-
-	    _RelayQueryTransform.call(this);
-	    this._filterUnterminatedRange = filterUnterminatedRange;
-	  }
-
-	  /**
-	   * @private
-	   */
-
-	  RelayQueryIntersector.prototype.traverse = function traverse(subjectNode, patternNode) {
-	    var _this = this;
-
-	    if (subjectNode.isScalar()) {
-	      // Since `patternNode` exists, `subjectNode` must be in the intersection.
-	      return subjectNode;
-	    }
-	    if (!hasChildren(patternNode)) {
-	      if (subjectNode instanceof RelayQuery.Field && subjectNode.isConnection() && this._filterUnterminatedRange(subjectNode)) {
-	        return filterRangeFields(subjectNode);
-	      }
-	      // Unterminated `patternNode` is the same as containing every descendant
-	      // sub-field, so `subjectNode` must be in the intersection.
-	      return subjectNode;
-	    }
-	    return subjectNode.clone(subjectNode.getChildren().map(function (subjectChild) {
-	      if (subjectChild instanceof RelayQuery.Fragment) {
-	        return _this.visit(subjectChild, patternNode);
-	      }
-	      if (subjectChild instanceof RelayQuery.Field) {
-	        var schemaName = subjectChild.getSchemaName();
-	        var patternChild;
-	        var patternChildren = patternNode.getChildren();
-	        for (var ii = 0; ii < patternChildren.length; ii++) {
-	          var child = patternChildren[ii];
-	          !(child instanceof RelayQuery.Field) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'intersectRelayQuery(): Nodes in `patternNode` must be fields.') : invariant(false) : undefined;
-	          if (child.getSchemaName() === schemaName) {
-	            patternChild = child;
-	            break;
-	          }
-	        }
-	        if (patternChild) {
-	          return _this.visit(subjectChild, patternChild);
-	        }
-	      }
-	      return null;
-	    }));
-	  };
-
-	  return RelayQueryIntersector;
-	})(RelayQueryTransform);
-
-	var RelayQueryRangeFilter = (function (_RelayQueryTransform2) {
-	  _inherits(RelayQueryRangeFilter, _RelayQueryTransform2);
-
-	  function RelayQueryRangeFilter() {
-	    _classCallCheck(this, RelayQueryRangeFilter);
-
-	    _RelayQueryTransform2.apply(this, arguments);
-	  }
-
-	  RelayQueryRangeFilter.prototype.visitField = function visitField(node) {
-	    var schemaName = node.getSchemaName();
-	    if (schemaName === RelayConnectionInterface.EDGES || schemaName === RelayConnectionInterface.PAGE_INFO) {
-	      return null;
-	    } else {
-	      return node;
-	    }
-	  };
-
-	  return RelayQueryRangeFilter;
-	})(RelayQueryTransform);
-
-	var rangeFilter = new RelayQueryRangeFilter();
-	function filterRangeFields(node) {
-	  return rangeFilter.traverse(node, undefined);
-	}
-
-	function returnsFalse() {
-	  return false;
-	}
-
-	function hasChildren(node) {
-	  return !node.getChildren().every(isGenerated);
-	}
-
-	function isGenerated(node) {
-	  return node.isGenerated();
-	}
-
-	module.exports = intersectRelayQuery;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 364 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayMutationRequest
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var _inherits = __webpack_require__(198)['default'];
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var Deferred = __webpack_require__(304);
-
-	var printRelayQuery = __webpack_require__(311);
-
-	/**
-	 * @internal
-	 *
-	 * Instances of these are made available via `RelayNetworkLayer.sendMutation`.
-	 */
-
-	var RelayMutationRequest = (function (_Deferred) {
-	  _inherits(RelayMutationRequest, _Deferred);
-
-	  function RelayMutationRequest(mutation, files) {
-	    _classCallCheck(this, RelayMutationRequest);
-
-	    _Deferred.call(this);
-	    this._mutation = mutation;
-	    this._printedQuery = null;
-	    this._files = files;
-	  }
-
-	  /**
-	   * @public
-	   *
-	   * Gets a string name used to refer to this request for printing debug output.
-	   */
-
-	  RelayMutationRequest.prototype.getDebugName = function getDebugName() {
-	    return this._mutation.getName();
-	  };
-
-	  /**
-	   * @public
-	   *
-	   * Gets an optional map from name to File objects.
-	   */
-
-	  RelayMutationRequest.prototype.getFiles = function getFiles() {
-	    return this._files;
-	  };
-
-	  /**
-	   * @public
-	   *
-	   * Gets the variables used by the mutation. These variables should be
-	   * serialized and sent in the GraphQL request.
-	   */
-
-	  RelayMutationRequest.prototype.getVariables = function getVariables() {
-	    var printedQuery = this._printedQuery;
-	    if (!printedQuery) {
-	      printedQuery = printRelayQuery(this._mutation);
-	      this._printedQuery = printedQuery;
-	    }
-	    return printedQuery.variables;
-	  };
-
-	  /**
-	   * @public
-	   *
-	   * Gets a string representation of the GraphQL mutation.
-	   */
-
-	  RelayMutationRequest.prototype.getQueryString = function getQueryString() {
-	    var printedQuery = this._printedQuery;
-	    if (!printedQuery) {
-	      printedQuery = printRelayQuery(this._mutation);
-	      this._printedQuery = printedQuery;
-	    }
-	    return printedQuery.text;
-	  };
-
-	  /**
-	   * @public
-	   * @unstable
-	   */
-
-	  RelayMutationRequest.prototype.getMutation = function getMutation() {
-	    return this._mutation;
-	  };
-
-	  return RelayMutationRequest;
-	})(Deferred);
-
-	module.exports = RelayMutationRequest;
-
-/***/ },
-/* 365 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayMutationTransactionStatus
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var RelayMutationTransactionStatus = {
-	  /**
-	   * Transaction hasn't yet been sent to the server. Client has an optimistic
-	   * update applied if the mutation defined one. Transaction can be committed or
-	   * rolledback.
-	   */
-	  UNCOMMITTED: 'UNCOMMITTED',
-
-	  /**
-	   * Transaction was committed but another transaction with the same collision
-	   * key is pending, so the transaction has been queued to send to the server.
-	   */
-	  COMMIT_QUEUED: 'COMMIT_QUEUED',
-
-	  /**
-	   * Transaction was queued for commit but another transaction with the same
-	   * collision queue failed to commit. All transactions in the collision
-	   * queue, including this one, have been failed as well. Transaction can be
-	   * recommitted or rolledback.
-	   */
-	  COLLISION_COMMIT_FAILED: 'COLLISION_COMMIT_FAILED',
-
-	  /**
-	   * Transaction was sent to the server for comitting and a response is awaited.
-	   */
-	  COMMITTING: 'COMMITTING',
-
-	  /**
-	   * Transaction was sent to the server for comitting but was failed.
-	   */
-	  COMMIT_FAILED: 'COMMIT_FAILED'
-	};
-
-	module.exports = RelayMutationTransactionStatus;
-
-/***/ },
-/* 366 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule fromGraphQL
-	 * 
-	 */
-
-	'use strict';
-
-	var RelayQuery = __webpack_require__(214);
-	var RelayMetaRoute = __webpack_require__(231);
-
-	var invariant = __webpack_require__(222);
-
-	/**
-	 * @internal
-	 *
-	 * Converts GraphQL nodes to RelayQuery nodes.
-	 */
-	var fromGraphQL = {
-	  Field: (function (_Field) {
-	    function Field(_x) {
-	      return _Field.apply(this, arguments);
-	    }
-
-	    Field.toString = function () {
-	      return _Field.toString();
-	    };
-
-	    return Field;
-	  })(function (query) {
-	    var node = createNode(query, RelayQuery.Field);
-	    !(node instanceof RelayQuery.Field) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'fromGraphQL.Field(): Expected a GraphQL field node.') : invariant(false) : undefined;
-	    return node;
-	  }),
-	  Fragment: (function (_Fragment) {
-	    function Fragment(_x2) {
-	      return _Fragment.apply(this, arguments);
-	    }
-
-	    Fragment.toString = function () {
-	      return _Fragment.toString();
-	    };
-
-	    return Fragment;
-	  })(function (query) {
-	    var node = createNode(query, RelayQuery.Fragment);
-	    !(node instanceof RelayQuery.Fragment) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'fromGraphQL.Field(): Expected a GraphQL fragment node.') : invariant(false) : undefined;
-	    return node;
-	  }),
-	  Query: function Query(query) {
-	    var node = createNode(query, RelayQuery.Root);
-	    !(node instanceof RelayQuery.Root) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'fromGraphQL.Operation(): Expected a root node.') : invariant(false) : undefined;
-	    return node;
-	  },
-	  Operation: (function (_Operation) {
-	    function Operation(_x3) {
-	      return _Operation.apply(this, arguments);
-	    }
-
-	    Operation.toString = function () {
-	      return _Operation.toString();
-	    };
-
-	    return Operation;
-	  })(function (query) {
-	    var node = createNode(query, RelayQuery.Operation);
-	    !(node instanceof RelayQuery.Operation) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'fromGraphQL.Operation(): Expected a mutation/subscription node.') : invariant(false) : undefined;
-	    return node;
-	  })
-	};
-
-	function createNode(query, desiredType) {
-	  var variables = {};
-	  var route = RelayMetaRoute.get('$fromGraphQL');
-	  return desiredType.create(query, route, variables);
-	}
-
-	module.exports = fromGraphQL;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 367 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayPropTypes
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _require = __webpack_require__(1);
-
-	var PropTypes = _require.PropTypes;
-
-	var isRelayContainer = __webpack_require__(368);
-	var sprintf = __webpack_require__(193);
-
-	var RelayPropTypes = {
-	  Container: function Container(props, propName, componentName) {
-	    var component = props[propName];
-	    if (component == null) {
-	      return new Error(sprintf('Required prop `%s` was not specified in `%s`.', propName, componentName));
-	    } else if (!isRelayContainer(component)) {
-	      return new Error(sprintf('Invalid prop `%s` supplied to `%s`, expected a RelayContainer.', propName, componentName));
-	    }
-	    return null;
-	  },
-
-	  QueryConfig: PropTypes.shape({
-	    name: PropTypes.string.isRequired,
-	    params: PropTypes.object.isRequired,
-	    queries: PropTypes.object.isRequired,
-	    uri: PropTypes.object
-	  })
-	};
-
-	module.exports = RelayPropTypes;
-
-/***/ },
-/* 368 */
-/***/ function(module, exports) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule isRelayContainer
-	 * 
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	function isRelayContainer(component) {
-	  return !!(component && component.getFragmentNames && component.getFragment && component.hasFragment && component.hasVariable);
-	}
-
-	module.exports = isRelayContainer;
-
-/***/ },
-/* 369 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayStore
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var GraphQLFragmentPointer = __webpack_require__(212);
-
-	var RelayMutationTransaction = __webpack_require__(359);
-	var RelayQuery = __webpack_require__(214);
-	var RelayQueryResultObservable = __webpack_require__(370);
-	var RelayStoreData = __webpack_require__(278);
-
-	var forEachRootCallArg = __webpack_require__(221);
-	var readRelayQueryData = __webpack_require__(352);
-
-	var queryRunner = RelayStoreData.getDefaultInstance().getQueryRunner();
-	var queuedStore = RelayStoreData.getDefaultInstance().getQueuedStore();
-
-	/**
-	 * @public
-	 *
-	 * RelayStore is a caching layer that records GraphQL response data and enables
-	 * resolving and subscribing to queries.
-	 *
-	 * === onReadyStateChange ===
-	 *
-	 * Whenever Relay sends a request for data via GraphQL, an "onReadyStateChange"
-	 * callback can be supplied. This callback is called one or more times with a
-	 * `readyState` object with the following properties:
-	 *
-	 *   aborted: Whether the request was aborted.
-	 *   done: Whether all response data has been fetched.
-	 *   error: An error in the event of a failure, or null if none.
-	 *   ready: Whether the queries are at least partially resolvable.
-	 *   stale: When resolvable during `forceFetch`, whether data is stale.
-	 *
-	 * If the callback is invoked with `aborted`, `done`, or a non-null `error`, the
-	 * callback will never be called again. Example usage:
-	 *
-	 *  function onReadyStateChange(readyState) {
-	 *    if (readyState.aborted) {
-	 *      // Request was aborted.
-	 *    } else if (readyState.error) {
-	 *      // Failure occurred.
-	 *    } else if (readyState.ready) {
-	 *      // Queries are at least partially resolvable.
-	 *      if (readyState.done) {
-	 *        // Queries are completely resolvable.
-	 *      }
-	 *    }
-	 *  }
-	 *
-	 */
-	var RelayStore = {
-
-	  /**
-	   * Primes the store by sending requests for any missing data that would be
-	   * required to satisfy the supplied set of queries.
-	   */
-	  primeCache: function primeCache(querySet, callback) {
-	    return queryRunner.run(querySet, callback);
-	  },
-
-	  /**
-	   * Forces the supplied set of queries to be fetched and written to the store.
-	   * Any data that previously satisfied the queries will be overwritten.
-	   */
-	  forceFetch: function forceFetch(querySet, callback) {
-	    return queryRunner.forceFetch(querySet, callback);
-	  },
-
-	  /**
-	   * Reads query data anchored at the supplied data ID.
-	   */
-	  read: function read(node, dataID, options) {
-	    return readRelayQueryData(queuedStore, node, dataID, options).data;
-	  },
-
-	  /**
-	   * Reads query data anchored at the supplied data IDs.
-	   */
-	  readAll: function readAll(node, dataIDs, options) {
-	    return dataIDs.map(function (dataID) {
-	      return readRelayQueryData(queuedStore, node, dataID, options).data;
-	    });
-	  },
-
-	  /**
-	   * Reads query data, where each element in the result array corresponds to a
-	   * root call argument. If the root call has no arguments, the result array
-	   * will contain exactly one element.
-	   */
-	  readQuery: function readQuery(root, options) {
-	    var storageKey = root.getStorageKey();
-	    var results = [];
-	    forEachRootCallArg(root, function (identifyingArgValue) {
-	      var data;
-	      var dataID = queuedStore.getDataID(storageKey, identifyingArgValue);
-	      if (dataID != null) {
-	        data = RelayStore.read(root, dataID, options);
-	      }
-	      results.push(data);
-	    });
-	    return results;
-	  },
-
-	  /**
-	   * Reads and subscribes to query data anchored at the supplied data ID. The
-	   * returned observable emits updates as the data changes over time.
-	   */
-	  observe: function observe(fragment, dataID) {
-	    var fragmentPointer = new GraphQLFragmentPointer(fragment.isPlural() ? [dataID] : dataID, fragment);
-	    return new RelayQueryResultObservable(queuedStore, fragmentPointer);
-	  },
-
-	  update: function update(mutation, callbacks) {
-	    var transaction = new RelayMutationTransaction(mutation);
-	    transaction.commit(callbacks);
-	  }
-	};
-
-	module.exports = RelayStore;
-
-/***/ },
 /* 370 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule RelayQueryResultObservable
-	 * @typechecks
-	 * 
-	 */
-
-	'use strict';
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var GraphQLFragmentPointer = __webpack_require__(212);
-	var GraphQLStoreQueryResolver = __webpack_require__(247);
-
-	var invariant = __webpack_require__(222);
-
-	/**
-	 * An Rx Observable representing the results of a fragment in the local cache.
-	 * Subscribers are notified as follows:
-	 *
-	 * `onNext`: Called with the latest results of a fragment. Results may be `null`
-	 * if the data was marked as deleted or `undefined` if the fragment was either
-	 * not fetched or evicted from the cache. Note that required fields may be
-	 * missing if the fragment was not fetched with `Relay.Store.primeCache` or
-	 * `Relay.Store.forceFetch` before creating a subscription.
-	 * - Called synchronously on `subscribe()`.
-	 * - Called whenever the results of the fragment change.
-	 *
-	 * `onError`: Currently not called. In the future this may be used to indicate
-	 * that required data for the fragment has not been fetched or was evicted
-	 * from the cache.
-	 *
-	 * `onCompleted`: Not called.
-	 *
-	 * @see http://reactivex.io/documentation/observable.html
-	 */
-
-	var RelayQueryResultObservable = (function () {
-	  function RelayQueryResultObservable(store, fragmentPointer) {
-	    _classCallCheck(this, RelayQueryResultObservable);
-
-	    this._data = undefined;
-	    this._fragmentPointer = fragmentPointer;
-	    this._queryResolver = null;
-	    this._store = store;
-	    this._subscriptionCallbacks = [];
-	    this._subscriptionCount = 0;
-	  }
-
-	  RelayQueryResultObservable.prototype.subscribe = function subscribe(callbacks) {
-	    var _this = this;
-
-	    this._subscriptionCount++;
-	    var subscriptionIndex = this._subscriptionCallbacks.length;
-	    var subscription = {
-	      dispose: function dispose() {
-	        !_this._subscriptionCallbacks[subscriptionIndex] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryResultObservable: Subscriptions may only be disposed once.') : invariant(false) : undefined;
-	        delete _this._subscriptionCallbacks[subscriptionIndex];
-	        _this._subscriptionCount--;
-	        if (_this._subscriptionCount === 0) {
-	          _this._unobserve();
-	        }
-	      }
-	    };
-	    this._subscriptionCallbacks.push(callbacks);
-
-	    if (this._subscriptionCount === 1) {
-	      this._resolveData(this._observe());
-	    }
-	    this._fire(callbacks);
-
-	    return subscription;
-	  };
-
-	  RelayQueryResultObservable.prototype._observe = function _observe() {
-	    var _this2 = this;
-
-	    !!this._queryResolver ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryResultObservable: Initialized twice.') : invariant(false) : undefined;
-	    var queryResolver = new GraphQLStoreQueryResolver(this._store, this._fragmentPointer, function () {
-	      return _this2._onUpdate(queryResolver);
-	    });
-	    this._queryResolver = queryResolver;
-	    return queryResolver;
-	  };
-
-	  RelayQueryResultObservable.prototype._unobserve = function _unobserve() {
-	    if (this._queryResolver) {
-	      this._data = undefined;
-	      this._queryResolver.reset();
-	      this._queryResolver = null;
-	    }
-	  };
-
-	  RelayQueryResultObservable.prototype._onUpdate = function _onUpdate(queryResolver) {
-	    var _this3 = this;
-
-	    this._resolveData(queryResolver);
-	    this._subscriptionCallbacks.forEach(function (callbacks) {
-	      return _this3._fire(callbacks);
-	    });
-	  };
-
-	  RelayQueryResultObservable.prototype._fire = function _fire(callbacks) {
-	    callbacks.onNext && callbacks.onNext(this._data);
-	  };
-
-	  RelayQueryResultObservable.prototype._resolveData = function _resolveData(queryResolver) {
-	    var data = queryResolver.resolve(this._fragmentPointer);
-	    !!Array.isArray(data) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQueryResultObservable: Plural fragments are not supported.') : invariant(false) : undefined;
-	    this._data = data;
-	  };
-
-	  return RelayQueryResultObservable;
-	})();
-
-	module.exports = RelayQueryResultObservable;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -39906,20 +39675,20 @@
 
 	var _extends = __webpack_require__(161)['default'];
 
-	var _toConsumableArray = __webpack_require__(295)['default'];
+	var _toConsumableArray = __webpack_require__(293)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var Map = __webpack_require__(280);
+	var Map = __webpack_require__(328);
 	var QueryBuilder = __webpack_require__(218);
 
 	var RelayProfiler = __webpack_require__(232);
 
-	var filterObject = __webpack_require__(372);
+	var filterObject = __webpack_require__(371);
 	var invariant = __webpack_require__(222);
-	var mapObject = __webpack_require__(313);
+	var mapObject = __webpack_require__(312);
 
 	// Cache results of executing fragment query builders.
 	var fragmentCache = new Map();
@@ -39983,18 +39752,29 @@
 	        node = queryBuilder(Component, _variables);
 	        var query = QueryBuilder.getQuery(node);
 	        if (query) {
-	          var children = query.children ? [].concat(_toConsumableArray(query.children)) : [];
-	          var hasScalarFieldsOnly = children.every(function (child) {
-	            return !child || child.kind === 'Field' && (!child.children || child.children.length === 0);
-	          });
-	          !hasScalarFieldsOnly ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Relay.QL: Expected query `%s` to be empty. For example, use ' + '`node(id: $id)`, not `node(id: $id) { ... }`.', query.fieldName) : invariant(false) : undefined;
-	          var fragmentValues = filterObject(values, function (_, name) {
-	            return Component.hasVariable(name);
-	          });
-	          children.push(Component.getFragment(queryName, fragmentValues));
-	          node = _extends({}, query, {
-	            children: children
-	          });
+	          (function () {
+	            var hasFragment = false;
+	            var hasScalarFieldsOnly = true;
+	            if (query.children) {
+	              query.children.forEach(function (child) {
+	                if (child) {
+	                  hasFragment = hasFragment || child.kind === 'Fragment';
+	                  hasScalarFieldsOnly = hasScalarFieldsOnly && child.kind === 'Field' && (!child.children || child.children.length === 0);
+	                }
+	              });
+	            }
+	            if (!hasFragment) {
+	              var children = query.children ? [].concat(_toConsumableArray(query.children)) : [];
+	              !hasScalarFieldsOnly ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Relay.QL: Expected query `%s` to be empty. For example, use ' + '`node(id: $id)`, not `node(id: $id) { ... }`.', query.fieldName) : invariant(false) : undefined;
+	              var fragmentValues = filterObject(values, function (_, name) {
+	                return Component.hasVariable(name);
+	              });
+	              children.push(Component.getFragment(queryName, fragmentValues));
+	              node = _extends({}, query, {
+	                children: children
+	              });
+	            }
+	          })();
 	        }
 	      }
 	      componentCache.set(Component, node);
@@ -40022,7 +39802,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 372 */
+/* 371 */
 /***/ function(module, exports) {
 
 	/**
@@ -40079,7 +39859,7 @@
 	module.exports = filterObject;
 
 /***/ },
-/* 373 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -40095,10 +39875,10 @@
 
 	'use strict';
 
-	module.exports = __webpack_require__(374);
+	module.exports = __webpack_require__(373);
 
 /***/ },
-/* 374 */
+/* 373 */
 /***/ function(module, exports) {
 
 	/**
@@ -40129,7 +39909,7 @@
 	module.exports = prepareRelayOSSContainerProps;
 
 /***/ },
-/* 375 */
+/* 374 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -40159,12 +39939,12 @@
 
 	var RelayFragmentReference = __webpack_require__(229);
 
-	var RelayStore = __webpack_require__(369);
+	var RelayStore = __webpack_require__(289);
 
-	var buildRQL = __webpack_require__(371);
+	var buildRQL = __webpack_require__(370);
 
 	var forEachObject = __webpack_require__(230);
-	var fromGraphQL = __webpack_require__(366);
+	var fromGraphQL = __webpack_require__(346);
 	var invariant = __webpack_require__(222);
 	var warning = __webpack_require__(194);
 
@@ -40439,7 +40219,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 376 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -40462,13 +40242,11 @@
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
-	var GraphQL_DEPRECATED = __webpack_require__(377);
 	var QueryBuilder = __webpack_require__(218);
 	var RelayFragmentReference = __webpack_require__(229);
 	var RelayRouteFragment = __webpack_require__(234);
 
 	var invariant = __webpack_require__(222);
-	var warning = __webpack_require__(194);
 
 	/**
 	 * @public
@@ -40489,26 +40267,29 @@
 	 * Private helper methods used by the transformed code.
 	 */
 	_Object$assign(RelayQL, {
-	  __GraphQL: GraphQL_DEPRECATED,
 	  __frag: function __frag(substitution) {
 	    if (typeof substitution === 'function') {
 	      // Route conditional fragment, e.g. `${route => matchRoute(route, ...)}`.
 	      return new RelayRouteFragment(substitution);
 	    }
 	    if (substitution != null) {
-	      !(substitution instanceof RelayFragmentReference || QueryBuilder.getFragment(substitution)) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQL: Invalid fragment composition, use ' + '`${Child.getFragment(\'name\')}`.') : invariant(false) : undefined;
+	      !(substitution instanceof RelayFragmentReference || QueryBuilder.getFragment(substitution) || QueryBuilder.getFragmentReference(substitution)) ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQL: Invalid fragment composition, use ' + '`${Child.getFragment(\'name\')}`.') : invariant(false) : undefined;
 	    }
 	    return substitution;
 	  },
-	  // NOTE: This exists to support deprecated usage of `${variables.value}`.
-	  __var: function __var(substitution) {
-	    if (substitution === undefined) {
-	      process.env.NODE_ENV !== 'production' ? warning(false, 'RelayQL: Invalid undefined argument; use null.') : undefined;
-	      substitution = null;
-	    } else if (!QueryBuilder.getCallVariable(substitution)) {
-	      process.env.NODE_ENV !== 'production' ? warning(false, 'RelayQL: Invalid argument `%s` supplied via template substitution. ' + 'Instead, use an inline argument (e.g. `field(size: 32)`) or a ' + 'variable (e.g. `field(size: $size)`).', substitution) : undefined;
+	  __var: function __var(expression) {
+	    var variable = QueryBuilder.getCallVariable(expression);
+	    if (variable) {
+	       true ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQL: Invalid argument `%s` supplied via template substitution. ' + 'Instead, use an inline variable (e.g. `comments(count: $count)`).', variable.callVariableName) : invariant(false) : undefined;
 	    }
-	    return substitution;
+	    return QueryBuilder.createCallValue(expression);
+	  },
+	  __varDEPRECATED: function __varDEPRECATED(expression) {
+	    var variable = QueryBuilder.getCallVariable(expression);
+	    if (variable) {
+	       true ? process.env.NODE_ENV !== 'production' ? invariant(false, 'RelayQL: Invalid argument `%s` supplied via template substitution. ' + 'Instead, use an inline variable (e.g. `comments(count: $count)`).', variable.callVariableName) : invariant(false) : undefined;
+	    }
+	    return expression;
 	  }
 	});
 
@@ -40516,402 +40297,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 377 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {/**
-	 * Copyright 2013-2015, Facebook, Inc.
-	 * All rights reserved.
-	 *
-	 * This source code is licensed under the BSD-style license found in the
-	 * LICENSE file in the root directory of this source tree. An additional grant
-	 * of patent rights can be found in the PATENTS file in the same directory.
-	 *
-	 * @providesModule GraphQL_DEPRECATED
-	 * @typechecks
-	 */
-
-	'use strict';
-
-	var _classCallCheck = __webpack_require__(178)['default'];
-
-	var _inherits = __webpack_require__(198)['default'];
-
-	var _extends = __webpack_require__(161)['default'];
-
-	var _Object$freeze = __webpack_require__(215)['default'];
-
-	var RelayNodeInterface = __webpack_require__(219);
-
-	var EMPTY_OBJECT = {};
-	var EMPTY_ARRAY = [];
-
-	if (process.env.NODE_ENV !== 'production') {
-	  _Object$freeze(EMPTY_OBJECT);
-	  _Object$freeze(EMPTY_ARRAY);
-	}
-
-	var BATCH_CALL_VARIABLE = 'BatchCallVariable';
-	var CALL = 'Call';
-	var CALL_VALUE = 'CallValue';
-	var CALL_VARIABLE = 'CallVariable';
-	var FIELD = 'Field';
-	var FRAGMENT = 'Fragment';
-	var MUTATION = 'Mutation';
-	var QUERY = 'Query';
-	var SUBSCRIPTION = 'Subscription';
-
-	/**
-	 * Represents a GraphQL node.
-	 *
-	 * A node may contain zero or more fields and/or query fragments.
-	 *
-	 * Note that we don't actually export this class (rather, we export subclasses
-	 * corresponding to fields, fragments, queries and mutations); we do, however,
-	 * use `GraphQLNode` as a type throughout Dlite.
-	 */
-
-	var GraphQLNode = function GraphQLNode(fields, fragments) {
-	  _classCallCheck(this, GraphQLNode);
-
-	  this.fields = fields || EMPTY_ARRAY;
-	  this.fragments = fragments && fragments.length > 0 ? fragments.filter(isTruthy) : EMPTY_ARRAY;
-
-	  this.children = this.fields.concat(this.fragments);
-	}
-
-	/**
-	 * Represents a GraphQL call such as `size(50, 50)` or `(size: 32)`.
-	 */
-	;
-
-	var GraphQLCallvNode = function GraphQLCallvNode(name, value, metadata) {
-	  _classCallCheck(this, GraphQLCallvNode);
-
-	  this.kind = CALL;
-	  this.value = map(value, castArg) || null;
-	  this.name = name;
-	  this.metadata = metadata || EMPTY_OBJECT;
-	}
-
-	/**
-	 * Represents a value passed to a GraphQL call (for example, the value 5 passed
-	 * in a call like `first(5)`).
-	 */
-	;
-
-	var GraphQLCallValue = function GraphQLCallValue(value) {
-	  _classCallCheck(this, GraphQLCallValue);
-
-	  this.kind = CALL_VALUE;
-	  this.callValue = value;
-	}
-
-	/**
-	 * Represents a GraphQL call variable for use with the GraphQL Batch API.
-	 *
-	 * For example, given a source query identified by "q0", we would make a batch
-	 * call variable "<ref_q0>" as follows:
-	 *
-	 *     new GraphQL.BatchCallVariable('q0', '$.*.actor.id');
-	 *
-	 * The batch API allows streaming responses to the client, re-using information
-	 * from previous queries via ref_params; the query identifier ("q0" in the
-	 * example above) combined with a JSONPath to the node to be extended
-	 * ("$.*.actor.id") allow us to define a supplementary query that retrieves
-	 * additional information (example: https://fburl.com/65122329) for that node.
-	 *
-	 * @see https://our.intern.facebook.com/intern/dex/graphql-batch-api
-	 */
-	;
-
-	var GraphQLBatchCallVariable = function GraphQLBatchCallVariable(sourceQueryID, jsonPath) {
-	  _classCallCheck(this, GraphQLBatchCallVariable);
-
-	  this.kind = BATCH_CALL_VARIABLE;
-	  this.sourceQueryID = sourceQueryID;
-	  this.jsonPath = jsonPath;
-	}
-
-	/**
-	 * Represents a variable used in a GraphQL call.
-	 *
-	 * For example:
-	 *
-	 *     new GraphQL.CallVariable('foo') // variable: <foo>
-	 */
-	;
-
-	var GraphQLCallVariable = function GraphQLCallVariable(variableName) {
-	  _classCallCheck(this, GraphQLCallVariable);
-
-	  this.kind = CALL_VARIABLE;
-	  this.callVariableName = variableName;
-	}
-
-	/**
-	 * Represents a field in a GraphQL query.
-	 *
-	 * A field may be simple or arbitrarily complex, including calls, and containing
-	 * subfields, nested fragments.
-	 */
-	;
-
-	var GraphQLFieldNode = (function (_GraphQLNode) {
-	  _inherits(GraphQLFieldNode, _GraphQLNode);
-
-	  function GraphQLFieldNode(fieldName, fields, fragments, calls, alias, condition, metadata, directives) {
-	    _classCallCheck(this, GraphQLFieldNode);
-
-	    _GraphQLNode.call(this, fields, fragments);
-
-	    this.kind = FIELD;
-	    this.fieldName = fieldName;
-	    this.calls = calls || EMPTY_ARRAY;
-	    this.alias = alias || null;
-	    this.condition = condition || null;
-
-	    metadata = metadata || EMPTY_OBJECT;
-	    this.__metadata__ = metadata;
-	    this.metadata = {
-	      edgesID: metadata.edgesID,
-	      inferredRootCallName: metadata.rootCall,
-	      inferredPrimaryKey: metadata.pk,
-	      isConnection: !!metadata.connection,
-	      isFindable: !!metadata.connection && !metadata.nonFindable,
-	      isGenerated: !!metadata.generated,
-	      isPlural: !!metadata.plural,
-	      isRequisite: !!metadata.requisite,
-	      isUnionOrInterface: !!metadata.dynamic,
-	      parentType: metadata.parentType
-	    };
-	    this.directives = directives || null;
-	  }
-
-	  /**
-	   * Represents a query fragment in a GraphQL query.
-	   *
-	   * A fragment may contain zero or more fields and/or additional fragments.
-	   */
-	  return GraphQLFieldNode;
-	})(GraphQLNode);
-
-	var GraphQLQueryFragment = (function (_GraphQLNode2) {
-	  _inherits(GraphQLQueryFragment, _GraphQLNode2);
-
-	  function GraphQLQueryFragment(name, type, fields, fragments, metadata, directives) {
-	    _classCallCheck(this, GraphQLQueryFragment);
-
-	    _GraphQLNode2.call(this, fields, fragments);
-	    this.kind = FRAGMENT;
-	    this.name = name;
-	    this.type = type;
-	    this.metadata = this.__metadata__ = metadata || EMPTY_OBJECT;
-	    this.directives = directives || null;
-	  }
-
-	  /**
-	   * Represents a root GraphQL query such as `viewer() { ... }` or `me() { ... }`.
-	   *
-	   * Queries may contain zero or more fields, and/or subfragments.
-	   */
-	  return GraphQLQueryFragment;
-	})(GraphQLNode);
-
-	var GraphQLQuery = (function (_GraphQLNode3) {
-	  _inherits(GraphQLQuery, _GraphQLNode3);
-
-	  function GraphQLQuery(fieldName, value, fields, fragments, metadata, queryName, directives) {
-	    _classCallCheck(this, GraphQLQuery);
-
-	    _GraphQLNode3.call(this, fields, fragments);
-	    this.__metadata__ = metadata || EMPTY_OBJECT;
-	    var identifyingArgName = this.__metadata__.identifyingArgName;
-	    if (identifyingArgName == null && RelayNodeInterface.isNodeRootCall(fieldName)) {
-	      identifyingArgName = RelayNodeInterface.ID;
-	    }
-	    this.kind = QUERY;
-	    this.metadata = _extends({}, this.__metadata__);
-	    if (identifyingArgName !== undefined) {
-	      this.metadata.identifyingArgName = identifyingArgName;
-	    }
-	    this.directives = directives || null;
-	    this.name = queryName;
-	    this.fieldName = fieldName;
-	    this.isDeferred = !!this.__metadata__.isDeferred;
-
-	    this.calls = [];
-	    // In the future, the constructor for a `GraphQLQuery` will accept an
-	    // arbitrary number of `arguments` for the root field and pass them all
-	    // through to `this.calls`. In the meantime we synthesize an identifying
-	    // argument, if an `identifyingArgName` exists.
-	    if (identifyingArgName != null) {
-	      this.calls.push(new GraphQLCallvNode(identifyingArgName, value));
-	    }
-	  }
-
-	  /**
-	   * Base class from which GraphQLMutation and GraphQLSubscription extend.
-	   */
-	  return GraphQLQuery;
-	})(GraphQLNode);
-
-	var GraphQLOperation = (function (_GraphQLNode4) {
-	  _inherits(GraphQLOperation, _GraphQLNode4);
-
-	  function GraphQLOperation(name, responseType, call, fields, fragments, metadata) {
-	    _classCallCheck(this, GraphQLOperation);
-
-	    _GraphQLNode4.call(this, fields, fragments);
-	    this.name = name;
-	    this.responseType = responseType;
-	    this.calls = [call];
-	    this.metadata = metadata || EMPTY_OBJECT;
-	  }
-
-	  /**
-	   * Represents a GraphQL mutation.
-	   */
-	  return GraphQLOperation;
-	})(GraphQLNode);
-
-	var GraphQLMutation = (function (_GraphQLOperation) {
-	  _inherits(GraphQLMutation, _GraphQLOperation);
-
-	  function GraphQLMutation() {
-	    _classCallCheck(this, GraphQLMutation);
-
-	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-	      args[_key] = arguments[_key];
-	    }
-
-	    _GraphQLOperation.call.apply(_GraphQLOperation, [this].concat(args));
-	    this.kind = MUTATION;
-	  }
-
-	  /**
-	   * Represents a GraphQL subscription.
-	   */
-	  return GraphQLMutation;
-	})(GraphQLOperation);
-
-	var GraphQLSubscription = (function (_GraphQLOperation2) {
-	  _inherits(GraphQLSubscription, _GraphQLOperation2);
-
-	  function GraphQLSubscription() {
-	    _classCallCheck(this, GraphQLSubscription);
-
-	    for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-	      args[_key2] = arguments[_key2];
-	    }
-
-	    _GraphQLOperation2.call.apply(_GraphQLOperation2, [this].concat(args));
-	    this.kind = SUBSCRIPTION;
-	  }
-
-	  return GraphQLSubscription;
-	})(GraphQLOperation);
-
-	function isTruthy(thing) {
-	  return !!thing;
-	}
-
-	/**
-	 * Map a singular/array value with the supplied function.
-	 */
-	function map(value, fn) {
-	  if (value == null) {
-	    return value;
-	  } else if (Array.isArray(value)) {
-	    return value.map(fn);
-	  } else {
-	    return fn(value);
-	  }
-	}
-
-	function castArg(arg) {
-	  if (arg instanceof GraphQLCallValue || arg instanceof GraphQLCallVariable || arg instanceof GraphQLBatchCallVariable) {
-	    return arg;
-	  } else if (arg == null) {
-	    return new GraphQLCallVariable('__null__');
-	  } else {
-	    return new GraphQLCallValue(arg);
-	  }
-	}
-
-	function isType(node, type) {
-	  return typeof node === 'object' && node !== null && node.kind === type;
-	}
-
-	function isCall(node) {
-	  return isType(node, CALL);
-	}
-
-	function isCallValue(node) {
-	  return isType(node, CALL_VALUE);
-	}
-
-	function isCallVariable(node) {
-	  return isType(node, CALL_VARIABLE);
-	}
-
-	function isBatchCallVariable(node) {
-	  return isType(node, BATCH_CALL_VARIABLE);
-	}
-
-	function isField(node) {
-	  return isType(node, FIELD);
-	}
-
-	function isFragment(node) {
-	  return isType(node, FRAGMENT);
-	}
-
-	function isQuery(node) {
-	  return isType(node, QUERY);
-	}
-
-	function isMutation(node) {
-	  return isType(node, MUTATION);
-	}
-
-	function isSubscription(node) {
-	  return isType(node, SUBSCRIPTION);
-	}
-
-	/**
-	 * This module exports the building blocks for creating a structured
-	 * representation (ie. an AST) of GraphQL queries in JavaScript.
-	 *
-	 * @see https://our.intern.facebook.com/intern/dex/introduction-to-graphql/
-	 * @internal
-	 */
-	var GraphQL_DEPRECATED = {
-	  BatchCallVariable: GraphQLBatchCallVariable,
-	  Callv: GraphQLCallvNode,
-	  CallValue: GraphQLCallValue,
-	  CallVariable: GraphQLCallVariable,
-	  Field: GraphQLFieldNode,
-	  Mutation: GraphQLMutation,
-	  Query: GraphQLQuery,
-	  QueryFragment: GraphQLQueryFragment,
-	  Subscription: GraphQLSubscription,
-	  isBatchCallVariable: isBatchCallVariable,
-	  isCall: isCall,
-	  isCallValue: isCallValue,
-	  isCallVariable: isCallVariable,
-	  isField: isField,
-	  isFragment: isFragment,
-	  isMutation: isMutation,
-	  isQuery: isQuery,
-	  isSubscription: isSubscription
-	};
-
-	module.exports = GraphQL_DEPRECATED;
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
-
-/***/ },
-/* 378 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -40931,9 +40317,9 @@
 
 	var React = __webpack_require__(1);
 
-	var RelayPropTypes = __webpack_require__(367);
+	var RelayPropTypes = __webpack_require__(287);
 
-	var RelayRenderer = __webpack_require__(379);
+	var RelayRenderer = __webpack_require__(377);
 
 	var PropTypes = React.PropTypes;
 
@@ -41051,7 +40437,7 @@
 	module.exports = RelayRootContainer;
 
 /***/ },
-/* 379 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -41078,15 +40464,15 @@
 	var GraphQLFragmentPointer = __webpack_require__(212);
 	var React = __webpack_require__(1);
 
-	var RelayPropTypes = __webpack_require__(367);
-	var RelayStore = __webpack_require__(369);
-	var RelayStoreData = __webpack_require__(278);
+	var RelayPropTypes = __webpack_require__(287);
+	var RelayStore = __webpack_require__(289);
+	var RelayStoreData = __webpack_require__(291);
 
-	var StaticContainer = __webpack_require__(380);
+	var StaticContainer = __webpack_require__(378);
 
-	var getRelayQueries = __webpack_require__(382);
+	var getRelayQueries = __webpack_require__(380);
 	var invariant = __webpack_require__(222);
-	var mapObject = __webpack_require__(313);
+	var mapObject = __webpack_require__(312);
 
 	var PropTypes = React.PropTypes;
 
@@ -41344,7 +40730,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 380 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -41356,11 +40742,11 @@
 	 * of patent rights can be found in the PATENTS file in the same directory.
 	 */
 
-	module.exports = __webpack_require__(381);
+	module.exports = __webpack_require__(379);
 
 
 /***/ },
-/* 381 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -41435,7 +40821,7 @@
 	module.exports = StaticContainer;
 
 /***/ },
-/* 382 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -41454,15 +40840,15 @@
 
 	var _Object$keys = __webpack_require__(207)['default'];
 
-	var Map = __webpack_require__(280);
+	var Map = __webpack_require__(328);
 
 	var RelayMetaRoute = __webpack_require__(231);
 	var RelayProfiler = __webpack_require__(232);
 	var RelayQuery = __webpack_require__(214);
 
-	var buildRQL = __webpack_require__(371);
+	var buildRQL = __webpack_require__(370);
 	var invariant = __webpack_require__(222);
-	var stableStringify = __webpack_require__(242);
+	var stableStringify = __webpack_require__(243);
 	var warning = __webpack_require__(194);
 
 	var queryCache = new Map();
@@ -41513,7 +40899,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 383 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -41539,9 +40925,9 @@
 	  value: true
 	});
 
-	var RelayDeprecated = __webpack_require__(358);
+	var RelayDeprecated = __webpack_require__(284);
 
-	var RelayQueryConfig = __webpack_require__(384);
+	var RelayQueryConfig = __webpack_require__(382);
 
 	var forEachObject = __webpack_require__(230);
 	var invariant = __webpack_require__(222);
@@ -41616,7 +41002,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 384 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -41698,7 +41084,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 385 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -41715,11 +41101,11 @@
 
 	'use strict';
 
-	var RelayNetworkLayer = __webpack_require__(302);
-	var RelayStoreData = __webpack_require__(278);
+	var RelayNetworkLayer = __webpack_require__(303);
+	var RelayStoreData = __webpack_require__(291);
 
-	var flattenRelayQuery = __webpack_require__(329);
-	var printRelayQuery = __webpack_require__(311);
+	var flattenRelayQuery = __webpack_require__(327);
+	var printRelayQuery = __webpack_require__(344);
 
 	/**
 	 * This module contains internal Relay modules that we expose for development
@@ -41737,7 +41123,7 @@
 	module.exports = RelayInternals;
 
 /***/ },
-/* 386 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -41769,24 +41155,16 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ },
-/* 387 */
+/* 385 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(1);
 
@@ -41796,74 +41174,80 @@
 
 	var _reactRelay2 = _interopRequireDefault(_reactRelay);
 
-	var _classnames = __webpack_require__(388);
+	var _classnames = __webpack_require__(386);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mutationsAddTodoMutation = __webpack_require__(389);
+	var _AddTodoMutation = __webpack_require__(387);
 
-	var _mutationsAddTodoMutation2 = _interopRequireDefault(_mutationsAddTodoMutation);
+	var _AddTodoMutation2 = _interopRequireDefault(_AddTodoMutation);
 
-	var _mutationsDeleteTodoMutation = __webpack_require__(390);
+	var _DeleteTodoMutation = __webpack_require__(388);
 
-	var _mutationsDeleteTodoMutation2 = _interopRequireDefault(_mutationsDeleteTodoMutation);
+	var _DeleteTodoMutation2 = _interopRequireDefault(_DeleteTodoMutation);
 
-	var _TodoTextInput = __webpack_require__(391);
+	var _TodoTextInput = __webpack_require__(389);
 
 	var _TodoTextInput2 = _interopRequireDefault(_TodoTextInput);
 
-	var _TodoList = __webpack_require__(392);
+	var _TodoList = __webpack_require__(390);
 
 	var _TodoList2 = _interopRequireDefault(_TodoList);
 
-	__webpack_require__(396);
+	__webpack_require__(394);
 
-	__webpack_require__(400);
+	__webpack_require__(398);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var TodoApp = (function (_React$Component) {
 	  _inherits(TodoApp, _React$Component);
 
 	  function TodoApp() {
-	    var _this = this;
+	    var _Object$getPrototypeO;
+
+	    var _temp, _this, _ret;
 
 	    _classCallCheck(this, TodoApp);
 
-	    _get(Object.getPrototypeOf(TodoApp.prototype), 'constructor', this).apply(this, arguments);
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
 
-	    this.state = {
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(TodoApp)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
 	      selectedFilter: 'all'
-	    };
-
-	    this.handleTextInputSave = function (text) {
-	      _reactRelay2['default'].Store.update(new _mutationsAddTodoMutation2['default']({ text: text, viewer: _this.props.viewer }));
-	    };
-
-	    this.handleFilterChange = function (selectedFilter) {
+	    }, _this.handleTextInputSave = function (text) {
+	      _reactRelay2.default.Store.update(new _AddTodoMutation2.default({ text: text, viewer: _this.props.viewer }));
+	    }, _this.handleFilterChange = function (selectedFilter) {
 	      _this.setState({ selectedFilter: selectedFilter });
-	    };
-
-	    this.handleClearCompleted = function () {
+	    }, _this.handleClearCompleted = function () {
 	      var viewer = _this.props.viewer;
 	      viewer.todos.edges.filter(function (edge) {
 	        return edge.node.complete;
 	      }).forEach(function (edge) {
-	        return _reactRelay2['default'].Store.update(new _mutationsDeleteTodoMutation2['default']({ viewer: viewer, id: edge.node.id }));
+	        return _reactRelay2.default.Store.update(new _DeleteTodoMutation2.default({ viewer: viewer, id: edge.node.id }));
 	      });
-	    };
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
 	  _createClass(TodoApp, [{
 	    key: 'makeHeader',
 	    value: function makeHeader() {
-	      return _react2['default'].createElement(
+	      return _react2.default.createElement(
 	        'header',
 	        { className: 'header' },
-	        _react2['default'].createElement(
+	        _react2.default.createElement(
 	          'h1',
 	          null,
 	          'Todos'
 	        ),
-	        _react2['default'].createElement(_TodoTextInput2['default'], { className: 'new-todo',
+	        _react2.default.createElement(_TodoTextInput2.default, { className: 'new-todo',
 	          placeholder: 'What needs to be done?',
 	          autoFocus: true,
 	          onSave: this.handleTextInputSave
@@ -41883,13 +41267,13 @@
 	        var total = todos.length;
 	        var filters = ['all', 'active', 'completed'].map(function (filter) {
 	          var selected = filter === _this2.state.selectedFilter;
-	          return _react2['default'].createElement(
+	          return _react2.default.createElement(
 	            'li',
 	            { key: filter },
-	            _react2['default'].createElement(
+	            _react2.default.createElement(
 	              'a',
 	              { href: '#' + filter,
-	                className: (0, _classnames2['default'])({ selected: selected }),
+	                className: (0, _classnames2.default)({ selected: selected }),
 	                onClick: selected ? null : _this2.handleFilterChange.bind(_this2, filter) },
 	              filter
 	            )
@@ -41898,7 +41282,7 @@
 
 	        var clearButton = undefined;
 	        if (total - undone > 0) {
-	          clearButton = _react2['default'].createElement(
+	          clearButton = _react2.default.createElement(
 	            'button',
 	            { className: 'clear-completed',
 	              onClick: this.handleClearCompleted },
@@ -41906,10 +41290,10 @@
 	          );
 	        }
 
-	        return _react2['default'].createElement(
+	        return _react2.default.createElement(
 	          'footer',
 	          { className: 'footer' },
-	          _react2['default'].createElement(
+	          _react2.default.createElement(
 	            'span',
 	            { className: 'todo-count' },
 	            undone,
@@ -41917,7 +41301,7 @@
 	            total,
 	            ' items left'
 	          ),
-	          _react2['default'].createElement(
+	          _react2.default.createElement(
 	            'ul',
 	            { className: 'filters' },
 	            filters
@@ -41931,51 +41315,51 @@
 	    value: function render() {
 	      var viewer = this.props.viewer;
 	      var todos = viewer.todos;
-	      return _react2['default'].createElement(
+	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2['default'].createElement(
+	        _react2.default.createElement(
 	          'section',
 	          { className: 'todoapp' },
 	          this.makeHeader(),
-	          _react2['default'].createElement(_TodoList2['default'], { todos: todos,
+	          _react2.default.createElement(_TodoList2.default, { todos: todos,
 	            filter: this.state.selectedFilter,
 	            viewer: viewer }),
 	          this.makeList()
 	        ),
-	        _react2['default'].createElement(
+	        _react2.default.createElement(
 	          'footer',
 	          { className: 'info' },
-	          _react2['default'].createElement(
+	          _react2.default.createElement(
 	            'p',
 	            null,
 	            'Double-click to edit a todo'
 	          ),
-	          _react2['default'].createElement(
+	          _react2.default.createElement(
 	            'p',
 	            null,
 	            'Created by the ',
-	            _react2['default'].createElement(
+	            _react2.default.createElement(
 	              'a',
 	              { target: '_blank', href: 'https://risingstack.com' },
 	              'RisingStack team'
 	            )
 	          ),
-	          _react2['default'].createElement(
+	          _react2.default.createElement(
 	            'p',
 	            null,
 	            'The source code can be found on ',
-	            _react2['default'].createElement(
+	            _react2.default.createElement(
 	              'a',
 	              { target: '_blank', href: 'https://github.com/RisingStack/graffiti-todo' },
 	              'GitHub'
 	            )
 	          ),
-	          _react2['default'].createElement(
+	          _react2.default.createElement(
 	            'p',
 	            null,
 	            'Part of ',
-	            _react2['default'].createElement(
+	            _react2.default.createElement(
 	              'a',
 	              { target: '_blank', href: 'http://todomvc.com' },
 	              'TodoMVC'
@@ -41987,25 +41371,24 @@
 	  }]);
 
 	  return TodoApp;
-	})(_react2['default'].Component);
+	})(_react2.default.Component);
 
-	exports['default'] = _reactRelay2['default'].createContainer(TodoApp, {
+	exports.default = _reactRelay2.default.createContainer(TodoApp, {
 	  prepareVariables: function prepareVariables() {
 	    return {
-	      limit: Number.MAX_SAFE_INTEGER
+	      limit: 100
 	    };
 	  },
 
 	  fragments: {
 	    viewer: function viewer() {
-	      return (function (sub_0, sub_1, sub_2) {
+	      return (function (RQL_0, RQL_1, RQL_2) {
 	        return {
 	          children: [{
 	            fieldName: '__typename',
 	            kind: 'Field',
-	            metadata: {
-	              parentType: 'Viewer'
-	            }
+	            metadata: {},
+	            type: 'String'
 	          }, {
 	            calls: [{
 	              kind: 'Call',
@@ -42022,96 +41405,95 @@
 	                  fieldName: 'id',
 	                  kind: 'Field',
 	                  metadata: {
-	                    parentType: 'Todo',
 	                    isRequisite: true
-	                  }
+	                  },
+	                  type: 'ID'
 	                }, {
 	                  fieldName: 'complete',
 	                  kind: 'Field',
-	                  metadata: {
-	                    parentType: 'Todo'
-	                  }
+	                  metadata: {},
+	                  type: 'Boolean'
 	                }],
 	                fieldName: 'node',
 	                kind: 'Field',
 	                metadata: {
-	                  parentType: 'TodoEdge',
 	                  inferredRootCallName: 'node',
 	                  inferredPrimaryKey: 'id',
 	                  isRequisite: true
-	                }
+	                },
+	                type: 'Todo'
 	              }, {
 	                fieldName: 'cursor',
 	                kind: 'Field',
 	                metadata: {
-	                  parentType: 'TodoEdge',
 	                  isGenerated: true,
 	                  isRequisite: true
-	                }
+	                },
+	                type: 'String'
 	              }],
 	              fieldName: 'edges',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'TodoConnection',
 	                isPlural: true
-	              }
+	              },
+	              type: 'TodoEdge'
 	            }, {
 	              children: [{
 	                fieldName: 'hasNextPage',
 	                kind: 'Field',
 	                metadata: {
-	                  parentType: 'PageInfo',
 	                  isGenerated: true,
 	                  isRequisite: true
-	                }
+	                },
+	                type: 'Boolean'
 	              }, {
 	                fieldName: 'hasPreviousPage',
 	                kind: 'Field',
 	                metadata: {
-	                  parentType: 'PageInfo',
 	                  isGenerated: true,
 	                  isRequisite: true
-	                }
+	                },
+	                type: 'Boolean'
 	              }],
 	              fieldName: 'pageInfo',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'TodoConnection',
 	                isGenerated: true,
 	                isRequisite: true
-	              }
-	            }, _reactRelay2['default'].QL.__frag(sub_0)],
+	              },
+	              type: 'PageInfo'
+	            }, _reactRelay2.default.QL.__frag(RQL_0)],
 	            fieldName: 'todos',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'Viewer',
 	              isConnection: true
-	            }
+	            },
+	            type: 'TodoConnection'
 	          }, {
 	            fieldName: 'id',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'Viewer',
 	              isGenerated: true,
 	              isRequisite: true
-	            }
-	          }, _reactRelay2['default'].QL.__frag(sub_1), _reactRelay2['default'].QL.__frag(sub_2)],
+	            },
+	            type: 'ID'
+	          }, _reactRelay2.default.QL.__frag(RQL_1), _reactRelay2.default.QL.__frag(RQL_2)],
+	          hash: 'G5V+AwUP',
 	          kind: 'Fragment',
 	          metadata: {},
 	          name: 'TodoApp',
 	          type: 'Viewer'
 	        };
-	      })(_TodoList2['default'].getFragment('todos'), _TodoList2['default'].getFragment('viewer'), _mutationsAddTodoMutation2['default'].getFragment('viewer'));
+	      })(_TodoList2.default.getFragment('todos'), _TodoList2.default.getFragment('viewer'), _AddTodoMutation2.default.getFragment('viewer'));
 	    }
 	  }
 	});
-	module.exports = exports['default'];
 
 /***/ },
-/* 388 */
+/* 386 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	  Copyright (c) 2015 Jed Watson.
 	  Licensed under the MIT License (MIT), see
 	  http://jedwatson.github.io/classnames
@@ -42152,9 +41534,9 @@
 			module.exports = classNames;
 		} else if (true) {
 			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
 				return classNames;
-			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 		} else {
 			window.classNames = classNames;
 		}
@@ -42162,28 +41544,28 @@
 
 
 /***/ },
-/* 389 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _reactRelay = __webpack_require__(160);
 
 	var _reactRelay2 = _interopRequireDefault(_reactRelay);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var AddTodoMutation = (function (_Relay$Mutation) {
 	  _inherits(AddTodoMutation, _Relay$Mutation);
@@ -42191,7 +41573,7 @@
 	  function AddTodoMutation() {
 	    _classCallCheck(this, AddTodoMutation);
 
-	    _get(Object.getPrototypeOf(AddTodoMutation.prototype), 'constructor', this).apply(this, arguments);
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(AddTodoMutation).apply(this, arguments));
 	  }
 
 	  _createClass(AddTodoMutation, [{
@@ -42212,10 +41594,10 @@
 	            fieldName: 'clientMutationId',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'addTodoPayload',
 	              isGenerated: true,
 	              isRequisite: true
-	            }
+	            },
+	            type: 'String'
 	          }],
 	          kind: 'Mutation',
 	          metadata: {
@@ -42244,65 +41626,64 @@
 	              fieldName: 'cursor',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'changedTodoEdge',
 	                isGenerated: true,
 	                isRequisite: true
-	              }
+	              },
+	              type: 'String'
 	            }, {
 	              children: [{
 	                fieldName: 'id',
 	                kind: 'Field',
 	                metadata: {
-	                  parentType: 'changedTodoNode',
 	                  isGenerated: true,
 	                  isRequisite: true
-	                }
+	                },
+	                type: 'ID'
 	              }],
 	              fieldName: 'node',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'changedTodoEdge',
 	                isGenerated: true,
 	                isRequisite: true
-	              }
+	              },
+	              type: 'changedTodoNode'
 	            }],
 	            fieldName: 'changedTodoEdge',
 	            kind: 'Field',
-	            metadata: {
-	              parentType: 'addTodoPayload'
-	            }
+	            metadata: {},
+	            type: 'changedTodoEdge'
 	          }, {
 	            children: [{
 	              children: [{
 	                fieldName: 'count',
 	                kind: 'Field',
-	                metadata: {
-	                  parentType: 'TodoConnection'
-	                }
+	                metadata: {},
+	                type: 'Float'
 	              }],
 	              fieldName: 'todos',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'Viewer',
 	                isConnection: true
-	              }
+	              },
+	              type: 'TodoConnection'
 	            }, {
 	              fieldName: 'id',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'Viewer',
 	                isGenerated: true,
 	                isRequisite: true
-	              }
+	              },
+	              type: 'ID'
 	            }],
 	            fieldName: 'viewer',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'addTodoPayload',
 	              inferredRootCallName: 'node',
 	              inferredPrimaryKey: 'id'
-	            }
+	            },
+	            type: 'Viewer'
 	          }],
+	          hash: 'kQsFdo6U',
 	          kind: 'Fragment',
 	          metadata: {},
 	          name: 'AddTodoMutation',
@@ -42341,74 +41722,70 @@
 	        }
 	      };
 	    }
-	  }], [{
-	    key: 'fragments',
-	    value: {
-	      viewer: function viewer() {
-	        return (function () {
-	          return {
-	            children: [{
-	              fieldName: 'id',
-	              kind: 'Field',
-	              metadata: {
-	                parentType: 'Viewer',
-	                isRequisite: true
-	              }
-	            }, {
-	              children: [{
-	                fieldName: 'count',
-	                kind: 'Field',
-	                metadata: {
-	                  parentType: 'TodoConnection'
-	                }
-	              }],
-	              fieldName: 'todos',
-	              kind: 'Field',
-	              metadata: {
-	                parentType: 'Viewer',
-	                isConnection: true
-	              }
-	            }],
-	            kind: 'Fragment',
-	            metadata: {},
-	            name: 'AddTodoMutation',
-	            type: 'Viewer'
-	          };
-	        })();
-	      }
-	    },
-	    enumerable: true
 	  }]);
 
 	  return AddTodoMutation;
-	})(_reactRelay2['default'].Mutation);
+	})(_reactRelay2.default.Mutation);
 
-	exports['default'] = AddTodoMutation;
-	module.exports = exports['default'];
+	AddTodoMutation.fragments = {
+	  viewer: function viewer() {
+	    return (function () {
+	      return {
+	        children: [{
+	          fieldName: 'id',
+	          kind: 'Field',
+	          metadata: {
+	            isRequisite: true
+	          },
+	          type: 'ID'
+	        }, {
+	          children: [{
+	            fieldName: 'count',
+	            kind: 'Field',
+	            metadata: {},
+	            type: 'Float'
+	          }],
+	          fieldName: 'todos',
+	          kind: 'Field',
+	          metadata: {
+	            isConnection: true
+	          },
+	          type: 'TodoConnection'
+	        }],
+	        hash: 'fp2A/rXD',
+	        kind: 'Fragment',
+	        metadata: {},
+	        name: 'AddTodoMutation',
+	        type: 'Viewer'
+	      };
+	    })();
+	  }
+	};
+	exports.default = AddTodoMutation;
 
 /***/ },
-/* 390 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _reactRelay = __webpack_require__(160);
 
 	var _reactRelay2 = _interopRequireDefault(_reactRelay);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var AddTodoMutation = (function (_Relay$Mutation) {
 	  _inherits(AddTodoMutation, _Relay$Mutation);
@@ -42416,7 +41793,7 @@
 	  function AddTodoMutation() {
 	    _classCallCheck(this, AddTodoMutation);
 
-	    _get(Object.getPrototypeOf(AddTodoMutation.prototype), 'constructor', this).apply(this, arguments);
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(AddTodoMutation).apply(this, arguments));
 	  }
 
 	  _createClass(AddTodoMutation, [{
@@ -42437,10 +41814,10 @@
 	            fieldName: 'clientMutationId',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'deleteTodoPayload',
 	              isGenerated: true,
 	              isRequisite: true
-	            }
+	            },
+	            type: 'String'
 	          }],
 	          kind: 'Mutation',
 	          metadata: {
@@ -42467,40 +41844,40 @@
 	            fieldName: 'id',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'deleteTodoPayload',
 	              isRequisite: true
-	            }
+	            },
+	            type: 'ID'
 	          }, {
 	            children: [{
 	              fieldName: 'id',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'Viewer',
 	                isRequisite: true
-	              }
+	              },
+	              type: 'ID'
 	            }, {
 	              children: [{
 	                fieldName: 'count',
 	                kind: 'Field',
-	                metadata: {
-	                  parentType: 'TodoConnection'
-	                }
+	                metadata: {},
+	                type: 'Float'
 	              }],
 	              fieldName: 'todos',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'Viewer',
 	                isConnection: true
-	              }
+	              },
+	              type: 'TodoConnection'
 	            }],
 	            fieldName: 'viewer',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'deleteTodoPayload',
 	              inferredRootCallName: 'node',
 	              inferredPrimaryKey: 'id'
-	            }
+	            },
+	            type: 'Viewer'
 	          }],
+	          hash: 'WZTDtz4z',
 	          kind: 'Fragment',
 	          metadata: {},
 	          name: 'DeleteTodoMutation',
@@ -42532,70 +41909,58 @@
 	        }
 	      };
 	    }
-	  }], [{
-	    key: 'fragments',
-	    value: {
-	      viewer: function viewer() {
-	        return (function () {
-	          return {
-	            children: [{
-	              fieldName: 'id',
-	              kind: 'Field',
-	              metadata: {
-	                parentType: 'Viewer',
-	                isRequisite: true
-	              }
-	            }, {
-	              children: [{
-	                fieldName: 'count',
-	                kind: 'Field',
-	                metadata: {
-	                  parentType: 'TodoConnection'
-	                }
-	              }],
-	              fieldName: 'todos',
-	              kind: 'Field',
-	              metadata: {
-	                parentType: 'Viewer',
-	                isConnection: true
-	              }
-	            }],
-	            kind: 'Fragment',
-	            metadata: {},
-	            name: 'DeleteTodoMutation',
-	            type: 'Viewer'
-	          };
-	        })();
-	      }
-	    },
-	    enumerable: true
 	  }]);
 
 	  return AddTodoMutation;
-	})(_reactRelay2['default'].Mutation);
+	})(_reactRelay2.default.Mutation);
 
-	exports['default'] = AddTodoMutation;
-	module.exports = exports['default'];
+	AddTodoMutation.fragments = {
+	  viewer: function viewer() {
+	    return (function () {
+	      return {
+	        children: [{
+	          fieldName: 'id',
+	          kind: 'Field',
+	          metadata: {
+	            isRequisite: true
+	          },
+	          type: 'ID'
+	        }, {
+	          children: [{
+	            fieldName: 'count',
+	            kind: 'Field',
+	            metadata: {},
+	            type: 'Float'
+	          }],
+	          fieldName: 'todos',
+	          kind: 'Field',
+	          metadata: {
+	            isConnection: true
+	          },
+	          type: 'TodoConnection'
+	        }],
+	        hash: '4obyg9HU',
+	        kind: 'Fragment',
+	        metadata: {},
+	        name: 'DeleteTodoMutation',
+	        type: 'Viewer'
+	      };
+	    })();
+	  }
+	};
+	exports.default = AddTodoMutation;
 
 /***/ },
-/* 391 */
+/* 389 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(1);
 
@@ -42605,6 +41970,14 @@
 
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 	var ENTER_KEY_CODE = 13;
 	var ESC_KEY_CODE = 27;
 
@@ -42612,40 +41985,38 @@
 	  _inherits(TodoTextInput, _React$Component);
 
 	  function TodoTextInput() {
-	    var _this = this;
+	    var _Object$getPrototypeO;
+
+	    var _temp, _this, _ret;
 
 	    _classCallCheck(this, TodoTextInput);
 
-	    _get(Object.getPrototypeOf(TodoTextInput.prototype), 'constructor', this).apply(this, arguments);
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
 
-	    this.state = {
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(TodoTextInput)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
 	      isEditing: false,
-	      text: this.props.initialValue || ''
-	    };
-
-	    this.handleBlur = function () {
+	      text: _this.props.initialValue || ''
+	    }, _this.handleBlur = function () {
 	      if (_this.props.saveOnBlur) {
 	        _this.save();
 	      }
-	    };
-
-	    this.handleChange = function (e) {
+	    }, _this.handleChange = function (e) {
 	      _this.setState({ text: e.target.value });
-	    };
-
-	    this.handleKeyDown = function (e) {
+	    }, _this.handleKeyDown = function (e) {
 	      if (_this.props.onCancel && e.keyCode === ESC_KEY_CODE) {
 	        _this.props.onCancel();
 	      } else if (e.keyCode === ENTER_KEY_CODE) {
 	        _this.save();
 	      }
-	    };
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
 	  _createClass(TodoTextInput, [{
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
-	      _reactDom2['default'].findDOMNode(this).focus();
+	      _reactDom2.default.findDOMNode(this).focus();
 	    }
 	  }, {
 	    key: 'save',
@@ -42663,46 +42034,34 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2['default'].createElement('input', { className: this.props.className || '',
+	      return _react2.default.createElement('input', { className: this.props.className || '',
 	        placeholder: this.props.placeholder || '',
 	        value: this.state.text,
 	        onBlur: this.handleBlur,
 	        onChange: this.handleChange,
 	        onKeyDown: this.handleKeyDown });
 	    }
-	  }], [{
-	    key: 'defaultProps',
-	    value: {
-	      commitOnBlur: false
-	    },
-	    enumerable: true
 	  }]);
 
 	  return TodoTextInput;
-	})(_react2['default'].Component);
+	})(_react2.default.Component);
 
-	exports['default'] = TodoTextInput;
-	module.exports = exports['default'];
+	TodoTextInput.defaultProps = {
+	  commitOnBlur: false
+	};
+	exports.default = TodoTextInput;
 
 /***/ },
-/* 392 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(1);
 
@@ -42712,25 +42071,37 @@
 
 	var _reactRelay2 = _interopRequireDefault(_reactRelay);
 
-	var _mutationsChangeTodoStatusMutation = __webpack_require__(393);
+	var _ChangeTodoStatusMutation = __webpack_require__(391);
 
-	var _mutationsChangeTodoStatusMutation2 = _interopRequireDefault(_mutationsChangeTodoStatusMutation);
+	var _ChangeTodoStatusMutation2 = _interopRequireDefault(_ChangeTodoStatusMutation);
 
-	var _Todo = __webpack_require__(394);
+	var _Todo = __webpack_require__(392);
 
 	var _Todo2 = _interopRequireDefault(_Todo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var TodoList = (function (_React$Component) {
 	  _inherits(TodoList, _React$Component);
 
 	  function TodoList() {
-	    var _this = this;
+	    var _Object$getPrototypeO;
+
+	    var _temp, _this, _ret;
 
 	    _classCallCheck(this, TodoList);
 
-	    _get(Object.getPrototypeOf(TodoList.prototype), 'constructor', this).apply(this, arguments);
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
 
-	    this.handleToggleAllChange = function () {
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(TodoList)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.handleToggleAllChange = function () {
 	      var todoCount = _this.props.todos.count;
 	      var edges = _this.props.todos.edges;
 	      var done = edges.filter(function (edge) {
@@ -42741,18 +42112,16 @@
 	      edges.filter(function (edge) {
 	        return edge.node.complete !== setTo;
 	      }).forEach(function (edge) {
-	        return _reactRelay2['default'].Store.update(new _mutationsChangeTodoStatusMutation2['default']({
+	        return _reactRelay2.default.Store.update(new _ChangeTodoStatusMutation2.default({
 	          id: edge.node.id,
 	          complete: setTo
 	        }));
 	      });
-	    };
-
-	    this.makeTodo = function (edge) {
-	      return _react2['default'].createElement(_Todo2['default'], { key: edge.node.id,
+	    }, _this.makeTodo = function (edge) {
+	      return _react2.default.createElement(_Todo2.default, { key: edge.node.id,
 	        todo: edge.node,
 	        viewer: _this.props.viewer });
-	    };
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
 	  _createClass(TodoList, [{
@@ -42780,14 +42149,14 @@
 	      });
 	      var todos = this.getFilteredTodos();
 	      var todoList = todos.map(this.makeTodo);
-	      return _react2['default'].createElement(
+	      return _react2.default.createElement(
 	        'section',
 	        { className: 'main' },
-	        _react2['default'].createElement('input', { className: 'toggle-all',
+	        _react2.default.createElement('input', { className: 'toggle-all',
 	          type: 'checkbox',
 	          checked: todoCount === done,
 	          onChange: this.handleToggleAllChange }),
-	        _react2['default'].createElement(
+	        _react2.default.createElement(
 	          'ul',
 	          { className: 'todo-list' },
 	          todoList
@@ -42797,137 +42166,136 @@
 	  }]);
 
 	  return TodoList;
-	})(_react2['default'].Component);
+	})(_react2.default.Component);
 
-	exports['default'] = _reactRelay2['default'].createContainer(TodoList, {
+	exports.default = _reactRelay2.default.createContainer(TodoList, {
 	  fragments: {
 	    viewer: function viewer() {
-	      return (function (sub_0) {
+	      return (function (RQL_0) {
 	        return {
 	          children: [{
 	            fieldName: 'id',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'Viewer',
 	              isGenerated: true,
 	              isRequisite: true
-	            }
-	          }, _reactRelay2['default'].QL.__frag(sub_0)],
+	            },
+	            type: 'ID'
+	          }, _reactRelay2.default.QL.__frag(RQL_0)],
+	          hash: 'Ombgaix/',
 	          kind: 'Fragment',
 	          metadata: {},
 	          name: 'TodoList',
 	          type: 'Viewer'
 	        };
-	      })(_Todo2['default'].getFragment('viewer'));
+	      })(_Todo2.default.getFragment('viewer'));
 	    },
 	    todos: function todos() {
-	      return (function (sub_0) {
+	      return (function (RQL_0) {
 	        return {
 	          children: [{
 	            fieldName: 'count',
 	            kind: 'Field',
-	            metadata: {
-	              parentType: 'TodoConnection'
-	            }
+	            metadata: {},
+	            type: 'Float'
 	          }, {
 	            children: [{
 	              children: [{
 	                fieldName: 'id',
 	                kind: 'Field',
 	                metadata: {
-	                  parentType: 'Todo',
 	                  isRequisite: true
-	                }
+	                },
+	                type: 'ID'
 	              }, {
 	                fieldName: 'complete',
 	                kind: 'Field',
-	                metadata: {
-	                  parentType: 'Todo'
-	                }
-	              }, _reactRelay2['default'].QL.__frag(sub_0)],
+	                metadata: {},
+	                type: 'Boolean'
+	              }, _reactRelay2.default.QL.__frag(RQL_0)],
 	              fieldName: 'node',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'TodoEdge',
 	                inferredRootCallName: 'node',
 	                inferredPrimaryKey: 'id',
 	                isRequisite: true
-	              }
+	              },
+	              type: 'Todo'
 	            }, {
 	              fieldName: 'cursor',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'TodoEdge',
 	                isGenerated: true,
 	                isRequisite: true
-	              }
+	              },
+	              type: 'String'
 	            }],
 	            fieldName: 'edges',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'TodoConnection',
 	              isPlural: true
-	            }
+	            },
+	            type: 'TodoEdge'
 	          }, {
 	            children: [{
 	              fieldName: 'hasNextPage',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'PageInfo',
 	                isGenerated: true,
 	                isRequisite: true
-	              }
+	              },
+	              type: 'Boolean'
 	            }, {
 	              fieldName: 'hasPreviousPage',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'PageInfo',
 	                isGenerated: true,
 	                isRequisite: true
-	              }
+	              },
+	              type: 'Boolean'
 	            }],
 	            fieldName: 'pageInfo',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'TodoConnection',
 	              isGenerated: true,
 	              isRequisite: true
-	            }
+	            },
+	            type: 'PageInfo'
 	          }],
+	          hash: 'dKvT4RhA',
 	          kind: 'Fragment',
 	          metadata: {},
 	          name: 'TodoList',
 	          type: 'TodoConnection'
 	        };
-	      })(_Todo2['default'].getFragment('todo'));
+	      })(_Todo2.default.getFragment('todo'));
 	    }
 	  }
 	});
-	module.exports = exports['default'];
 
 /***/ },
-/* 393 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _reactRelay = __webpack_require__(160);
 
 	var _reactRelay2 = _interopRequireDefault(_reactRelay);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var ChangeTodoStatusMutation = (function (_Relay$Mutation) {
 	  _inherits(ChangeTodoStatusMutation, _Relay$Mutation);
@@ -42935,7 +42303,7 @@
 	  function ChangeTodoStatusMutation() {
 	    _classCallCheck(this, ChangeTodoStatusMutation);
 
-	    _get(Object.getPrototypeOf(ChangeTodoStatusMutation.prototype), 'constructor', this).apply(this, arguments);
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(ChangeTodoStatusMutation).apply(this, arguments));
 	  }
 
 	  _createClass(ChangeTodoStatusMutation, [{
@@ -42956,10 +42324,10 @@
 	            fieldName: 'clientMutationId',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'updateTodoPayload',
 	              isGenerated: true,
 	              isRequisite: true
-	            }
+	            },
+	            type: 'String'
 	          }],
 	          kind: 'Mutation',
 	          metadata: {
@@ -42987,24 +42355,23 @@
 	            children: [{
 	              fieldName: 'complete',
 	              kind: 'Field',
-	              metadata: {
-	                parentType: 'changedTodo'
-	              }
+	              metadata: {},
+	              type: 'Boolean'
 	            }, {
 	              fieldName: 'id',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'changedTodo',
 	                isGenerated: true,
 	                isRequisite: true
-	              }
+	              },
+	              type: 'ID'
 	            }],
 	            fieldName: 'changedTodo',
 	            kind: 'Field',
-	            metadata: {
-	              parentType: 'updateTodoPayload'
-	            }
+	            metadata: {},
+	            type: 'changedTodo'
 	          }],
+	          hash: 'Cn3/JYd4',
 	          kind: 'Fragment',
 	          metadata: {},
 	          name: 'ChangeTodoStatusMutation',
@@ -43035,30 +42402,21 @@
 	  }]);
 
 	  return ChangeTodoStatusMutation;
-	})(_reactRelay2['default'].Mutation);
+	})(_reactRelay2.default.Mutation);
 
-	exports['default'] = ChangeTodoStatusMutation;
-	module.exports = exports['default'];
+	exports.default = ChangeTodoStatusMutation;
 
 /***/ },
-/* 394 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _react = __webpack_require__(1);
 
@@ -43068,88 +42426,88 @@
 
 	var _reactRelay2 = _interopRequireDefault(_reactRelay);
 
-	var _classnames = __webpack_require__(388);
+	var _classnames = __webpack_require__(386);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _mutationsChangeTodoStatusMutation = __webpack_require__(393);
+	var _ChangeTodoStatusMutation = __webpack_require__(391);
 
-	var _mutationsChangeTodoStatusMutation2 = _interopRequireDefault(_mutationsChangeTodoStatusMutation);
+	var _ChangeTodoStatusMutation2 = _interopRequireDefault(_ChangeTodoStatusMutation);
 
-	var _mutationsChangeTodoTextMutation = __webpack_require__(395);
+	var _ChangeTodoTextMutation = __webpack_require__(393);
 
-	var _mutationsChangeTodoTextMutation2 = _interopRequireDefault(_mutationsChangeTodoTextMutation);
+	var _ChangeTodoTextMutation2 = _interopRequireDefault(_ChangeTodoTextMutation);
 
-	var _mutationsDeleteTodoMutation = __webpack_require__(390);
+	var _DeleteTodoMutation = __webpack_require__(388);
 
-	var _mutationsDeleteTodoMutation2 = _interopRequireDefault(_mutationsDeleteTodoMutation);
+	var _DeleteTodoMutation2 = _interopRequireDefault(_DeleteTodoMutation);
 
-	var _TodoTextInput = __webpack_require__(391);
+	var _TodoTextInput = __webpack_require__(389);
 
 	var _TodoTextInput2 = _interopRequireDefault(_TodoTextInput);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Todo = (function (_React$Component) {
 	  _inherits(Todo, _React$Component);
 
 	  function Todo() {
-	    var _this = this;
+	    var _Object$getPrototypeO;
+
+	    var _temp, _this, _ret;
 
 	    _classCallCheck(this, Todo);
 
-	    _get(Object.getPrototypeOf(Todo.prototype), 'constructor', this).apply(this, arguments);
+	    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+	      args[_key] = arguments[_key];
+	    }
 
-	    this.state = {
+	    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Todo)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
 	      isEditing: false
-	    };
-
-	    this.handleCompleteToggle = function () {
-	      _reactRelay2['default'].Store.update(new _mutationsChangeTodoStatusMutation2['default']({
+	    }, _this.handleCompleteToggle = function () {
+	      _reactRelay2.default.Store.update(new _ChangeTodoStatusMutation2.default({
 	        id: _this.props.todo.id,
 	        complete: !_this.props.todo.complete
 	      }));
-	    };
-
-	    this.handleLabelDoubleClick = function () {
+	    }, _this.handleLabelDoubleClick = function () {
 	      _this.setState({
 	        isEditing: true
 	      });
-	    };
-
-	    this.handleDestroyClick = function () {
-	      _reactRelay2['default'].Store.update(new _mutationsDeleteTodoMutation2['default']({
+	    }, _this.handleDestroyClick = function () {
+	      _reactRelay2.default.Store.update(new _DeleteTodoMutation2.default({
 	        id: _this.props.todo.id,
 	        viewer: _this.props.viewer
 	      }));
-	    };
-
-	    this.handleInputSave = function (text) {
-	      _reactRelay2['default'].Store.update(new _mutationsChangeTodoTextMutation2['default']({
+	    }, _this.handleInputSave = function (text) {
+	      _reactRelay2.default.Store.update(new _ChangeTodoTextMutation2.default({
 	        id: _this.props.todo.id,
 	        text: text
 	      }));
 	      _this.setState({
 	        isEditing: false
 	      });
-	    };
-
-	    this.handleInputCancel = function () {
+	    }, _this.handleInputCancel = function () {
 	      _this.setState({
 	        isEditing: false
 	      });
-	    };
-
-	    this.handleInputDelete = function () {
+	    }, _this.handleInputDelete = function () {
 	      _this.setState({
 	        isEditing: false
 	      });
-	    };
+	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 
 	  _createClass(Todo, [{
 	    key: 'makeInput',
 	    value: function makeInput() {
 	      if (this.state.isEditing) {
-	        return _react2['default'].createElement(_TodoTextInput2['default'], { className: 'edit',
+	        return _react2.default.createElement(_TodoTextInput2.default, { className: 'edit',
 	          saveOnBlur: true,
 	          initialValue: this.props.todo.text,
 	          onSave: this.handleInputSave,
@@ -43161,25 +42519,25 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return _react2['default'].createElement(
+	      return _react2.default.createElement(
 	        'li',
-	        { className: (0, _classnames2['default'])({
+	        { className: (0, _classnames2.default)({
 	            completed: this.props.todo.complete,
 	            editing: this.state.isEditing
 	          }) },
-	        _react2['default'].createElement(
+	        _react2.default.createElement(
 	          'div',
 	          { className: 'view' },
-	          _react2['default'].createElement('input', { className: 'toggle',
+	          _react2.default.createElement('input', { className: 'toggle',
 	            checked: this.props.todo.complete,
 	            onChange: this.handleCompleteToggle,
 	            type: 'checkbox' }),
-	          _react2['default'].createElement(
+	          _react2.default.createElement(
 	            'label',
 	            { onDoubleClick: this.handleLabelDoubleClick },
 	            this.props.todo.text
 	          ),
-	          _react2['default'].createElement('button', { className: 'destroy',
+	          _react2.default.createElement('button', { className: 'destroy',
 	            onClick: this.handleDestroyClick })
 	        ),
 	        this.makeInput()
@@ -43188,28 +42546,29 @@
 	  }]);
 
 	  return Todo;
-	})(_react2['default'].Component);
+	})(_react2.default.Component);
 
-	exports['default'] = _reactRelay2['default'].createContainer(Todo, {
+	exports.default = _reactRelay2.default.createContainer(Todo, {
 	  fragments: {
 	    viewer: function viewer() {
-	      return (function (sub_0) {
+	      return (function (RQL_0) {
 	        return {
 	          children: [{
 	            fieldName: 'id',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'Viewer',
 	              isGenerated: true,
 	              isRequisite: true
-	            }
-	          }, _reactRelay2['default'].QL.__frag(sub_0)],
+	            },
+	            type: 'ID'
+	          }, _reactRelay2.default.QL.__frag(RQL_0)],
+	          hash: 'Zzutl0fu',
 	          kind: 'Fragment',
 	          metadata: {},
 	          name: 'Todo',
 	          type: 'Viewer'
 	        };
-	      })(_mutationsDeleteTodoMutation2['default'].getFragment('viewer'));
+	      })(_DeleteTodoMutation2.default.getFragment('viewer'));
 	    },
 	    todo: function todo() {
 	      return (function () {
@@ -43218,22 +42577,21 @@
 	            fieldName: 'id',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'Todo',
 	              isRequisite: true
-	            }
+	            },
+	            type: 'ID'
 	          }, {
 	            fieldName: 'text',
 	            kind: 'Field',
-	            metadata: {
-	              parentType: 'Todo'
-	            }
+	            metadata: {},
+	            type: 'String'
 	          }, {
 	            fieldName: 'complete',
 	            kind: 'Field',
-	            metadata: {
-	              parentType: 'Todo'
-	            }
+	            metadata: {},
+	            type: 'Boolean'
 	          }],
+	          hash: 'EpXtsDR0',
 	          kind: 'Fragment',
 	          metadata: {},
 	          name: 'Todo',
@@ -43243,31 +42601,30 @@
 	    }
 	  }
 	});
-	module.exports = exports['default'];
 
 /***/ },
-/* 395 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _reactRelay = __webpack_require__(160);
 
 	var _reactRelay2 = _interopRequireDefault(_reactRelay);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var ChangeTodoTextMutation = (function (_Relay$Mutation) {
 	  _inherits(ChangeTodoTextMutation, _Relay$Mutation);
@@ -43275,7 +42632,7 @@
 	  function ChangeTodoTextMutation() {
 	    _classCallCheck(this, ChangeTodoTextMutation);
 
-	    _get(Object.getPrototypeOf(ChangeTodoTextMutation.prototype), 'constructor', this).apply(this, arguments);
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(ChangeTodoTextMutation).apply(this, arguments));
 	  }
 
 	  _createClass(ChangeTodoTextMutation, [{
@@ -43296,10 +42653,10 @@
 	            fieldName: 'clientMutationId',
 	            kind: 'Field',
 	            metadata: {
-	              parentType: 'updateTodoPayload',
 	              isGenerated: true,
 	              isRequisite: true
-	            }
+	            },
+	            type: 'String'
 	          }],
 	          kind: 'Mutation',
 	          metadata: {
@@ -43327,24 +42684,23 @@
 	            children: [{
 	              fieldName: 'text',
 	              kind: 'Field',
-	              metadata: {
-	                parentType: 'changedTodo'
-	              }
+	              metadata: {},
+	              type: 'String'
 	            }, {
 	              fieldName: 'id',
 	              kind: 'Field',
 	              metadata: {
-	                parentType: 'changedTodo',
 	                isGenerated: true,
 	                isRequisite: true
-	              }
+	              },
+	              type: 'ID'
 	            }],
 	            fieldName: 'changedTodo',
 	            kind: 'Field',
-	            metadata: {
-	              parentType: 'updateTodoPayload'
-	            }
+	            metadata: {},
+	            type: 'changedTodo'
 	          }],
+	          hash: 'p+icXmQh',
 	          kind: 'Fragment',
 	          metadata: {},
 	          name: 'ChangeTodoTextMutation',
@@ -43375,22 +42731,21 @@
 	  }]);
 
 	  return ChangeTodoTextMutation;
-	})(_reactRelay2['default'].Mutation);
+	})(_reactRelay2.default.Mutation);
 
-	exports['default'] = ChangeTodoTextMutation;
-	module.exports = exports['default'];
+	exports.default = ChangeTodoTextMutation;
 
 /***/ },
-/* 396 */
+/* 394 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(397);
+	var content = __webpack_require__(395);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(399)(content, {});
+	var update = __webpack_require__(397)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -43407,10 +42762,10 @@
 	}
 
 /***/ },
-/* 397 */
+/* 395 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(398)();
+	exports = module.exports = __webpack_require__(396)();
 	// imports
 
 
@@ -43421,7 +42776,7 @@
 
 
 /***/ },
-/* 398 */
+/* 396 */
 /***/ function(module, exports) {
 
 	/*
@@ -43477,7 +42832,7 @@
 
 
 /***/ },
-/* 399 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -43731,16 +43086,16 @@
 
 
 /***/ },
-/* 400 */
+/* 398 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(401);
+	var content = __webpack_require__(399);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(399)(content, {});
+	var update = __webpack_require__(397)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -43757,10 +43112,10 @@
 	}
 
 /***/ },
-/* 401 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(398)();
+	exports = module.exports = __webpack_require__(396)();
 	// imports
 
 
@@ -43771,73 +43126,63 @@
 
 
 /***/ },
-/* 402 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	Object.defineProperty(exports, '__esModule', {
+	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var _reactRelay = __webpack_require__(160);
 
 	var _reactRelay2 = _interopRequireDefault(_reactRelay);
 
-	var _default = (function (_Relay$Route) {
-	  _inherits(_default, _Relay$Route);
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	  function _default() {
-	    _classCallCheck(this, _default);
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	    _get(Object.getPrototypeOf(_default.prototype), 'constructor', this).apply(this, arguments);
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _class = (function (_Relay$Route) {
+	  _inherits(_class, _Relay$Route);
+
+	  function _class() {
+	    _classCallCheck(this, _class);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(_class).apply(this, arguments));
 	  }
 
-	  _createClass(_default, null, [{
-	    key: 'queries',
-	    value: {
-	      viewer: function viewer() {
-	        return (function () {
-	          return {
-	            children: [{
-	              fieldName: 'id',
-	              kind: 'Field',
-	              metadata: {
-	                parentType: 'Viewer',
-	                isGenerated: true,
-	                isRequisite: true
-	              }
-	            }],
-	            fieldName: 'viewer',
-	            kind: 'Query',
-	            metadata: {},
-	            name: 'AppRoute'
-	          };
-	        })();
-	      }
-	    },
-	    enumerable: true
-	  }, {
-	    key: 'routeName',
-	    value: 'AppRoute',
-	    enumerable: true
-	  }]);
+	  return _class;
+	})(_reactRelay2.default.Route);
 
-	  return _default;
-	})(_reactRelay2['default'].Route);
-
-	exports['default'] = _default;
-	module.exports = exports['default'];
+	_class.queries = {
+	  viewer: function viewer() {
+	    return (function () {
+	      return {
+	        children: [{
+	          fieldName: 'id',
+	          kind: 'Field',
+	          metadata: {
+	            isGenerated: true,
+	            isRequisite: true
+	          },
+	          type: 'ID'
+	        }],
+	        fieldName: 'viewer',
+	        kind: 'Query',
+	        metadata: {},
+	        name: 'AppRoute',
+	        type: 'Viewer'
+	      };
+	    })();
+	  }
+	};
+	_class.routeName = 'AppRoute';
+	exports.default = _class;
 
 /***/ }
 /******/ ]);

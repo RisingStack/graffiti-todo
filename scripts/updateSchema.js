@@ -6,9 +6,8 @@ import {introspectionQuery, printSchema} from 'graphql/utilities';
 import mongooseSchema from '../data/schema';
 
 const schema = getSchema(mongooseSchema);
-// const schema = getSchema(mongooseSchema);
 // Save JSON of full schema introspection for Babel Relay Plugin to use
-async () => {
+(async () => {
   const result = await (graphql(schema, introspectionQuery));
   if (result.errors) {
     console.error( // eslint-disable-line no-console
@@ -21,7 +20,7 @@ async () => {
       JSON.stringify(result, null, 2)
     );
   }
-}();
+})();
 
 // Save user readable type system shorthand of schema
 fs.writeFileSync(

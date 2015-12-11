@@ -1,8 +1,8 @@
 import path from 'path';
 import Hapi from 'hapi';
 import Inert from 'inert';
-import {hapi} from '@risingstack/graffiti';
-import {getSchema} from '@risingstack/graffiti-mongoose';
+import { hapi } from '@risingstack/graffiti';
+import { getSchema } from '@risingstack/graffiti-mongoose';
 import mongoose from 'mongoose';
 import mongooseSchema from './data/schema';
 import Filter from 'bad-words';
@@ -30,7 +30,7 @@ const hooks = {
 server.register([Inert, {
   register: hapi,
   options: {
-    schema: getSchema(mongooseSchema, {hooks})
+    schema: getSchema(mongooseSchema, { hooks })
   }
 }], (err) => {
   if (err) {

@@ -52,7 +52,7 @@
     "mongoose": "4.3.0",
     "react": "0.14.3",
     "react-dom": "0.14.3",
-    "react-relay": "0.6.0",
+    "react-relay": "0.9.3",
     "todomvc-app-css": "2.0.3",
     "todomvc-common": "1.0.2"
   },

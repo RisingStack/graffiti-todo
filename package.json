@@ -50,7 +50,7 @@
     "hapi": "11.1.2",
     "inert": "3.2.0",
     "mongoose": "4.3.0",
-    "react": "0.14.3",
+    "react": "15.3.2",
     "react-dom": "0.14.3",
     "react-relay": "0.6.0",
     "todomvc-app-css": "2.0.3",

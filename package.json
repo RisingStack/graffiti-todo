@@ -58,7 +58,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.3.17",
-    "babel-eslint": "5.0.0-beta6",
+    "babel-eslint": "7.0.0",
     "css-loader": "0.23.0",
     "eslint": "1.10.3",
     "eslint-config-airbnb": "2.0.0",

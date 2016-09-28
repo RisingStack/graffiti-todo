@@ -57,7 +57,7 @@
     "todomvc-common": "1.0.2"
   },
   "devDependencies": {
-    "babel-cli": "^6.3.17",
+    "babel-cli": "^6.16.0",
     "babel-eslint": "5.0.0-beta6",
     "css-loader": "0.23.0",
     "eslint": "1.10.3",
